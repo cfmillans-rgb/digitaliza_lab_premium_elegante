@@ -31,7 +31,9 @@ body{
   font-family:var(--font-body);
   color:var(--color-text);
   background:
-    radial-gradient(circle at top left, rgba(245,130,32,.12), transparent 24%),
+    radial-gradient(circle at top left, rgba(255,255,255,.10), transparent 22%),
+    radial-gradient(circle at top right, rgba(255,255,255,.06), transparent 18%),
+    radial-gradient(circle at bottom left, rgba(245,130,32,.08), transparent 16%),
     radial-gradient(circle at bottom right, rgba(245,130,32,.08), transparent 18%),
     var(--color-bg);
   line-height:1.65;
@@ -65,11 +67,12 @@ a:hover{
 .topbar{
   position:relative;
   z-index:1035;
-  background:linear-gradient(90deg, rgba(245,130,32,.16), rgba(245,130,32,.03));
-  border-bottom:1px solid rgba(255,255,255,.06);
+  background:linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border-bottom:1px solid rgba(255,255,255,.08);
   color:#fff;
   font-size:.92rem;
   padding:.7rem 0;
+  backdrop-filter:blur(10px);
 }
 
 .topbar strong{
@@ -85,13 +88,13 @@ a:hover{
 .navbar{
   padding:1rem 0;
   transition:all .35s ease;
-  background:rgba(6,10,16,.35);
-  backdrop-filter: blur(14px);
+  background:rgba(7,10,16,.45);
+  backdrop-filter:blur(14px);
 }
 
 .navbar.scrolled{
-  background:rgba(6,10,16,.86);
-  box-shadow:0 10px 30px rgba(0,0,0,.28);
+  background:rgba(7,10,16,.82);
+  box-shadow:0 10px 30px rgba(0,0,0,.22);
   padding:.75rem 0;
 }
 
@@ -171,7 +174,7 @@ a:hover{
 .hero-orb-1{
   width:280px;
   height:280px;
-  background:rgba(245,130,32,.16);
+  background:rgba(255,255,255,.08);
   top:120px;
   right:10%;
 }
@@ -179,7 +182,7 @@ a:hover{
 .hero-orb-2{
   width:210px;
   height:210px;
-  background:rgba(245,130,32,.12);
+  background:rgba(245,130,32,.10);
   bottom:30px;
   left:6%;
 }
@@ -965,4 +968,48 @@ body::before{
   .signature-strip{
     padding-bottom:78px;
   }
+}
+/* ===== Arreglo cabecera superior ===== */
+
+.topbar{
+  position: relative;
+  z-index: 1050;
+  background: rgba(18, 22, 29, 0.92) !important;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: hidden;
+}
+
+.navbar{
+  position: relative;
+  z-index: 1040;
+  background: rgba(10, 14, 20, 0.88) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+
+.navbar.scrolled{
+  background: rgba(10, 14, 20, 0.96) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+/* evita que los brillos del hero se vean detrás de la cabecera */
+.hero-orb-1,
+.hero-orb-2{
+  z-index: 0;
+  opacity: .35;
+}
+
+/* asegura que el contenido principal quede por debajo de la cabecera */
+.hero{
+  position: relative;
+  z-index: 1;
+  padding-top: 170px;
+}
+
+/* opcional: si el grid brillante se nota mucho arriba, lo suaviza */
+body::before{
+  opacity: .18;
 }
