@@ -1,215 +1,90 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const WHATSAPP_NUMBER = "56982867164";
+const WHATSAPP_NUMBER = '56982867164';
 
-  const navbar = document.getElementById("navbarPrincipal");
-  const topbar = document.querySelector(".topbar");
-  const menuCollapse = document.getElementById("menuPrincipal");
-  const whatsappForm = document.getElementById("whatsappForm");
-  const formFeedback = document.getElementById("formFeedback");
-  const currentYear = document.getElementById("currentYear");
-  const revealItems = document.querySelectorAll(".reveal-up");
-  const counters = document.querySelectorAll(".counter");
-  const waLinks = document.querySelectorAll(".js-wa-link");
-
-  function getHeaderOffset() {
-    const topbarHeight = topbar ? topbar.offsetHeight : 0;
-    const navbarHeight = navbar ? navbar.offsetHeight : 0;
-    return topbarHeight + navbarHeight + 18;
-  }
-
-  function buildWhatsAppUrl(message) {
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  }
-
-  function setWhatsAppLinks() {
-    waLinks.forEach((link) => {
-      const message =
-        link.dataset.message ||
-        "Hola Digitaliza Lab, quiero hablar sobre mi proyecto web.";
-      link.setAttribute("href", buildWhatsAppUrl(message));
-    });
-  }
-
-function handleNavbarOnScroll() {
-  if (!navbar) return;
-
-  if (window.scrollY > 24) {
-    navbar.style.background = "#0b1118";
-    navbar.style.boxShadow = "none";
-    navbar.style.backdropFilter = "none";
-    navbar.style.webkitBackdropFilter = "none";
-  } else {
-    navbar.style.background = "#0b1118";
-    navbar.style.boxShadow = "none";
-    navbar.style.backdropFilter = "none";
-    navbar.style.webkitBackdropFilter = "none";
-  }
+function buildWhatsAppUrl(message) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-  function closeMobileMenu() {
-    if (!menuCollapse || !window.bootstrap) return;
-    const bsCollapse = bootstrap.Collapse.getInstance(menuCollapse);
-    if (bsCollapse) {
-      bsCollapse.hide();
+function setupWhatsAppLinks() {
+  document.querySelectorAll('.js-wa-link').forEach((link) => {
+    const message = link.dataset.message || 'Hola Digitaliza Lab, quiero cotizar una landing para mi negocio.';
+    link.href = buildWhatsAppUrl(message);
+  });
+}
+
+function setupNavbar() {
+  const navbar = document.getElementById('navbarPrincipal');
+  if (!navbar) return;
+
+  const updateNavbar = () => {
+    if (window.scrollY > 24) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-  }
+  };
 
-  function setupSmoothAnchors() {
-    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+  updateNavbar();
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+}
 
-    anchorLinks.forEach((anchor) => {
-      anchor.addEventListener("click", (event) => {
-        const targetId = anchor.getAttribute("href");
-        const target = document.querySelector(targetId);
+function setupReveal() {
+  const items = document.querySelectorAll('.reveal-up');
+  if (!items.length) return;
 
-        if (!target) return;
-
-        event.preventDefault();
-
-        const offset = getHeaderOffset();
-        const targetTop =
-          target.getBoundingClientRect().top + window.pageYOffset - offset;
-
-        window.scrollTo({
-          top: targetTop,
-          behavior: "smooth",
-        });
-
-        closeMobileMenu();
-      });
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
     });
-  }
+  }, { threshold: 0.06, rootMargin: '0px 0px -12px 0px' });
 
-  function setupRevealAnimation() {
-    if (!("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
+  items.forEach((item) => observer.observe(item));
+}
+
+function setupForm() {
+  const form = document.getElementById('whatsappForm');
+  const feedback = document.getElementById('formFeedback');
+  if (!form || !feedback) return;
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const nombre = document.getElementById('nombreCliente').value.trim();
+    const telefono = document.getElementById('telefonoCliente').value.trim();
+    const rubro = document.getElementById('rubroCliente').value.trim();
+    const mensaje = document.getElementById('mensajeCliente').value.trim();
+
+    if (!nombre || !telefono || !rubro || !mensaje) {
+      feedback.textContent = 'Completa todos los campos para abrir el mensaje en WhatsApp.';
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px",
-      }
-    );
+    const text = [
+      'Hola Digitaliza Lab, quiero cotizar una landing para mi negocio.',
+      '',
+      `Nombre: ${nombre}`,
+      `WhatsApp: ${telefono}`,
+      `Rubro: ${rubro}`,
+      `Objetivo: ${mensaje}`,
+    ].join('\n');
 
-    revealItems.forEach((item, index) => {
-      item.style.transitionDelay = `${Math.min(index * 35, 180)}ms`;
-      observer.observe(item);
-    });
-  }
+    feedback.textContent = 'Abriendo WhatsApp...';
+    window.open(buildWhatsAppUrl(text), '_blank', 'noopener,noreferrer');
+    form.reset();
+  });
+}
 
-  function animateCounter(counter) {
-    const target = Number(counter.dataset.target || 0);
-    const duration = 900;
-    const startTime = performance.now();
+function setCurrentYear() {
+  const year = document.getElementById('currentYear');
+  if (year) year.textContent = new Date().getFullYear();
+}
 
-    function updateCounter(currentTime) {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const value = Math.round(target * eased);
-
-      counter.textContent = value;
-
-      if (progress < 1) {
-        requestAnimationFrame(updateCounter);
-      }
-    }
-
-    requestAnimationFrame(updateCounter);
-  }
-
-  function setupCounters() {
-    if (!counters.length) return;
-
-    if (!("IntersectionObserver" in window)) {
-      counters.forEach((counter) => {
-        counter.textContent = counter.dataset.target || "0";
-      });
-      return;
-    }
-
-    const counterObserver = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.4,
-      }
-    );
-
-    counters.forEach((counter) => counterObserver.observe(counter));
-  }
-
-  function setupWhatsAppForm() {
-    if (!whatsappForm) return;
-
-    whatsappForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const nombre = document.getElementById("nombreCliente")?.value.trim();
-      const telefono = document.getElementById("telefonoCliente")?.value.trim();
-      const rubro = document.getElementById("rubroCliente")?.value.trim();
-      const mensaje = document.getElementById("mensajeCliente")?.value.trim();
-
-      if (!nombre || !telefono || !rubro || !mensaje) {
-        if (formFeedback) {
-          formFeedback.textContent =
-            "Por favor completa todos los campos antes de continuar.";
-        }
-        return;
-      }
-
-      const waMessage =
-        `Hola Digitaliza Lab, quiero hablar sobre mi proyecto web.%0A%0A` +
-        `Nombre: ${nombre}%0A` +
-        `WhatsApp: ${telefono}%0A` +
-        `Rubro: ${rubro}%0A` +
-        `Proyecto: ${mensaje}`;
-
-      if (formFeedback) {
-        formFeedback.textContent =
-          "Perfecto. Te estamos llevando a WhatsApp para continuar la conversación.";
-      }
-
-      window.open(
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`,
-        "_blank",
-        "noopener,noreferrer"
-      );
-
-      whatsappForm.reset();
-    });
-  }
-
-  function setCurrentYear() {
-    if (currentYear) {
-      currentYear.textContent = new Date().getFullYear();
-    }
-  }
-
+document.addEventListener('DOMContentLoaded', () => {
+  setupWhatsAppLinks();
+  setupNavbar();
+  setupReveal();
+  setupForm();
   setCurrentYear();
-  setWhatsAppLinks();
-  setupSmoothAnchors();
-  setupRevealAnimation();
-  setupCounters();
-  setupWhatsAppForm();
-  handleNavbarOnScroll();
-
-  window.addEventListener("scroll", handleNavbarOnScroll, { passive: true });
-  window.addEventListener("resize", handleNavbarOnScroll);
 });
