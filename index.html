@@ -3,29 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Digitaliza Lab | Landing pages claras, elegantes y listas para vender</title>
-  <meta name="description" content="Creamos landing pages claras, rápidas y enfocadas en conversión para negocios que necesitan verse más profesionales y vender mejor por WhatsApp.">
+  <title>Digitaliza Lab | Landing pages para profesionales independientes</title>
+  <meta name="description" content="Diseñamos landing pages claras y bien construidas para abogados, médicos y coaches que necesitan transmitir credibilidad y recibir consultas desde su web.">
   <meta name="theme-color" content="#0d1218">
-  <meta property="og:title" content="Digitaliza Lab | Landing pages claras, elegantes y listas para vender">
-  <meta property="og:description" content="Diseño web para negocios que quieren verse serios, generar confianza y facilitar el contacto por WhatsApp.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Digitaliza Lab | Presencia digital para profesionales">
+  <meta property="og:description" content="Landing pages diseñadas para profesionales independientes que necesitan una presencia digital a la altura de su trabajo.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://digitalizalab.cl/">
-  <meta property="og:image" content="https://digitalizalab.cl/favicon.png">
+  <meta property="og:image" content="https://digitalizalab.cl/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="canonical" href="https://digitalizalab.cl/">
+
+  <!-- Preload críticos -->
+  <link rel="preload" href="assets/img/logo.png" as="image">
+  <link rel="preload" href="assets/css/style.css" as="style">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Digitaliza Lab",
+    "url": "https://digitalizalab.cl",
+    "logo": "https://digitalizalab.cl/assets/img/logo.png",
+    "description": "Diseñamos landing pages para profesionales independientes que necesitan transmitir credibilidad y recibir consultas desde su web.",
+    "areaServed": "CL",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+56982867164",
+      "email": "hola@digitalizalab.cl",
+      "contactType": "sales",
+      "availableLanguage": "Spanish"
+    }
+  }
+  </script>
 </head>
 <body>
+
+  <!-- TOPBAR -->
   <div class="topbar">
     <div class="container">
-      <span>Lanzamos tu web en 72 horas hábiles | Todo incluido: Dominio, Hosting, Correo Corporativo y SSL por 1 año.</span>
+      <span>Dominio, hosting, correo corporativo y SSL incluidos por 1 año.</span>
     </div>
   </div>
 
+  <!-- NAVBAR -->
   <nav id="navbarPrincipal" class="navbar navbar-expand-lg fixed-top navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#inicio" aria-label="Ir al inicio de Digitaliza Lab">
@@ -41,15 +79,16 @@
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
           <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
           <li class="nav-item"><a class="nav-link" href="#incluye">Qué incluye</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ideal">Esto es para ti</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ideal">Para quién es</a></li>
           <li class="nav-item"><a class="nav-link" href="#proceso">Proceso</a></li>
           <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-brand btn-sm" href="#contacto">Cotizar proyecto</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-brand btn-sm" href="#contacto">Empieza tu proyecto</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- HERO -->
   <header id="inicio" class="hero section-dark">
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
@@ -57,43 +96,55 @@
     <div class="container position-relative">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6">
-          <span class="eyebrow reveal-up"><i class="bi bi-stars"></i> Diseño web para negocios que quieren verse serios y vender mejor</span>
-          <h1 class="hero-gradient-title reveal-up">Transformamos clics en clientes.</h1>
-          <p class="hero-copy reveal-up">Creamos landing pages que ordenan tu oferta, elevan la percepción de tu marca y facilitan el contacto por WhatsApp sin perder semanas en procesos técnicos.</p>
+
+          <span class="eyebrow reveal-up">
+            <i class="bi bi-stars"></i> Presencia digital para profesionales independientes
+          </span>
+
+          <h1 class="hero-gradient-title reveal-up">
+            Una presencia digital a la altura de tu trabajo.
+          </h1>
+
+          <p class="hero-copy reveal-up">
+            Landing pages diseñadas para profesionales independientes que necesitan
+            transmitir credibilidad, recibir consultas y proyectar una imagen
+            coherente con la calidad de su trabajo.
+          </p>
 
           <div class="hero-points reveal-up">
-            <div><i class="bi bi-check2-circle"></i> Estructura comercial pensada para captar consultas</div>
-            <div><i class="bi bi-check2-circle"></i> Imagen más profesional desde el primer vistazo</div>
-            <div><i class="bi bi-check2-circle"></i> Implementación técnica resuelta de punta a punta</div>
+            <div><i class="bi bi-check2-circle"></i> Diseño limpio que transmite credibilidad desde el primer clic</div>
+            <div><i class="bi bi-check2-circle"></i> Estructura pensada para recibir consultas, no solo visitas</div>
+            <div><i class="bi bi-check2-circle"></i> Configuración técnica completa — tú solo revisas el resultado</div>
           </div>
 
           <div class="hero-actions reveal-up">
-            <a class="btn btn-brand btn-lg" href="#contacto">Hablemos de tu proyecto</a>
-            <a class="btn btn-ghost btn-lg" href="#incluye">Ver qué incluye</a>
+            <a class="btn btn-brand btn-lg" href="#contacto">Empieza tu proyecto</a>
+            <a class="btn btn-ghost btn-lg" href="#incluye">Ver qué incluye el paquete</a>
           </div>
 
           <div class="hero-trust reveal-up">
             <span><i class="bi bi-shield-check"></i> Todo incluido por 1 año</span>
             <span><i class="bi bi-phone"></i> Responsive</span>
-            <span><i class="bi bi-whatsapp"></i> WhatsApp optimizado</span>
+            <span><i class="bi bi-envelope"></i> Contacto multicanal</span>
           </div>
+
         </div>
 
         <div class="col-lg-6">
           <div class="premium-card hero-card reveal-up">
             <div class="hero-card-top">
               <span class="soft-pill">Proceso simple</span>
-              <span class="soft-pill">Enfoque comercial</span>
+              <span class="soft-pill">Enfoque profesional</span>
             </div>
 
             <div class="hero-screen">
               <span class="screen-kicker">Lo que recibe tu negocio</span>
-              <h2>Una presencia digital que se ve ordenada, transmite confianza y mueve a la acción.</h2>
+              <h2>Una web que comunica lo que haces, genera confianza y facilita el contacto.</h2>
               <ul>
                 <li>Mensaje claro para explicar qué haces y por qué elegirte.</li>
-                <li>Diseño limpio con foco en credibilidad y contacto.</li>
+                <li>Diseño coherente con el nivel de tu servicio.</li>
                 <li>Dominio, hosting, SSL y correo corporativo resueltos.</li>
-                <li>Entrega rápida y revisión final para ajustes pequeños.</li>
+                <li>Entrega rápida con revisión final incluida.</li>
               </ul>
             </div>
 
@@ -113,17 +164,19 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </header>
 
 
+  <!-- BENEFICIOS -->
   <section class="section-light" id="beneficios">
     <div class="container">
       <div class="section-heading text-center reveal-up">
         <span class="section-kicker">Beneficios</span>
-        <h2>Tu negocio se ve más serio, más claro y más fácil de elegir.</h2>
-        <p>No se trata solo de tener una página. Se trata de presentar mejor tu propuesta y reducir fricción al momento de contactar.</p>
+        <h2>Tu servicio merece una presentación que esté a su altura.</h2>
+        <p>No se trata solo de tener una página. Se trata de presentar tu propuesta con claridad y reducir la fricción al momento de contactar.</p>
       </div>
 
       <div class="row g-4 mt-1">
@@ -131,34 +184,35 @@
           <article class="premium-card info-card h-100 reveal-up">
             <div class="icon-wrap"><i class="bi bi-gem"></i></div>
             <h3>Diseño con buena presencia</h3>
-            <p>Una estética limpia y profesional que ordena tu marca y mejora la primera impresión.</p>
+            <p>Una estética limpia y profesional que representa tu marca y mejora la primera impresión de forma inmediata.</p>
           </article>
         </div>
         <div class="col-md-4">
           <article class="premium-card info-card h-100 reveal-up">
             <div class="icon-wrap"><i class="bi bi-diagram-3"></i></div>
-            <h3>Estructura pensada para vender</h3>
-            <p>Jerarquía visual, textos claros y llamados a la acción ubicados donde realmente ayudan.</p>
+            <h3>Estructura pensada para convertir</h3>
+            <p>Jerarquía visual, textos claros y llamados a la acción ubicados donde realmente ayudan a generar consultas.</p>
           </article>
         </div>
         <div class="col-md-4">
           <article class="premium-card info-card h-100 reveal-up">
             <div class="icon-wrap"><i class="bi bi-tools"></i></div>
             <h3>Parte técnica resuelta</h3>
-            <p>Nos ocupamos del armado, la publicación y la configuración para que no pierdas tiempo en detalles técnicos.</p>
+            <p>Nos ocupamos del armado, la publicación y la configuración para que no pierdas tiempo en detalles que no son tu área.</p>
           </article>
         </div>
-
       </div>
     </div>
   </section>
 
+
+  <!-- QUÉ INCLUYE -->
   <section class="section-dark" id="incluye">
     <div class="container">
       <div class="section-heading text-center section-heading-dark reveal-up">
         <span class="section-kicker">Qué incluye</span>
-        <h2>Una solución lista para lanzar, con foco en claridad, confianza y contacto.</h2>
-        <p>Todo está pensado para que avances rápido y con una base digital profesional desde el primer día.</p>
+        <h2>Una solución lista para publicar, con foco en claridad y contacto.</h2>
+        <p>Todo está pensado para que tengas una base digital profesional desde el primer día.</p>
       </div>
 
       <div class="row g-4 mt-1 align-items-stretch">
@@ -168,15 +222,15 @@
               <div class="col-md-6">
                 <div class="include-item"><i class="bi bi-check2"></i><span>Landing page de una sola página</span></div>
                 <div class="include-item"><i class="bi bi-check2"></i><span>Diseño visual limpio y profesional</span></div>
-                <div class="include-item"><i class="bi bi-check2"></i><span>Copy estructurado para presentar mejor tu oferta</span></div>
-                <div class="include-item"><i class="bi bi-check2"></i><span>Formulario conectado a WhatsApp</span></div>
+                <div class="include-item"><i class="bi bi-check2"></i><span>Copy estructurado para presentar tu servicio con claridad</span></div>
+                <div class="include-item"><i class="bi bi-check2"></i><span>Formulario de contacto multicanal</span></div>
                 <div class="include-item"><i class="bi bi-check2"></i><span>SEO técnico básico y buena velocidad de carga</span></div>
               </div>
               <div class="col-md-6">
                 <div class="include-item"><i class="bi bi-check2"></i><span>Dominio, hosting y SSL por 1 año</span></div>
                 <div class="include-item"><i class="bi bi-check2"></i><span>Correo corporativo</span></div>
-                <div class="include-item"><i class="bi bi-check2"></i><span>Entrega en 72 horas hábiles tras onboarding</span></div>
-                <div class="include-item"><i class="bi bi-check2"></i><span>Una ronda de ajustes pequeños</span></div>
+                <div class="include-item"><i class="bi bi-check2"></i><span>Entrega en plazo acordado tras el onboarding</span></div>
+                <div class="include-item"><i class="bi bi-check2"></i><span>Una ronda de ajustes incluida</span></div>
                 <div class="include-item muted"><i class="bi bi-x"></i><span>No incluye ecommerce ni integraciones avanzadas</span></div>
               </div>
             </div>
@@ -186,40 +240,51 @@
         <div class="col-lg-5">
           <div class="premium-card price-card h-100 reveal-up">
             <span class="price-tag">Paquete base</span>
-            <h3>Landing estratégica para negocios y servicios</h3>
+            <h3>Landing estratégica para profesionales y servicios</h3>
             <div class="price-display">$99.990</div>
-            <p>Ideal para marcas que hoy venden por Instagram, WhatsApp o recomendación y necesitan una web clara para verse más profesionales.</p>
+            <p>Ideal para profesionales independientes que hoy dependen de redes sociales o recomendaciones y necesitan una web que los represente bien.</p>
             <ul class="price-list list-unstyled">
               <li><i class="bi bi-check2"></i> Todo listo para publicar</li>
-              <li><i class="bi bi-check2"></i> Menos fricción técnica</li>
-              <li><i class="bi bi-check2"></i> Contacto más directo</li>
+              <li><i class="bi bi-check2"></i> Sin complicaciones técnicas</li>
+              <li><i class="bi bi-check2"></i> Contacto directo desde el primer día</li>
             </ul>
-            <a href="#contacto" class="btn btn-brand w-100">Quiero cotizar</a>
+            <a href="#contacto" class="btn btn-brand w-100">Solicitar cotización</a>
             <small>El plazo corre desde que recibimos la información completa del proyecto.</small>
           </div>
         </div>
       </div>
+
+      <!-- Micro-CTA post-precio -->
+      <div class="text-center mt-4 reveal-up">
+        <a href="#contacto" class="btn btn-brand px-5">Empieza tu proyecto</a>
+        <p class="mt-2 mb-0" style="font-size:0.8rem; opacity:0.55;">
+          Respuesta en menos de 24 horas hábiles
+        </p>
+      </div>
+
     </div>
   </section>
 
+
+  <!-- PARA QUIÉN ES -->
   <section class="section-light" id="ideal">
     <div class="container">
       <div class="section-heading text-center reveal-up">
-        <span class="section-kicker">Esto es para ti</span>
-        <h2>Este formato funciona mejor cuando necesitas verte bien y convertir rápido.</h2>
-        <p>Te ayuda especialmente si ya ofreces algo valioso, pero todavía no lo presentas con la claridad que merece.</p>
-        <p class="section-note">También puedes revisar casos de éxito y trabajos publicados en nuestro Instagram para ver el estilo y nivel de ejecución.</p>
+        <span class="section-kicker">Para quién es</span>
+        <h2>Funciona especialmente bien cuando ya tienes algo valioso que ofrecer y necesitas presentarlo con claridad.</h2>
+        <p>Si ofreces un servicio de calidad pero tu presencia digital todavía no lo refleja, este formato está diseñado para ti.</p>
+        <p class="section-note">Puedes revisar trabajos publicados y referencias visuales en nuestro Instagram para ver el estilo y nivel de ejecución.</p>
       </div>
 
       <div class="row g-4 mt-1">
         <div class="col-lg-6">
           <div class="premium-card compare-card h-100 reveal-up">
-            <h3>Sí es para ti si...</h3>
+            <h3>Es para ti si...</h3>
             <ul>
-              <li>Vendes servicios o atiendes consultas por WhatsApp.</li>
-              <li>Tu negocio hoy depende demasiado de redes sociales.</li>
-              <li>Necesitas una imagen más seria para cerrar mejor.</li>
-              <li>Quieres una web rápida de implementar y fácil de mantener.</li>
+              <li>Ofreces servicios profesionales y recibes consultas por varios canales.</li>
+              <li>Tu práctica hoy depende demasiado de redes sociales o el boca a boca.</li>
+              <li>Necesitas una imagen más seria para generar confianza desde el primer contacto.</li>
+              <li>Quieres una web bien construida, sin gestionar la parte técnica.</li>
             </ul>
           </div>
         </div>
@@ -227,10 +292,10 @@
           <div class="premium-card compare-card h-100 reveal-up">
             <h3>No es para ti si...</h3>
             <ul>
-              <li>Buscas ecommerce, carrito o pasarela de pago.</li>
-              <li>Necesitas un sistema complejo o desarrollo a medida.</li>
-              <li>Aún no tienes claridad mínima sobre tu oferta o servicio.</li>
-              <li>Esperas cambios estructurales ilimitados dentro del paquete base.</li>
+              <li>Necesitas ecommerce, carrito de compras o pasarela de pago.</li>
+              <li>Requieres un sistema complejo o desarrollo a medida.</li>
+              <li>Aún no tienes claridad sobre tu servicio o propuesta de valor.</li>
+              <li>Esperas revisiones estructurales ilimitadas dentro del paquete base.</li>
             </ul>
           </div>
         </div>
@@ -238,12 +303,14 @@
     </div>
   </section>
 
+
+  <!-- PROCESO -->
   <section class="section-dark" id="proceso">
     <div class="container">
       <div class="section-heading text-center section-heading-dark reveal-up">
         <span class="section-kicker">Proceso</span>
-        <h2>Un flujo simple para avanzar rápido y sin desorden.</h2>
-        <p>Te pedimos lo justo, organizamos la información y ejecutamos con foco para que el proyecto salga bien y a tiempo.</p>
+        <h2>Simple, ordenado y sin idas y vueltas innecesarias.</h2>
+        <p>Te pedimos lo justo, organizamos la información y ejecutamos con foco para que el resultado salga bien y en el plazo acordado.</p>
       </div>
 
       <div class="row g-4 mt-1">
@@ -251,36 +318,39 @@
           <article class="premium-card step-card h-100 reveal-up">
             <span class="step-pill">Paso 1</span>
             <h3>Brief y onboarding</h3>
-            <p>Reunimos la información clave de tu negocio, propuesta, servicios, tono y contactos.</p>
+            <p>Reunimos la información clave de tu práctica: servicios, tono, diferencial y datos de contacto. Toma menos de lo que parece.</p>
           </article>
         </div>
         <div class="col-md-4">
           <article class="premium-card step-card h-100 reveal-up">
             <span class="step-pill">Paso 2</span>
             <h3>Diseño y desarrollo</h3>
-            <p>Construimos tu landing con estructura clara, diseño limpio y una experiencia orientada a conversión.</p>
+            <p>Construimos tu landing con estructura clara, diseño limpio y una experiencia pensada para generar consultas reales.</p>
           </article>
         </div>
         <div class="col-md-4">
           <article class="premium-card step-card h-100 reveal-up">
             <span class="step-pill">Paso 3</span>
             <h3>Publicación y ajustes</h3>
-            <p>Te entregamos la web lista para usar y dejamos una revisión final para detalles pequeños.</p>
+            <p>Publicamos la web y dejamos una ronda de revisión final para que quede exactamente como la necesitas.</p>
           </article>
         </div>
       </div>
     </div>
   </section>
 
+
+  <!-- FAQ -->
   <section class="section-light" id="faq">
     <div class="container">
       <div class="section-heading text-center reveal-up">
         <span class="section-kicker">Preguntas frecuentes</span>
-        <h2>Respuestas directas para tomar la decisión con más claridad.</h2>
-        <p>Sin relleno. Lo importante, explicado simple.</p>
+        <h2>Respuestas directas para tomar la decisión con claridad.</h2>
+        <p>Lo importante, explicado sin rodeos.</p>
       </div>
 
       <div class="accordion premium-accordion mt-4 reveal-up" id="faqAccordion">
+
         <div class="accordion-item">
           <h3 class="accordion-header" id="faqOneHeading">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
@@ -289,7 +359,7 @@
           </h3>
           <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneHeading" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Incluye una landing de una sola página, diseño profesional, estructura de textos, WhatsApp conectado, SEO técnico básico, dominio, hosting, SSL y correo corporativo por 1 año.
+              Incluye una landing page de una sola página, diseño profesional, estructura de textos orientada a consultas, formulario de contacto, SEO técnico básico, dominio, hosting, SSL y correo corporativo por 1 año.
             </div>
           </div>
         </div>
@@ -297,12 +367,12 @@
         <div class="accordion-item">
           <h3 class="accordion-header" id="faqTwoHeading">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
-              ¿Cuándo empiezan a correr las 72 horas hábiles?
+              ¿Cuándo comienza el plazo de entrega?
             </button>
           </h3>
           <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoHeading" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              El plazo comienza cuando recibimos el onboarding completo con la información, textos base, accesos y archivos necesarios para construir la página.
+              El plazo comienza cuando recibimos el onboarding completo: información del servicio, textos base, accesos y archivos necesarios para construir la página.
             </div>
           </div>
         </div>
@@ -310,12 +380,12 @@
         <div class="accordion-item">
           <h3 class="accordion-header" id="faqThreeHeading">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
-              ¿Sirve para cualquier tipo de negocio?
+              ¿Funciona para cualquier tipo de profesional?
             </button>
           </h3>
           <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqThreeHeading" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Funciona mejor para servicios, negocios locales, marcas personales y empresas que buscan generar consultas. No es el paquete correcto para ecommerce o desarrollos más complejos.
+              Funciona mejor para profesionales independientes y negocios de servicios que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. No es el formato correcto para ecommerce o desarrollos más complejos.
             </div>
           </div>
         </div>
@@ -323,12 +393,12 @@
         <div class="accordion-item">
           <h3 class="accordion-header" id="faqFourHeading">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
-              ¿Qué pasa después del primer año?
+              ¿Qué pasa cuando termina el primer año?
             </button>
           </h3>
           <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqFourHeading" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Se puede renovar dominio, hosting, SSL y correo para mantener la web activa. La renovación se coordina contigo antes del vencimiento.
+              Te avisamos con anticipación antes del vencimiento. Puedes renovar dominio, hosting, SSL y correo a un costo anual accesible para que tu web siga activa, o transferirlos si así lo decides.
             </div>
           </div>
         </div>
@@ -336,93 +406,125 @@
         <div class="accordion-item">
           <h3 class="accordion-header" id="faqFiveHeading">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
-              ¿Qué sucede cuando finaliza el año de dominio y hosting incluido?
+              ¿Puedo ver trabajos anteriores antes de contratar?
             </button>
           </h3>
           <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqFiveHeading" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Te notificaremos con anticipación antes de que se cumpla el plazo. Podrás renovar ambos servicios a un costo anual accesible para que tu web siga funcionando rápido y sin interrupciones, o transferirlos si así lo decides.
+              Sí. Puedes revisar casos publicados y referencias visuales en nuestro Instagram. Allí puedes ver el estilo, el nivel de detalle y el tipo de proyectos con los que trabajamos.
             </div>
           </div>
         </div>
 
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="faqSixHeading">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix" aria-expanded="false" aria-controls="faqSix">
-              ¿Puedo ver trabajos o casos de éxito antes de contratar?
-            </button>
-          </h3>
-          <div id="faqSix" class="accordion-collapse collapse" aria-labelledby="faqSixHeading" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Sí. Puedes revisar casos de éxito, piezas publicadas y referencias visuales en nuestro Instagram. Así puedes ver el estilo, nivel de detalle y tipo de negocios con los que trabajamos.
-            </div>
-          </div>
-        </div>
-
-        </div>
       </div>
     </div>
   </section>
 
+
+  <!-- CONTACTO -->
   <section class="cta-section" id="contacto">
     <div class="container">
       <div class="row g-4 align-items-center">
+
         <div class="col-lg-5">
           <span class="section-kicker text-warning">Contacto</span>
-          <h2>Cuéntanos qué quieres lanzar y te diremos si este formato es el correcto para tu negocio.</h2>
-          <p>Escríbenos y abrimos la conversación por WhatsApp para revisar tu caso, resolver dudas y cotizar con claridad. También puedes revisar casos de éxito en nuestro Instagram.</p>
+          <h2>¿Listo para tener una web que representa tu trabajo como merece?</h2>
+          <p>
+            Completa el formulario o escríbenos directamente. Revisamos tu caso,
+            resolvemos dudas y te entregamos una propuesta clara, sin compromisos.
+          </p>
 
           <div class="cta-points">
-            <div><i class="bi bi-globe2"></i> www.digitalizalab.cl</div>
-            <div><i class="bi bi-envelope"></i> ventas@digitalizalab.cl</div>
-            <div><i class="bi bi-whatsapp"></i> +56 9 8286 7164</div>
+            <div>
+              <i class="bi bi-envelope"></i>
+              <a href="mailto:hola@digitalizalab.cl">hola@digitalizalab.cl</a>
+            </div>
+            <div>
+              <i class="bi bi-whatsapp"></i>
+              <a class="js-wa-link" href="#"
+                 data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page."
+                 target="_blank" rel="noopener noreferrer">
+                +56 9 8286 7164
+              </a>
+            </div>
+            <div>
+              <i class="bi bi-globe2"></i> digitalizalab.cl
+            </div>
           </div>
         </div>
 
         <div class="col-lg-7">
           <div class="premium-card form-card reveal-up">
+
+            <p class="form-intro">
+              Cuéntanos brevemente qué necesitas y te contactamos en menos de 24 horas hábiles.
+            </p>
+
             <form id="whatsappForm" novalidate>
               <div class="row g-3">
+
                 <div class="col-md-6">
-                  <label class="form-label" for="nombreCliente">Tu nombre</label>
-                  <input type="text" class="form-control" id="nombreCliente" placeholder="Ej: Camila" required>
+                  <label class="form-label" for="nombreCliente">Nombre</label>
+                  <input type="text" class="form-control" id="nombreCliente"
+                         placeholder="Ej: Carolina Reyes" required>
                 </div>
+
                 <div class="col-md-6">
-                  <label class="form-label" for="telefonoCliente">Tu WhatsApp</label>
-                  <input type="tel" class="form-control" id="telefonoCliente" placeholder="Ej: +56912345678" required>
+                  <label class="form-label" for="rubroCliente">Profesión o rubro</label>
+                  <input type="text" class="form-control" id="rubroCliente"
+                         placeholder="Ej: Abogada, médico, coach" required>
                 </div>
+
                 <div class="col-12">
-                  <label class="form-label" for="rubroCliente">Rubro o tipo de negocio</label>
-                  <input type="text" class="form-control" id="rubroCliente" placeholder="Ej: clínica, estudio jurídico, inmobiliaria, estética" required>
+                  <label class="form-label" for="contactoCliente">Correo o WhatsApp</label>
+                  <input type="text" class="form-control" id="contactoCliente"
+                         placeholder="Ej: correo@dominio.com o +56912345678" required>
                 </div>
+
                 <div class="col-12">
-                  <label class="form-label" for="mensajeCliente">Qué quieres lograr con tu web</label>
-                  <textarea class="form-control" id="mensajeCliente" rows="4" placeholder="Ej: Quiero una landing clara para captar más consultas desde Instagram y WhatsApp." required></textarea>
+                  <button type="submit" class="btn btn-brand btn-lg w-100">
+                    Enviar solicitud
+                  </button>
                 </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-brand btn-lg w-100">Enviar por WhatsApp</button>
-                </div>
+
               </div>
+
+              <div class="form-alt-contact mt-3 text-center">
+                <span style="font-size:0.8rem; opacity:0.55;">o si prefieres,</span>
+                <a class="js-wa-link d-inline-flex align-items-center gap-1 ms-1"
+                   href="#"
+                   data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page."
+                   target="_blank" rel="noopener noreferrer"
+                   style="font-size:0.85rem; font-weight:500;">
+                  <i class="bi bi-whatsapp"></i> escríbenos por WhatsApp
+                </a>
+              </div>
+
               <p id="formFeedback" class="form-feedback mt-3 mb-0" role="status" aria-live="polite"></p>
             </form>
+
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
+
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="row gy-4 align-items-start">
+
         <div class="col-lg-5">
           <a class="footer-brand" href="#inicio">
             <img src="assets/img/logo.png" alt="Logo Digitaliza Lab" width="42" height="42">
             <span>Digitaliza <strong>Lab</strong></span>
           </a>
-          <p>Landing pages para negocios que necesitan una presencia digital más seria, más clara y más fácil de convertir en conversaciones reales.</p>
+          <p>Landing pages para profesionales independientes que necesitan una presencia digital seria, clara y coherente con la calidad de su trabajo.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="mailto:ventas@digitalizalab.cl" aria-label="Correo"><i class="bi bi-envelope"></i></a>
+            <a href="mailto:hola@digitalizalab.cl" aria-label="Correo"><i class="bi bi-envelope"></i></a>
             <a href="https://digitalizalab.cl/" target="_blank" rel="noopener noreferrer" aria-label="Sitio web"><i class="bi bi-globe"></i></a>
           </div>
         </div>
@@ -432,7 +534,7 @@
           <ul class="footer-links list-unstyled">
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#incluye">Qué incluye</a></li>
-            <li><a href="#ideal">Esto es para ti</a></li>
+            <li><a href="#ideal">Para quién es</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
@@ -441,8 +543,8 @@
           <h3 class="footer-title">Paquete</h3>
           <ul class="footer-links list-unstyled">
             <li><span>Landing page</span></li>
-            <li><span>72 horas hábiles</span></li>
-            <li><span>WhatsApp optimizado</span></li>
+            <li><span>Entrega en plazo acordado</span></li>
+            <li><span>Contacto multicanal</span></li>
             <li><span>Todo incluido por 1 año</span></li>
           </ul>
         </div>
@@ -450,11 +552,18 @@
         <div class="col-lg-3">
           <h3 class="footer-title">Contacto</h3>
           <ul class="footer-links list-unstyled">
-            <li><a href="mailto:ventas@digitalizalab.cl">ventas@digitalizalab.cl</a></li>
-            <li><a href="#" class="js-wa-link" data-message="Hola Digitaliza Lab, quiero cotizar una landing para mi negocio." target="_blank" rel="noopener noreferrer">+56 9 8286 7164</a></li>
+            <li><a href="mailto:hola@digitalizalab.cl">hola@digitalizalab.cl</a></li>
+            <li>
+              <a href="#" class="js-wa-link"
+                 data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page."
+                 target="_blank" rel="noopener noreferrer">
+                +56 9 8286 7164
+              </a>
+            </li>
             <li><a href="https://digitalizalab.cl/" target="_blank" rel="noopener noreferrer">digitalizalab.cl</a></li>
           </ul>
         </div>
+
       </div>
 
       <div class="footer-bottom">
@@ -464,11 +573,43 @@
     </div>
   </footer>
 
-  <a class="whatsapp-float js-wa-link" href="#" data-message="Hola Digitaliza Lab, quiero cotizar una landing para mi negocio." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+  <!-- WhatsApp flotante -->
+  <a class="whatsapp-float js-wa-link"
+     href="#"
+     data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page."
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Abrir WhatsApp">
     <i class="bi bi-whatsapp"></i>
+    <span class="wa-label d-none d-md-inline">Cotizar</span>
   </a>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmFrA7PeNqmHnEJxp6K4rdCSsHB" crossorigin="anonymous"></script>
   <script src="assets/js/script.js"></script>
+
+  <!-- CSS adicional inline para clases nuevas -->
+  <style>
+    .form-intro {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      opacity: 0.68;
+      margin-bottom: 1.25rem;
+    }
+    .form-alt-contact {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding-top: 0.85rem;
+    }
+    .whatsapp-float {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .wa-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+  </style>
+
 </body>
 </html>
