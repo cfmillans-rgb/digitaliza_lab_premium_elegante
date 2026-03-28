@@ -142,3 +142,7 @@ function setupNavbar() {
   updateNavbar();
   window.addEventListener('scroll', updateNavbar, { passive: true });
 }
+// FIX bootstrap accordion click en algunos entornos
+document.querySelectorAll('.accordion-button').forEach(btn => {
+  btn.addEventListener('click', () => {});
+});
