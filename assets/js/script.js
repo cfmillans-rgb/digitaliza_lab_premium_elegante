@@ -19,11 +19,14 @@
 
   function toggleNavbar () {
     if (!navbar) return;
-    const topbarH = document.querySelector('.topbar')?.offsetHeight ?? 0;
+    const topbar = document.querySelector('.topbar');
+    const topbarH = topbar?.offsetHeight ?? 0;
     if (window.scrollY > topbarH + 10) {
       navbar.classList.add('scrolled');
+      if (topbar) topbar.classList.add('hide');
     } else {
       navbar.classList.remove('scrolled');
+      if (topbar) topbar.classList.remove('hide');
     }
   }
 
@@ -124,25 +127,3 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 })();
-function setupNavbar() {
-  const navbar = document.getElementById('navbarPrincipal');
-  const topbar = document.querySelector('.topbar');
-  if (!navbar) return;
-
-  const updateNavbar = () => {
-    if (window.scrollY > 24) {
-      navbar.classList.add('scrolled');
-      if (topbar) topbar.classList.add('hide');
-    } else {
-      navbar.classList.remove('scrolled');
-      if (topbar) topbar.classList.remove('hide');
-    }
-  };
-
-  updateNavbar();
-  window.addEventListener('scroll', updateNavbar, { passive: true });
-}
-// FIX bootstrap accordion click en algunos entornos
-document.querySelectorAll('.accordion-button').forEach(btn => {
-  btn.addEventListener('click', () => {});
-});

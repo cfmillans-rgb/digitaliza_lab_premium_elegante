@@ -96,7 +96,7 @@
   --navbar-h: 68px;
   --topbar-h: 36px;
   --container-max: 1180px;
-  --section-py: var(--space-24);
+  --section-py: var(--space-16);
 }
 
 
@@ -216,6 +216,11 @@ strong { font-weight: var(--weight-semibold); }
   text-align: center;
 }
 
+.topbar.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
 
 /* ============================================================
    05. NAVBAR
@@ -241,6 +246,7 @@ strong { font-weight: var(--weight-semibold); }
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   border-bottom-color: var(--clr-border);
   box-shadow: 0 1px 0 rgba(255,255,255,.04), 0 8px 32px rgba(0,0,0,.3);
+  top: 0;
 }
 
 .navbar-brand {
@@ -407,7 +413,7 @@ section {
 }
 
 .section-heading {
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-10);
 }
 
 .section-heading h2 {
@@ -660,7 +666,7 @@ section {
   margin-bottom: var(--space-3);
 }
 
-.hero-screen h2 {
+.hero-screen h3 {
   font-size: var(--text-md);
   font-weight: var(--weight-bold);
   color: var(--clr-text-primary);
@@ -1399,7 +1405,7 @@ section {
    15. ANIMACIONES DE ENTRADA (reveal-up)
    ============================================================ */
 
-.reveal-up {
+.js .reveal-up {
   opacity: 0;
   transform: translateY(28px);
   transition:
@@ -1407,23 +1413,23 @@ section {
     transform var(--duration-slow) var(--ease-out);
 }
 
-.reveal-up.visible {
+.js .reveal-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Stagger para elementos dentro de una fila */
-.row .reveal-up:nth-child(1) { transition-delay: 0ms; }
-.row .reveal-up:nth-child(2) { transition-delay: 80ms; }
-.row .reveal-up:nth-child(3) { transition-delay: 160ms; }
+.js .row .reveal-up:nth-child(1) { transition-delay: 0ms; }
+.js .row .reveal-up:nth-child(2) { transition-delay: 80ms; }
+.js .row .reveal-up:nth-child(3) { transition-delay: 160ms; }
 
 /* Hero: stagger en cascada */
-.hero .reveal-up:nth-child(1) { transition-delay: 0ms; }
-.hero .reveal-up:nth-child(2) { transition-delay: 100ms; }
-.hero .reveal-up:nth-child(3) { transition-delay: 200ms; }
-.hero .reveal-up:nth-child(4) { transition-delay: 300ms; }
-.hero .reveal-up:nth-child(5) { transition-delay: 400ms; }
-.hero .reveal-up:nth-child(6) { transition-delay: 500ms; }
+.js .hero .reveal-up:nth-child(1) { transition-delay: 0ms; }
+.js .hero .reveal-up:nth-child(2) { transition-delay: 100ms; }
+.js .hero .reveal-up:nth-child(3) { transition-delay: 200ms; }
+.js .hero .reveal-up:nth-child(4) { transition-delay: 300ms; }
+.js .hero .reveal-up:nth-child(5) { transition-delay: 400ms; }
+.js .hero .reveal-up:nth-child(6) { transition-delay: 500ms; }
 
 
 /* ============================================================
@@ -1594,35 +1600,4 @@ section {
   outline-offset: 3px;
   border-radius: 2px;
 }
-.topbar {
-  background: linear-gradient(90deg, #050608, #0b0e12);
-  color: rgba(255,255,255,0.86);
-  font-size: 0.88rem;
-  text-align: center;
-  padding: 0.7rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  transition: transform 0.25s ease, opacity 0.25s ease;
-  position: relative;
-  z-index: 1031;
-}
-
-.topbar.hide {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-.navbar {
-  padding: 1rem 0;
-  background: rgba(8, 12, 17, 0.38);
-  backdrop-filter: blur(14px);
-  transition: background 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease, top 0.25s ease;
-  top: 47px; /* ajusta según altura real de tu topbar */
-  z-index: 1030;
-}
-
-.navbar.scrolled {
-  background: rgba(8, 12, 17, 0.88);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.22);
-  padding: 0.8rem 0;
-  top: 0;
-}
+/* Fin del archivo */
