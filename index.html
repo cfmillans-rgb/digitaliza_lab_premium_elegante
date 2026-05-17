@@ -598,6 +598,59 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    /* ══════════════════════════════════════════
+       MODO HÍBRIDO — secciones claras (crema)
+       ══════════════════════════════════════════ */
+    .section-light {
+      background: #F8F6F2 !important;
+      position: relative;
+    }
+    .section-light,
+    .section-light h1, .section-light h2, .section-light h3, .section-light h4 {
+      color: #18181B;
+    }
+    .section-light .text-white   { color: #18181B !important; }
+    .section-light .text-white\/95 { color: #1f1f23 !important; }
+    .section-light .text-white\/90 { color: #27272e !important; }
+    .section-light .text-white\/80 { color: #3f3f46 !important; }
+    .section-light .text-mist    { color: #52525b !important; }
+    .section-light .text-amber-glow { color: #c96a2c !important; }
+    .section-light .italic.text-amber-glow { color: #c96a2c !important; }
+    .section-light .stat-value { color: #18181B !important; }
+    .section-light .stat-label { color: #52525b !important; }
+    .section-light .stat-note  { color: #71717a !important; }
+    .section-light .glass {
+      background: rgba(255,255,255,0.92) !important;
+      border-color: rgba(0,0,0,0.07) !important;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04) inset !important;
+    }
+    .section-light .glass.rounded-3xl {
+      background: rgba(255,255,255,0.97) !important;
+      border-color: rgba(0,0,0,0.06) !important;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.07) !important;
+    }
+    .section-light .border-l { border-color: rgba(224,122,58,0.35) !important; }
+    .section-light .border-white\/10 { border-color: rgba(0,0,0,0.08) !important; }
+    .section-light .border-t { border-color: rgba(0,0,0,0.08) !important; }
+    .section-light .step-numeral { color: rgba(224,122,58,0.10) !important; }
+    .section-light .accordion-title { color: #18181B !important; }
+    .section-light details > div p  { color: #52525b !important; }
+    .section-light details > div strong { color: #18181B !important; }
+    .section-light .accordion-icon {
+      border-color: rgba(224,122,58,0.35) !important;
+      background: rgba(224,122,58,0.06) !important;
+    }
+    .section-light .section-divider {
+      background: linear-gradient(90deg, transparent, rgba(224,122,58,0.3), transparent) !important;
+    }
+    .section-light::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(224,122,58,0.15), transparent);
+    }
   </style>
 
   <!-- ================== SCHEMA.ORG JSON-LD ================== -->
@@ -820,23 +873,22 @@
           </h1>
 
           <p class="mt-6 text-base sm:text-lg text-mist max-w-xl leading-relaxed">
-            Transformamos tu servicio en una web que <span class="text-white/95">genera consultas reales, atrae clientes y vende por ti</span> — sin que tengas que preocuparte por nada técnico.
-            <span class="block mt-2 text-white/90">Entrega garantizada en <strong class="text-[#ff8a42] font-semibold">72 horas hábiles.</strong></span>
+            Tu servicio merece una web que lo represente bien. Nos encargamos de todo lo técnico y te entregamos una página publicada en <strong class="text-amber-glow font-semibold">72 horas hábiles.</strong>
           </p>
 
           <!-- Points -->
           <ul class="mt-7 space-y-2.5 text-sm sm:text-base text-white/80">
             <li class="flex items-start gap-3">
               <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              Diseño que transmite credibilidad y aumenta consultas desde el primer día.
+              Diseño limpio y profesional, adaptado al estilo de tu rubro.
             </li>
             <li class="flex items-start gap-3">
               <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              Estructura pensada para convertir visitas en clientes, no solo para verse bonita.
+              Estructura pensada para que el visitante encuentre lo que busca y te contacte fácil.
             </li>
             <li class="flex items-start gap-3">
               <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              Todo técnico resuelto — tú solo revisas y publicas tu web lista.
+              Dominio, hosting, SSL y correo corporativo incluidos — tú solo apruebas el resultado.
             </li>
           </ul>
 
@@ -952,7 +1004,7 @@
   <!-- ============================================
        PROMESA · MÉTRICAS DE VALOR (NUEVA v3)
   ============================================ -->
-  <section aria-label="Nuestra promesa" class="relative py-20 sm:py-24 section-alt overflow-hidden">
+  <section aria-label="Nuestra promesa" class="relative py-20 sm:py-24 section-light overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
 
@@ -1040,7 +1092,7 @@
 
         <!-- Card grande — imagen equipo + oficina -->
         <article class="md:col-span-7 glass card-tilt rounded-3xl overflow-hidden group relative" data-aos="fade-up">
-          <div class="relative overflow-hidden" style="aspect-ratio:16/10;">
+          <div class="relative overflow-hidden" style="aspect-ratio:16/7;">
             <img
               src="assets/img/portfolio/equipo-oficina.png"
               alt="Equipo Digitaliza Lab trabajando en diseño de sitio web profesional"
@@ -1057,7 +1109,7 @@
           </div>
           <div class="p-6">
             <h3 class="font-display text-xl text-white mb-2 leading-tight">Diseño profesional para tu marca</h3>
-            <p class="text-sm text-mist leading-relaxed">Diseñamos webs que transmiten credibilidad desde el primer segundo — con foco en generar consultas reales para tu negocio.</p>
+            <p class="text-sm text-mist leading-relaxed">Diseñamos webs que reflejan la calidad de tu servicio desde el primer segundo.</p>
             <div class="mt-4 flex items-center gap-2">
               <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow">Agencia Digital · Santiago</span>
             </div>
@@ -1069,7 +1121,7 @@
 
           <!-- Card — presentación 72h -->
           <article class="glass card-tilt rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="100">
-            <div class="relative overflow-hidden" style="aspect-ratio:16/8;">
+            <div class="relative overflow-hidden" style="aspect-ratio:16/6;">
               <img
                 src="assets/img/portfolio/presentacion-72h.png"
                 alt="Entrega de sitio web en 72 horas — resultados rápidos para tu negocio"
@@ -1084,13 +1136,13 @@
             </div>
             <div class="p-5">
               <h3 class="font-display text-lg text-white mb-1.5 leading-tight">Tu web lista en tiempo récord</h3>
-              <p class="text-xs text-mist leading-relaxed">Sitios web profesionales, rápidos y optimizados para generar resultados desde el día uno.</p>
+              <p class="text-xs text-mist leading-relaxed">Sitios web profesionales, rápidos y listos para trabajar desde el día uno.</p>
             </div>
           </article>
 
           <!-- Card — portfolio mockups -->
           <article class="glass card-tilt rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="180">
-            <div class="relative overflow-hidden" style="aspect-ratio:16/8;">
+            <div class="relative overflow-hidden" style="aspect-ratio:16/6;">
               <img
                 src="assets/img/portfolio/portfolio-mockups.png"
                 alt="Portafolio de sitios web diseñados por Digitaliza Lab — variedad de industrias"
@@ -1133,7 +1185,7 @@
   <!-- ============================================
        BENEFICIOS
   ============================================ -->
-  <section id="beneficios" class="relative py-24 sm:py-32">
+  <section id="beneficios" class="relative py-24 sm:py-32 section-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
       <!-- Section header -->
@@ -1232,7 +1284,7 @@
         <div class="lg:col-span-5 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="100">
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-tr from-amber-glow/20 via-transparent to-cyan-500/10 blur-2xl rounded-3xl"></div>
-            <img src="assets/img/mockup-devices.png" alt="Landing page de Digitaliza Lab mostrada en notebook y celular" class="relative w-full rounded-2xl" loading="lazy" width="600" height="450">
+            <img src="assets/img/mockup-devices.png" alt="Landing page de Digitaliza Lab mostrada en notebook y celular" class="relative w-full max-w-lg mx-auto block rounded-2xl" loading="lazy" width="600" height="450">
           </div>
         </div>
       </div>
@@ -1345,7 +1397,7 @@
   <!-- ============================================
        PARA QUIÉN ES
   ============================================ -->
-  <section id="ideal" class="relative py-24 sm:py-32 section-alt">
+  <section id="ideal" class="relative py-24 sm:py-32 section-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
       <div class="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
@@ -1422,15 +1474,15 @@
             <figure class="text-center py-4">
               <div class="inline-block font-display text-6xl leading-none text-[#ff8a42]/25 mb-1 select-none">“</div>
               <blockquote class="font-display text-xl sm:text-2xl lg:text-[1.75rem] font-light leading-[1.38] text-white/95 max-w-3xl mx-auto tracking-tight">
-                Antes dependía solo de Instagram y referidos.
-                <span class="italic text-[#ff8a42]"> Ahora tengo una web que habla por mí</span>
-                mientras atiendo a mis pacientes — y las consultas llegan solas.
+                Necesitábamos algo que representara bien nuestro trabajo en obra.
+                <span class="italic text-[#ff8a42]"> La web quedó exactamente como la imaginábamos</span>
+                — profesional, clara y sin relleno. El proceso fue sorprendentemente rápido y sin vueltas.
               </blockquote>
               <figcaption class="mt-7 flex items-center justify-center gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#ff8a42] to-[#c96a2c] grid place-items-center text-white font-display font-semibold text-base flex-shrink-0">C</div>
+                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#ff8a42] to-[#c96a2c] grid place-items-center text-white font-display font-semibold text-base flex-shrink-0">S</div>
                 <div class="text-left">
-                  <div class="text-white font-medium text-sm">Carolina R.</div>
-                  <div class="text-[11px] text-mist font-mono uppercase tracking-wider">Psióloga Clínica · Santiago</div>
+                  <div class="text-white font-medium text-sm">Sebastián M.</div>
+                  <div class="text-[11px] text-mist font-mono uppercase tracking-wider">SMS · Constructora </div>
                 </div>
               </figcaption>
             </figure>
@@ -1440,15 +1492,15 @@
             <figure class="text-center py-4">
               <div class="inline-block font-display text-6xl leading-none text-[#ff8a42]/25 mb-1 select-none">“</div>
               <blockquote class="font-display text-xl sm:text-2xl lg:text-[1.75rem] font-light leading-[1.38] text-white/95 max-w-3xl mx-auto tracking-tight">
-                En 72 horas tenía mi web publicada.
-                <span class="italic text-[#ff8a42]"> El nivel de diseño superó todo lo que había visto</span>
-                en este rango de precio — y la entregaron lista para funcionar.
+                En nuestra industria la primera impresión importa cuando mandas un presupuesto.
+                <span class="italic text-[#ff8a42]"> Desde que tenemos la web los clientes llegan mucho más convencidos</span>
+                — y cerrar proyectos se hizo bastante más fácil.
               </blockquote>
               <figcaption class="mt-7 flex items-center justify-center gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-700 grid place-items-center text-white font-display font-semibold text-base flex-shrink-0">M</div>
+                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-700 grid place-items-center text-white font-display font-semibold text-base flex-shrink-0">R</div>
                 <div class="text-left">
-                  <div class="text-white font-medium text-sm">Matías O.</div>
-                  <div class="text-[11px] text-mist font-mono uppercase tracking-wider">Abogado Tributario · Las Condes</div>
+                  <div class="text-white font-medium text-sm">Ricardo V.</div>
+                  <div class="text-[11px] text-mist font-mono uppercase tracking-wider">Video Inspección ·  Mantenimiento </div>
                 </div>
               </figcaption>
             </figure>
@@ -1458,15 +1510,15 @@
             <figure class="text-center py-4">
               <div class="inline-block font-display text-6xl leading-none text-[#ff8a42]/25 mb-1 select-none">“</div>
               <blockquote class="font-display text-xl sm:text-2xl lg:text-[1.75rem] font-light leading-[1.38] text-white/95 max-w-3xl mx-auto tracking-tight">
-                Llevaba meses postergando armar mi web por lo técnico.
-                <span class="italic text-[#ff8a42]"> Con Digitaliza Lab solo tuve que revisar y aprobar.</span>
-                Fue lo más simple que he hecho este año.
+                Somos una marca chica pero queríamos una web que se viera de verdad bonita y transmitiera lo que somos.
+                <span class="italic text-[#ff8a42]"> Digitaliza Lab entendió el estilo de Svara al tiro</span>
+                — quedamos encantadas con el resultado.
               </blockquote>
               <figcaption class="mt-7 flex items-center justify-center gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-violet-500 to-violet-700 grid place-items-center text-white font-display font-semibold text-base flex-shrink-0">V</div>
+                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-violet-500 to-violet-700 grid place-items-center text-white font-display font-semibold text-base flex-shrink-0">A</div>
                 <div class="text-left">
-                  <div class="text-white font-medium text-sm">Valentina C.</div>
-                  <div class="text-[11px] text-mist font-mono uppercase tracking-wider">Nutricionista · Providencia</div>
+                  <div class="text-white font-medium text-sm">Antonia S.</div>
+                  <div class="text-[11px] text-mist font-mono uppercase tracking-wider">Svara · Tienda de Velas</div>
                 </div>
               </figcaption>
             </figure>
@@ -1494,22 +1546,21 @@
         <div class="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-ink-900 to-transparent z-10 pointer-events-none"></div>
 
         <div class="brands-track py-2">
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">SMS</span><span class="brand-pill-type">Contructora</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Video inspección</span><span class="brand-pill-type">Mantenciones</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Svara</span><span class="brand-pill-type">Tienda de Velas</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">CrissM</span><span class="brand-pill-type">Fotografía</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Elite Law Firm</span><span class="brand-pill-type">Estudio Jurídico</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Peluca de Carla</span><span class="brand-pill-type">Peluquería</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Cañabas La Lela</span><span class="brand-pill-type">Artesanía</span></div>
           <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">DermaLuz</span><span class="brand-pill-type">Clínica Estética</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Pizarro &amp; Asociados</span><span class="brand-pill-type">Abogados</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">NutriBalance</span><span class="brand-pill-type">Nutrición</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Coach Conmigo</span><span class="brand-pill-type">Coaching Personal</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Estudio Varga</span><span class="brand-pill-type">Fotografía</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Centro VidaActiva</span><span class="brand-pill-type">Fisioterapia</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">TuProfe Online</span><span class="brand-pill-type">Educación</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">ArquiDesign</span><span class="brand-pill-type">Arquitectura</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">DermaLuz</span><span class="brand-pill-type">Clínica Estética</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Pizarro &amp; Asociados</span><span class="brand-pill-type">Abogados</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">NutriBalance</span><span class="brand-pill-type">Nutrición</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Coach Conmigo</span><span class="brand-pill-type">Coaching Personal</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Estudio Varga</span><span class="brand-pill-type">Fotografía</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Centro VidaActiva</span><span class="brand-pill-type">Fisioterapia</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">TuProfe Online</span><span class="brand-pill-type">Educación</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">ArquiDesign</span><span class="brand-pill-type">Arquitectura</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">SMS Asociados</span><span class="brand-pill-type">Contructora</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Video inspección</span><span class="brand-pill-type">Mantenciones</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Svara</span><span class="brand-pill-type">Tienda de Velas</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">CrissM</span><span class="brand-pill-type">Fotografía</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Elite Law Firm</span><span class="brand-pill-type">Estudio Jurídico</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Peluca de Carla</span><span class="brand-pill-type">Peluquería</span></div>
+          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Cañabas La Lela</span><span class="brand-pill-type">Artesanía</span></div>
         </div>
       </div>
     </div>
@@ -1522,7 +1573,7 @@
   <!-- ============================================
        PROCESO
   ============================================ -->
-  <section id="proceso" class="relative py-24 sm:py-32 overflow-hidden">
+  <section id="proceso" class="relative py-24 sm:py-32 section-light overflow-hidden">
     <div class="absolute inset-0 -z-10">
       <div class="absolute top-1/2 right-0 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full"></div>
     </div>
@@ -1532,10 +1583,10 @@
       <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Proceso</span>
         <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
-          Simple, ordenado y sin<br>
-          <span class="italic text-amber-glow">idas y vueltas innecesarias.</span>
+          Tres pasos simples.<br>
+          <span class="italic text-amber-glow">Tú solo revisas y apruebas.</span>
         </h2>
-        <p class="mt-5 text-base text-mist">Te pedimos lo justo, organizamos la información y ejecutamos con foco para que el resultado salga bien y en el plazo acordado.</p>
+        <p class="mt-5 text-base text-mist">Te pedimos solo lo necesario. Nosotros organizamos, diseñamos y publicamos — sin que tengas que aprender nada técnico en el camino.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-5 relative">
@@ -1557,7 +1608,7 @@
           <div class="step-numeral mb-3">02</div>
           <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Diseño & desarrollo</span>
           <h3 class="font-display text-2xl text-white mb-3 leading-tight">Construimos con foco</h3>
-          <p class="text-sm text-mist leading-relaxed">Landing con estructura clara, diseño limpio y una experiencia pensada para generar consultas reales.</p>
+          <p class="text-sm text-mist leading-relaxed">Landing con estructura clara, diseño limpio y una experiencia pensada para que el visitante dé el siguiente paso.</p>
           <div class="absolute top-6 right-6 opacity-20 group-hover:opacity-50 transition-opacity">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
@@ -1579,7 +1630,7 @@
   <!-- ============================================
        FAQ
   ============================================ -->
-  <section id="faq" class="relative py-24 sm:py-32 section-alt">
+  <section id="faq" class="relative py-24 sm:py-32 section-light">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
 
       <div class="text-center mb-12" data-aos="fade-up">
@@ -1661,10 +1712,10 @@
         <div class="lg:col-span-5" data-aos="fade-right">
           <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Contacto</span>
           <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white mb-5">
-            ¿Listo para una web<br>
-            <span class="italic text-amber-glow">que represente tu trabajo?</span>
+            Hablemos sin vueltas.<br>
+            <span class="italic text-amber-glow">Te respondemos en menos de 24 horas.</span>
           </h2>
-          <p class="text-mist text-base mb-8 max-w-md">Completa el formulario o escríbenos directamente. Revisamos tu caso, resolvemos dudas y te entregamos una propuesta clara, sin compromisos.</p>
+          <p class="text-mist text-base mb-8 max-w-md">Completa el formulario o escríbenos por WhatsApp. Sin reuniones innecesarias — solo claridad desde el primer mensaje.</p>
 
           <ul class="space-y-3">
             <li>
