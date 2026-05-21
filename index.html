@@ -61,7 +61,7 @@
   <link rel="apple-touch-icon" href="favicon.png">
 
   <!-- ================== PRELOADS ================== -->
-  <link rel="preload" as="image" href="assets/img/logo.png" fetchpriority="high">
+  <link rel="preload" as="image" href="favicon.png" fetchpriority="high">
 
   <!-- ================== FONTS ================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -651,6 +651,199 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(224,122,58,0.15), transparent);
     }
+
+    /* ═══════════════════════════════════════════
+       CURSOR PREMIUM + HALO DINÁMICO
+    ═══════════════════════════════════════════ */
+    @media (pointer: fine) {
+      body { cursor: none; }
+      a, button, [role="button"], summary, label, select { cursor: none; }
+    }
+
+    #cursor-dot {
+      position: fixed;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #e07a3a;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: normal;
+      transition: width .12s, height .12s, background .2s, opacity .2s;
+      will-change: left, top;
+    }
+    #cursor-ring {
+      position: fixed;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(224,122,58,0.7);
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width .25s ease, height .25s ease, opacity .2s, border-color .25s;
+      opacity: 0.55;
+      will-change: left, top;
+    }
+
+    /* Hover state: anillo crece y se calienta */
+    body.cursor-hover #cursor-ring {
+      width: 52px; height: 52px;
+      opacity: 0.9;
+      border-color: #ff8a42;
+    }
+    body.cursor-hover #cursor-dot {
+      width: 5px; height: 5px;
+      background: #ff8a42;
+    }
+
+    /* Click state */
+    body.cursor-click #cursor-ring {
+      width: 28px; height: 28px;
+      opacity: 1;
+      border-color: #fff;
+    }
+
+    #cursor-halo {
+      position: fixed;
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(224,122,58,.075) 0%,
+        rgba(224,122,58,.03)  40%,
+        transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      transition: background .6s ease;
+      will-change: left, top;
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO PARALLAX LAYERS (multicapa)
+    ═══════════════════════════════════════════ */
+    .hero-layer {
+      position: absolute;
+      inset: -15%;
+      pointer-events: none;
+      will-change: transform;
+    }
+    .hero-layer-1 {
+      background:
+        radial-gradient(ellipse 55% 45% at 75% 35%, rgba(255,138,66,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 15% 70%, rgba(224,122,58,.04) 0%, transparent 60%);
+    }
+    .hero-layer-2 {
+      background:
+        radial-gradient(ellipse 30% 35% at 85% 80%, rgba(255,80,80,.035) 0%, transparent 55%);
+    }
+    .hero-layer-3 {
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 72px, rgba(255,255,255,.012) 72px, rgba(255,255,255,.012) 73px),
+        repeating-linear-gradient(90deg, transparent, transparent 72px, rgba(255,255,255,.012) 72px, rgba(255,255,255,.012) 73px);
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    }
+
+    /* ═══════════════════════════════════════════
+       SEO BLOG SECTION
+    ═══════════════════════════════════════════ */
+    .seo-guide-card {
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding: 3.5rem 0;
+    }
+    .seo-guide-card:first-child { border-top: none; padding-top: 0; }
+
+    .seo-kw-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c96a2c;
+      border: 1px solid rgba(201,106,44,0.35);
+      padding: 0.28rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1.2rem;
+    }
+
+    .seo-guide-h3 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: #18181B;
+      margin-bottom: 1.2rem;
+    }
+    .seo-guide-h3 em { color: #c96a2c; font-style: italic; }
+
+    .seo-guide-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.97rem;
+      line-height: 1.78;
+      color: #52525b;
+    }
+    .seo-guide-body p { margin-bottom: 1.1rem; }
+    .seo-guide-body strong { color: #27272e; font-weight: 600; }
+    .seo-guide-body h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      color: #27272e;
+      margin: 1.8rem 0 0.6rem;
+    }
+    .seo-guide-body ul { list-style: none; margin-bottom: 1.1rem; }
+    .seo-guide-body ul li {
+      padding: 0.3rem 0 0.3rem 1.4rem;
+      position: relative;
+    }
+    .seo-guide-body ul li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: #e07a3a;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+    }
+
+    .seo-inline-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      background: rgba(224,122,58,0.05);
+      border: 1px solid rgba(224,122,58,0.2);
+      border-radius: 16px;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .seo-inline-cta-text {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #27272e;
+    }
+
+    /* Read-time chip */
+    .read-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #71717a;
+      margin-bottom: 0.8rem;
+    }
+    .read-time::before {
+      content: '';
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #e07a3a;
+    }
   </style>
 
   <!-- ================== SCHEMA.ORG JSON-LD ================== -->
@@ -666,7 +859,7 @@
         "url": "https://digitalizalab.cl/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://digitalizalab.cl/assets/img/logo.png",
+          "url": "https://digitalizalab.cl/favicon.png",
           "width": 512,
           "height": 512
         },
@@ -792,6 +985,13 @@
   </div>
 
   <!-- ============================================
+       CURSOR PREMIUM
+  ============================================ -->
+  <div id="cursor-halo" aria-hidden="true"></div>
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ============================================
        TOPBAR
   ============================================ -->
   <div class="topbar relative z-40 bg-ink-950/80 border-b border-white/5 text-xs font-mono text-mist">
@@ -808,10 +1008,35 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
 
       <a href="#inicio" class="flex items-center gap-2.5 group" aria-label="Ir al inicio de Digitaliza Lab">
-        <div class="relative">
-          <img src="assets/img/logo.png" alt="Logo Digitaliza Lab" width="36" height="36" class="relative z-10">
-          <div class="absolute inset-0 bg-amber-glow/40 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        </div>
+        <!-- Flask SVG inline — sin fondo, sin imágenes externas -->
+        <svg width="32" height="36" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
+          <!-- Pixel dots dispersing up -->
+          <rect x="16" y="0"  width="3" height="3" rx="0.5" fill="#ff8a42" opacity="0.9"/>
+          <rect x="21" y="2"  width="2.5" height="2.5" rx="0.5" fill="#ff6a20" opacity="0.75"/>
+          <rect x="13" y="3"  width="2" height="2" rx="0.5" fill="#ff8a42" opacity="0.6"/>
+          <rect x="24" y="5"  width="2" height="2" rx="0.5" fill="#ff6a20" opacity="0.45"/>
+          <rect x="11" y="6"  width="1.5" height="1.5" rx="0.3" fill="#ff8a42" opacity="0.3"/>
+          <!-- Flask body -->
+          <path d="M11 10 L11 18 L4 30 Q3 32 5 33 L27 33 Q29 32 28 30 L21 18 L21 10 Z"
+                fill="url(#flaskGrad)" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" stroke-linejoin="round"/>
+          <!-- Flask neck -->
+          <rect x="10" y="7" width="12" height="4" rx="1" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
+          <!-- Liquid level -->
+          <path d="M6.5 27 Q16 23 25.5 27 L27.5 31 Q29 32 27 33 L5 33 Q3 32 4.5 31 Z"
+                fill="url(#liquidGrad)" opacity="0.9"/>
+          <!-- Shine -->
+          <line x1="13" y1="20" x2="11" y2="29" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="flaskGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"   stop-color="rgba(255,255,255,0.08)"/>
+              <stop offset="100%" stop-color="rgba(255,138,66,0.15)"/>
+            </linearGradient>
+            <linearGradient id="liquidGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="#ff8a42"/>
+              <stop offset="100%" stop-color="#e03a1e"/>
+            </linearGradient>
+          </defs>
+        </svg>
         <span class="font-display text-lg tracking-tight">
           Digitaliza<span class="text-amber-glow font-medium italic"> Lab</span>
         </span>
@@ -847,6 +1072,7 @@
         <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="#ideal">Para quién es</a></li>
         <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="#proceso">Proceso</a></li>
         <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="#faq">FAQ</a></li>
+        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="blog.html">Blog</a></li>
         <li class="pt-2"><a href="#contacto" class="btn-primary w-full js-cta-track" data-cta="mobile_menu">Quiero mi web en 72 horas</a></li>
       </ul>
     </div>
@@ -856,6 +1082,10 @@
        HERO
   ============================================ -->
   <header id="inicio" class="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden">
+    <!-- Parallax multicapa -->
+    <div class="hero-layer hero-layer-1" data-hero-layer="0.25" aria-hidden="true"></div>
+    <div class="hero-layer hero-layer-2" data-hero-layer="0.12" aria-hidden="true"></div>
+    <div class="hero-layer hero-layer-3" data-hero-layer="0.05" aria-hidden="true"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
@@ -1093,12 +1323,53 @@
         <!-- Card grande — imagen equipo + oficina -->
         <article class="md:col-span-7 glass card-tilt rounded-3xl overflow-hidden group relative" data-aos="fade-up">
           <div class="relative overflow-hidden" style="aspect-ratio:16/7;">
-            <img
-              src="assets/img/portfolio/equipo-oficina.png"
-              alt="Equipo Digitaliza Lab trabajando en diseño de sitio web profesional"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-              loading="lazy"
-            >
+<div class="w-full h-full flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-ink-800 to-ink-900" style="aspect-ratio:16/7;">
+              <svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                <defs>
+                  <radialGradient id="g1" cx="30%" cy="50%"><stop offset="0%" stop-color="#e07a3a" stop-opacity=".18"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+                  <radialGradient id="g2" cx="80%" cy="50%"><stop offset="0%" stop-color="#0891b2" stop-opacity=".12"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+                </defs>
+                <rect width="800" height="350" fill="#111827"/>
+                <ellipse cx="240" cy="175" rx="260" ry="220" fill="url(#g1)"/>
+                <ellipse cx="620" cy="175" rx="200" ry="180" fill="url(#g2)"/>
+                <!-- Desk surface -->
+                <rect x="60" y="220" width="440" height="6" rx="3" fill="rgba(255,255,255,.07)"/>
+                <!-- Monitor -->
+                <rect x="140" y="100" width="220" height="140" rx="6" fill="#1a2230" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
+                <rect x="148" y="108" width="204" height="124" rx="4" fill="#0d1520"/>
+                <!-- Screen content lines -->
+                <rect x="160" y="122" width="90" height="8" rx="2" fill="rgba(224,122,58,.7)"/>
+                <rect x="160" y="138" width="170" height="4" rx="1" fill="rgba(255,255,255,.2)"/>
+                <rect x="160" y="150" width="140" height="4" rx="1" fill="rgba(255,255,255,.12)"/>
+                <rect x="160" y="162" width="160" height="4" rx="1" fill="rgba(255,255,255,.12)"/>
+                <rect x="160" y="180" width="60" height="20" rx="10" fill="rgba(224,122,58,.4)" stroke="rgba(224,122,58,.6)" stroke-width="1"/>
+                <text x="190" y="194" font-family="monospace" font-size="7" fill="rgba(255,255,255,.8)" text-anchor="middle">CTA</text>
+                <!-- Monitor stand -->
+                <rect x="238" y="240" width="24" height="18" rx="2" fill="rgba(255,255,255,.08)"/>
+                <rect x="220" y="255" width="60" height="5" rx="2" fill="rgba(255,255,255,.06)"/>
+                <!-- Laptop -->
+                <rect x="420" y="155" width="180" height="110" rx="5" fill="#1a2230" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+                <rect x="427" y="162" width="166" height="97" rx="3" fill="#0d1520"/>
+                <rect x="410" y="264" width="200" height="6" rx="3" fill="rgba(255,255,255,.07)"/>
+                <!-- Laptop screen content -->
+                <rect x="437" y="172" width="70" height="6" rx="1" fill="rgba(224,122,58,.6)"/>
+                <rect x="437" y="184" width="140" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
+                <rect x="437" y="193" width="120" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+                <rect x="437" y="210" width="50" height="16" rx="8" fill="rgba(224,122,58,.35)" stroke="rgba(224,122,58,.5)" stroke-width="1"/>
+                <!-- Coffee mug -->
+                <rect x="610" y="198" width="28" height="32" rx="4" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+                <path d="M638 210 Q648 210 648 222 Q648 234 638 234" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+                <!-- Steam -->
+                <path d="M618 192 Q622 184 618 176" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M625 190 Q629 182 625 174" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Grid dots bg -->
+                <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.8" fill="rgba(255,255,255,.04)"/></pattern>
+                <rect width="800" height="350" fill="url(#dots)"/>
+                <!-- Floating badge -->
+                <rect x="580" y="80" width="140" height="42" rx="21" fill="rgba(224,122,58,.12)" stroke="rgba(224,122,58,.3)" stroke-width="1"/>
+                <circle cx="601" cy="101" r="5" fill="#22c55e"/>
+                <text x="614" y="106" font-family="monospace" font-size="9" fill="rgba(255,255,255,.75)" letter-spacing="1">ONLINE</text>
+              </svg>
             <!-- Overlay gradiente -->
             <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent"></div>
             <!-- Badge flotante -->
@@ -1122,12 +1393,38 @@
           <!-- Card — presentación 72h -->
           <article class="glass card-tilt rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="100">
             <div class="relative overflow-hidden" style="aspect-ratio:16/6;">
-              <img
-                src="assets/img/portfolio/presentacion-72h.png"
-                alt="Entrega de sitio web en 72 horas — resultados rápidos para tu negocio"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                loading="lazy"
-              >
+<div class="w-full h-full flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-ink-800 to-ink-900" style="aspect-ratio:16/6;">
+              <svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                <defs><radialGradient id="g72" cx="50%" cy="50%"><stop offset="0%" stop-color="#e07a3a" stop-opacity=".2"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs>
+                <rect width="560" height="210" fill="#0a0e1a"/>
+                <ellipse cx="280" cy="105" rx="180" ry="130" fill="url(#g72)"/>
+                <!-- Clock face -->
+                <circle cx="200" cy="105" r="72" fill="#111827" stroke="rgba(224,122,58,.35)" stroke-width="1.5"/>
+                <circle cx="200" cy="105" r="64" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+                <!-- Tick marks -->
+                <line x1="200" y1="41" x2="200" y2="51" stroke="rgba(224,122,58,.5)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="264" y1="105" x2="254" y2="105" stroke="rgba(224,122,58,.5)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="200" y1="169" x2="200" y2="159" stroke="rgba(224,122,58,.5)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="136" y1="105" x2="146" y2="105" stroke="rgba(224,122,58,.5)" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Hour hand pointing to ~72h mark (3 o'clock area) -->
+                <line x1="200" y1="105" x2="242" y2="83" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                <!-- Minute hand -->
+                <line x1="200" y1="105" x2="200" y2="55" stroke="rgba(224,122,58,.9)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="200" cy="105" r="5" fill="#e07a3a"/>
+                <!-- 72 text in clock -->
+                <text x="200" y="130" font-family="monospace" font-size="13" fill="rgba(255,255,255,.25)" text-anchor="middle" font-weight="bold">72H</text>
+                <!-- Checkmark badge -->
+                <circle cx="340" cy="75" r="30" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.4)" stroke-width="1.5"/>
+                <polyline points="328,75 337,84 354,65" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Speed lines -->
+                <line x1="380" y1="100" x2="440" y2="100" stroke="rgba(224,122,58,.3)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="390" y1="112" x2="445" y2="112" stroke="rgba(224,122,58,.2)" stroke-width="1" stroke-linecap="round"/>
+                <line x1="383" y1="88" x2="430" y2="88" stroke="rgba(224,122,58,.15)" stroke-width="1" stroke-linecap="round"/>
+                <!-- label -->
+                <text x="340" y="125" font-family="monospace" font-size="8" fill="rgba(34,197,94,.7)" text-anchor="middle" letter-spacing="1">ENTREGADO</text>
+                <pattern id="d2" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="rgba(255,255,255,.04)"/></pattern>
+                <rect width="560" height="210" fill="url(#d2)"/>
+              </svg>
               <div class="absolute inset-0 bg-gradient-to-t from-ink-900/75 via-transparent to-transparent"></div>
               <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-ping"></span>
@@ -1143,12 +1440,56 @@
           <!-- Card — portfolio mockups -->
           <article class="glass card-tilt rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="180">
             <div class="relative overflow-hidden" style="aspect-ratio:16/6;">
-              <img
-                src="assets/img/portfolio/portfolio-mockups.png"
-                alt="Portafolio de sitios web diseñados por Digitaliza Lab — variedad de industrias"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                loading="lazy"
-              >
+<div class="w-full h-full flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-ink-800 to-ink-900" style="aspect-ratio:16/6;">
+              <svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                <defs><radialGradient id="gc" cx="50%" cy="50%"><stop offset="0%" stop-color="#0891b2" stop-opacity=".15"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs>
+                <rect width="560" height="210" fill="#0a0e1a"/>
+                <ellipse cx="280" cy="105" rx="200" ry="130" fill="url(#gc)"/>
+                <!-- Mini browser cards -->
+                <!-- Card 1 -->
+                <rect x="40" y="35" width="140" height="100" rx="6" fill="#111827" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+                <rect x="40" y="35" width="140" height="22" rx="6" fill="rgba(224,122,58,.2)"/>
+                <circle cx="55" cy="46" r="4" fill="rgba(255,80,80,.6)"/>
+                <circle cx="68" cy="46" r="4" fill="rgba(224,122,58,.6)"/>
+                <circle cx="81" cy="46" r="4" fill="rgba(34,197,94,.4)"/>
+                <rect x="50" y="66" width="80" height="7" rx="2" fill="rgba(224,122,58,.5)"/>
+                <rect x="50" y="80" width="120" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
+                <rect x="50" y="88" width="100" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+                <rect x="50" y="96" width="110" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+                <rect x="50" y="110" width="50" height="15" rx="7" fill="rgba(224,122,58,.3)" stroke="rgba(224,122,58,.5)" stroke-width="1"/>
+                <!-- Card 1 label -->
+                <text x="110" y="148" font-family="monospace" font-size="7" fill="rgba(255,255,255,.35)" text-anchor="middle" letter-spacing=".5">DERECHO</text>
+                <!-- Card 2 -->
+                <rect x="210" y="20" width="140" height="100" rx="6" fill="#111827" stroke="rgba(0,200,255,.2)" stroke-width="1"/>
+                <rect x="210" y="20" width="140" height="22" rx="6" fill="rgba(8,145,178,.2)"/>
+                <circle cx="225" cy="31" r="4" fill="rgba(255,80,80,.5)"/>
+                <circle cx="238" cy="31" r="4" fill="rgba(224,122,58,.5)"/>
+                <circle cx="251" cy="31" r="4" fill="rgba(34,197,94,.35)"/>
+                <rect x="220" y="51" width="70" height="7" rx="2" fill="rgba(8,145,178,.7)"/>
+                <rect x="220" y="65" width="120" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
+                <rect x="220" y="73" width="95" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+                <rect x="220" y="85" width="40" height="30" rx="5" fill="rgba(8,145,178,.15)" stroke="rgba(8,145,178,.3)" stroke-width="1"/>
+                <text x="240" y="105" font-family="monospace" font-size="7" fill="rgba(8,145,178,.8)" text-anchor="middle">RESERVAR</text>
+                <text x="280" y="133" font-family="monospace" font-size="7" fill="rgba(255,255,255,.35)" text-anchor="middle" letter-spacing=".5">SALUD</text>
+                <!-- Card 3 -->
+                <rect x="380" y="35" width="140" height="100" rx="6" fill="#111827" stroke="rgba(168,85,247,.2)" stroke-width="1"/>
+                <rect x="380" y="35" width="140" height="22" rx="6" fill="rgba(168,85,247,.15)"/>
+                <circle cx="395" cy="46" r="4" fill="rgba(255,80,80,.5)"/>
+                <circle cx="408" cy="46" r="4" fill="rgba(224,122,58,.5)"/>
+                <circle cx="421" cy="46" r="4" fill="rgba(34,197,94,.35)"/>
+                <rect x="390" y="66" width="60" height="7" rx="2" fill="rgba(168,85,247,.6)"/>
+                <rect x="390" y="80" width="130" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
+                <rect x="390" y="88" width="105" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+                <rect x="390" y="110" width="55" height="15" rx="7" fill="rgba(168,85,247,.25)" stroke="rgba(168,85,247,.45)" stroke-width="1"/>
+                <text x="450" y="148" font-family="monospace" font-size="7" fill="rgba(255,255,255,.35)" text-anchor="middle" letter-spacing=".5">EMPRESA</text>
+                <!-- Connecting dots -->
+                <circle cx="185" cy="85" r="3" fill="rgba(255,255,255,.2)"/>
+                <circle cx="360" cy="75" r="3" fill="rgba(255,255,255,.2)"/>
+                <line x1="180" y1="85" x2="210" y2="75" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="350" y1="72" x2="380" y2="68" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="3 3"/>
+                <pattern id="d3" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="rgba(255,255,255,.03)"/></pattern>
+                <rect width="560" height="210" fill="url(#d3)"/>
+              </svg>
               <div class="absolute inset-0 bg-gradient-to-t from-ink-900/75 via-transparent to-transparent"></div>
               <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
@@ -1284,7 +1625,63 @@
         <div class="lg:col-span-5 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="100">
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-tr from-amber-glow/20 via-transparent to-cyan-500/10 blur-2xl rounded-3xl"></div>
-            <img src="assets/img/mockup-devices.png" alt="Landing page de Digitaliza Lab mostrada en notebook y celular" class="relative w-full max-w-lg mx-auto block rounded-2xl" loading="lazy" width="600" height="450">
+            <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" class="relative w-full max-w-lg mx-auto block" width="600" height="450">
+              <defs>
+                <radialGradient id="gd" cx="50%" cy="50%"><stop offset="0%" stop-color="#e07a3a" stop-opacity=".25"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+                <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <!-- Ambient glow -->
+              <ellipse cx="280" cy="300" rx="220" ry="80" fill="url(#gd)" opacity=".6"/>
+              <!-- LAPTOP body -->
+              <rect x="60" y="80" width="380" height="240" rx="10" fill="#111827" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
+              <!-- Screen bezel -->
+              <rect x="70" y="90" width="360" height="220" rx="7" fill="#0a0e1a"/>
+              <!-- Browser bar -->
+              <rect x="70" y="90" width="360" height="28" rx="7" fill="#1a2230"/>
+              <circle cx="90" cy="104" r="5" fill="rgba(255,80,80,.55)"/>
+              <circle cx="105" cy="104" r="5" fill="rgba(224,122,58,.55)"/>
+              <circle cx="120" cy="104" r="5" fill="rgba(34,197,94,.45)"/>
+              <rect x="140" y="97" width="200" height="14" rx="7" fill="rgba(255,255,255,.06)"/>
+              <text x="240" y="108" font-family="monospace" font-size="7" fill="rgba(255,255,255,.3)" text-anchor="middle">digitalizalab.cl</text>
+              <!-- Nav bar on screen -->
+              <rect x="78" y="126" width="344" height="20" rx="0" fill="rgba(255,255,255,.03)"/>
+              <rect x="86" y="131" width="60" height="8" rx="2" fill="rgba(224,122,58,.5)"/>
+              <rect x="350" y="130" width="60" height="10" rx="5" fill="rgba(224,122,58,.25)" stroke="rgba(224,122,58,.5)" stroke-width="1"/>
+              <!-- Hero area -->
+              <rect x="86" y="155" width="170" height="16" rx="3" fill="rgba(255,255,255,.85)"/>
+              <rect x="86" y="177" width="130" height="10" rx="2" fill="rgba(224,122,58,.8)"/>
+              <rect x="86" y="195" width="200" height="4" rx="1" fill="rgba(255,255,255,.18)"/>
+              <rect x="86" y="205" width="180" height="4" rx="1" fill="rgba(255,255,255,.12)"/>
+              <rect x="86" y="220" width="90" height="24" rx="12" fill="rgba(224,122,58,.35)" stroke="rgba(224,122,58,.6)" stroke-width="1"/>
+              <text x="131" y="236" font-family="monospace" font-size="8" fill="rgba(255,255,255,.8)" text-anchor="middle">Cotizar →</text>
+              <!-- Right side illustration on screen -->
+              <rect x="290" y="152" width="120" height="110" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+              <rect x="298" y="160" width="104" height="60" rx="4" fill="rgba(224,122,58,.08)"/>
+              <circle cx="350" cy="190" r="22" fill="none" stroke="rgba(224,122,58,.3)" stroke-width="1.5" stroke-dasharray="5 3"/>
+              <text x="350" y="195" font-family="monospace" font-size="10" fill="rgba(224,122,58,.7)" text-anchor="middle">DL</text>
+              <!-- Laptop base -->
+              <rect x="40" y="320" width="420" height="12" rx="4" fill="#1a2230" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+              <rect x="160" y="330" width="180" height="5" rx="2" fill="rgba(255,255,255,.04)"/>
+              <!-- MOBILE phone (overlapping, right side) -->
+              <rect x="380" y="200" width="110" height="195" rx="16" fill="#111827" stroke="rgba(255,255,255,.15)" stroke-width="1.5" filter="url(#glow)"/>
+              <rect x="387" y="215" width="96" height="165" rx="10" fill="#0a0e1a"/>
+              <!-- Phone notch -->
+              <rect x="415" y="208" width="40" height="6" rx="3" fill="rgba(255,255,255,.08)"/>
+              <!-- Mobile nav -->
+              <rect x="393" y="220" width="84" height="14" rx="0" fill="rgba(255,255,255,.03)"/>
+              <rect x="397" y="223" width="30" height="6" rx="2" fill="rgba(224,122,58,.5)"/>
+              <!-- Mobile hero text -->
+              <rect x="397" y="242" width="76" height="10" rx="2" fill="rgba(255,255,255,.8)"/>
+              <rect x="397" y="258" width="55" height="7" rx="1" fill="rgba(224,122,58,.7)"/>
+              <rect x="397" y="272" width="78" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
+              <rect x="397" y="280" width="65" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+              <rect x="397" y="292" width="60" height="18" rx="9" fill="rgba(224,122,58,.3)" stroke="rgba(224,122,58,.55)" stroke-width="1"/>
+              <text x="427" y="304" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.7)" text-anchor="middle">Cotizar</text>
+              <!-- Mobile home bar -->
+              <rect x="415" y="375" width="40" height="4" rx="2" fill="rgba(255,255,255,.15)"/>
+              <!-- Reflection line on laptop -->
+              <line x1="70" y1="91" x2="430" y2="91" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+            </svg>
           </div>
         </div>
       </div>
@@ -1832,7 +2229,7 @@
 
         <div class="md:col-span-5">
           <a href="#inicio" class="inline-flex items-center gap-2.5 mb-4">
-            <img src="assets/img/logo.png" alt="Logo Digitaliza Lab" width="40" height="40">
+            <img src="logo.png" alt="Logo Digitaliza Lab" height="44" style="height:44px;width:auto;">
             <span class="font-display text-xl">Digitaliza<span class="text-amber-glow italic font-medium"> Lab</span></span>
           </a>
           <p class="text-sm text-mist max-w-sm mb-5">Landing pages para profesionales independientes que necesitan una presencia digital seria, clara y coherente con la calidad de su trabajo.</p>
@@ -2142,8 +2539,161 @@
           }
         }, { passive: true });
       }
+      /* -------- CURSOR PREMIUM + HALO -------- */
+      (function () {
+        const isFine = window.matchMedia('(pointer: fine)').matches;
+        if (!isFine) return;
+
+        const dot   = document.getElementById('cursor-dot');
+        const ring  = document.getElementById('cursor-ring');
+        const halo  = document.getElementById('cursor-halo');
+        if (!dot || !ring || !halo) return;
+
+        let mx = -500, my = -500;
+        let rx = -500, ry = -500;
+        let hx = -500, hy = -500;
+        let rafId;
+
+        document.addEventListener('mousemove', (e) => {
+          mx = e.clientX;
+          my = e.clientY;
+        }, { passive: true });
+
+        // Hover state via event delegation
+        document.addEventListener('mouseover', (e) => {
+          if (e.target.closest('a, button, [role="button"], summary, label, select')) {
+            document.body.classList.add('cursor-hover');
+          }
+        });
+        document.addEventListener('mouseout', (e) => {
+          if (e.target.closest('a, button, [role="button"], summary, label, select')) {
+            document.body.classList.remove('cursor-hover');
+          }
+        });
+        document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
+        document.addEventListener('mouseup',   () => document.body.classList.remove('cursor-click'));
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        function tick() {
+          dot.style.left  = mx + 'px';
+          dot.style.top   = my + 'px';
+
+          rx = lerp(rx, mx, 0.18);
+          ry = lerp(ry, my, 0.18);
+          ring.style.left = rx + 'px';
+          ring.style.top  = ry + 'px';
+
+          hx = lerp(hx, mx, 0.07);
+          hy = lerp(hy, my, 0.07);
+          halo.style.left = hx + 'px';
+          halo.style.top  = hy + 'px';
+
+          rafId = requestAnimationFrame(tick);
+        }
+        tick();
+      })();
+
+      /* -------- PARALLAX MULTICAPA HERO -------- */
+      (function () {
+        const layers = document.querySelectorAll('[data-hero-layer]');
+        if (!layers.length) return;
+        const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (noMotion) return;
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              const sy = window.scrollY;
+              layers.forEach((layer) => {
+                const speed = parseFloat(layer.dataset.heroLayer);
+                layer.style.transform = `translateY(${sy * speed}px)`;
+              });
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+      })();
+
     })();
   </script>
+
+
+<!-- ============================================
+     BLOG PREVIEW
+============================================ -->
+<section class="relative py-24 sm:py-32 border-t border-white/5 overflow-hidden">
+  <div class="hero-layer hero-layer-1" data-hero-layer="0.15" aria-hidden="true"></div>
+  <div class="max-w-5xl mx-auto px-6 relative">
+
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14" data-aos="fade-up">
+      <div>
+        <span class="block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Guías & Recursos</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
+          Todo lo que necesitas saber<br>sobre <span class="italic text-amber-glow">diseño web en Chile</span>
+        </h2>
+      </div>
+      <a href="blog.html" class="shrink-0 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-amber-glow border border-amber-glow/30 hover:border-amber-glow/70 px-5 py-3 rounded-full transition-all hover:bg-amber-glow/5">
+        Ver todas las guías
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+
+      <!-- Card 1 -->
+      <a href="blog.html#diseno-web-chile" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
+        <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow/70">Diseño Web Chile</span>
+        <h3 class="font-display text-xl font-light text-white leading-snug group-hover:text-amber-glow transition-colors">
+          Lo que realmente importa en un sitio web en Chile en 2025
+        </h3>
+        <p class="text-mist text-sm leading-relaxed flex-1">Velocidad, SEO local y redacción en español chileno — los tres factores que marcan la diferencia.</p>
+        <span class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mt-2">
+          Leer guía
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="blog.html#landing-page-chile" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
+        <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow/70">Landing Page Chile</span>
+        <h3 class="font-display text-xl font-light text-white leading-snug group-hover:text-amber-glow transition-colors">
+          Anatomía de una landing page que convierte en el mercado chileno
+        </h3>
+        <p class="text-mist text-sm leading-relaxed flex-1">Los seis elementos que comparten todas las campañas exitosas que hemos analizado.</p>
+        <span class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mt-2">
+          Leer guía
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="blog.html#sectores" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
+        <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow/70">Abogados · Médicos</span>
+        <h3 class="font-display text-xl font-light text-white leading-snug group-hover:text-amber-glow transition-colors">
+          Webs para sectores que exigen autoridad desde el primer clic
+        </h3>
+        <p class="text-mist text-sm leading-relaxed flex-1">Cómo transmitir confianza y llenar la agenda de consultas con tu presencia digital.</p>
+        <span class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mt-2">
+          Leer guía
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </span>
+      </a>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-10 text-center" data-aos="fade-up" data-aos-delay="150">
+      <a href="blog.html" class="text-mist hover:text-white font-mono text-[11px] uppercase tracking-[0.18em] transition inline-flex items-center gap-2 group">
+        Ver también: SEO Local Chile, Agencia Digital Santiago
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
