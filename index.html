@@ -66,7 +66,7 @@
   <!-- ================== FONTS ================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- ================== TAILWIND CDN ================== -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -76,11 +76,11 @@
         extend: {
           colors: {
             ink: {
-              950: '#050810',
-              900: '#0a0e1a',
-              800: '#111827',
-              700: '#1a2230',
-              600: '#2a3448',
+              950: '#000000',
+              900: '#050505',
+              800: '#111111',
+              700: '#1a1a1a',
+              600: '#2a2a2a',
             },
             amber: {
               glow: '#ff8a42',
@@ -95,8 +95,8 @@
             mist: '#9ca3af',
           },
           fontFamily: {
-            display: ['Fraunces', 'Georgia', 'serif'],
-            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+            display: ['Inter', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace'],
           },
           boxShadow: {
@@ -158,11 +158,11 @@
       --r-2xl: 32px;
 
       /* Sombras en capas — inspirado en Stripe/Linear */
-      --shadow-xs: 0 1px 2px rgba(0,0,0,0.3);
-      --shadow-sm: 0 4px 12px -2px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.04) inset;
-      --shadow-md: 0 12px 32px -8px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05) inset;
-      --shadow-lg: 0 30px 60px -20px rgba(0,0,0,0.55), 0 12px 24px -12px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06) inset;
-      --shadow-xl: 0 50px 100px -20px rgba(0,0,0,0.65), 0 30px 60px -30px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07) inset;
+      --shadow-xs: 0 1px 2px rgba(0,0,0,0.8);
+      --shadow-sm: 0 4px 12px -2px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.03) inset;
+      --shadow-md: 0 12px 32px -8px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04) inset;
+      --shadow-lg: 0 30px 60px -20px rgba(0,0,0,1), 0 12px 24px -12px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05) inset;
+      --shadow-xl: 0 50px 100px -20px rgba(0,0,0,1), 0 30px 60px -30px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06) inset;
       --shadow-brand: 0 20px 50px -12px rgba(224,122,58,0.45), 0 8px 20px -8px rgba(224,122,58,0.35);
       --shadow-brand-hover: 0 28px 65px -10px rgba(224,122,58,0.6), 0 12px 24px -8px rgba(224,122,58,0.5);
 
@@ -171,7 +171,7 @@
       --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     }
     * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    html, body { background: #0a0e1a; color: #e5e7eb; font-family: 'DM Sans', system-ui, sans-serif; }
+    html, body { background: #000000; color: #e5e7eb; font-family: 'Inter', system-ui, sans-serif; }
 
     /* === Fallback: si AOS tarda en cargar, los elementos se muestran igual === */
     html:not(.aos-ready) [data-aos] {
@@ -183,9 +183,9 @@
     ::selection { background: rgba(224,122,58,0.35); color: #fff; }
 
     ::-webkit-scrollbar { width: 10px; height: 10px; }
-    ::-webkit-scrollbar-track { background: #0a0e1a; }
-    ::-webkit-scrollbar-thumb { background: #2a3448; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: #3b475d; }
+    ::-webkit-scrollbar-track { background: #000000; }
+    ::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2a2a2a; }
 
     .grain::before {
       content: "";
@@ -209,19 +209,19 @@
 
     /* === Glassmorphism con sombras premium === */
     .glass {
-      background: linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
-      backdrop-filter: blur(20px) saturate(140%);
-      -webkit-backdrop-filter: blur(20px) saturate(140%);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      backdrop-filter: blur(24px) saturate(150%);
+      -webkit-backdrop-filter: blur(24px) saturate(150%);
+      border: 1px solid rgba(255,255,255,0.05);
       box-shadow: var(--shadow-md);
       border-radius: var(--r-xl);
       transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.4s;
     }
     .glass-strong {
-      background: linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
       backdrop-filter: blur(30px) saturate(150%);
       -webkit-backdrop-filter: blur(30px) saturate(150%);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.07);
       box-shadow: var(--shadow-lg);
       border-radius: var(--r-xl);
     }
@@ -1004,76 +1004,51 @@
   <!-- ============================================
        NAVBAR
   ============================================ -->
-  <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+  <nav id="mainNav" class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-500 rounded-full border border-white/10 bg-[#0a0a0a]/60 backdrop-blur-lg shadow-lg">
+    <div class="px-5 py-3 flex items-center justify-between">
 
-      <a href="#inicio" class="flex items-center gap-2.5 group" aria-label="Ir al inicio de Digitaliza Lab">
-        <!-- Flask SVG inline — sin fondo, sin imágenes externas -->
-        <svg width="32" height="36" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
-          <!-- Pixel dots dispersing up -->
-          <rect x="16" y="0"  width="3" height="3" rx="0.5" fill="#ff8a42" opacity="0.9"/>
-          <rect x="21" y="2"  width="2.5" height="2.5" rx="0.5" fill="#ff6a20" opacity="0.75"/>
-          <rect x="13" y="3"  width="2" height="2" rx="0.5" fill="#ff8a42" opacity="0.6"/>
-          <rect x="24" y="5"  width="2" height="2" rx="0.5" fill="#ff6a20" opacity="0.45"/>
-          <rect x="11" y="6"  width="1.5" height="1.5" rx="0.3" fill="#ff8a42" opacity="0.3"/>
-          <!-- Flask body -->
-          <path d="M11 10 L11 18 L4 30 Q3 32 5 33 L27 33 Q29 32 28 30 L21 18 L21 10 Z"
-                fill="url(#flaskGrad)" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" stroke-linejoin="round"/>
-          <!-- Flask neck -->
-          <rect x="10" y="7" width="12" height="4" rx="1" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
-          <!-- Liquid level -->
-          <path d="M6.5 27 Q16 23 25.5 27 L27.5 31 Q29 32 27 33 L5 33 Q3 32 4.5 31 Z"
-                fill="url(#liquidGrad)" opacity="0.9"/>
-          <!-- Shine -->
-          <line x1="13" y1="20" x2="11" y2="29" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-linecap="round"/>
-          <defs>
-            <linearGradient id="flaskGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%"   stop-color="rgba(255,255,255,0.08)"/>
-              <stop offset="100%" stop-color="rgba(255,138,66,0.15)"/>
-            </linearGradient>
-            <linearGradient id="liquidGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%"   stop-color="#ff8a42"/>
-              <stop offset="100%" stop-color="#e03a1e"/>
-            </linearGradient>
-          </defs>
+      <a href="#inicio" class="flex items-center gap-2 group" aria-label="Ir al inicio de Digitaliza Lab">
+        <!-- Minimalist Logo -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="rgba(255,138,66,0.8)" stroke-width="2" fill="none"/>
+          <path d="M12 6V12L16 16" stroke="rgba(255,138,66,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="font-display text-lg tracking-tight">
-          Digitaliza<span class="text-amber-glow font-medium italic"> Lab</span>
+        <span class="font-display font-medium text-lg tracking-tight text-white group-hover:text-amber-glow transition-colors">
+          Digitaliza Lab
         </span>
       </a>
 
       <!-- Desktop links -->
-      <ul class="hidden lg:flex items-center gap-1 text-sm">
-        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="#beneficios">Beneficios</a></li>
-        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="#portafolio">Portafolio</a></li>
-        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="#incluye">Qué incluye</a></li>
-        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="#ideal">Para quién es</a></li>
-        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="#proceso">Proceso</a></li>
-        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="#faq">FAQ</a></li>
+      <ul class="hidden lg:flex items-center gap-2 text-[13px] font-medium">
+        <li><a class="relative px-3 py-2 text-mist hover:text-white transition-colors group" href="#beneficios">Beneficios<span class="absolute inset-x-0 bottom-0 h-[2px] bg-amber-glow scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span></a></li>
+        <li><a class="relative px-3 py-2 text-mist hover:text-white transition-colors group" href="#portafolio">Portafolio<span class="absolute inset-x-0 bottom-0 h-[2px] bg-amber-glow scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span></a></li>
+        <li><a class="relative px-3 py-2 text-mist hover:text-white transition-colors group" href="#incluye">Qué incluye<span class="absolute inset-x-0 bottom-0 h-[2px] bg-amber-glow scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span></a></li>
+        <li><a class="relative px-3 py-2 text-mist hover:text-white transition-colors group" href="#ideal">Para quién es<span class="absolute inset-x-0 bottom-0 h-[2px] bg-amber-glow scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span></a></li>
+        <li><a class="relative px-3 py-2 text-mist hover:text-white transition-colors group" href="#proceso">Proceso<span class="absolute inset-x-0 bottom-0 h-[2px] bg-amber-glow scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span></a></li>
+        <li><a class="relative px-3 py-2 text-mist hover:text-white transition-colors group" href="#faq">FAQ<span class="absolute inset-x-0 bottom-0 h-[2px] bg-amber-glow scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span></a></li>
       </ul>
 
       <div class="flex items-center gap-3">
-        <a href="#contacto" class="hidden sm:inline-flex btn-primary text-sm py-2.5 px-5 js-cta-track" data-cta="nav_primary">
-          Quiero mi web en 72 horas
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <a href="#contacto" class="hidden sm:inline-flex items-center justify-center rounded-full bg-white text-black font-medium text-xs px-5 py-2.5 transition-transform hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_20px_rgba(255,255,255,0.3)]" data-cta="nav_primary">
+          Cotizar proyecto
         </a>
-        <button id="menuToggle" class="lg:hidden w-10 h-10 grid place-items-center rounded-full border border-white/10 text-white hover:bg-white/5" aria-label="Abrir menú" aria-expanded="false">
+        <button id="menuToggle" class="lg:hidden w-10 h-10 grid place-items-center rounded-full border border-white/10 text-white hover:bg-white/5 transition-colors" aria-label="Abrir menú" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="lg:hidden hidden border-t border-white/5 bg-ink-950/95 backdrop-blur-xl">
-      <ul class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1 text-sm">
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="#beneficios">Beneficios</a></li>
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="#portafolio">Portafolio</a></li>
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="#incluye">Qué incluye</a></li>
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="#ideal">Para quién es</a></li>
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="#proceso">Proceso</a></li>
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="#faq">FAQ</a></li>
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="blog.html">Blog</a></li>
-        <li class="pt-2"><a href="#contacto" class="btn-primary w-full js-cta-track" data-cta="mobile_menu">Quiero mi web en 72 horas</a></li>
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-[#050505]/95 backdrop-blur-xl rounded-b-[2rem] overflow-hidden mt-1">
+      <ul class="px-5 py-4 flex flex-col gap-2 text-sm font-medium">
+        <li><a class="block px-4 py-3 text-mist hover:text-white rounded-xl hover:bg-white/5 transition" href="#beneficios">Beneficios</a></li>
+        <li><a class="block px-4 py-3 text-mist hover:text-white rounded-xl hover:bg-white/5 transition" href="#portafolio">Portafolio</a></li>
+        <li><a class="block px-4 py-3 text-mist hover:text-white rounded-xl hover:bg-white/5 transition" href="#incluye">Qué incluye</a></li>
+        <li><a class="block px-4 py-3 text-mist hover:text-white rounded-xl hover:bg-white/5 transition" href="#ideal">Para quién es</a></li>
+        <li><a class="block px-4 py-3 text-mist hover:text-white rounded-xl hover:bg-white/5 transition" href="#proceso">Proceso</a></li>
+        <li><a class="block px-4 py-3 text-mist hover:text-white rounded-xl hover:bg-white/5 transition" href="#faq">FAQ</a></li>
+        <li><a class="block px-4 py-3 text-mist hover:text-white rounded-xl hover:bg-white/5 transition" href="blog.html">Blog</a></li>
+        <li class="pt-3 border-t border-white/10"><a href="#contacto" class="block text-center rounded-xl bg-white text-black py-3 js-cta-track" data-cta="mobile_menu">Cotizar proyecto</a></li>
       </ul>
     </div>
   </nav>
@@ -1097,9 +1072,9 @@
             <span class="font-mono uppercase tracking-[0.15em] text-[10px] sm:text-[11px]">Profesionales en Chile confían en nosotros</span>
           </div>
 
-          <h1 class="font-display tracking-tight leading-[1.0] sm:leading-[0.97] lg:leading-[0.95] text-[2.2rem] sm:text-5xl lg:text-[5.25rem] font-light">
-            <span class="gradient-title block">Landing pages</span>
-            <span class="italic font-normal text-white/95">diseñadas </span><span class="gradient-title-warm font-medium">para convertir</span>
+          <h1 class="font-display tracking-tighter leading-[1.0] sm:leading-[0.97] lg:leading-[0.95] text-[2.5rem] sm:text-5xl lg:text-[5.5rem] font-medium">
+            <span class="gradient-title block pb-2">Landing pages</span>
+            <span class="font-light text-white/95">diseñadas </span><span class="gradient-title-warm font-semibold">para convertir</span>
           </h1>
 
           <p class="mt-6 text-base sm:text-lg text-mist max-w-xl leading-relaxed">
@@ -1124,82 +1099,74 @@
 
           <!-- CTAs dominantes con micro-métrica -->
           <div class="mt-9">
-            <div class="flex flex-wrap gap-3 items-center">
-              <a href="#contacto" class="btn-primary text-base py-4 px-7 js-cta-track" data-cta="hero_primary">
+            <div class="flex flex-wrap gap-4 items-center">
+              <a href="#contacto" class="inline-flex items-center justify-center rounded-full bg-white text-black font-semibold text-sm px-8 py-4 transition-all hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_30px_rgba(255,255,255,0.2)]" data-cta="hero_primary">
                 Quiero mi web en 72 horas
-                <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
-              <a href="#incluye" class="btn-ghost">
+              <a href="#incluye" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent text-white font-medium text-sm px-8 py-4 transition-colors hover:bg-white/5">
                 Ver qué incluye
               </a>
             </div>
             <!-- Micro-métrica de respuesta -->
-            <div class="mt-4 flex items-center gap-2 text-xs text-mist font-mono">
+            <div class="mt-6 flex items-center gap-2 text-[11px] text-mist font-mono uppercase tracking-wider">
               <span class="relative flex w-2 h-2">
                 <span class="absolute inline-flex w-full h-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
                 <span class="relative inline-flex w-2 h-2 rounded-full bg-green-400"></span>
               </span>
-              Respuesta en &lt; 24 horas · Sin compromiso · 100% en español
+              Respuesta en &lt; 24 horas · 100% en español
             </div>
           </div>
 
           <!-- Trust -->
-          <div class="mt-10 pt-8 border-t border-white/5 flex flex-wrap gap-x-6 gap-y-3 text-xs font-mono text-mist">
-            <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Todo incluido · 1 año</span>
-            <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg> 100% responsive</span>
-            <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Contacto multicanal</span>
+          <div class="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-x-8 gap-y-4 text-xs font-medium text-mist/80">
+            <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Todo incluido · 1 año</span>
+            <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg> 100% responsive</span>
+            <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Contacto multicanal</span>
           </div>
         </div>
 
-        <!-- Right column: premium showcase card -->
-        <div class="lg:col-span-5">
-          <div class="relative">
-
-            <!-- Main card -->
-            <div class="relative glass rounded-3xl p-7 sm:p-8 overflow-hidden">
-
-              <!-- Sweep line -->
-              <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-glow/80 to-transparent"></div>
-
-              <!-- Mini browser header -->
-              <div class="flex items-center justify-between mb-5 pb-4 border-b border-white/8">
-                <div class="flex items-center gap-2">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                  <span class="font-mono text-[10px] text-mist tracking-wider">DIGITALIZALAB.CL</span>
-                </div>
-                <span class="font-mono text-[9px] text-mist/50 uppercase tracking-[0.15em]">SSL activo</span>
+        <!-- Right column: floating UI cards -->
+        <div class="lg:col-span-5 relative h-[500px] hidden lg:block">
+          
+          <!-- Card 1: SSL -->
+          <div class="absolute top-10 right-0 w-64 glass rounded-2xl p-5 shadow-2xl z-10 animate-float-slow border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
-
-              <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Lo que recibe tu negocio</span>
-              <h3 class="font-display text-2xl sm:text-[1.7rem] leading-tight text-white mb-4">
-                Una web que comunica, <span class="italic text-amber-glow">genera confianza</span> y facilita el contacto.
-              </h3>
-
-              <ul class="space-y-2 text-sm text-white/75 mb-6">
-                <li class="flex items-start gap-2"><span class="text-amber-glow mt-1.5 text-xs">◆</span> Mensaje claro sobre qué haces y por qué elegirte.</li>
-                <li class="flex items-start gap-2"><span class="text-amber-glow mt-1.5 text-xs">◆</span> Diseño coherente con el nivel de tu servicio.</li>
-                <li class="flex items-start gap-2"><span class="text-amber-glow mt-1.5 text-xs">◆</span> Dominio, hosting, SSL y correo corporativo resueltos.</li>
-                <li class="flex items-start gap-2"><span class="text-amber-glow mt-1.5 text-xs">◆</span> Entrega rápida con revisión final incluida.</li>
-              </ul>
-
-              <!-- Stats -->
-              <div class="grid grid-cols-3 gap-2 pt-5 border-t border-white/8">
-                <div class="text-center">
-                  <div class="font-display text-2xl sm:text-3xl text-white font-medium">72<span class="text-amber-glow">h</span></div>
-                  <div class="font-mono text-[9px] uppercase tracking-wider text-mist mt-1">entrega hábil</div>
-                </div>
-                <div class="text-center border-x border-white/8">
-                  <div class="font-display text-2xl sm:text-3xl text-white font-medium">1<span class="text-amber-glow text-lg"> año</span></div>
-                  <div class="font-mono text-[9px] uppercase tracking-wider text-mist mt-1">incluido</div>
-                </div>
-                <div class="text-center">
-                  <div class="font-display text-2xl sm:text-3xl text-white font-medium">100<span class="text-amber-glow">%</span></div>
-                  <div class="font-mono text-[9px] uppercase tracking-wider text-mist mt-1">responsive</div>
-                </div>
-              </div>
-
+              <span class="font-mono text-xs text-mist tracking-widest uppercase">SSL Activo</span>
+            </div>
+            <div class="h-1.5 w-full bg-white/5 rounded-full mt-3 overflow-hidden">
+              <div class="h-full bg-green-500/50 w-full"></div>
             </div>
           </div>
+
+          <!-- Card 2: 72 horas -->
+          <div class="absolute top-40 left-0 w-72 glass rounded-2xl p-6 shadow-2xl z-20 animate-float-slower border border-white/10 bg-[#0a0a0a]/90 backdrop-blur-xl">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Entrega récord</span>
+            <div class="flex items-baseline gap-1">
+              <span class="font-display text-5xl font-medium text-white tracking-tighter">72</span>
+              <span class="text-xl text-amber-glow font-medium">horas</span>
+            </div>
+            <p class="text-xs text-mist/70 mt-2">Página publicada y funcional en menos de 3 días hábiles.</p>
+          </div>
+
+          <!-- Card 3: 1 Año -->
+          <div class="absolute bottom-20 right-10 w-56 glass rounded-2xl p-5 shadow-2xl z-10 animate-float-slow border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl" style="animation-delay: -2s;">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <span class="font-mono text-xs text-mist tracking-widest uppercase">Renovación</span>
+            </div>
+            <div class="font-display text-2xl font-medium text-white mt-1">1 Año <span class="text-mist text-sm font-normal">incluido</span></div>
+          </div>
+
+          <!-- Glowing connecting lines -->
+          <svg class="absolute inset-0 w-full h-full -z-10 opacity-20" aria-hidden="true">
+            <path d="M 200 100 Q 150 200 100 250 T 250 400" fill="none" stroke="#ff8a42" stroke-width="1" stroke-dasharray="4 4" />
+          </svg>
         </div>
       </div>
     </div>
@@ -1263,28 +1230,36 @@
         <div class="lg:col-span-7" data-aos="fade-left" data-aos-delay="100">
           <div class="grid grid-cols-2 gap-4">
 
-            <div class="glass card-tilt p-6 sm:p-7 text-center">
-              <div class="stat-value" data-counter="72" data-suffix="h">0h</div>
-              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist">Entrega hábil</div>
-              <div class="mt-1 text-xs text-white/70">Desde que recibimos tu onboarding</div>
+            <!-- Card 1 -->
+            <div class="relative overflow-hidden group glass p-6 sm:p-7 text-center transition-all duration-500 hover:border-amber-glow/30 hover:shadow-[0_0_40px_rgba(255,138,66,0.1)]">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#ff8a42]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              <div class="stat-value relative z-10" data-counter="72" data-suffix="h">0h</div>
+              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist relative z-10">Entrega hábil</div>
+              <div class="mt-2 text-xs text-white/60 leading-relaxed relative z-10">Desde que recibimos tu onboarding completo</div>
             </div>
 
-            <div class="glass card-tilt p-6 sm:p-7 text-center">
-              <div class="stat-value" data-counter="24" data-suffix="h">0h</div>
-              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist">Respuesta garantizada</div>
-              <div class="mt-1 text-xs text-white/70">Ante cualquier consulta o duda</div>
+            <!-- Card 2 -->
+            <div class="relative overflow-hidden group glass p-6 sm:p-7 text-center transition-all duration-500 hover:border-amber-glow/30 hover:shadow-[0_0_40px_rgba(255,138,66,0.1)]">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#ff8a42]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              <div class="stat-value relative z-10" data-counter="24" data-suffix="h">0h</div>
+              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist relative z-10">Soporte VIP</div>
+              <div class="mt-2 text-xs text-white/60 leading-relaxed relative z-10">Respuesta garantizada ante cualquier duda</div>
             </div>
 
-            <div class="glass card-tilt p-6 sm:p-7 text-center">
-              <div class="stat-value" data-counter="1" data-suffix=" año">1 año</div>
-              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist">Todo incluido</div>
-              <div class="mt-1 text-xs text-white/70">Dominio, hosting, SSL y correo</div>
+            <!-- Card 3 -->
+            <div class="relative overflow-hidden group glass p-6 sm:p-7 text-center transition-all duration-500 hover:border-amber-glow/30 hover:shadow-[0_0_40px_rgba(255,138,66,0.1)]">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#ff8a42]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              <div class="stat-value relative z-10" data-counter="1" data-suffix=" año">1 año</div>
+              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist relative z-10">Todo incluido</div>
+              <div class="mt-2 text-xs text-white/60 leading-relaxed relative z-10">Dominio, hosting de alto rendimiento y SSL</div>
             </div>
 
-            <div class="glass card-tilt p-6 sm:p-7 text-center">
-              <div class="stat-value" data-counter="100" data-suffix="%">0%</div>
-              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist">Hecho en Chile</div>
-              <div class="mt-1 text-xs text-white/70">Soporte local, conversación directa</div>
+            <!-- Card 4 -->
+            <div class="relative overflow-hidden group glass p-6 sm:p-7 text-center transition-all duration-500 hover:border-amber-glow/30 hover:shadow-[0_0_40px_rgba(255,138,66,0.1)]">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#ff8a42]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              <div class="stat-value relative z-10" data-counter="100" data-suffix="%">0%</div>
+              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist relative z-10">Hecho en Chile</div>
+              <div class="mt-2 text-xs text-white/60 leading-relaxed relative z-10">Soporte local y comunicación directa</div>
             </div>
 
           </div>
@@ -1323,55 +1298,43 @@
         <!-- Card grande — imagen equipo + oficina -->
         <article class="md:col-span-7 glass card-tilt rounded-3xl overflow-hidden group relative" data-aos="fade-up">
           <div class="relative overflow-hidden" style="aspect-ratio:16/7;">
-<div class="w-full h-full flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-ink-800 to-ink-900" style="aspect-ratio:16/7;">
-              <svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                <defs>
-                  <radialGradient id="g1" cx="30%" cy="50%"><stop offset="0%" stop-color="#e07a3a" stop-opacity=".18"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                  <radialGradient id="g2" cx="80%" cy="50%"><stop offset="0%" stop-color="#0891b2" stop-opacity=".12"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                </defs>
-                <rect width="800" height="350" fill="#111827"/>
-                <ellipse cx="240" cy="175" rx="260" ry="220" fill="url(#g1)"/>
-                <ellipse cx="620" cy="175" rx="200" ry="180" fill="url(#g2)"/>
-                <!-- Desk surface -->
-                <rect x="60" y="220" width="440" height="6" rx="3" fill="rgba(255,255,255,.07)"/>
-                <!-- Monitor -->
-                <rect x="140" y="100" width="220" height="140" rx="6" fill="#1a2230" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
-                <rect x="148" y="108" width="204" height="124" rx="4" fill="#0d1520"/>
-                <!-- Screen content lines -->
-                <rect x="160" y="122" width="90" height="8" rx="2" fill="rgba(224,122,58,.7)"/>
-                <rect x="160" y="138" width="170" height="4" rx="1" fill="rgba(255,255,255,.2)"/>
-                <rect x="160" y="150" width="140" height="4" rx="1" fill="rgba(255,255,255,.12)"/>
-                <rect x="160" y="162" width="160" height="4" rx="1" fill="rgba(255,255,255,.12)"/>
-                <rect x="160" y="180" width="60" height="20" rx="10" fill="rgba(224,122,58,.4)" stroke="rgba(224,122,58,.6)" stroke-width="1"/>
-                <text x="190" y="194" font-family="monospace" font-size="7" fill="rgba(255,255,255,.8)" text-anchor="middle">CTA</text>
-                <!-- Monitor stand -->
-                <rect x="238" y="240" width="24" height="18" rx="2" fill="rgba(255,255,255,.08)"/>
-                <rect x="220" y="255" width="60" height="5" rx="2" fill="rgba(255,255,255,.06)"/>
-                <!-- Laptop -->
-                <rect x="420" y="155" width="180" height="110" rx="5" fill="#1a2230" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-                <rect x="427" y="162" width="166" height="97" rx="3" fill="#0d1520"/>
-                <rect x="410" y="264" width="200" height="6" rx="3" fill="rgba(255,255,255,.07)"/>
-                <!-- Laptop screen content -->
-                <rect x="437" y="172" width="70" height="6" rx="1" fill="rgba(224,122,58,.6)"/>
-                <rect x="437" y="184" width="140" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
-                <rect x="437" y="193" width="120" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
-                <rect x="437" y="210" width="50" height="16" rx="8" fill="rgba(224,122,58,.35)" stroke="rgba(224,122,58,.5)" stroke-width="1"/>
-                <!-- Coffee mug -->
-                <rect x="610" y="198" width="28" height="32" rx="4" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
-                <path d="M638 210 Q648 210 648 222 Q648 234 638 234" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
-                <!-- Steam -->
-                <path d="M618 192 Q622 184 618 176" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M625 190 Q629 182 625 174" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-linecap="round"/>
-                <!-- Grid dots bg -->
-                <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.8" fill="rgba(255,255,255,.04)"/></pattern>
-                <rect width="800" height="350" fill="url(#dots)"/>
-                <!-- Floating badge -->
-                <rect x="580" y="80" width="140" height="42" rx="21" fill="rgba(224,122,58,.12)" stroke="rgba(224,122,58,.3)" stroke-width="1"/>
-                <circle cx="601" cy="101" r="5" fill="#22c55e"/>
-                <text x="614" y="106" font-family="monospace" font-size="9" fill="rgba(255,255,255,.75)" letter-spacing="1">ONLINE</text>
-              </svg>
+            <div class="w-full h-full flex flex-col items-center justify-end relative overflow-hidden bg-[#050505] pt-10 px-8" style="aspect-ratio:16/7;">
+              <!-- Abstract CSS UI Mockup -->
+              <div class="w-full h-full bg-[#111111] rounded-t-xl border-t border-l border-r border-white/10 flex flex-col overflow-hidden relative shadow-[0_-20px_50px_rgba(255,138,66,0.05)]">
+                <!-- Browser Header -->
+                <div class="h-8 border-b border-white/5 flex items-center px-4 gap-2 bg-[#0a0a0a]">
+                  <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                </div>
+                <!-- Content Skeleton -->
+                <div class="flex-1 p-6 relative">
+                  <!-- Hero wireframe -->
+                  <div class="w-3/4 h-8 bg-white/5 rounded-md mb-4"></div>
+                  <div class="w-1/2 h-4 bg-white/5 rounded-sm mb-8"></div>
+                  
+                  <div class="flex gap-4">
+                    <div class="w-32 h-10 bg-amber-glow/20 border border-amber-glow/30 rounded-full"></div>
+                    <div class="w-32 h-10 bg-white/5 rounded-full"></div>
+                  </div>
+
+                  <!-- Cards wireframe -->
+                  <div class="absolute bottom-0 left-6 right-6 flex gap-4 translate-y-4">
+                    <div class="flex-1 h-32 bg-white/5 rounded-t-xl border-t border-x border-white/5 p-4">
+                      <div class="w-8 h-8 rounded-full bg-white/10 mb-3"></div>
+                      <div class="w-full h-2 bg-white/10 rounded-sm mb-2"></div>
+                      <div class="w-2/3 h-2 bg-white/10 rounded-sm"></div>
+                    </div>
+                    <div class="flex-1 h-40 bg-white/5 rounded-t-xl border-t border-x border-white/5 p-4">
+                      <div class="w-8 h-8 rounded-full bg-white/10 mb-3"></div>
+                      <div class="w-full h-2 bg-white/10 rounded-sm mb-2"></div>
+                      <div class="w-3/4 h-2 bg-white/10 rounded-sm"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <!-- Overlay gradiente -->
-            <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent"></div>
             <!-- Badge flotante -->
             <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-glow animate-shimmer"></span>
@@ -1391,113 +1354,75 @@
         <div class="md:col-span-5 flex flex-col gap-5">
 
           <!-- Card — presentación 72h -->
-          <article class="glass card-tilt rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="100">
-            <div class="relative overflow-hidden" style="aspect-ratio:16/6;">
-<div class="w-full h-full flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-ink-800 to-ink-900" style="aspect-ratio:16/6;">
-              <svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                <defs><radialGradient id="g72" cx="50%" cy="50%"><stop offset="0%" stop-color="#e07a3a" stop-opacity=".2"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs>
-                <rect width="560" height="210" fill="#0a0e1a"/>
-                <ellipse cx="280" cy="105" rx="180" ry="130" fill="url(#g72)"/>
-                <!-- Clock face -->
-                <circle cx="200" cy="105" r="72" fill="#111827" stroke="rgba(224,122,58,.35)" stroke-width="1.5"/>
-                <circle cx="200" cy="105" r="64" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-                <!-- Tick marks -->
-                <line x1="200" y1="41" x2="200" y2="51" stroke="rgba(224,122,58,.5)" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="264" y1="105" x2="254" y2="105" stroke="rgba(224,122,58,.5)" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="200" y1="169" x2="200" y2="159" stroke="rgba(224,122,58,.5)" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="136" y1="105" x2="146" y2="105" stroke="rgba(224,122,58,.5)" stroke-width="2.5" stroke-linecap="round"/>
-                <!-- Hour hand pointing to ~72h mark (3 o'clock area) -->
-                <line x1="200" y1="105" x2="242" y2="83" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                <!-- Minute hand -->
-                <line x1="200" y1="105" x2="200" y2="55" stroke="rgba(224,122,58,.9)" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="200" cy="105" r="5" fill="#e07a3a"/>
-                <!-- 72 text in clock -->
-                <text x="200" y="130" font-family="monospace" font-size="13" fill="rgba(255,255,255,.25)" text-anchor="middle" font-weight="bold">72H</text>
-                <!-- Checkmark badge -->
-                <circle cx="340" cy="75" r="30" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.4)" stroke-width="1.5"/>
-                <polyline points="328,75 337,84 354,65" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                <!-- Speed lines -->
-                <line x1="380" y1="100" x2="440" y2="100" stroke="rgba(224,122,58,.3)" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="390" y1="112" x2="445" y2="112" stroke="rgba(224,122,58,.2)" stroke-width="1" stroke-linecap="round"/>
-                <line x1="383" y1="88" x2="430" y2="88" stroke="rgba(224,122,58,.15)" stroke-width="1" stroke-linecap="round"/>
-                <!-- label -->
-                <text x="340" y="125" font-family="monospace" font-size="8" fill="rgba(34,197,94,.7)" text-anchor="middle" letter-spacing="1">ENTREGADO</text>
-                <pattern id="d2" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="rgba(255,255,255,.04)"/></pattern>
-                <rect width="560" height="210" fill="url(#d2)"/>
-              </svg>
-              <div class="absolute inset-0 bg-gradient-to-t from-ink-900/75 via-transparent to-transparent"></div>
-              <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5">
+          <article class="glass rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative overflow-hidden bg-[#050505] p-6 flex flex-col justify-center" style="aspect-ratio:16/6;">
+              <!-- 72h CSS Mockup -->
+              <div class="w-full h-full border border-white/10 rounded-xl bg-gradient-to-br from-[#111111] to-[#0a0a0a] flex items-center justify-between px-6 shadow-inner relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,138,66,0.1),transparent_70%)]"></div>
+                
+                <div class="flex flex-col gap-2 z-10">
+                  <div class="w-16 h-3 bg-white/10 rounded-sm"></div>
+                  <div class="w-24 h-4 bg-white/20 rounded-sm mb-2"></div>
+                  <div class="w-10 h-8 rounded-full bg-amber-glow/20 border border-amber-glow/40 flex items-center justify-center">
+                    <div class="w-4 h-4 rounded-full bg-amber-glow animate-pulse"></div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-end gap-2 z-10">
+                  <div class="text-3xl font-display text-white tracking-tighter">72<span class="text-amber-glow text-xl">H</span></div>
+                  <div class="w-12 h-1.5 bg-green-500/50 rounded-full"></div>
+                </div>
+              </div>
+
+              <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent"></div>
+              <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5 border border-white/10">
                 <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-ping"></span>
                 <span class="font-mono text-[10px] uppercase tracking-wider text-white/80">Entrega 72h</span>
               </div>
             </div>
-            <div class="p-5">
-              <h3 class="font-display text-lg text-white mb-1.5 leading-tight">Tu web lista en tiempo récord</h3>
+            <div class="p-5 border-t border-white/5 bg-[#050505]">
+              <h3 class="font-display text-lg text-white mb-1.5 leading-tight group-hover:text-amber-glow transition-colors">Tu web lista en tiempo récord</h3>
               <p class="text-xs text-mist leading-relaxed">Sitios web profesionales, rápidos y listos para trabajar desde el día uno.</p>
             </div>
           </article>
 
           <!-- Card — portfolio mockups -->
-          <article class="glass card-tilt rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="180">
-            <div class="relative overflow-hidden" style="aspect-ratio:16/6;">
-<div class="w-full h-full flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-ink-800 to-ink-900" style="aspect-ratio:16/6;">
-              <svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                <defs><radialGradient id="gc" cx="50%" cy="50%"><stop offset="0%" stop-color="#0891b2" stop-opacity=".15"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs>
-                <rect width="560" height="210" fill="#0a0e1a"/>
-                <ellipse cx="280" cy="105" rx="200" ry="130" fill="url(#gc)"/>
-                <!-- Mini browser cards -->
-                <!-- Card 1 -->
-                <rect x="40" y="35" width="140" height="100" rx="6" fill="#111827" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-                <rect x="40" y="35" width="140" height="22" rx="6" fill="rgba(224,122,58,.2)"/>
-                <circle cx="55" cy="46" r="4" fill="rgba(255,80,80,.6)"/>
-                <circle cx="68" cy="46" r="4" fill="rgba(224,122,58,.6)"/>
-                <circle cx="81" cy="46" r="4" fill="rgba(34,197,94,.4)"/>
-                <rect x="50" y="66" width="80" height="7" rx="2" fill="rgba(224,122,58,.5)"/>
-                <rect x="50" y="80" width="120" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
-                <rect x="50" y="88" width="100" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
-                <rect x="50" y="96" width="110" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
-                <rect x="50" y="110" width="50" height="15" rx="7" fill="rgba(224,122,58,.3)" stroke="rgba(224,122,58,.5)" stroke-width="1"/>
-                <!-- Card 1 label -->
-                <text x="110" y="148" font-family="monospace" font-size="7" fill="rgba(255,255,255,.35)" text-anchor="middle" letter-spacing=".5">DERECHO</text>
-                <!-- Card 2 -->
-                <rect x="210" y="20" width="140" height="100" rx="6" fill="#111827" stroke="rgba(0,200,255,.2)" stroke-width="1"/>
-                <rect x="210" y="20" width="140" height="22" rx="6" fill="rgba(8,145,178,.2)"/>
-                <circle cx="225" cy="31" r="4" fill="rgba(255,80,80,.5)"/>
-                <circle cx="238" cy="31" r="4" fill="rgba(224,122,58,.5)"/>
-                <circle cx="251" cy="31" r="4" fill="rgba(34,197,94,.35)"/>
-                <rect x="220" y="51" width="70" height="7" rx="2" fill="rgba(8,145,178,.7)"/>
-                <rect x="220" y="65" width="120" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
-                <rect x="220" y="73" width="95" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
-                <rect x="220" y="85" width="40" height="30" rx="5" fill="rgba(8,145,178,.15)" stroke="rgba(8,145,178,.3)" stroke-width="1"/>
-                <text x="240" y="105" font-family="monospace" font-size="7" fill="rgba(8,145,178,.8)" text-anchor="middle">RESERVAR</text>
-                <text x="280" y="133" font-family="monospace" font-size="7" fill="rgba(255,255,255,.35)" text-anchor="middle" letter-spacing=".5">SALUD</text>
-                <!-- Card 3 -->
-                <rect x="380" y="35" width="140" height="100" rx="6" fill="#111827" stroke="rgba(168,85,247,.2)" stroke-width="1"/>
-                <rect x="380" y="35" width="140" height="22" rx="6" fill="rgba(168,85,247,.15)"/>
-                <circle cx="395" cy="46" r="4" fill="rgba(255,80,80,.5)"/>
-                <circle cx="408" cy="46" r="4" fill="rgba(224,122,58,.5)"/>
-                <circle cx="421" cy="46" r="4" fill="rgba(34,197,94,.35)"/>
-                <rect x="390" y="66" width="60" height="7" rx="2" fill="rgba(168,85,247,.6)"/>
-                <rect x="390" y="80" width="130" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
-                <rect x="390" y="88" width="105" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
-                <rect x="390" y="110" width="55" height="15" rx="7" fill="rgba(168,85,247,.25)" stroke="rgba(168,85,247,.45)" stroke-width="1"/>
-                <text x="450" y="148" font-family="monospace" font-size="7" fill="rgba(255,255,255,.35)" text-anchor="middle" letter-spacing=".5">EMPRESA</text>
-                <!-- Connecting dots -->
-                <circle cx="185" cy="85" r="3" fill="rgba(255,255,255,.2)"/>
-                <circle cx="360" cy="75" r="3" fill="rgba(255,255,255,.2)"/>
-                <line x1="180" y1="85" x2="210" y2="75" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="3 3"/>
-                <line x1="350" y1="72" x2="380" y2="68" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="3 3"/>
-                <pattern id="d3" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="rgba(255,255,255,.03)"/></pattern>
-                <rect width="560" height="210" fill="url(#d3)"/>
-              </svg>
-              <div class="absolute inset-0 bg-gradient-to-t from-ink-900/75 via-transparent to-transparent"></div>
-              <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5">
+          <article class="glass rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="180">
+            <div class="relative overflow-hidden bg-[#050505] p-6 flex flex-col justify-center" style="aspect-ratio:16/6;">
+              <!-- Multi-industry CSS Mockup -->
+              <div class="w-full h-full border border-white/10 rounded-xl bg-[#111111] flex gap-3 p-4 shadow-inner relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.1),transparent_70%)]"></div>
+                
+                <!-- Mini Card 1 -->
+                <div class="flex-1 bg-[#1a1a1a] rounded-lg border border-white/5 p-3 flex flex-col gap-2 relative z-10 hover:-translate-y-1 transition-transform">
+                  <div class="w-6 h-6 rounded bg-cyan-500/20 mb-1"></div>
+                  <div class="w-full h-2 bg-white/10 rounded"></div>
+                  <div class="w-2/3 h-2 bg-white/10 rounded"></div>
+                </div>
+                
+                <!-- Mini Card 2 -->
+                <div class="flex-1 bg-[#1a1a1a] rounded-lg border border-white/5 p-3 flex flex-col gap-2 relative z-10 hover:-translate-y-1 transition-transform delay-75">
+                  <div class="w-6 h-6 rounded bg-amber-glow/20 mb-1"></div>
+                  <div class="w-full h-2 bg-white/10 rounded"></div>
+                  <div class="w-3/4 h-2 bg-white/10 rounded"></div>
+                </div>
+
+                <!-- Mini Card 3 -->
+                <div class="flex-1 bg-[#1a1a1a] rounded-lg border border-white/5 p-3 flex flex-col gap-2 relative z-10 hover:-translate-y-1 transition-transform delay-150">
+                  <div class="w-6 h-6 rounded bg-purple-500/20 mb-1"></div>
+                  <div class="w-full h-2 bg-white/10 rounded"></div>
+                  <div class="w-1/2 h-2 bg-white/10 rounded"></div>
+                </div>
+              </div>
+
+              <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent"></div>
+              <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5 border border-white/10">
                 <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
                 <span class="font-mono text-[10px] uppercase tracking-wider text-white/80">Multi-industria</span>
               </div>
             </div>
-            <div class="p-5">
-              <h3 class="font-display text-lg text-white mb-1.5 leading-tight">Soluciones para cada industria</h3>
+            <div class="p-5 border-t border-white/5 bg-[#050505]">
+              <h3 class="font-display text-lg text-white mb-1.5 leading-tight group-hover:text-cyan-400 transition-colors">Soluciones para cada industria</h3>
               <p class="text-xs text-mist leading-relaxed">Finanzas, decoración, real estate, delivery — cada web adaptada al lenguaje de su mercado.</p>
             </div>
           </article>
@@ -1748,42 +1673,53 @@
 
         <!-- Price card -->
         <div class="lg:col-span-5" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative h-full">
-            <!-- Glowing border -->
-            <div class="absolute -inset-px bg-gradient-to-br from-amber-glow/50 via-amber-deep/20 to-transparent rounded-3xl blur-sm"></div>
+          <div class="relative h-full group">
+            <!-- Subtle glow on hover -->
+            <div class="absolute -inset-px bg-gradient-to-br from-amber-glow/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></div>
 
-            <div class="relative glass-strong rounded-3xl p-7 sm:p-9 h-full flex flex-col">
-              <div class="flex items-center justify-between mb-5">
-                <span class="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow px-3 py-1.5 rounded-full border border-amber-glow/30 bg-amber-glow/5">
+            <div class="relative bg-[#050505] border border-white/10 rounded-3xl p-7 sm:p-9 h-full flex flex-col shadow-2xl">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-amber-glow/5 rounded-full blur-[80px] -z-10"></div>
+              
+              <div class="flex items-center justify-between mb-6">
+                <span class="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow px-3 py-1.5 rounded-full border border-amber-glow/20 bg-amber-glow/5">
                   <span class="w-1.5 h-1.5 rounded-full bg-amber-glow animate-shimmer"></span>
-                  Paquete base
+                  Paquete Único
                 </span>
-                <span class="font-mono text-[10px] text-mist">// 01</span>
+                <span class="font-mono text-[10px] text-mist tracking-widest">// 01</span>
               </div>
 
-              <h3 class="font-display text-2xl text-white leading-tight mb-5">Landing estratégica para<br>profesionales y servicios</h3>
+              <h3 class="font-display text-2xl text-white leading-tight mb-5 group-hover:text-amber-glow transition-colors">Landing estratégica para<br>profesionales y servicios</h3>
 
-              <div class="mb-5">
+              <div class="mb-5 pb-5 border-b border-white/5">
                 <div class="flex items-baseline gap-2">
-                  <span class="font-display text-5xl sm:text-6xl font-light gradient-title-warm">$99.990</span>
-                  <span class="text-xs font-mono text-mist">CLP</span>
+                  <span class="font-display text-5xl sm:text-6xl font-medium text-white">$99.990</span>
+                  <span class="text-xs font-mono text-mist uppercase tracking-wider">CLP</span>
                 </div>
-                <span class="text-xs text-mist mt-1 block">Pago único · sin mensualidades ocultas</span>
+                <span class="text-xs text-mist mt-2 block">Pago único · sin mensualidades ocultas</span>
               </div>
 
-              <p class="text-sm text-mist mb-6">Ideal para profesionales independientes que hoy dependen de redes o recomendaciones y necesitan una web que los represente bien.</p>
+              <p class="text-sm text-mist/80 mb-6">Ideal para profesionales independientes que hoy dependen de redes o recomendaciones y necesitan una web que los represente bien.</p>
 
-              <ul class="space-y-2.5 mb-7 flex-grow">
-                <li class="flex items-center gap-2.5 text-sm text-white/85"><span class="text-amber-glow">◆</span> Todo listo para publicar</li>
-                <li class="flex items-center gap-2.5 text-sm text-white/85"><span class="text-amber-glow">◆</span> Sin complicaciones técnicas</li>
-                <li class="flex items-center gap-2.5 text-sm text-white/85"><span class="text-amber-glow">◆</span> Contacto directo desde el primer día</li>
+              <ul class="space-y-3 mb-8 flex-grow">
+                <li class="flex items-center gap-3 text-sm text-white/90">
+                  <svg class="w-4 h-4 text-amber-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  Todo listo para publicar
+                </li>
+                <li class="flex items-center gap-3 text-sm text-white/90">
+                  <svg class="w-4 h-4 text-amber-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  Sin complicaciones técnicas
+                </li>
+                <li class="flex items-center gap-3 text-sm text-white/90">
+                  <svg class="w-4 h-4 text-amber-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  Contacto directo desde el primer día
+                </li>
               </ul>
 
-              <a href="#contacto" class="btn-primary w-full js-cta-track" data-cta="pricing_card">
+              <a href="#contacto" class="btn-primary w-full js-cta-track justify-center" data-cta="pricing_card">
                 Quiero mi web en 72 horas
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
-              <small class="block text-center text-xs text-mist mt-3">El plazo corre desde que recibimos la información completa del proyecto.</small>
+              <small class="block text-center text-[10px] text-mist/60 mt-4 uppercase tracking-wider">El plazo corre desde que recibimos la información.</small>
             </div>
           </div>
         </div>
@@ -1868,54 +1804,51 @@
         <div class="testimonial-slides" id="testimonialSlides">
 
           <div class="testimonial-slide px-2 sm:px-8">
-            <figure class="text-center py-4">
-              <div class="inline-block font-display text-6xl leading-none text-[#ff8a42]/25 mb-1 select-none">“</div>
-              <blockquote class="font-display text-xl sm:text-2xl lg:text-[1.75rem] font-light leading-[1.38] text-white/95 max-w-3xl mx-auto tracking-tight">
-                Necesitábamos algo que representara bien nuestro trabajo en obra.
-                <span class="italic text-[#ff8a42]"> La web quedó exactamente como la imaginábamos</span>
-                — profesional, clara y sin relleno. El proceso fue sorprendentemente rápido y sin vueltas.
+            <figure class="text-center py-4 relative">
+              <blockquote class="font-display text-xl sm:text-2xl lg:text-3xl font-light leading-[1.4] text-white max-w-3xl mx-auto tracking-tight">
+                "Necesitábamos algo que representara bien nuestro trabajo en obra.
+                <span class="text-amber-glow font-normal">La web quedó exactamente como la imaginábamos</span>
+                — profesional, clara y sin relleno. El proceso fue sorprendentemente rápido y sin vueltas."
               </blockquote>
-              <figcaption class="mt-7 flex items-center justify-center gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#ff8a42] to-[#c96a2c] grid place-items-center text-white font-display font-semibold text-base flex-shrink-0">S</div>
+              <figcaption class="mt-8 flex items-center justify-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">S</div>
                 <div class="text-left">
-                  <div class="text-white font-medium text-sm">Sebastián M.</div>
-                  <div class="text-[11px] text-mist font-mono uppercase tracking-wider">SMS · Constructora </div>
+                  <div class="text-white text-sm font-medium">Sebastián M.</div>
+                  <div class="text-[10px] text-mist/60 font-mono uppercase tracking-widest">SMS · Constructora</div>
                 </div>
               </figcaption>
             </figure>
           </div>
 
           <div class="testimonial-slide px-2 sm:px-8">
-            <figure class="text-center py-4">
-              <div class="inline-block font-display text-6xl leading-none text-[#ff8a42]/25 mb-1 select-none">“</div>
-              <blockquote class="font-display text-xl sm:text-2xl lg:text-[1.75rem] font-light leading-[1.38] text-white/95 max-w-3xl mx-auto tracking-tight">
-                En nuestra industria la primera impresión importa cuando mandas un presupuesto.
-                <span class="italic text-[#ff8a42]"> Desde que tenemos la web los clientes llegan mucho más convencidos</span>
-                — y cerrar proyectos se hizo bastante más fácil.
+            <figure class="text-center py-4 relative">
+              <blockquote class="font-display text-xl sm:text-2xl lg:text-3xl font-light leading-[1.4] text-white max-w-3xl mx-auto tracking-tight">
+                "En nuestra industria la primera impresión importa cuando mandas un presupuesto.
+                <span class="text-cyan-400 font-normal">Desde que tenemos la web los clientes llegan mucho más convencidos</span>
+                — y cerrar proyectos se hizo bastante más fácil."
               </blockquote>
-              <figcaption class="mt-7 flex items-center justify-center gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-700 grid place-items-center text-white font-display font-semibold text-base flex-shrink-0">R</div>
+              <figcaption class="mt-8 flex items-center justify-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">R</div>
                 <div class="text-left">
-                  <div class="text-white font-medium text-sm">Ricardo V.</div>
-                  <div class="text-[11px] text-mist font-mono uppercase tracking-wider">Video Inspección ·  Mantenimiento </div>
+                  <div class="text-white text-sm font-medium">Ricardo V.</div>
+                  <div class="text-[10px] text-mist/60 font-mono uppercase tracking-widest">Video Inspección</div>
                 </div>
               </figcaption>
             </figure>
           </div>
 
           <div class="testimonial-slide px-2 sm:px-8">
-            <figure class="text-center py-4">
-              <div class="inline-block font-display text-6xl leading-none text-[#ff8a42]/25 mb-1 select-none">“</div>
-              <blockquote class="font-display text-xl sm:text-2xl lg:text-[1.75rem] font-light leading-[1.38] text-white/95 max-w-3xl mx-auto tracking-tight">
-                Somos una marca chica pero queríamos una web que se viera de verdad bonita y transmitiera lo que somos.
-                <span class="italic text-[#ff8a42]"> Digitaliza Lab entendió el estilo de Svara al tiro</span>
-                — quedamos encantadas con el resultado.
+            <figure class="text-center py-4 relative">
+              <blockquote class="font-display text-xl sm:text-2xl lg:text-3xl font-light leading-[1.4] text-white max-w-3xl mx-auto tracking-tight">
+                "Somos una marca chica pero queríamos una web que se viera de verdad bonita y transmitiera lo que somos.
+                <span class="text-purple-400 font-normal">Digitaliza Lab entendió el estilo de Svara al tiro</span>
+                — quedamos encantadas con el resultado."
               </blockquote>
-              <figcaption class="mt-7 flex items-center justify-center gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-violet-500 to-violet-700 grid place-items-center text-white font-display font-semibold text-base flex-shrink-0">A</div>
+              <figcaption class="mt-8 flex items-center justify-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">A</div>
                 <div class="text-left">
-                  <div class="text-white font-medium text-sm">Antonia S.</div>
-                  <div class="text-[11px] text-mist font-mono uppercase tracking-wider">Svara · Tienda de Velas</div>
+                  <div class="text-white text-sm font-medium">Antonia S.</div>
+                  <div class="text-[10px] text-mist/60 font-mono uppercase tracking-widest">Svara · Tienda de Velas</div>
                 </div>
               </figcaption>
             </figure>
@@ -1923,41 +1856,38 @@
 
         </div>
 
-        <div class="flex justify-center gap-2.5 mt-8" id="testimonialDots">
-          <button class="testimonial-dot active" data-index="0" aria-label="Testimonio 1"></button>
-          <button class="testimonial-dot" data-index="1" aria-label="Testimonio 2"></button>
-          <button class="testimonial-dot" data-index="2" aria-label="Testimonio 3"></button>
+        <div class="flex justify-center gap-3 mt-10" id="testimonialDots">
+          <button class="w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-colors active:bg-amber-glow testimonial-dot active" data-index="0" aria-label="Testimonio 1"></button>
+          <button class="w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-colors active:bg-amber-glow testimonial-dot" data-index="1" aria-label="Testimonio 2"></button>
+          <button class="w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-colors active:bg-amber-glow testimonial-dot" data-index="2" aria-label="Testimonio 3"></button>
         </div>
       </div>
 
     </div>
 
     <!-- MARCAS -->
-    <div class="mt-20 sm:mt-24">
-      <div class="text-center mb-8 max-w-5xl mx-auto px-4 sm:px-6" data-aos="fade-up">
-        <span class="inline-block font-mono text-[10px] uppercase tracking-[0.22em] text-mist/60">— Marcas que ya trabajan con nosotros</span>
+    <div class="mt-24 sm:mt-32">
+      <div class="text-center mb-10 max-w-5xl mx-auto px-4 sm:px-6" data-aos="fade-up">
+        <span class="inline-block font-mono text-[10px] uppercase tracking-[0.22em] text-mist/40">— Marcas que confían</span>
       </div>
 
       <div class="overflow-hidden relative" data-aos="fade-up">
-        <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-ink-900 to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-ink-900 to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#000000] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#000000] to-transparent z-10 pointer-events-none"></div>
 
-        <div class="brands-track py-2">
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">SMS</span><span class="brand-pill-type">Contructora</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Video inspección</span><span class="brand-pill-type">Mantenciones</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Svara</span><span class="brand-pill-type">Tienda de Velas</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">CrissM</span><span class="brand-pill-type">Fotografía</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Elite Law Firm</span><span class="brand-pill-type">Estudio Jurídico</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Peluca de Carla</span><span class="brand-pill-type">Peluquería</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Cañabas La Lela</span><span class="brand-pill-type">Turismo</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">SMS</span><span class="brand-pill-type">Contructora</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Video inspección</span><span class="brand-pill-type">Mantenciones</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Svara</span><span class="brand-pill-type">Tienda de Velas</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">CrissM</span><span class="brand-pill-type">Fotografía</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Elite Law Firm</span><span class="brand-pill-type">Estudio Jurídico</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Peluca de Carla</span><span class="brand-pill-type">Peluquería</span></div>
-          <div class="brand-pill"><span class="brand-pill-dot"></span><span class="brand-pill-name">Cañabas La Lela</span><span class="brand-pill-type">Turismo</span></div>
+        <div class="brands-track py-4 opacity-70">
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/50 ml-1">Constructora</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Video Inspección</span> <span class="text-xs text-mist/50 ml-1">Mantenciones</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Svara</span> <span class="text-xs text-mist/50 ml-1">Tienda de Velas</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">CrissM</span> <span class="text-xs text-mist/50 ml-1">Fotografía</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Elite Law Firm</span> <span class="text-xs text-mist/50 ml-1">Estudio Jurídico</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Peluca de Carla</span> <span class="text-xs text-mist/50 ml-1">Peluquería</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Cabañas La Lela</span> <span class="text-xs text-mist/50 ml-1">Turismo</span></div>
+          <!-- Duplicated for marquee -->
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/50 ml-1">Constructora</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Video Inspección</span> <span class="text-xs text-mist/50 ml-1">Mantenciones</span></div>
         </div>
+
       </div>
     </div>
 
@@ -1985,38 +1915,61 @@
         <p class="mt-5 text-base text-mist">Te pedimos solo lo necesario. Nosotros organizamos, diseñamos y publicamos — sin que tengas que aprender nada técnico en el camino.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-5 relative">
+      <div class="grid md:grid-cols-3 gap-5 relative mt-8">
 
         <!-- Connection line (desktop) -->
-        <div class="hidden md:block absolute top-[5.5rem] left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-transparent via-amber-glow/30 to-transparent"></div>
+        <div class="hidden md:block absolute top-10 left-[16.66%] right-[16.66%] h-px bg-white/5">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-amber-glow to-transparent opacity-50 w-full h-full" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);"></div>
+        </div>
 
-        <article class="relative glass card-tilt p-7 overflow-hidden group" data-aos="fade-up">
-          <div class="step-numeral mb-3">01</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Brief & onboarding</span>
-          <h3 class="font-display text-2xl text-white mb-3 leading-tight">Reunimos lo esencial</h3>
-          <p class="text-sm text-mist leading-relaxed">Información clave de tu práctica: servicios, tono, diferencial y datos de contacto. Toma menos de lo que parece.</p>
-          <div class="absolute top-6 right-6 opacity-20 group-hover:opacity-50 transition-opacity">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-aos="fade-up">
+          <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6 relative z-10 group-hover:border-amber-glow/30 transition-colors">
+            <div class="absolute inset-0 rounded-full bg-amber-glow/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            01
+          </div>
+          
+          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3 relative z-10">Brief & onboarding</span>
+          <h3 class="font-display text-2xl text-white mb-3 leading-tight relative z-10">Reunimos lo esencial</h3>
+          <p class="text-sm text-mist/80 leading-relaxed relative z-10">Información clave de tu práctica: servicios, tono, diferencial y datos de contacto. Toma menos de lo que parece.</p>
+          
+          <div class="absolute bottom-0 right-0 p-6 opacity-10 group-hover:opacity-30 group-hover:text-amber-glow transition-all translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           </div>
         </article>
 
-        <article class="relative glass card-tilt p-7 overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-          <div class="step-numeral mb-3">02</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Diseño & desarrollo</span>
-          <h3 class="font-display text-2xl text-white mb-3 leading-tight">Construimos con foco</h3>
-          <p class="text-sm text-mist leading-relaxed">Landing con estructura clara, diseño limpio y una experiencia pensada para que el visitante dé el siguiente paso.</p>
-          <div class="absolute top-6 right-6 opacity-20 group-hover:opacity-50 transition-opacity">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-aos="fade-up" data-aos-delay="100">
+          <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6 relative z-10 group-hover:border-amber-glow/30 transition-colors">
+            <div class="absolute inset-0 rounded-full bg-amber-glow/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            02
+          </div>
+
+          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3 relative z-10">Diseño & desarrollo</span>
+          <h3 class="font-display text-2xl text-white mb-3 leading-tight relative z-10">Construimos con foco</h3>
+          <p class="text-sm text-mist/80 leading-relaxed relative z-10">Landing con estructura clara, diseño limpio y una experiencia pensada para que el visitante dé el siguiente paso.</p>
+          
+          <div class="absolute bottom-0 right-0 p-6 opacity-10 group-hover:opacity-30 group-hover:text-amber-glow transition-all translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
         </article>
 
-        <article class="relative glass card-tilt p-7 overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-          <div class="step-numeral mb-3">03</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Publicación & ajustes</span>
-          <h3 class="font-display text-2xl text-white mb-3 leading-tight">Lanzamos al aire</h3>
-          <p class="text-sm text-mist leading-relaxed">Publicamos la web y dejamos una ronda de revisión final para que quede exactamente como la necesitas.</p>
-          <div class="absolute top-6 right-6 opacity-20 group-hover:opacity-50 transition-opacity">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-aos="fade-up" data-aos-delay="200">
+          <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6 relative z-10 group-hover:border-amber-glow/30 transition-colors">
+            <div class="absolute inset-0 rounded-full bg-amber-glow/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            03
+          </div>
+
+          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3 relative z-10">Publicación & ajustes</span>
+          <h3 class="font-display text-2xl text-white mb-3 leading-tight relative z-10">Lanzamos al aire</h3>
+          <p class="text-sm text-mist/80 leading-relaxed relative z-10">Publicamos la web y dejamos una ronda de revisión final para que quede exactamente como la necesitas.</p>
+          
+          <div class="absolute bottom-0 right-0 p-6 opacity-10 group-hover:opacity-30 group-hover:text-amber-glow transition-all translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
         </article>
       </div>
@@ -2027,7 +1980,7 @@
        FAQ
   ============================================ -->
   <section id="faq" class="relative py-24 sm:py-32 section-light">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
 
       <div class="text-center mb-12" data-aos="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Preguntas frecuentes</span>
@@ -2037,56 +1990,56 @@
         </h2>
       </div>
 
-      <div class="glass rounded-3xl p-2 sm:p-4" data-aos="fade-up">
+      <div class="bg-[#050505] border border-white/5 rounded-3xl p-2 sm:p-4 shadow-2xl" data-aos="fade-up">
 
-        <details open class="group px-4 sm:px-6 py-2">
-          <summary class="flex items-center justify-between gap-4 py-5">
-            <h3 class="accordion-title font-display text-lg sm:text-xl text-white transition-colors">¿Qué incluye el paquete de $99.990?</h3>
-            <span class="accordion-icon w-8 h-8 rounded-full border border-amber-glow/30 bg-amber-glow/5 grid place-items-center flex-shrink-0">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+        <details open class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
+            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Qué incluye el paquete de $99.990?</h3>
+            <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
+              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div><p class="text-mist text-sm sm:text-base leading-relaxed">Incluye una landing page de una sola página, diseño profesional, estructura de textos orientada a consultas, formulario de contacto, SEO técnico básico, dominio, hosting, SSL y correo corporativo por 1 año.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Incluye una landing page de una sola página, diseño profesional, estructura de textos orientada a consultas, formulario de contacto, SEO técnico básico, dominio, hosting, SSL y correo corporativo por 1 año.</p></div>
         </details>
 
-        <details class="group px-4 sm:px-6 py-2">
-          <summary class="flex items-center justify-between gap-4 py-5">
-            <h3 class="accordion-title font-display text-lg sm:text-xl text-white transition-colors">¿Cuándo comienza el plazo de entrega?</h3>
-            <span class="accordion-icon w-8 h-8 rounded-full border border-amber-glow/30 bg-amber-glow/5 grid place-items-center flex-shrink-0">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+        <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
+            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Cuándo comienza el plazo de entrega?</h3>
+            <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
+              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div><p class="text-mist text-sm sm:text-base leading-relaxed">El plazo de 72 horas hábiles comienza cuando recibimos el onboarding completo: información del servicio, textos base, accesos y archivos necesarios para construir la página.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">El plazo de 72 horas hábiles comienza cuando recibimos el onboarding completo: información del servicio, textos base, accesos y archivos necesarios para construir la página.</p></div>
         </details>
 
-        <details class="group px-4 sm:px-6 py-2">
-          <summary class="flex items-center justify-between gap-4 py-5">
-            <h3 class="accordion-title font-display text-lg sm:text-xl text-white transition-colors">¿Funciona para cualquier tipo de profesional?</h3>
-            <span class="accordion-icon w-8 h-8 rounded-full border border-amber-glow/30 bg-amber-glow/5 grid place-items-center flex-shrink-0">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+        <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
+            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Funciona para cualquier tipo de profesional?</h3>
+            <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
+              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div><p class="text-mist text-sm sm:text-base leading-relaxed">Funciona mejor para profesionales independientes y negocios de servicios que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. No es el formato correcto para ecommerce o desarrollos más complejos.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Funciona mejor para profesionales independientes y negocios de servicios que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. No es el formato correcto para ecommerce o desarrollos más complejos.</p></div>
         </details>
 
-        <details class="group px-4 sm:px-6 py-2">
-          <summary class="flex items-center justify-between gap-4 py-5">
-            <h3 class="accordion-title font-display text-lg sm:text-xl text-white transition-colors">¿Qué pasa cuando termina el primer año?</h3>
-            <span class="accordion-icon w-8 h-8 rounded-full border border-amber-glow/30 bg-amber-glow/5 grid place-items-center flex-shrink-0">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+        <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
+            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Qué pasa cuando termina el primer año?</h3>
+            <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
+              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div><p class="text-mist text-sm sm:text-base leading-relaxed">Te avisamos con anticipación antes del vencimiento. <strong class="text-white/90">La renovación del hosting y dominio tiene un valor de $50.000 anual</strong>, para que tu web siga activa sin interrupciones. También puedes transferir el dominio si así lo decides.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Te avisamos con anticipación antes del vencimiento. <strong class="text-white">La renovación del hosting y dominio tiene un valor de $50.000 anual</strong>, para que tu web siga activa sin interrupciones. También puedes transferir el dominio si así lo decides.</p></div>
         </details>
 
-        <details class="group px-4 sm:px-6 py-2">
-          <summary class="flex items-center justify-between gap-4 py-5">
-            <h3 class="accordion-title font-display text-lg sm:text-xl text-white transition-colors">¿Puedo ver trabajos anteriores antes de contratar?</h3>
-            <span class="accordion-icon w-8 h-8 rounded-full border border-amber-glow/30 bg-amber-glow/5 grid place-items-center flex-shrink-0">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+        <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
+            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Puedo ver trabajos anteriores antes de contratar?</h3>
+            <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
+              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div><p class="text-mist text-sm sm:text-base leading-relaxed">Sí. Puedes revisar casos publicados y referencias visuales en nuestro <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" class="text-amber-glow hover:underline">Instagram @digitaliza_lab</a>. Allí puedes ver el estilo, el nivel de detalle y el tipo de proyectos con los que trabajamos.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Sí. Puedes revisar casos publicados y referencias visuales en nuestro <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" class="text-amber-glow hover:underline">Instagram @digitaliza_lab</a>. Allí puedes ver el estilo, el nivel de detalle y el tipo de proyectos con los que trabajamos.</p></div>
         </details>
 
       </div>
@@ -2155,9 +2108,11 @@
         </div>
 
         <div class="lg:col-span-7" data-aos="fade-left">
-          <div class="relative">
-            <div class="absolute -inset-px bg-gradient-to-br from-amber-glow/40 via-transparent to-cyan-500/20 rounded-3xl blur-sm"></div>
-            <div class="relative glass-strong rounded-3xl p-7 sm:p-10">
+          <div class="relative group">
+            <div class="absolute -inset-px bg-gradient-to-br from-amber-glow/20 via-transparent to-cyan-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-md"></div>
+            <div class="relative bg-[#050505] border border-white/10 rounded-3xl p-7 sm:p-10 shadow-2xl">
+
+              <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-[80px] -z-10"></div>
 
               <div class="flex items-center justify-between mb-6">
                 <div>
@@ -2171,39 +2126,39 @@
                 </div>
               </div>
 
-              <p class="text-sm text-mist mb-6">Te contactamos en menos de 24 horas hábiles con una propuesta clara.</p>
+              <p class="text-sm text-mist/80 mb-6 border-b border-white/5 pb-6">Te contactamos en menos de 24 horas hábiles con una propuesta clara.</p>
 
-              <form id="whatsappForm" novalidate class="space-y-4">
+              <form id="whatsappForm" novalidate class="space-y-5">
 
-                <div class="grid sm:grid-cols-2 gap-4">
-                  <div>
+                <div class="grid sm:grid-cols-2 gap-5">
+                  <div class="relative">
                     <label for="nombreCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Nombre</label>
-                    <input type="text" id="nombreCliente" class="field" placeholder="Carolina Reyes" required autocomplete="name">
+                    <input type="text" id="nombreCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="Carolina Reyes" required autocomplete="name">
                   </div>
-                  <div>
+                  <div class="relative">
                     <label for="rubroCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Profesión o rubro</label>
-                    <input type="text" id="rubroCliente" class="field" placeholder="Abogada, médico, coach..." required>
+                    <input type="text" id="rubroCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="Abogada, médico, coach..." required>
                   </div>
                 </div>
 
-                <div>
+                <div class="relative">
                   <label for="contactoCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Correo o WhatsApp</label>
-                  <input type="text" id="contactoCliente" class="field" placeholder="correo@dominio.com o +56 9 1234 5678" required>
+                  <input type="text" id="contactoCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="correo@dominio.com o +56 9 1234 5678" required>
                 </div>
 
-                <div>
+                <div class="relative">
                   <label for="mensajeCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Mensaje <span class="opacity-50">(opcional)</span></label>
-                  <textarea id="mensajeCliente" rows="3" class="field resize-none" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
+                  <textarea id="mensajeCliente" rows="3" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all resize-none" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-primary w-full py-4 mt-2">
+                <button type="submit" class="btn-primary w-full py-4 mt-2 justify-center shadow-[0_0_20px_rgba(255,138,66,0.15)] hover:shadow-[0_0_30px_rgba(255,138,66,0.3)] transition-all">
                   Enviar solicitud
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </button>
 
-                <div class="text-center pt-2">
-                  <span class="text-xs text-mist">o si prefieres, </span>
-                  <a class="js-wa-link inline-flex items-center gap-1 text-xs text-amber-glow hover:underline font-medium" data-source="form_alt"
+                <div class="text-center pt-3 border-t border-white/5 mt-5">
+                  <span class="text-xs text-mist/60">o si prefieres, </span>
+                  <a class="js-wa-link inline-flex items-center gap-1 text-xs text-amber-glow hover:text-white transition-colors font-medium" data-source="form_alt"
                      href="#"
                      data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">
                     escríbenos por WhatsApp →
@@ -2223,7 +2178,7 @@
   <!-- ============================================
        FOOTER
   ============================================ -->
-  <footer class="relative border-t border-white/5 bg-ink-950/60 pt-16 pb-8">
+  <footer class="relative border-t border-white/5 bg-[#000000] pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid md:grid-cols-12 gap-8 mb-12">
 
