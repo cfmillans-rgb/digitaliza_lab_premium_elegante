@@ -170,8 +170,17 @@
       --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
       --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     }
-    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    html, body { background: #000000; color: #e5e7eb; font-family: 'Inter', system-ui, sans-serif; }
+    * { 
+      -webkit-font-smoothing: antialiased; 
+      -moz-osx-font-smoothing: grayscale; 
+      -webkit-tap-highlight-color: transparent;
+    }
+    html, body { 
+      background: #000000; 
+      color: #e5e7eb; 
+      font-family: 'Inter', system-ui, sans-serif; 
+      overflow-x: hidden; 
+    }
 
     /* === Fallback: si AOS tarda en cargar, los elementos se muestran igual === */
     html:not(.aos-ready) [data-aos] {
@@ -1004,7 +1013,8 @@
   <!-- ============================================
        NAVBAR
   ============================================ -->
-  <nav id="mainNav" class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-500 rounded-full border border-white/10 bg-[#0a0a0a]/60 backdrop-blur-lg shadow-lg">
+  <div class="sticky top-4 z-50 flex justify-center w-full pointer-events-none">
+    <nav id="mainNav" class="pointer-events-auto w-[95%] max-w-5xl transition-all duration-500 rounded-full border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl shadow-[0_8px_32px_-12px_rgba(0,0,0,0.5)]">
     <div class="px-5 py-3 flex items-center justify-between">
 
       <a href="#inicio" class="flex items-center gap-2 group" aria-label="Ir al inicio de Digitaliza Lab">
@@ -1032,8 +1042,8 @@
         <a href="#contacto" class="hidden sm:inline-flex items-center justify-center rounded-full bg-white text-black font-medium text-xs px-5 py-2.5 transition-transform hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_20px_rgba(255,255,255,0.3)]" data-cta="nav_primary">
           Cotizar proyecto
         </a>
-        <button id="menuToggle" class="lg:hidden w-10 h-10 grid place-items-center rounded-full border border-white/10 text-white hover:bg-white/5 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <button id="menuToggle" class="lg:hidden w-12 h-12 grid place-items-center rounded-full border border-white/10 text-white hover:bg-white/5 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
     </div>
@@ -1051,7 +1061,8 @@
         <li class="pt-3 border-t border-white/10"><a href="#contacto" class="block text-center rounded-xl bg-white text-black py-3 js-cta-track" data-cta="mobile_menu">Cotizar proyecto</a></li>
       </ul>
     </div>
-  </nav>
+    </nav>
+  </div>
 
   <!-- ============================================
        HERO
@@ -1072,9 +1083,9 @@
             <span class="font-mono uppercase tracking-[0.15em] text-[10px] sm:text-[11px]">Profesionales en Chile confían en nosotros</span>
           </div>
 
-          <h1 class="font-display tracking-tighter leading-[1.0] sm:leading-[0.97] lg:leading-[0.95] text-[2.5rem] sm:text-5xl lg:text-[5.5rem] font-medium">
+          <h1 class="font-display tracking-tighter leading-[1.05] sm:leading-[0.97] lg:leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-medium">
             <span class="gradient-title block pb-2">Landing pages</span>
-            <span class="font-light text-white/95">diseñadas </span><span class="gradient-title-warm font-semibold">para convertir</span>
+            <span class="font-light text-white/95">diseñadas </span><br class="block sm:hidden"><span class="gradient-title-warm font-semibold">para convertir</span>
           </h1>
 
           <p class="mt-6 text-base sm:text-lg text-mist max-w-xl leading-relaxed">
@@ -1273,7 +1284,7 @@
        PORTAFOLIO · GALERÍA DE TRABAJOS
        (Nueva sección — debajo de la propuesta de valor)
   ============================================ -->
-  <section id="portafolio" class="relative py-24 sm:py-32 overflow-hidden">
+  <section id="portafolio" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
     <!-- Accent background -->
     <div class="absolute inset-0 -z-10">
       <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-amber-glow/8 blur-[130px] rounded-full"></div>
@@ -1451,7 +1462,7 @@
   <!-- ============================================
        BENEFICIOS
   ============================================ -->
-  <section id="beneficios" class="relative py-24 sm:py-32 section-light">
+  <section id="beneficios" class="relative py-16 sm:py-24 lg:py-32 section-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
       <!-- Section header -->
@@ -1465,7 +1476,7 @@
       </div>
 
       <!-- Cards -->
-      <div class="grid md:grid-cols-3 gap-5">
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
 
         <article class="glass card-tilt p-7 group relative overflow-hidden" data-aos="fade-up">
           <div class="absolute top-0 right-0 w-32 h-32 bg-[#ff8a42]/5 blur-3xl group-hover:bg-[#ff8a42]/20 transition-all duration-700"></div>
@@ -1513,7 +1524,7 @@
   <!-- ============================================
        QUÉ INCLUYE · SHOWCASE
   ============================================ -->
-  <section id="incluye" class="relative py-24 sm:py-32 overflow-hidden">
+  <section id="incluye" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
     <!-- Section background accent -->
     <div class="absolute inset-0 -z-10">
       <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-glow/10 blur-[120px] rounded-full"></div>
@@ -1730,7 +1741,7 @@
   <!-- ============================================
        PARA QUIÉN ES
   ============================================ -->
-  <section id="ideal" class="relative py-24 sm:py-32 section-light">
+  <section id="ideal" class="relative py-16 sm:py-24 lg:py-32 section-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
       <div class="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
@@ -1742,7 +1753,7 @@
         <p class="mt-5 text-base text-mist">Si ofreces un servicio de calidad pero tu presencia digital todavía no lo refleja, este formato está diseñado para ti.</p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-5">
+      <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
 
         <div class="glass card-tilt p-7 sm:p-9 relative overflow-hidden" data-aos="fade-right">
           <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-amber-glow/15 grid place-items-center">
@@ -1783,7 +1794,7 @@
   <!-- ============================================
        SOCIAL PROOF: TESTIMONIOS + MARCAS
   ============================================ -->
-  <section aria-label="Testimonios y clientes" class="relative py-20 sm:py-28 overflow-hidden">
+  <section aria-label="Testimonios y clientes" class="relative py-14 sm:py-20 lg:py-28 overflow-hidden">
 
     <div class="absolute inset-0 -z-10">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#e07a3a]/07 blur-[140px] rounded-full"></div>
@@ -1899,7 +1910,7 @@
   <!-- ============================================
        PROCESO
   ============================================ -->
-  <section id="proceso" class="relative py-24 sm:py-32 section-light overflow-hidden">
+  <section id="proceso" class="relative py-16 sm:py-24 lg:py-32 section-light overflow-hidden">
     <div class="absolute inset-0 -z-10">
       <div class="absolute top-1/2 right-0 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full"></div>
     </div>
@@ -1915,7 +1926,7 @@
         <p class="mt-5 text-base text-mist">Te pedimos solo lo necesario. Nosotros organizamos, diseñamos y publicamos — sin que tengas que aprender nada técnico en el camino.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-5 relative mt-8">
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 relative mt-8">
 
         <!-- Connection line (desktop) -->
         <div class="hidden md:block absolute top-10 left-[16.66%] right-[16.66%] h-px bg-white/5">
@@ -1993,8 +2004,8 @@
       <div class="bg-[#050505] border border-white/5 rounded-3xl p-2 sm:p-4 shadow-2xl" data-aos="fade-up">
 
         <details open class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
-          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
-            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Qué incluye el paquete de $99.990?</h3>
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Qué incluye el paquete de $99.990?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
@@ -2003,8 +2014,8 @@
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
-          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
-            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Cuándo comienza el plazo de entrega?</h3>
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Cuándo comienza el plazo de entrega?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
@@ -2013,8 +2024,8 @@
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
-          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
-            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Funciona para cualquier tipo de profesional?</h3>
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Funciona para cualquier tipo de profesional?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
@@ -2023,8 +2034,8 @@
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
-          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
-            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Qué pasa cuando termina el primer año?</h3>
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Qué pasa cuando termina el primer año?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
@@ -2033,8 +2044,8 @@
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
-          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none">
-            <h3 class="font-display text-lg sm:text-xl text-white group-hover:text-amber-glow transition-colors">¿Puedo ver trabajos anteriores antes de contratar?</h3>
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Puedo ver trabajos anteriores antes de contratar?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
@@ -2132,23 +2143,23 @@
 
                 <div class="grid sm:grid-cols-2 gap-5">
                   <div class="relative">
-                    <label for="nombreCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Nombre</label>
-                    <input type="text" id="nombreCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="Carolina Reyes" required autocomplete="name">
+                      <label for="nombreCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Nombre</label>
+                    <input type="text" id="nombreCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="Carolina Reyes" required autocomplete="name">
                   </div>
                   <div class="relative">
                     <label for="rubroCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Profesión o rubro</label>
-                    <input type="text" id="rubroCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="Abogada, médico, coach..." required>
+                    <input type="text" id="rubroCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="Abogada, médico, coach..." required>
                   </div>
                 </div>
 
                 <div class="relative">
                   <label for="contactoCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Correo o WhatsApp</label>
-                  <input type="text" id="contactoCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="correo@dominio.com o +56 9 1234 5678" required>
+                  <input type="text" id="contactoCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="correo@dominio.com o +56 9 1234 5678" required>
                 </div>
 
                 <div class="relative">
                   <label for="mensajeCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Mensaje <span class="opacity-50">(opcional)</span></label>
-                  <textarea id="mensajeCliente" rows="3" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all resize-none" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
+                  <textarea id="mensajeCliente" rows="3" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all resize-none" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary w-full py-4 mt-2 justify-center shadow-[0_0_20px_rgba(255,138,66,0.15)] hover:shadow-[0_0_30px_rgba(255,138,66,0.3)] transition-all">
