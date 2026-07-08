@@ -3,6 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76SK4B9GS2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'granted',
+      'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-76SK4B9GS2', { anonymize_ip: true, cookie_flags: 'SameSite=None;Secure', send_page_view: true });
+  </script>
   <!-- ================== SEO PRIMARIO ================== -->
   <title>Blog de Diseño Web y SEO Local | Digitaliza Lab</title>
   <meta name="description" content="Guías completas sobre diseño de landing pages, SEO local para profesionales en Chile y estrategias digitales. Digitaliza Lab, agencia en Santiago.">
@@ -89,25 +104,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'ink':        { 950:'#07080a', 900:'#0a0e1a', 800:'#0e1320', 700:'#141b2d' },
-            'amber-glow': '#ff8a42',
-            'mist':       '#8a95a3',
-          },
-          fontFamily: {
-            display: ['"Fraunces"','serif'],
-            sans:    ['"DM Sans"','sans-serif'],
-            mono:    ['"JetBrains Mono"','monospace'],
-          },
-        }
-      }
-    }
-  </script>
+  <!-- ================== COMPILED CSS ================== -->
+  <link rel="preload" href="assets/css/blog-styles.min.css" as="style">
+  <link rel="stylesheet" href="assets/css/blog-styles.min.css">
   <style>
     :root {
       --grain-opacity: 0.035;
@@ -1093,7 +1092,7 @@
 
         <div class="md:col-span-5">
           <a href="#inicio" class="inline-flex items-center gap-2.5 mb-4">
-            <img src="logo.png" alt="Logo Digitaliza Lab" height="44" style="height:44px;width:auto;">
+            <img src="logo.png" alt="Logo Digitaliza Lab" height="44" style="height:44px;width:auto;" loading="lazy" decoding="async">
             <span class="font-display text-xl">Digitaliza<span class="text-amber-glow italic font-medium"> Lab</span></span>
           </a>
           <p class="text-sm text-mist max-w-sm mb-5">Landing pages para profesionales independientes que necesitan una presencia digital seria, clara y coherente con la calidad de su trabajo.</p>
@@ -1157,44 +1156,44 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 700, once: true, offset: 60 });
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 700, once: true, offset: 60 });
 
-    // Nav scroll
-    const nav = document.getElementById('navbar');
-    if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
+      // Nav scroll
+      const nav = document.getElementById('navbar');
+      if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
 
-    // Cursor
-    (function () {
+      // Cursor
       const isFine = window.matchMedia('(pointer: fine)').matches;
-      if (!isFine) return;
-      const dot = document.getElementById('cursor-dot');
-      const ring = document.getElementById('cursor-ring');
-      const halo = document.getElementById('cursor-halo');
-      if (!dot) return;
-      let mx=-500,my=-500,rx=-500,ry=-500,hx=-500,hy=-500;
-      document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; }, {passive:true});
-      document.addEventListener('mouseover', e=>{ if(e.target.closest('a,button')) document.body.classList.add('cursor-hover'); });
-      document.addEventListener('mouseout',  e=>{ if(e.target.closest('a,button')) document.body.classList.remove('cursor-hover'); });
-      const lerp=(a,b,t)=>a+(b-a)*t;
-      (function tick(){
-        dot.style.left=mx+'px'; dot.style.top=my+'px';
-        rx=lerp(rx,mx,.18); ry=lerp(ry,my,.18);
-        ring.style.left=rx+'px'; ring.style.top=ry+'px';
-        hx=lerp(hx,mx,.07); hy=lerp(hy,my,.07);
-        halo.style.left=hx+'px'; halo.style.top=hy+'px';
-        requestAnimationFrame(tick);
-      })();
-    })();
+      if (isFine) {
+        const dot = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+        const halo = document.getElementById('cursor-halo');
+        if (dot) {
+          let mx=-500,my=-500,rx=-500,ry=-500,hx=-500,hy=-500;
+          document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; }, {passive:true});
+          document.addEventListener('mouseover', e=>{ if(e.target.closest('a,button')) document.body.classList.add('cursor-hover'); });
+          document.addEventListener('mouseout',  e=>{ if(e.target.closest('a,button')) document.body.classList.remove('cursor-hover'); });
+          const lerp=(a,b,t)=>a+(b-a)*t;
+          (function tick(){
+            dot.style.left=mx+'px'; dot.style.top=my+'px';
+            rx=lerp(rx,mx,.18); ry=lerp(ry,my,.18);
+            ring.style.left=rx+'px'; ring.style.top=ry+'px';
+            hx=lerp(hx,mx,.07); hy=lerp(hy,my,.07);
+            halo.style.left=hx+'px'; halo.style.top=hy+'px';
+            requestAnimationFrame(tick);
+          })();
+        }
+      }
 
-    // Parallax
-    (function(){
+      // Parallax
       const layers=document.querySelectorAll('[data-hero-layer]');
       window.addEventListener('scroll',()=>{
         layers.forEach(l=>{ l.style.transform='translateY('+(window.scrollY*parseFloat(l.dataset.heroLayer))+'px)'; });
       },{passive:true});
-    })();
+    });
   </script>
 </body>
 </html>

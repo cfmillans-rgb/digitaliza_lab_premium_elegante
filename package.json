@@ -1,0 +1,24 @@
+{
+  "name": "digitaliza_lab_premium_elegante",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.min.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfmillans-rgb/digitaliza_lab_premium_elegante.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cfmillans-rgb/digitaliza_lab_premium_elegante/issues"
+  },
+  "homepage": "https://github.com/cfmillans-rgb/digitaliza_lab_premium_elegante#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.3.2"
+  }
+}
