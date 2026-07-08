@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.min.css --minify"
+    "build": "npx tailwindcss@3.4.17 -c ./tailwind.config.js -i ./src/input.css -o ./assets/css/styles.min.css --minify && npx tailwindcss@3.4.17 -c ./tailwind-blog.config.js -i ./src/input.css -o ./assets/css/blog-styles.min.css --minify"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "url": "https://github.com/cfmillans-rgb/digitaliza_lab_premium_elegante/issues"
   },
   "homepage": "https://github.com/cfmillans-rgb/digitaliza_lab_premium_elegante#readme",
-  "devDependencies": {
-    "tailwindcss": "^4.3.2"
+  "dependencies": {
+    "tailwindcss": "^3.4.17"
   }
 }

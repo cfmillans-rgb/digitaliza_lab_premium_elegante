@@ -136,7 +136,7 @@
       pointer-events: none;
       z-index: 1;
       opacity: var(--grain-opacity);
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
     }
 
     .grid-bg {
@@ -879,6 +879,7 @@
 </head>
 
 <body class="grain overflow-x-hidden antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-amber-glow text-ink-950 font-bold px-4 py-2 rounded-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 focus-visible:ring-white">Saltar al contenido principal</a>
 
   <!-- ============================================
        BACKGROUND LAYERS (fixed, behind everything)
@@ -887,9 +888,9 @@
     <!-- Grid -->
     <div class="absolute inset-0 grid-bg"></div>
     <!-- Gradient mesh orbs -->
-    <div class="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-[#e07a3a]/20 blur-[120px] animate-float-slow"></div>
-    <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-[140px] animate-float-slower"></div>
-    <div class="absolute bottom-0 left-1/3 w-[500px] h-[500px] rounded-full bg-[#ff8a42]/10 blur-[130px] animate-scale-pulse"></div>
+    <div class="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-[#e07a3a]/20 blur-[120px] motion-safe:animate-float-slow"></div>
+    <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-[140px] motion-safe:animate-float-slower"></div>
+    <div class="absolute bottom-0 left-1/3 w-[500px] h-[500px] rounded-full bg-[#ff8a42]/10 blur-[130px] motion-safe:animate-scale-pulse"></div>
   </div>
 
   <!-- ============================================
@@ -902,9 +903,10 @@
   <!-- ============================================
        TOPBAR
   ============================================ -->
+  <header role="banner">
   <div class="topbar relative z-40 bg-ink-950/80 border-b border-white/5 text-xs font-mono text-mist">
     <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-2">
-      <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-glow animate-shimmer"></span>
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
       <span>Dominio + Hosting + SSL + Correo corporativo incluidos por 1 año</span>
     </div>
   </div>
@@ -942,7 +944,7 @@
           Cotizar proyecto
         </a>
         <button id="menuToggle" class="lg:hidden w-12 h-12 grid place-items-center rounded-full border border-white/10 text-white hover:bg-white/5 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
     </div>
@@ -962,11 +964,14 @@
     </div>
     </nav>
   </div>
+  </header>
+
+  <main id="main-content" role="main">
 
   <!-- ============================================
        HERO
   ============================================ -->
-  <header id="inicio" class="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden">
+  <section id="inicio" aria-labelledby="hero-title" class="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden">
     <!-- Parallax multicapa -->
     <div class="hero-layer hero-layer-1" data-hero-layer="0.25" aria-hidden="true"></div>
     <div class="hero-layer hero-layer-2" data-hero-layer="0.12" aria-hidden="true"></div>
@@ -978,11 +983,11 @@
         <div class="lg:col-span-7 relative">
           <!-- Trust pill con social proof -->
           <div class="trust-pill mb-6">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
             <span class="font-mono uppercase tracking-[0.15em] text-[10px] sm:text-[11px]">Profesionales en Chile confían en nosotros</span>
           </div>
 
-          <h1 class="font-display tracking-tighter leading-[1.05] sm:leading-[0.97] lg:leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-medium">
+          <h1 id="hero-title" class="font-display tracking-tighter leading-[1.05] sm:leading-[0.97] lg:leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-medium">
             <span class="gradient-title block pb-2">Landing pages</span>
             <span class="font-light text-white/95">diseñadas </span><br class="block sm:hidden"><span class="gradient-title-warm font-semibold">para convertir</span>
           </h1>
@@ -994,15 +999,15 @@
           <!-- Points -->
           <ul class="mt-7 space-y-2.5 text-sm sm:text-base text-white/80">
             <li class="flex items-start gap-3">
-              <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
               Diseño limpio y profesional, adaptado al estilo de tu rubro.
             </li>
             <li class="flex items-start gap-3">
-              <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
               Estructura pensada para que el visitante encuentre lo que busca y te contacte fácil.
             </li>
             <li class="flex items-start gap-3">
-              <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
               Dominio, hosting, SSL y correo corporativo incluidos — tú solo apruebas el resultado.
             </li>
           </ul>
@@ -1012,7 +1017,7 @@
             <div class="flex flex-wrap gap-4 items-center">
               <a href="#contacto" class="inline-flex items-center justify-center rounded-full bg-white text-black font-semibold text-sm px-8 py-4 transition-all hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_30px_rgba(255,255,255,0.2)]" data-cta="hero_primary">
                 Quiero mi web en 72 horas
-                <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg aria-hidden="true" class="ml-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
               <a href="#incluye" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent text-white font-medium text-sm px-8 py-4 transition-colors hover:bg-white/5">
                 Ver qué incluye
@@ -1030,9 +1035,9 @@
 
           <!-- Trust -->
           <div class="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-x-8 gap-y-4 text-xs font-medium text-mist/80">
-            <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Todo incluido · 1 año</span>
-            <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg> 100% responsive</span>
-            <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Contacto multicanal</span>
+            <span class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Todo incluido · 1 año</span>
+            <span class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg> 100% responsive</span>
+            <span class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Contacto multicanal</span>
           </div>
         </div>
 
@@ -1040,10 +1045,10 @@
         <div class="lg:col-span-5 relative h-[500px] hidden lg:block">
           
           <!-- Card 1: SSL -->
-          <div class="absolute top-10 right-0 w-64 glass rounded-2xl p-5 shadow-2xl z-10 animate-float-slow border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl">
+          <div class="absolute top-10 right-0 w-64 glass rounded-2xl p-5 shadow-2xl z-10 motion-safe:animate-float-slow border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </div>
               <span class="font-mono text-xs text-mist tracking-widest uppercase">SSL Activo</span>
             </div>
@@ -1053,7 +1058,7 @@
           </div>
 
           <!-- Card 2: 72 horas -->
-          <div class="absolute top-40 left-0 w-72 glass rounded-2xl p-6 shadow-2xl z-20 animate-float-slower border border-white/10 bg-[#0a0a0a]/90 backdrop-blur-xl">
+          <div class="absolute top-40 left-0 w-72 glass rounded-2xl p-6 shadow-2xl z-20 motion-safe:animate-float-slower border border-white/10 bg-[#0a0a0a]/90 backdrop-blur-xl">
             <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Entrega récord</span>
             <div class="flex items-baseline gap-1">
               <span class="font-display text-5xl font-medium text-white tracking-tighter">72</span>
@@ -1063,10 +1068,10 @@
           </div>
 
           <!-- Card 3: 1 Año -->
-          <div class="absolute bottom-20 right-10 w-56 glass rounded-2xl p-5 shadow-2xl z-10 animate-float-slow border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl" style="animation-delay: -2s;">
+          <div class="absolute bottom-20 right-10 w-56 glass rounded-2xl p-5 shadow-2xl z-10 motion-safe:animate-float-slow border border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl" style="animation-delay: -2s;">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
               </div>
               <span class="font-mono text-xs text-mist tracking-widest uppercase">Renovación</span>
             </div>
@@ -1080,13 +1085,13 @@
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- ============================================
        MARQUEE / SOCIAL PROOF
   ============================================ -->
   <section aria-label="Servicios y tecnologías" class="py-10 border-y border-white/5 bg-ink-950/40 overflow-hidden">
-    <div class="marquee-track animate-marquee">
+    <div class="marquee-track motion-safe:animate-marquee">
       <div class="flex items-center gap-12 px-6 text-xs font-mono uppercase tracking-[0.25em] text-mist/60 whitespace-nowrap">
         <span>◆ Landing pages</span>
         <span>◆ Diseño web</span>
@@ -1247,7 +1252,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent"></div>
             <!-- Badge flotante -->
             <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-amber-glow animate-shimmer"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
               <span class="font-mono text-[10px] uppercase tracking-wider text-white/80">Diseño Web</span>
             </div>
           </div>
@@ -1345,12 +1350,12 @@
         <p class="text-sm text-mist mb-5">¿Quieres ver más trabajos? Revisa nuestro Instagram con proyectos publicados.</p>
         <div class="flex flex-wrap justify-center gap-4">
           <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-3 px-6 flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Ver en Instagram
           </a>
           <a href="#contacto" class="btn-primary text-sm py-3 px-6 js-cta-track" data-cta="portfolio_cta">
             Quiero mi web en 72 horas
-            <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg aria-hidden="true" class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
       </div>
@@ -1380,7 +1385,7 @@
         <article class="glass card-tilt p-7 group relative overflow-hidden" data-aos="fade-up">
           <div class="absolute top-0 right-0 w-32 h-32 bg-[#ff8a42]/5 blur-3xl group-hover:bg-[#ff8a42]/20 transition-all duration-700"></div>
           <div class="icon-box mb-5 relative">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
           </div>
           <h3 class="font-display text-2xl text-white mb-3 leading-tight">Diseño con buena presencia</h3>
           <p class="text-sm text-mist leading-relaxed">Una estética limpia y profesional que representa tu marca y mejora la primera impresión de forma inmediata.</p>
@@ -1393,7 +1398,7 @@
         <article class="glass card-tilt p-7 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
           <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 blur-3xl group-hover:bg-cyan-500/20 transition-all duration-700"></div>
           <div class="icon-box mb-5 relative">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
           </div>
           <h3 class="font-display text-2xl text-white mb-3 leading-tight">Estructura que convierte</h3>
           <p class="text-sm text-mist leading-relaxed">Jerarquía visual, textos claros y llamados a la acción ubicados donde realmente ayudan a generar consultas.</p>
@@ -1406,7 +1411,7 @@
         <article class="glass card-tilt p-7 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
           <div class="absolute top-0 right-0 w-32 h-32 bg-[#ff8a42]/5 blur-3xl group-hover:bg-[#ff8a42]/20 transition-all duration-700"></div>
           <div class="icon-box mb-5 relative">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <h3 class="font-display text-2xl text-white mb-3 leading-tight">Parte técnica resuelta</h3>
           <p class="text-sm text-mist leading-relaxed">Nos ocupamos del armado, la publicación y la configuración para que no pierdas tiempo en detalles que no son tu área.</p>
@@ -1443,15 +1448,15 @@
 
           <div class="space-y-3 max-w-md">
             <div class="flex items-center gap-3 glass rounded-xl px-4 py-3">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
               <span class="text-sm text-white/85">Optimizada para escritorio y móvil</span>
             </div>
             <div class="flex items-center gap-3 glass rounded-xl px-4 py-3">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
               <span class="text-sm text-white/85">Diseño personalizado para tu marca</span>
             </div>
             <div class="flex items-center gap-3 glass rounded-xl px-4 py-3">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               <span class="text-sm text-white/85">Carga rápida y experiencia fluida</span>
             </div>
           </div>
@@ -1460,7 +1465,7 @@
         <div class="lg:col-span-5 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="100">
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-tr from-amber-glow/20 via-transparent to-cyan-500/10 blur-2xl rounded-3xl"></div>
-            <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" class="relative w-full max-w-lg mx-auto block" width="600" height="450">
+            <svg aria-hidden="true" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" class="relative w-full max-w-lg mx-auto block" width="600" height="450">
               <defs>
                 <radialGradient id="gd" cx="50%" cy="50%"><stop offset="0%" stop-color="#e07a3a" stop-opacity=".25"/><stop offset="100%" stop-color="transparent"/></radialGradient>
                 <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -1538,43 +1543,43 @@
           <div class="glass rounded-3xl p-7 sm:p-9 h-full relative overflow-hidden">
             <div class="grid sm:grid-cols-2 gap-x-6 gap-y-1">
               <div class="check-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 <span class="text-sm text-white/85">Landing page de una sola página</span>
               </div>
               <div class="check-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 <span class="text-sm text-white/85">Dominio, hosting y SSL por 1 año</span>
               </div>
               <div class="check-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 <span class="text-sm text-white/85">Diseño visual limpio y profesional</span>
               </div>
               <div class="check-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 <span class="text-sm text-white/85">Correo corporativo personalizado</span>
               </div>
               <div class="check-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 <span class="text-sm text-white/85">Copy estructurado y claro</span>
               </div>
               <div class="check-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 <span class="text-sm text-white/85">Entrega en 72 horas hábiles</span>
               </div>
               <div class="check-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 <span class="text-sm text-white/85">Formulario de contacto multicanal</span>
               </div>
               <div class="check-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 <span class="text-sm text-white/85">Una ronda de ajustes incluida</span>
               </div>
               <div class="check-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 <span class="text-sm text-white/85">SEO técnico básico + buena velocidad</span>
               </div>
               <div class="check-item opacity-50">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 <span class="text-sm text-mist">No incluye ecommerce ni integraciones avanzadas</span>
               </div>
             </div>
@@ -1592,7 +1597,7 @@
               
               <div class="flex items-center justify-between mb-6">
                 <span class="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow px-3 py-1.5 rounded-full border border-amber-glow/20 bg-amber-glow/5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-glow animate-shimmer"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
                   Paquete Único
                 </span>
                 <span class="font-mono text-[10px] text-mist tracking-widest">// 01</span>
@@ -1612,22 +1617,22 @@
 
               <ul class="space-y-3 mb-8 flex-grow">
                 <li class="flex items-center gap-3 text-sm text-white/90">
-                  <svg class="w-4 h-4 text-amber-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <svg aria-hidden="true" class="w-4 h-4 text-amber-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                   Todo listo para publicar
                 </li>
                 <li class="flex items-center gap-3 text-sm text-white/90">
-                  <svg class="w-4 h-4 text-amber-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <svg aria-hidden="true" class="w-4 h-4 text-amber-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                   Sin complicaciones técnicas
                 </li>
                 <li class="flex items-center gap-3 text-sm text-white/90">
-                  <svg class="w-4 h-4 text-amber-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <svg aria-hidden="true" class="w-4 h-4 text-amber-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                   Contacto directo desde el primer día
                 </li>
               </ul>
 
               <a href="#contacto" class="btn-primary w-full js-cta-track justify-center" data-cta="pricing_card">
                 Quiero mi web en 72 horas
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
               <small class="block text-center text-[10px] text-mist/60 mt-4 uppercase tracking-wider">El plazo corre desde que recibimos la información.</small>
             </div>
@@ -1656,7 +1661,7 @@
 
         <div class="glass card-tilt p-7 sm:p-9 relative overflow-hidden" data-aos="fade-right">
           <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-amber-glow/15 grid place-items-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow">Es para ti si...</span>
           <h3 class="font-display text-2xl text-white mt-2 mb-5">Te identificas con esto</h3>
@@ -1670,7 +1675,7 @@
 
         <div class="glass card-tilt p-7 sm:p-9 relative overflow-hidden opacity-95" data-aos="fade-left">
           <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/5 grid place-items-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           </div>
           <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-mist">No es para ti si...</span>
           <h3 class="font-display text-2xl text-white mt-2 mb-5">Mejor busca otra solución</h3>
@@ -1845,7 +1850,7 @@
           <p class="text-sm text-mist/80 leading-relaxed relative z-10">Información clave de tu práctica: servicios, tono, diferencial y datos de contacto. Toma menos de lo que parece.</p>
           
           <div class="absolute bottom-0 right-0 p-6 opacity-10 group-hover:opacity-30 group-hover:text-amber-glow transition-all translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <svg aria-hidden="true" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           </div>
         </article>
 
@@ -1862,7 +1867,7 @@
           <p class="text-sm text-mist/80 leading-relaxed relative z-10">Landing con estructura clara, diseño limpio y una experiencia pensada para que el visitante dé el siguiente paso.</p>
           
           <div class="absolute bottom-0 right-0 p-6 opacity-10 group-hover:opacity-30 group-hover:text-amber-glow transition-all translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg aria-hidden="true" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
         </article>
 
@@ -1879,7 +1884,7 @@
           <p class="text-sm text-mist/80 leading-relaxed relative z-10">Publicamos la web y dejamos una ronda de revisión final para que quede exactamente como la necesitas.</p>
           
           <div class="absolute bottom-0 right-0 p-6 opacity-10 group-hover:opacity-30 group-hover:text-amber-glow transition-all translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <svg aria-hidden="true" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
         </article>
       </div>
@@ -1906,7 +1911,7 @@
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
             <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Qué incluye el paquete de $99.990?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
-              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
           <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Incluye una landing page de una sola página, diseño profesional, estructura de textos orientada a consultas, formulario de contacto, SEO técnico básico, dominio, hosting, SSL y correo corporativo por 1 año.</p></div>
@@ -1916,7 +1921,7 @@
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
             <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Cuándo comienza el plazo de entrega?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
-              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
           <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">El plazo de 72 horas hábiles comienza cuando recibimos el onboarding completo: información del servicio, textos base, accesos y archivos necesarios para construir la página.</p></div>
@@ -1926,7 +1931,7 @@
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
             <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Funciona para cualquier tipo de profesional?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
-              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
           <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Funciona mejor para profesionales independientes y negocios de servicios que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. No es el formato correcto para ecommerce o desarrollos más complejos.</p></div>
@@ -1936,7 +1941,7 @@
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
             <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Qué pasa cuando termina el primer año?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
-              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
           <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Te avisamos con anticipación antes del vencimiento. <strong class="text-white">La renovación del hosting y dominio tiene un valor de $50.000 anual</strong>, para que tu web siga activa sin interrupciones. También puedes transferir el dominio si así lo decides.</p></div>
@@ -1946,7 +1951,7 @@
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
             <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Puedo ver trabajos anteriores antes de contratar?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
-              <svg class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
           <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Sí. Puedes revisar casos publicados y referencias visuales en nuestro <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" class="text-amber-glow hover:underline">Instagram @digitaliza_lab</a>. Allí puedes ver el estilo, el nivel de detalle y el tipo de proyectos con los que trabajamos.</p></div>
@@ -1979,7 +1984,7 @@
           <ul class="space-y-3">
             <li>
               <a href="mailto:ventas@digitalizalab.cl" class="flex items-center gap-3 glass rounded-xl px-4 py-3.5 hover:border-amber-glow/30 transition-all group">
-                <span class="w-9 h-9 rounded-lg bg-amber-glow/10 grid place-items-center text-amber-glow group-hover:bg-amber-glow/20 transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+                <span class="w-9 h-9 rounded-lg bg-amber-glow/10 grid place-items-center text-amber-glow group-hover:bg-amber-glow/20 transition"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
                 <div>
                   <div class="text-[10px] font-mono uppercase tracking-wider text-mist">Correo</div>
                   <div class="text-white text-sm">ventas@digitalizalab.cl</div>
@@ -1989,7 +1994,7 @@
             <li>
               <a href="#" class="js-wa-link flex items-center gap-3 glass rounded-xl px-4 py-3.5 hover:border-amber-glow/30 transition-all group" data-source="contacto_card"
                  data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">
-                <span class="w-9 h-9 rounded-lg bg-green-500/10 grid place-items-center text-green-400 group-hover:bg-green-500/20 transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span>
+                <span class="w-9 h-9 rounded-lg bg-green-500/10 grid place-items-center text-green-400 group-hover:bg-green-500/20 transition"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span>
                 <div>
                   <div class="text-[10px] font-mono uppercase tracking-wider text-mist">WhatsApp</div>
                   <div class="text-white text-sm">+56 9 8286 7164</div>
@@ -1998,7 +2003,7 @@
             </li>
             <li>
               <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 glass rounded-xl px-4 py-3.5 hover:border-amber-glow/30 transition-all group">
-                <span class="w-9 h-9 rounded-lg bg-pink-500/10 grid place-items-center text-pink-300 group-hover:bg-pink-500/20 transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></span>
+                <span class="w-9 h-9 rounded-lg bg-pink-500/10 grid place-items-center text-pink-300 group-hover:bg-pink-500/20 transition"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></span>
                 <div>
                   <div class="text-[10px] font-mono uppercase tracking-wider text-mist">Instagram</div>
                   <div class="text-white text-sm">@digitaliza_lab</div>
@@ -2007,7 +2012,7 @@
             </li>
             <li>
               <a href="https://www.facebook.com/profile.php?id=61577511797419" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 glass rounded-xl px-4 py-3.5 hover:border-amber-glow/30 transition-all group">
-                <span class="w-9 h-9 rounded-lg bg-blue-500/10 grid place-items-center text-blue-300 group-hover:bg-blue-500/20 transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+                <span class="w-9 h-9 rounded-lg bg-blue-500/10 grid place-items-center text-blue-300 group-hover:bg-blue-500/20 transition"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
                 <div>
                   <div class="text-[10px] font-mono uppercase tracking-wider text-mist">Facebook</div>
                   <div class="text-white text-sm">Digitaliza Lab</div>
@@ -2030,7 +2035,7 @@
                   <h3 class="font-display text-2xl text-white mt-1">Cuéntanos tu proyecto</h3>
                 </div>
                 <div class="flex gap-1">
-                  <span class="w-2 h-2 rounded-full bg-amber-glow animate-shimmer"></span>
+                  <span class="w-2 h-2 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
                   <span class="w-2 h-2 rounded-full bg-amber-glow/40"></span>
                   <span class="w-2 h-2 rounded-full bg-amber-glow/20"></span>
                 </div>
@@ -2043,27 +2048,27 @@
                 <div class="grid sm:grid-cols-2 gap-5">
                   <div class="relative">
                       <label for="nombreCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Nombre</label>
-                    <input type="text" id="nombreCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="Carolina Reyes" required autocomplete="name">
+                    <input type="text" id="nombreCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="Carolina Reyes" required aria-required="true" autocomplete="name">
                   </div>
                   <div class="relative">
                     <label for="rubroCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Profesión o rubro</label>
-                    <input type="text" id="rubroCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="Abogada, médico, coach..." required>
+                    <input type="text" id="rubroCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="Abogada, médico, coach..." required aria-required="true" autocomplete="organization-title">
                   </div>
                 </div>
 
                 <div class="relative">
                   <label for="contactoCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Correo o WhatsApp</label>
-                  <input type="text" id="contactoCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all" placeholder="correo@dominio.com o +56 9 1234 5678" required>
+                  <input type="text" id="contactoCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="correo@dominio.com o +56 9 1234 5678" required aria-required="true" autocomplete="email tel">
                 </div>
 
                 <div class="relative">
                   <label for="mensajeCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Mensaje <span class="opacity-50">(opcional)</span></label>
-                  <textarea id="mensajeCliente" rows="3" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] transition-all resize-none" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
+                  <textarea id="mensajeCliente" rows="3" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all resize-none" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-primary w-full py-4 mt-2 justify-center shadow-[0_0_20px_rgba(255,138,66,0.15)] hover:shadow-[0_0_30px_rgba(255,138,66,0.3)] transition-all">
+                <button type="submit" class="btn-primary w-full py-4 mt-2 justify-center shadow-[0_0_20px_rgba(255,138,66,0.15)] hover:shadow-[0_0_30px_rgba(255,138,66,0.3)] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 transition-all">
                   Enviar solicitud
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </button>
 
                 <div class="text-center pt-3 border-t border-white/5 mt-5">
@@ -2088,7 +2093,9 @@
   <!-- ============================================
        FOOTER
   ============================================ -->
-  <footer class="relative border-t border-white/5 bg-[#000000] pt-16 pb-8">
+  </main>
+
+  <footer role="contentinfo" class="relative border-t border-white/5 bg-[#000000] pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid md:grid-cols-12 gap-8 mb-12">
 
@@ -2100,17 +2107,17 @@
           <p class="text-sm text-mist max-w-sm mb-5">Landing pages para profesionales independientes que necesitan una presencia digital seria, clara y coherente con la calidad de su trabajo.</p>
           <div class="flex gap-2">
             <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-amber-glow hover:border-amber-glow/40 transition">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             </a>
             <a href="https://www.facebook.com/profile.php?id=61577511797419" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-amber-glow hover:border-amber-glow/40 transition">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
             <a href="mailto:ventas@digitalizalab.cl" aria-label="Correo" class="w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-amber-glow hover:border-amber-glow/40 transition">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
             <a href="#" data-source="footer_social" class="js-wa-link w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-green-400 hover:border-green-400/40 transition" aria-label="WhatsApp"
                data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>
             </a>
           </div>
         </div>
@@ -2151,7 +2158,7 @@
       <div class="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-mist/60">
         <span>© <span id="currentYear"></span> Digitaliza Lab · Todos los derechos reservados</span>
         <span class="flex items-center gap-2">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-glow animate-shimmer"></span>
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
           Hecho en Chile · v2.0
         </span>
       </div>
@@ -2165,7 +2172,7 @@
      href="#"
      data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page."
      aria-label="Abrir WhatsApp">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     <span class="hidden md:inline">Cotizar</span>
   </a>
 
@@ -2502,7 +2509,7 @@
       </div>
       <a href="blog.html" class="shrink-0 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-amber-glow border border-amber-glow/30 hover:border-amber-glow/70 px-5 py-3 rounded-full transition-all hover:bg-amber-glow/5">
         Ver todas las guías
-        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
 
@@ -2517,7 +2524,7 @@
         <p class="text-mist text-sm leading-relaxed flex-1">Velocidad, SEO local y redacción en español chileno — los tres factores que marcan la diferencia.</p>
         <span class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mt-2">
           Leer guía
-          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </span>
       </a>
 
@@ -2530,7 +2537,7 @@
         <p class="text-mist text-sm leading-relaxed flex-1">Los seis elementos que comparten todas las campañas exitosas que hemos analizado.</p>
         <span class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mt-2">
           Leer guía
-          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </span>
       </a>
 
@@ -2543,7 +2550,7 @@
         <p class="text-mist text-sm leading-relaxed flex-1">Cómo transmitir confianza y llenar la agenda de consultas con tu presencia digital.</p>
         <span class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mt-2">
           Leer guía
-          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </span>
       </a>
 
@@ -2553,7 +2560,7 @@
     <div class="mt-10 text-center" data-aos="fade-up" data-aos-delay="150">
       <a href="blog.html" class="text-mist hover:text-white font-mono text-[11px] uppercase tracking-[0.18em] transition inline-flex items-center gap-2 group">
         Ver también: SEO Local Chile, Agencia Digital Santiago
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
 
