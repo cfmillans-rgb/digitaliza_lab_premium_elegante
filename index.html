@@ -74,9 +74,6 @@
   <link rel="stylesheet" href="assets/css/styles.min.css">
 
   <!-- ================== AOS ANIMATIONS (no-blocking) ================== -->
-  <link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"></noscript>
-
   <!-- ================== CUSTOM CSS ================== -->
   <style>
     :root {
@@ -879,7 +876,7 @@
 </head>
 
 <body class="bg-ink-950 text-mist font-sans selection:bg-brand selection:text-white grain overflow-x-hidden antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-amber-glow text-ink-950 font-bold px-4 py-2 rounded-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 focus-visible:ring-white">Saltar al contenido principal</a>
+  <a href="#main-content" class="btn-interactive sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-amber-glow text-ink-950 font-bold px-4 py-2 rounded-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 focus-visible:ring-white">Saltar al contenido principal</a>
 
   <!-- ============================================
        BACKGROUND LAYERS (fixed, behind everything)
@@ -940,7 +937,7 @@
       </ul>
 
       <div class="flex items-center gap-3">
-        <a href="#contacto" class="hidden sm:inline-flex items-center justify-center rounded-full bg-white text-black font-medium text-xs px-5 py-2.5 transition-transform hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_20px_rgba(255,255,255,0.3)]" data-cta="nav_primary">
+        <a href="#contacto" class="btn-interactive hidden sm:inline-flex items-center justify-center rounded-full bg-white text-black font-medium text-xs px-5 py-2.5 transition-transform hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_20px_rgba(255,255,255,0.3)]" data-cta="nav_primary">
           Cotizar proyecto
         </a>
         <button id="menuToggle" class="lg:hidden w-12 h-12 grid place-items-center rounded-full border border-white/10 text-white hover:bg-white/5 transition-colors" aria-label="Abrir menú" aria-expanded="false">
@@ -1015,11 +1012,11 @@
           <!-- CTAs dominantes con micro-métrica -->
           <div class="mt-9">
             <div class="flex flex-wrap gap-4 items-center">
-              <a href="#contacto" class="inline-flex items-center justify-center rounded-full bg-white text-black font-semibold text-sm px-8 py-4 transition-all hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_30px_rgba(255,255,255,0.2)]" data-cta="hero_primary">
+              <a href="#contacto" class="btn-interactive inline-flex items-center justify-center rounded-full bg-white text-black font-semibold text-sm px-8 py-4 transition-all hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_30px_rgba(255,255,255,0.2)]" data-cta="hero_primary">
                 Quiero mi web en 72 horas
                 <svg aria-hidden="true" class="ml-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
-              <a href="#incluye" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent text-white font-medium text-sm px-8 py-4 transition-colors hover:bg-white/5">
+              <a href="#incluye" class="btn-interactive inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent text-white font-medium text-sm px-8 py-4 transition-colors hover:bg-white/5">
                 Ver qué incluye
               </a>
             </div>
@@ -1120,7 +1117,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
 
-        <div class="lg:col-span-5" data-aos="fade-right">
+        <div class="lg:col-span-5" data-reveal="fade-right">
           <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-[#ff8a42] mb-4">— Nuestra promesa</span>
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.05] tracking-tight text-white">
             Cifras claras,<br>
@@ -1142,7 +1139,7 @@
           </div>
         </div>
 
-        <div class="lg:col-span-7" data-aos="fade-left" data-aos-delay="100">
+        <div class="lg:col-span-7" data-reveal="fade-left" data-reveal-delay="100">
           <div class="grid grid-cols-2 gap-4">
 
             <!-- Card 1 -->
@@ -1198,7 +1195,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
       <!-- Section header -->
-      <div class="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
+      <div class="max-w-3xl mx-auto text-center mb-14" data-reveal="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Portafolio</span>
         <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
           Trabajos reales,<br>
@@ -1211,7 +1208,7 @@
       <div class="grid md:grid-cols-12 gap-5">
 
         <!-- Card grande — imagen equipo + oficina -->
-        <article class="md:col-span-7 glass card-tilt rounded-3xl overflow-hidden group relative" data-aos="fade-up">
+        <article class="md:col-span-7 glass card-tilt rounded-3xl overflow-hidden group relative" data-reveal="fade-up">
           <div class="relative overflow-hidden" style="aspect-ratio:16/7;">
             <div class="w-full h-full flex flex-col items-center justify-end relative overflow-hidden bg-[#050505] pt-10 px-8" style="aspect-ratio:16/7;">
               <!-- Abstract CSS UI Mockup -->
@@ -1251,7 +1248,7 @@
             <!-- Overlay gradiente -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent"></div>
             <!-- Badge flotante -->
-            <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5">
+            <div class="btn-interactive absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
               <span class="font-mono text-[10px] uppercase tracking-wider text-white/80">Diseño Web</span>
             </div>
@@ -1269,10 +1266,10 @@
         <div class="md:col-span-5 flex flex-col gap-5">
 
           <!-- Card — presentación 72h -->
-          <article class="glass rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="100">
+          <article class="glass rounded-3xl overflow-hidden group relative flex-1" data-reveal="fade-up" data-reveal-delay="100">
             <div class="relative overflow-hidden bg-[#050505] p-6 flex flex-col justify-center" style="aspect-ratio:16/6;">
               <!-- 72h CSS Mockup -->
-              <div class="w-full h-full border border-white/10 rounded-xl bg-gradient-to-br from-[#111111] to-[#0a0a0a] flex items-center justify-between px-6 shadow-inner relative overflow-hidden">
+              <div class="spotlight-card w-full h-full border border-white/10 rounded-xl bg-gradient-to-br from-[#111111] to-[#0a0a0a] flex items-center justify-between px-6 shadow-inner relative overflow-hidden">
                 <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,138,66,0.1),transparent_70%)]"></div>
                 
                 <div class="flex flex-col gap-2 z-10">
@@ -1290,7 +1287,7 @@
               </div>
 
               <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent"></div>
-              <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5 border border-white/10">
+              <div class="btn-interactive absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5 border border-white/10">
                 <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-ping"></span>
                 <span class="font-mono text-[10px] uppercase tracking-wider text-white/80">Entrega 72h</span>
               </div>
@@ -1302,10 +1299,10 @@
           </article>
 
           <!-- Card — portfolio mockups -->
-          <article class="glass rounded-3xl overflow-hidden group relative flex-1" data-aos="fade-up" data-aos-delay="180">
+          <article class="glass rounded-3xl overflow-hidden group relative flex-1" data-reveal="fade-up" data-reveal-delay="180">
             <div class="relative overflow-hidden bg-[#050505] p-6 flex flex-col justify-center" style="aspect-ratio:16/6;">
               <!-- Multi-industry CSS Mockup -->
-              <div class="w-full h-full border border-white/10 rounded-xl bg-[#111111] flex gap-3 p-4 shadow-inner relative overflow-hidden">
+              <div class="spotlight-card w-full h-full border border-white/10 rounded-xl bg-[#111111] flex gap-3 p-4 shadow-inner relative overflow-hidden">
                 <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.1),transparent_70%)]"></div>
                 
                 <!-- Mini Card 1 -->
@@ -1331,7 +1328,7 @@
               </div>
 
               <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent"></div>
-              <div class="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5 border border-white/10">
+              <div class="btn-interactive absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-1.5 border border-white/10">
                 <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
                 <span class="font-mono text-[10px] uppercase tracking-wider text-white/80">Multi-industria</span>
               </div>
@@ -1346,14 +1343,14 @@
       </div>
 
       <!-- CTA de portafolio -->
-      <div class="text-center mt-12" data-aos="fade-up">
+      <div class="text-center mt-12" data-reveal="fade-up">
         <p class="text-sm text-mist mb-5">¿Quieres ver más trabajos? Revisa nuestro Instagram con proyectos publicados.</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-3 px-6 flex items-center gap-2">
+          <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-ghost text-sm py-3 px-6 flex items-center gap-2">
             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Ver en Instagram
           </a>
-          <a href="#contacto" class="btn-primary text-sm py-3 px-6 js-cta-track" data-cta="portfolio_cta">
+          <a href="#contacto" class="btn-interactive btn-primary text-sm py-3 px-6 js-cta-track" data-cta="portfolio_cta">
             Quiero mi web en 72 horas
             <svg aria-hidden="true" class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -1370,7 +1367,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
       <!-- Section header -->
-      <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+      <div class="max-w-3xl mx-auto text-center mb-16" data-reveal="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Beneficios</span>
         <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.05] tracking-tight text-white">
           Tu servicio merece una presentación<br>
@@ -1382,7 +1379,7 @@
       <!-- Cards -->
       <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
 
-        <article class="glass card-tilt p-7 group relative overflow-hidden" data-aos="fade-up">
+        <article class="glass card-tilt p-7 group relative overflow-hidden" data-reveal="fade-up">
           <div class="absolute top-0 right-0 w-32 h-32 bg-[#ff8a42]/5 blur-3xl group-hover:bg-[#ff8a42]/20 transition-all duration-700"></div>
           <div class="icon-box mb-5 relative">
             <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
@@ -1395,7 +1392,7 @@
           </div>
         </article>
 
-        <article class="glass card-tilt p-7 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <article class="glass card-tilt p-7 group relative overflow-hidden" data-reveal="fade-up" data-reveal-delay="100">
           <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 blur-3xl group-hover:bg-cyan-500/20 transition-all duration-700"></div>
           <div class="icon-box mb-5 relative">
             <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
@@ -1408,7 +1405,7 @@
           </div>
         </article>
 
-        <article class="glass card-tilt p-7 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <article class="glass card-tilt p-7 group relative overflow-hidden" data-reveal="fade-up" data-reveal-delay="200">
           <div class="absolute top-0 right-0 w-32 h-32 bg-[#ff8a42]/5 blur-3xl group-hover:bg-[#ff8a42]/20 transition-all duration-700"></div>
           <div class="icon-box mb-5 relative">
             <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
@@ -1438,7 +1435,7 @@
 
       <!-- Showcase block: mockup + copy -->
       <div class="grid lg:grid-cols-12 gap-10 items-center mb-24">
-        <div class="lg:col-span-7 order-2 lg:order-1" data-aos="fade-right">
+        <div class="lg:col-span-7 order-2 lg:order-1" data-reveal="fade-right">
           <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Resultado profesional</span>
           <h2 class="font-display text-3xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white mb-5">
             Así se ve el resultado final que<br>
@@ -1462,7 +1459,7 @@
           </div>
         </div>
 
-        <div class="lg:col-span-5 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="100">
+        <div class="lg:col-span-5 order-1 lg:order-2" data-reveal="fade-left" data-reveal-delay="100">
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-tr from-amber-glow/20 via-transparent to-cyan-500/10 blur-2xl rounded-3xl"></div>
             <svg aria-hidden="true" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" class="relative w-full max-w-lg mx-auto block" width="600" height="450">
@@ -1527,7 +1524,7 @@
       </div>
 
       <!-- Includes header -->
-      <div class="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
+      <div class="max-w-3xl mx-auto text-center mb-14" data-reveal="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Qué incluye</span>
         <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
           Una solución lista para publicar,<br>
@@ -1539,7 +1536,7 @@
       <div class="grid lg:grid-cols-12 gap-6 items-stretch">
 
         <!-- Features list -->
-        <div class="lg:col-span-7" data-aos="fade-up">
+        <div class="lg:col-span-7" data-reveal="fade-up">
           <div class="glass rounded-3xl p-7 sm:p-9 h-full relative overflow-hidden">
             <div class="grid sm:grid-cols-2 gap-x-6 gap-y-1">
               <div class="check-item">
@@ -1587,16 +1584,16 @@
         </div>
 
         <!-- Price card -->
-        <div class="lg:col-span-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="lg:col-span-5" data-reveal="fade-up" data-reveal-delay="100">
           <div class="relative h-full group">
             <!-- Subtle glow on hover -->
             <div class="absolute -inset-px bg-gradient-to-br from-amber-glow/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md"></div>
 
-            <div class="relative bg-[#050505] border border-white/10 rounded-3xl p-7 sm:p-9 h-full flex flex-col shadow-2xl">
+            <div class="spotlight-card relative bg-[#050505] border border-white/10 rounded-3xl p-7 sm:p-9 h-full flex flex-col shadow-2xl">
               <div class="absolute top-0 right-0 w-64 h-64 bg-amber-glow/5 rounded-full blur-[80px] -z-10"></div>
               
               <div class="flex items-center justify-between mb-6">
-                <span class="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow px-3 py-1.5 rounded-full border border-amber-glow/20 bg-amber-glow/5">
+                <span class="btn-interactive inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow px-3 py-1.5 rounded-full border border-amber-glow/20 bg-amber-glow/5">
                   <span class="w-1.5 h-1.5 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
                   Paquete Único
                 </span>
@@ -1648,7 +1645,7 @@
   <section id="ideal" class="relative py-16 sm:py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-      <div class="max-w-3xl mx-auto text-center mb-14" data-aos="fade-up">
+      <div class="max-w-3xl mx-auto text-center mb-14" data-reveal="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Para quién es</span>
         <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
           Funciona cuando ya tienes algo valioso<br>
@@ -1659,7 +1656,7 @@
 
       <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
 
-        <div class="glass card-tilt p-7 sm:p-9 relative overflow-hidden" data-aos="fade-right">
+        <div class="glass card-tilt p-7 sm:p-9 relative overflow-hidden" data-reveal="fade-right">
           <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-amber-glow/15 grid place-items-center">
             <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
@@ -1673,7 +1670,7 @@
           </ul>
         </div>
 
-        <div class="glass card-tilt p-7 sm:p-9 relative overflow-hidden opacity-95" data-aos="fade-left">
+        <div class="glass card-tilt p-7 sm:p-9 relative overflow-hidden opacity-95" data-reveal="fade-left">
           <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/5 grid place-items-center">
             <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           </div>
@@ -1688,7 +1685,7 @@
         </div>
       </div>
 
-      <p class="text-center mt-10 text-sm text-mist" data-aos="fade-up">
+      <p class="text-center mt-10 text-sm text-mist" data-reveal="fade-up">
         Puedes revisar trabajos publicados y referencias visuales en
         <a href="https://www.instagram.com/digitaliza_lab/" target="_blank" rel="noopener noreferrer" class="text-amber-glow hover:underline">nuestro Instagram</a>.
       </p>
@@ -1707,7 +1704,7 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="section-divider mb-14"></div>
 
-      <div class="text-center mb-10" data-aos="fade-up">
+      <div class="text-center mb-10" data-reveal="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-3">— Lo que dicen nuestros clientes</span>
         <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight tracking-tight text-white">
           Resultados que <span class="italic text-amber-glow">hablan solos.</span>
@@ -1715,7 +1712,7 @@
       </div>
 
       <!-- Testimonial slider -->
-      <div class="testimonial-slider" id="testimonialSlider" data-aos="fade-up" data-aos-delay="80">
+      <div class="testimonial-slider" id="testimonialSlider" data-reveal="fade-up" data-reveal-delay="80">
         <div class="testimonial-slides" id="testimonialSlides">
 
           <div class="testimonial-slide px-2 sm:px-8">
@@ -1782,25 +1779,25 @@
 
     <!-- MARCAS -->
     <div class="mt-24 sm:mt-32">
-      <div class="text-center mb-10 max-w-5xl mx-auto px-4 sm:px-6" data-aos="fade-up">
+      <div class="text-center mb-10 max-w-5xl mx-auto px-4 sm:px-6" data-reveal="fade-up">
         <span class="inline-block font-mono text-[10px] uppercase tracking-[0.22em] text-mist/40">— Marcas que confían</span>
       </div>
 
-      <div class="overflow-hidden relative" data-aos="fade-up">
+      <div class="overflow-hidden relative" data-reveal="fade-up">
         <div class="absolute inset-y-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#000000] to-transparent z-10 pointer-events-none"></div>
         <div class="absolute inset-y-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#000000] to-transparent z-10 pointer-events-none"></div>
 
         <div class="brands-track py-4 opacity-70">
-          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/50 ml-1">Constructora</span></div>
-          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Video Inspección</span> <span class="text-xs text-mist/50 ml-1">Mantenciones</span></div>
-          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Svara</span> <span class="text-xs text-mist/50 ml-1">Tienda de Velas</span></div>
-          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">CrissM</span> <span class="text-xs text-mist/50 ml-1">Fotografía</span></div>
-          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Elite Law Firm</span> <span class="text-xs text-mist/50 ml-1">Estudio Jurídico</span></div>
-          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Peluca de Carla</span> <span class="text-xs text-mist/50 ml-1">Peluquería</span></div>
-          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Cabañas La Lela</span> <span class="text-xs text-mist/50 ml-1">Turismo</span></div>
+          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/50 ml-1">Constructora</span></div>
+          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Video Inspección</span> <span class="text-xs text-mist/50 ml-1">Mantenciones</span></div>
+          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Svara</span> <span class="text-xs text-mist/50 ml-1">Tienda de Velas</span></div>
+          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">CrissM</span> <span class="text-xs text-mist/50 ml-1">Fotografía</span></div>
+          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Elite Law Firm</span> <span class="text-xs text-mist/50 ml-1">Estudio Jurídico</span></div>
+          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Peluca de Carla</span> <span class="text-xs text-mist/50 ml-1">Peluquería</span></div>
+          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Cabañas La Lela</span> <span class="text-xs text-mist/50 ml-1">Turismo</span></div>
           <!-- Duplicated for marquee -->
-          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/50 ml-1">Constructora</span></div>
-          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Video Inspección</span> <span class="text-xs text-mist/50 ml-1">Mantenciones</span></div>
+          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/50 ml-1">Constructora</span></div>
+          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Video Inspección</span> <span class="text-xs text-mist/50 ml-1">Mantenciones</span></div>
         </div>
 
       </div>
@@ -1821,7 +1818,7 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-      <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+      <div class="max-w-3xl mx-auto text-center mb-16" data-reveal="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Proceso</span>
         <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
           Tres pasos simples.<br>
@@ -1837,7 +1834,7 @@
           <div class="absolute inset-0 bg-gradient-to-r from-transparent via-amber-glow to-transparent opacity-50 w-full h-full" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);"></div>
         </div>
 
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-aos="fade-up">
+        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up">
           <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
           
           <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6 relative z-10 group-hover:border-amber-glow/30 transition-colors">
@@ -1854,7 +1851,7 @@
           </div>
         </article>
 
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-aos="fade-up" data-aos-delay="100">
+        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up" data-reveal-delay="100">
           <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
           
           <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6 relative z-10 group-hover:border-amber-glow/30 transition-colors">
@@ -1871,7 +1868,7 @@
           </div>
         </article>
 
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-aos="fade-up" data-aos-delay="200">
+        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up" data-reveal-delay="200">
           <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
           
           <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6 relative z-10 group-hover:border-amber-glow/30 transition-colors">
@@ -1897,7 +1894,7 @@
   <section id="faq" class="relative py-24 sm:py-32">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
 
-      <div class="text-center mb-12" data-aos="fade-up">
+      <div class="text-center mb-12" data-reveal="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Preguntas frecuentes</span>
         <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
           Respuestas directas para<br>
@@ -1905,7 +1902,7 @@
         </h2>
       </div>
 
-      <div class="bg-[#050505] border border-white/5 rounded-3xl p-2 sm:p-4 shadow-2xl" data-aos="fade-up">
+      <div class="bg-[#050505] border border-white/5 rounded-3xl p-2 sm:p-4 shadow-2xl" data-reveal="fade-up">
 
         <details open class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
@@ -1973,7 +1970,7 @@
 
       <div class="grid lg:grid-cols-12 gap-10 items-start">
 
-        <div class="lg:col-span-5" data-aos="fade-right">
+        <div class="lg:col-span-5" data-reveal="fade-right">
           <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Contacto</span>
           <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white mb-5">
             Hablemos sin vueltas.<br>
@@ -2022,10 +2019,10 @@
           </ul>
         </div>
 
-        <div class="lg:col-span-7" data-aos="fade-left">
+        <div class="lg:col-span-7" data-reveal="fade-left">
           <div class="relative group">
             <div class="absolute -inset-px bg-gradient-to-br from-amber-glow/20 via-transparent to-cyan-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-md"></div>
-            <div class="relative bg-[#050505] border border-white/10 rounded-3xl p-7 sm:p-10 shadow-2xl">
+            <div class="spotlight-card relative bg-[#050505] border border-white/10 rounded-3xl p-7 sm:p-10 shadow-2xl">
 
               <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-[80px] -z-10"></div>
 
@@ -2048,22 +2045,22 @@
                 <div class="grid sm:grid-cols-2 gap-5">
                   <div class="relative">
                       <label for="nombreCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Nombre</label>
-                    <input type="text" id="nombreCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="Carolina Reyes" required aria-required="true" autocomplete="name">
+                    <input type="text" id="nombreCliente" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="Carolina Reyes" required aria-required="true" autocomplete="name">
                   </div>
                   <div class="relative">
                     <label for="rubroCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Profesión o rubro</label>
-                    <input type="text" id="rubroCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="Abogada, médico, coach..." required aria-required="true" autocomplete="organization-title">
+                    <input type="text" id="rubroCliente" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="Abogada, médico, coach..." required aria-required="true" autocomplete="organization-title">
                   </div>
                 </div>
 
                 <div class="relative">
                   <label for="contactoCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Correo o WhatsApp</label>
-                  <input type="text" id="contactoCliente" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="correo@dominio.com o +56 9 1234 5678" required aria-required="true" autocomplete="email tel">
+                  <input type="text" id="contactoCliente" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="correo@dominio.com o +56 9 1234 5678" required aria-required="true" autocomplete="email tel">
                 </div>
 
                 <div class="relative">
                   <label for="mensajeCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Mensaje <span class="opacity-50">(opcional)</span></label>
-                  <textarea id="mensajeCliente" rows="3" class="w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all resize-none" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
+                  <textarea id="mensajeCliente" rows="3" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all resize-none" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary w-full py-4 mt-2 justify-center shadow-[0_0_20px_rgba(255,138,66,0.15)] hover:shadow-[0_0_30px_rgba(255,138,66,0.3)] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 transition-all">
@@ -2168,7 +2165,7 @@
   <!-- ============================================
        WHATSAPP FLOAT
   ============================================ -->
-  <a class="wa-float js-wa-link fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-green-500 text-white font-medium text-sm shadow-2xl hover:bg-green-600 transition" data-source="floating"
+  <a class="btn-interactive wa-float js-wa-link fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-green-500 text-white font-medium text-sm shadow-2xl hover:bg-green-600 transition" data-source="floating"
      href="#"
      data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page."
      aria-label="Abrir WhatsApp">
@@ -2179,7 +2176,6 @@
   <!-- ============================================
        SCRIPTS
   ============================================ -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
   <script>
     /* ============================================================
        Digitaliza Lab — main script (v3)
@@ -2500,20 +2496,20 @@
   <div class="hero-layer hero-layer-1" data-hero-layer="0.15" aria-hidden="true"></div>
   <div class="max-w-5xl mx-auto px-6 relative">
 
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14" data-aos="fade-up">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14" data-reveal="fade-up">
       <div>
         <span class="block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Guías & Recursos</span>
         <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
           Todo lo que necesitas saber<br>sobre <span class="italic text-amber-glow">diseño web en Chile</span>
         </h2>
       </div>
-      <a href="blog.html" class="shrink-0 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-amber-glow border border-amber-glow/30 hover:border-amber-glow/70 px-5 py-3 rounded-full transition-all hover:bg-amber-glow/5">
+      <a href="blog.html" class="btn-interactive shrink-0 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-amber-glow border border-amber-glow/30 hover:border-amber-glow/70 px-5 py-3 rounded-full transition-all hover:bg-amber-glow/5">
         Ver todas las guías
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden" data-reveal="fade-up" data-reveal-delay="100">
 
       <!-- Card 1 -->
       <a href="blog.html#diseno-web-chile" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
@@ -2557,7 +2553,7 @@
     </div>
 
     <!-- Bottom CTA -->
-    <div class="mt-10 text-center" data-aos="fade-up" data-aos-delay="150">
+    <div class="mt-10 text-center" data-reveal="fade-up" data-reveal-delay="150">
       <a href="blog.html" class="text-mist hover:text-white font-mono text-[11px] uppercase tracking-[0.18em] transition inline-flex items-center gap-2 group">
         Ver también: SEO Local Chile, Agencia Digital Santiago
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -2567,5 +2563,6 @@
   </div>
 </section>
 
+  <script src="assets/js/micro-interactions.js" defer></script>
 </body>
 </html>
