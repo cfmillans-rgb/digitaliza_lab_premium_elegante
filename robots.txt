@@ -6,17 +6,16 @@
 User-agent: *
 Allow: /
 
-# Bloquear rutas innecesarias
-Disallow: /assets/js/
-Disallow: /*.json$
+# Bloquear rutas de configuración interna
 Disallow: /CNAME
 
-# Permitir explícitamente imágenes y CSS
-Allow: /assets/img/
+# Permitir explícitamente recursos estáticos (necesarios para el renderizado SEO)
+Allow: /assets/
 Allow: /*.css$
+Allow: /*.js$
 Allow: /favicon.png
 
-# Bots de IA (comentar si deseas bloquearlos)
+# Bots de IA (Permitidos para AI Overviews y Perplexity)
 User-agent: GPTBot
 Allow: /
 
@@ -29,12 +28,15 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-# Crawl-delay razonable para bots agresivos
+User-agent: PerplexityBot
+Allow: /
+
+# Crawl-delay razonable para bots agresivos de herramientas SEO
 User-agent: AhrefsBot
-Crawl-delay: 10
+Crawl-delay: 5
 
 User-agent: SemrushBot
-Crawl-delay: 10
+Crawl-delay: 5
 
 # Sitemap
 Sitemap: https://digitalizalab.cl/sitemap.xml
