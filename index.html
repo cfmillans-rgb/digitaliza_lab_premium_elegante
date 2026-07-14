@@ -62,15 +62,16 @@
   <link rel="apple-touch-icon" href="favicon.png">
 
   <!-- ================== PRELOADS ================== -->
-  <link rel="preload" as="image" href="favicon.png" fetchpriority="high">
+  <link rel="preload" href="assets/css/styles.min.css" as="style">
+  <!-- Preconnect to font CDN for faster font loading -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
   <!-- ================== FONTS ================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- ================== COMPILED CSS ================== -->
-  <link rel="preload" href="assets/css/styles.min.css" as="style">
   <link rel="stylesheet" href="assets/css/styles.min.css">
 
   <!-- ================== AOS ANIMATIONS (no-blocking) ================== -->
@@ -109,7 +110,9 @@
       background: #000000; 
       color: #e5e7eb; 
       font-family: 'Inter', system-ui, sans-serif; 
-      overflow-x: hidden; 
+      overflow-x: hidden;
+      scrollbar-color: #1a1a1a #000000;
+      scrollbar-width: thin;
     }
 
     /* === Fallback: si AOS tarda en cargar, los elementos se muestran igual === */
@@ -202,6 +205,10 @@
       animation: sweep 4s linear infinite;
     }
     @keyframes sweep { to { left: 100%; } }
+    @keyframes gradientX {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
 
     /* === BOTÓN PRIMARIO PREMIUM (v3) === */
     .btn-primary {
@@ -338,6 +345,10 @@
       background: rgba(255,138,66,0.04);
       box-shadow: 0 0 0 4px rgba(255,138,66,0.12);
     }
+    .field:focus-visible {
+      outline: 3px solid rgba(255,138,66,0.6);
+      outline-offset: 2px;
+    }
 
     .marquee-track { display: flex; width: max-content; }
 
@@ -425,7 +436,7 @@
     /* Jerarquía con escala fluida para que la tipografía respire en móvil */
     .type-hero {
       font-size: clamp(2.2rem, 7vw, 5.25rem);
-      line-height: clamp(1.05, 1.1 - 0.02vw, 0.95);
+      line-height: clamp(0.95, 1.1 - 0.02vw, 1.05);
       letter-spacing: -0.03em;
     }
     .type-section-title {
@@ -455,6 +466,10 @@
       animation: marquee 35s linear infinite;
     }
     .brands-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
     .brand-pill {
       display: inline-flex;
@@ -542,10 +557,8 @@
     /* ═══════════════════════════════════════════
        CURSOR PREMIUM + HALO DINÁMICO
     ═══════════════════════════════════════════ */
-    @media (pointer: fine) {
-      body { cursor: none; }
-      a, button, [role="button"], summary, label, select { cursor: none; }
-    }
+    /* Cursor custom como complemento visual — NO oculta el cursor nativo (accesibilidad) */
+    /* El #cursor-dot, #cursor-ring y #cursor-halo se muestran como efecto decorativo adicional */
 
     #cursor-dot {
       position: fixed;
@@ -659,7 +672,7 @@
       font-weight: 400;
       line-height: 1.1;
       letter-spacing: -0.025em;
-      color: #18181B;
+      color: #f0f0f0;
       margin-bottom: 1.2rem;
     }
     .seo-guide-h3 em { color: #c96a2c; font-style: italic; }
@@ -668,16 +681,16 @@
       font-family: 'DM Sans', sans-serif;
       font-size: 0.97rem;
       line-height: 1.78;
-      color: #52525b;
+      color: #b0b3b8;
     }
     .seo-guide-body p { margin-bottom: 1.1rem; }
-    .seo-guide-body strong { color: #27272e; font-weight: 600; }
+    .seo-guide-body strong { color: #e5e7eb; font-weight: 600; }
     .seo-guide-body h4 {
       font-family: 'Fraunces', serif;
       font-size: 1.1rem;
       font-weight: 500;
       letter-spacing: -0.015em;
-      color: #27272e;
+      color: #e5e7eb;
       margin: 1.8rem 0 0.6rem;
     }
     .seo-guide-body ul { list-style: none; margin-bottom: 1.1rem; }
@@ -709,7 +722,7 @@
       font-family: 'Fraunces', serif;
       font-size: 1.05rem;
       font-style: italic;
-      color: #27272e;
+      color: #e5e7eb;
     }
 
     /* Read-time chip */
@@ -732,6 +745,21 @@
       background: #e07a3a;
     }
   </style>
+
+  <!-- ================== SECURITY: CSP ================== -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'none';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- ================== NOSCRIPT FALLBACK ================== -->
+  <noscript>
+    <style>
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+      #cursor-dot, #cursor-ring, #cursor-halo { display: none !important; }
+      .brands-track { animation: none !important; }
+    </style>
+  </noscript>
 
   <!-- ================== SCHEMA.ORG JSON-LD ================== -->
   <script type="application/ld+json">
