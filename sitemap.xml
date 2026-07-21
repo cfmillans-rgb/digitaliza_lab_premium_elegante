@@ -7,7 +7,7 @@
 
   <url>
     <loc>https://digitalizalab.cl/</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -16,14 +16,14 @@
       <image:caption>Agencia digital chilena especializada en landing pages para profesionales independientes.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://digitalizalab.cl/assets/img/logo.png</image:loc>
+      <image:loc>https://digitalizalab.cl/logo.png</image:loc>
       <image:title>Logo Digitaliza Lab</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://digitalizalab.cl/blog.html</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

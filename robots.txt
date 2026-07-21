@@ -1,6 +1,7 @@
 # ============================================
 # Digitaliza Lab — robots.txt
 # https://digitalizalab.cl/
+# Última actualización: 2026-07-20
 # ============================================
 
 User-agent: *
@@ -8,12 +9,14 @@ Allow: /
 
 # Bloquear rutas de configuración interna
 Disallow: /CNAME
+Disallow: /.git
 
 # Permitir explícitamente recursos estáticos (necesarios para el renderizado SEO)
 Allow: /assets/
 Allow: /*.css$
 Allow: /*.js$
 Allow: /favicon.png
+Allow: /logo.png
 
 # Bots de IA (Permitidos para AI Overviews y Perplexity)
 User-agent: GPTBot
@@ -31,12 +34,18 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
 # Crawl-delay razonable para bots agresivos de herramientas SEO
 User-agent: AhrefsBot
 Crawl-delay: 5
 
 User-agent: SemrushBot
 Crawl-delay: 5
+
+User-agent: MJ12bot
+Crawl-delay: 10
 
 # Sitemap
 Sitemap: https://digitalizalab.cl/sitemap.xml
