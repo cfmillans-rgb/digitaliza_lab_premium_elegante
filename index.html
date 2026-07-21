@@ -595,6 +595,39 @@
       
       /* Mejor padding en secciones en mobile */
       section { padding-left: 1rem; padding-right: 1rem; }
+
+      /* Reducir backdrop-filter en mobile para rendimiento GPU */
+      .glass { backdrop-filter: blur(12px) saturate(120%); -webkit-backdrop-filter: blur(12px) saturate(120%); }
+      .glass-strong { backdrop-filter: blur(16px) saturate(120%); -webkit-backdrop-filter: blur(16px) saturate(120%); }
+      .nav-scrolled { backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); }
+
+      /* Ocultar cursor decorativo en mobile */
+      #cursor-dot, #cursor-ring, #cursor-halo { display: none !important; }
+
+      /* Back-to-top + WA float: más espacio */
+      #backToTop { bottom: 5rem; right: 1rem; width: 40px; height: 40px; }
+
+      /* Hero parallax layers más sutiles */
+      .hero-layer { inset: -5%; }
+
+      /* Secciones con más respiración */
+      .section-alt { padding-top: 3rem; padding-bottom: 3rem; }
+    }
+
+    /* === TABLET BREAKPOINT (768-1024px) === */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      /* Reducir blur parcialmente en tablet */
+      .glass { backdrop-filter: blur(18px) saturate(130%); -webkit-backdrop-filter: blur(18px) saturate(130%); }
+
+      /* Tipografía tablet — entre mobile y desktop */
+      .type-hero { font-size: clamp(2.8rem, 6vw, 4.5rem); }
+      .type-section-title { font-size: clamp(2rem, 4.5vw, 3rem); }
+
+      /* Hero layers recortados */
+      .hero-layer { inset: -10%; }
+
+      /* Secciones con padding proporcional */
+      section { padding-left: 1.5rem; padding-right: 1.5rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -603,6 +636,7 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
+      #scrollProgress { display: none; }
     }
 
 
