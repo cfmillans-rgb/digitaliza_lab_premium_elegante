@@ -426,6 +426,43 @@
       color: #ff8a42;
     }
 
+    /* === STICKY CTA BAR (appears after hero) === */
+    #stickyCta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 38;
+      background: rgba(5,5,5,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,138,66,0.15);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.5s var(--ease-out);
+    }
+    #stickyCta.visible {
+      transform: translateY(0);
+    }
+    #stickyCta .sticky-price {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    #stickyCta .sticky-label {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      display: none;
+    }
+    @media (min-width: 640px) {
+      #stickyCta .sticky-label { display: inline; }
+    }
+
     /* === SECTION DIVIDERS — ritmo visual === */
     .section-divider {
       height: 1px;
@@ -1109,7 +1146,7 @@
           <!-- Trust pill con social proof -->
           <div class="trust-pill mb-6">
             <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-            <span class="font-mono uppercase tracking-[0.15em] text-[10px] sm:text-[11px]">Profesionales en Chile confían en nosotros</span>
+            <span class="font-mono uppercase tracking-[0.15em] text-[10px] sm:text-[11px]">+30 profesionales en Chile confían en nosotros</span>
           </div>
 
           <h1 id="hero-title" class="font-display tracking-tighter leading-[1.05] sm:leading-[0.97] lg:leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-medium">
@@ -1725,17 +1762,25 @@
                   <span class="w-1.5 h-1.5 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
                   Paquete Único
                 </span>
-                <span class="font-mono text-[10px] text-mist tracking-widest">// 01</span>
+                <span class="inline-flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.15em] text-green-400 px-2.5 py-1 rounded-full border border-green-400/20 bg-green-400/5">
+                  <span class="w-1 h-1 rounded-full bg-green-400 animate-pulse"></span>
+                  Cupos abiertos
+                </span>
               </div>
 
               <h3 class="font-display text-2xl text-white leading-tight mb-5 group-hover:text-amber-glow transition-colors">Landing estratégica para<br>profesionales y servicios</h3>
 
               <div class="mb-5 pb-5 border-b border-white/5">
                 <div class="flex items-baseline gap-2">
+                  <span class="text-lg text-mist/50 line-through font-light">$250.000</span>
                   <span class="font-display text-5xl sm:text-6xl font-medium text-white">$99.990</span>
                   <span class="text-xs font-mono text-mist uppercase tracking-wider">CLP</span>
                 </div>
                 <span class="text-xs text-mist mt-2 block">Pago único · sin mensualidades ocultas</span>
+                <span class="inline-flex items-center gap-1.5 mt-2 text-[10px] font-mono uppercase tracking-wider text-green-400">
+                  <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Ahorras $150.010 vs. precio de agencia
+                </span>
               </div>
 
               <p class="text-sm text-mist/80 mb-6">Ideal para profesionales independientes que hoy dependen de redes o recomendaciones y necesitan una web que los represente bien.</p>
@@ -1760,6 +1805,17 @@
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
               <small class="block text-center text-[10px] text-mist/60 mt-4 uppercase tracking-wider">El plazo corre desde que recibimos la información.</small>
+
+              <!-- Guarantee badge -->
+              <div class="mt-5 pt-5 border-t border-white/5 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-green-400/10 border border-green-400/20 grid place-items-center flex-shrink-0">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <span class="text-xs font-semibold text-white block">Garantía de satisfacción</span>
+                  <span class="text-[10px] text-mist/70">Si no te convence el resultado, te devolvemos el dinero.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2087,6 +2143,58 @@
   </section>
 
   <!-- ============================================
+       CTA INTERMEDIO — URGENCIA PRE-CONTACTO
+  ============================================ -->
+  <section class="relative py-20 sm:py-28 overflow-hidden" aria-label="Llamado a la acción">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-amber-glow/[0.03] to-transparent"></div>
+    </div>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center" data-reveal="fade-up">
+
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-glow/20 bg-amber-glow/5 mb-8">
+        <span class="w-2 h-2 rounded-full bg-amber-glow animate-pulse"></span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow">Disponibilidad limitada</span>
+      </div>
+
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.08] tracking-tight text-white mb-6">
+        Cada semana sin web profesional<br>
+        <span class="italic text-amber-glow">son clientes que no llegan.</span>
+      </h2>
+
+      <p class="text-mist text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+        Mientras lo piensas, tu competencia ya tiene su landing page funcionando y captando pacientes, clientes y consultas. <strong class="text-white font-medium">No necesitas más seguidores — necesitas una web que convierta.</strong>
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+        <a href="#contacto" class="btn-primary js-cta-track px-8 py-4 text-base" data-cta="urgency_cta_form">
+          Empezar mi proyecto hoy
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="js-wa-link btn-interactive inline-flex items-center gap-2 rounded-full border border-green-400/30 bg-green-400/5 text-green-400 font-medium text-sm px-6 py-3.5 hover:bg-green-400/10 transition-all" data-source="urgency_section" data-message="Hola Digitaliza Lab, quiero empezar con mi landing page lo antes posible.">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Escribir por WhatsApp
+        </a>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] text-mist/70 font-mono uppercase tracking-wider">
+        <span class="flex items-center gap-1.5">
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Pago único $99.990
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Entrega en 72h
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Garantía de satisfacción
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
        CONTACTO
   ============================================ -->
   <section id="contacto" class="relative py-24 sm:py-32 overflow-hidden">
@@ -2291,9 +2399,21 @@
   </footer>
 
   <!-- ============================================
+       STICKY CTA BAR (appears after scrolling past hero)
+  ============================================ -->
+  <div id="stickyCta" aria-hidden="true">
+    <span class="sticky-label">Landing page todo incluido</span>
+    <span class="sticky-price">$99.990 <span class="text-xs text-mist font-normal">CLP</span></span>
+    <a href="#contacto" class="btn-interactive inline-flex items-center gap-2 rounded-full bg-amber-glow text-ink-950 font-semibold text-xs px-5 py-2.5 hover:bg-[#ff9a5c] transition-all js-cta-track shadow-[0_0_15px_rgba(255,138,66,0.3)]" data-cta="sticky_bar">
+      Cotizar ahora
+      <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <!-- ============================================
        WHATSAPP FLOAT
   ============================================ -->
-  <a class="btn-interactive wa-float js-wa-link fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-green-500 text-white font-medium text-sm shadow-2xl hover:bg-green-600 transition" data-source="floating"
+  <a class="btn-interactive wa-float js-wa-link fixed bottom-14 sm:bottom-6 right-6 z-40 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-green-500 text-white font-medium text-sm shadow-2xl hover:bg-green-600 transition" data-source="floating"
      href="#"
      data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page."
      aria-label="Abrir WhatsApp">
@@ -2637,6 +2757,25 @@
         btn.addEventListener('click', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+      })();
+
+      /* -------- STICKY CTA BAR -------- */
+      (function () {
+        const bar = document.getElementById('stickyCta');
+        const contactSection = document.getElementById('contacto');
+        const waFloat = document.querySelector('.wa-float');
+        if (!bar) return;
+
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY;
+          const contactTop = contactSection ? contactSection.getBoundingClientRect().top + scrollY - window.innerHeight : Infinity;
+          const show = scrollY > 600 && scrollY < contactTop;
+          bar.classList.toggle('visible', show);
+          // Move WA float up when sticky bar is visible
+          if (waFloat) {
+            waFloat.style.bottom = show ? '4.5rem' : '';
+          }
+        }, { passive: true });
       })();
 
       /* -------- SMOOTH SCROLL con offset para navbar sticky -------- */
