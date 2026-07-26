@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="20" fill="#050505"/>
+  <rect width="100" height="100" rx="20" fill="transparent" stroke="#ff8a42" stroke-width="4" opacity="0.5"/>
+  <text x="50%" y="54%" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="700" fill="#ff8a42" text-anchor="middle" dominant-baseline="middle">DL</text>
+</svg>
