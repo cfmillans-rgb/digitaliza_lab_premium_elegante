@@ -888,6 +888,15 @@
       border-radius: 50%;
       background: #e07a3a;
     }
+    
+    /* Portfolio Auto-Scroll Hover */
+    .portfolio-img {
+      object-position: top;
+      transition: object-position 8s ease-in-out, transform 0.7s ease;
+    }
+    .group:hover .portfolio-img {
+      object-position: bottom;
+    }
   </style>
 
   <!-- ================== SECURITY: CSP ================== -->
@@ -1902,7 +1911,7 @@
         <!-- Proyecto 1: Johan Alegría -->
         <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up">
           <div class="relative overflow-hidden bg-[#050505] p-2 aspect-[4/3] flex items-center justify-center">
-            <img src="assets/img/portfolio-johan.png" alt="Johan Alegría Photography" class="w-full h-full object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-700">
+            <img src="assets/img/portfolio-johan.png" alt="Johan Alegría Photography" class="w-full h-full object-cover rounded-2xl portfolio-img group-hover:scale-[1.02]">
             <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/20 to-transparent opacity-60 pointer-events-none"></div>
           </div>
           <div class="p-8">
@@ -1919,7 +1928,7 @@
         <!-- Proyecto 2: Video Inspección -->
         <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up" data-reveal-delay="100">
           <div class="relative overflow-hidden bg-[#050505] p-2 aspect-[4/3] flex items-center justify-center">
-            <img src="assets/img/portfolio-vision.png" alt="Visión Inspección" class="w-full h-full object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-700">
+            <img src="assets/img/portfolio-vision.png" alt="Visión Inspección" class="w-full h-full object-cover rounded-2xl portfolio-img group-hover:scale-[1.02]">
             <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/20 to-transparent opacity-60 pointer-events-none"></div>
           </div>
           <div class="p-8">
