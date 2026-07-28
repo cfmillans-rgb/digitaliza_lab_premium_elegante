@@ -2001,10 +2001,22 @@
       <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16">
         
         <!-- Proyecto 1: Johan Alegría -->
-        <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up" onmouseover="this.querySelector('.portfolio-img').style.objectPosition='bottom'" onmouseout="this.querySelector('.portfolio-img').style.objectPosition='top'">
-          <div class="relative overflow-hidden bg-[#050505] p-2 aspect-[4/3] flex items-center justify-center">
-            <img src="assets/img/portfolio-johan.png?v=2" alt="Johan Alegría Photography" class="w-full h-full object-cover rounded-2xl portfolio-img group-hover:scale-[1.02]" style="object-position: top; transition: object-position 8s ease-in-out, transform 0.7s ease;">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/20 to-transparent opacity-60 pointer-events-none"></div>
+        <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up">
+          <!-- Browser frame -->
+          <div class="bg-[#1a1a1a] px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div class="flex gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+            </div>
+            <div class="flex-1 mx-3">
+              <div class="bg-[#0d0d0d] rounded-md px-3 py-1 text-[11px] text-mist/50 font-mono text-center truncate">johanalegriaphotography.cl</div>
+            </div>
+          </div>
+          <!-- Screenshot viewport -->
+          <div class="relative overflow-hidden h-[320px] sm:h-[360px] bg-[#050505]">
+            <img src="assets/img/portfolio-johan.png?v=3" alt="Johan Alegría Photography" class="w-full h-auto block" style="transition: transform 6s cubic-bezier(0.25, 0.1, 0.25, 1);" onmouseover="this.style.transform='translateY(calc(-100% + 360px))'" onmouseout="this.style.transform='translateY(0)'">
+            <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none"></div>
           </div>
           <div class="p-8">
             <span class="inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-2">Fotógrafo Profesional</span>
@@ -2018,10 +2030,22 @@
         </article>
 
         <!-- Proyecto 2: Video Inspección -->
-        <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up" data-reveal-delay="100" onmouseover="this.querySelector('.portfolio-img').style.objectPosition='bottom'" onmouseout="this.querySelector('.portfolio-img').style.objectPosition='top'">
-          <div class="relative overflow-hidden bg-[#050505] p-2 aspect-[4/3] flex items-center justify-center">
-            <img src="assets/img/portfolio-vision.png?v=2" alt="Visión Inspección" class="w-full h-full object-cover rounded-2xl portfolio-img group-hover:scale-[1.02]" style="object-position: top; transition: object-position 8s ease-in-out, transform 0.7s ease;">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/20 to-transparent opacity-60 pointer-events-none"></div>
+        <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up" data-reveal-delay="100">
+          <!-- Browser frame -->
+          <div class="bg-[#1a1a1a] px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div class="flex gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+            </div>
+            <div class="flex-1 mx-3">
+              <div class="bg-[#0d0d0d] rounded-md px-3 py-1 text-[11px] text-mist/50 font-mono text-center truncate">visioninspeccion.cl</div>
+            </div>
+          </div>
+          <!-- Screenshot viewport -->
+          <div class="relative overflow-hidden h-[320px] sm:h-[360px] bg-[#050505]">
+            <img src="assets/img/portfolio-vision.png?v=3" alt="Visión Inspección" class="w-full h-auto block" style="transition: transform 6s cubic-bezier(0.25, 0.1, 0.25, 1);" onmouseover="this.style.transform='translateY(calc(-100% + 360px))'" onmouseout="this.style.transform='translateY(0)'">
+            <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none"></div>
           </div>
           <div class="p-8">
             <span class="inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-2">Video inspección de tuberías</span>
