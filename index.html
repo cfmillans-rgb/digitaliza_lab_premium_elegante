@@ -1790,16 +1790,53 @@
   </section>
 
   <!-- ============================================
-       PROCESO
+       PROCESO — TIMELINE ANIMADO
   ============================================ -->
+  <style>
+    /* Timeline core */
+    .tl-wrapper { position: relative; max-width: 900px; margin: 0 auto; }
+    .tl-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.05); transform: translateX(-50%); }
+    .tl-line-fill { position: absolute; left: 0; top: 0; width: 100%; height: 0%; background: linear-gradient(180deg, #e07a3a, #f5a623); transition: height 0.1s linear; border-radius: 2px; box-shadow: 0 0 12px rgba(224,122,58,0.4); }
+
+    /* Timeline item */
+    .tl-item { position: relative; display: flex; align-items: flex-start; margin-bottom: 2.5rem; opacity: 0; transform: translateY(40px); transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1); }
+    .tl-item.tl-visible { opacity: 1; transform: translateY(0); }
+    .tl-item:last-child { margin-bottom: 0; }
+
+    /* Alternating layout */
+    .tl-item:nth-child(odd) { flex-direction: row; }
+    .tl-item:nth-child(even) { flex-direction: row-reverse; }
+
+    /* Content card */
+    .tl-card { width: calc(50% - 40px); background: #050505; border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 1.75rem; position: relative; transition: border-color 0.3s, box-shadow 0.3s; }
+    .tl-card:hover { border-color: rgba(224,122,58,0.25); box-shadow: 0 0 30px rgba(224,122,58,0.06); }
+
+    /* Center dot */
+    .tl-dot-wrap { position: absolute; left: 50%; top: 1.75rem; transform: translateX(-50%); z-index: 10; display: flex; align-items: center; justify-content: center; }
+    .tl-dot { width: 44px; height: 44px; border-radius: 50%; background: #0a0a0a; border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #fff; transition: border-color 0.4s, box-shadow 0.4s, background 0.4s; }
+    .tl-item.tl-visible .tl-dot { border-color: rgba(224,122,58,0.5); box-shadow: 0 0 20px rgba(224,122,58,0.2); }
+    .tl-dot-pulse { position: absolute; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(224,122,58,0.3); animation: tl-pulse 2.5s ease-in-out infinite; opacity: 0; }
+    .tl-item.tl-visible .tl-dot-pulse { opacity: 1; }
+    @keyframes tl-pulse { 0%,100%{ transform:scale(1); opacity:0.6; } 50%{ transform:scale(1.6); opacity:0; } }
+
+    /* Mobile: single column */
+    @media (max-width: 767px) {
+      .tl-line { left: 22px; }
+      .tl-item, .tl-item:nth-child(even) { flex-direction: row !important; padding-left: 56px; }
+      .tl-dot-wrap { left: 22px; }
+      .tl-card { width: 100%; }
+    }
+  </style>
+
   <section id="proceso" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
     <div class="absolute inset-0 -z-10">
       <div class="absolute top-1/2 right-0 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full"></div>
+      <div class="absolute top-1/4 left-0 w-80 h-80 bg-amber-glow/5 blur-[100px] rounded-full"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-      <div class="max-w-3xl mx-auto text-center mb-16" data-reveal="fade-up">
+      <div class="max-w-3xl mx-auto text-center mb-20" data-reveal="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— ¿Cómo trabajamos?</span>
         <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
           Un flujo de trabajo claro<br>
@@ -1807,83 +1844,138 @@
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative mt-8">
-        
+      <!-- Timeline -->
+      <div class="tl-wrapper" id="proceso-timeline">
+        <div class="tl-line"><div class="tl-line-fill" id="tl-progress"></div></div>
+
         <!-- Step 1 -->
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up">
-          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6">01</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Paso 1</span>
-          <h3 class="font-display text-xl text-white mb-3">Solicitas tu Landing</h3>
-          <p class="text-sm text-mist/80">Nos escribes por WhatsApp y resolvemos todas tus dudas iniciales antes de empezar.</p>
-        </article>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">01</div></div>
+          <div class="tl-card">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 1</span>
+            <h3 class="font-display text-xl text-white mb-2">Solicitas tu Landing</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Nos escribes por WhatsApp y resolvemos todas tus dudas iniciales antes de empezar.</p>
+          </div>
+        </div>
 
         <!-- Step 2 -->
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up" data-reveal-delay="100">
-          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6">02</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Paso 2</span>
-          <h3 class="font-display text-xl text-white mb-3">Realizas el pago</h3>
-          <p class="text-sm text-mist/80">Puedes pagar mediante Mercado Pago (crédito/débito) o Transferencia Bancaria.</p>
-        </article>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">02</div></div>
+          <div class="tl-card">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 2</span>
+            <h3 class="font-display text-xl text-white mb-2">Realizas el pago</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Puedes pagar mediante Mercado Pago (crédito/débito) o Transferencia Bancaria.</p>
+          </div>
+        </div>
 
         <!-- Step 3 -->
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up" data-reveal-delay="200">
-          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6">03</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Paso 3</span>
-          <h3 class="font-display text-xl text-white mb-3">Emitimos tu boleta</h3>
-          <p class="text-sm text-mist/80">Solicitamos tus datos de facturación y te enviamos la boleta electrónica por el servicio.</p>
-        </article>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">03</div></div>
+          <div class="tl-card">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 3</span>
+            <h3 class="font-display text-xl text-white mb-2">Emitimos tu boleta</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Solicitamos tus datos de facturación y te enviamos la boleta electrónica por el servicio.</p>
+          </div>
+        </div>
 
         <!-- Step 4 -->
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up">
-          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6">04</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Paso 4</span>
-          <h3 class="font-display text-xl text-white mb-3">Onboarding</h3>
-          <p class="text-sm text-mist/80">Recibes un formulario simple para enviarnos logo, colores, fotos, textos y datos de contacto.</p>
-        </article>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">04</div></div>
+          <div class="tl-card">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 4</span>
+            <h3 class="font-display text-xl text-white mb-2">Onboarding</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Recibes un formulario simple para enviarnos logo, colores, fotos, textos y datos de contacto.</p>
+          </div>
+        </div>
 
         <!-- Step 5 -->
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up" data-reveal-delay="100">
-          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6">05</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Paso 5</span>
-          <h3 class="font-display text-xl text-white mb-3">Diseñamos tu Landing</h3>
-          <p class="text-sm text-mist/80">En un plazo máximo de 72 horas hábiles recibirás la primera versión completamente funcional.</p>
-        </article>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">05</div></div>
+          <div class="tl-card">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 5</span>
+            <h3 class="font-display text-xl text-white mb-2">Diseñamos tu Landing</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">En un plazo máximo de 72 horas hábiles recibirás la primera versión completamente funcional.</p>
+          </div>
+        </div>
 
         <!-- Step 6 -->
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up" data-reveal-delay="200">
-          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6">06</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Paso 6</span>
-          <h3 class="font-display text-xl text-white mb-3">Revisión</h3>
-          <p class="text-sm text-mist/80">Dispondrás de 72 horas para revisar la landing y solicitar correcciones sobre lo entregado.</p>
-        </article>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">06</div></div>
+          <div class="tl-card">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 6</span>
+            <h3 class="font-display text-xl text-white mb-2">Revisión</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Dispondrás de 72 horas para revisar la landing y solicitar correcciones sobre lo entregado.</p>
+          </div>
+        </div>
 
         <!-- Step 7 -->
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up">
-          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6">07</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Paso 7</span>
-          <h3 class="font-display text-xl text-white mb-3">Publicación</h3>
-          <p class="text-sm text-mist/80">Una vez aprobada por ti, publicamos la landing y queda 100% operativa en tu dominio.</p>
-        </article>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">07</div></div>
+          <div class="tl-card">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 7</span>
+            <h3 class="font-display text-xl text-white mb-2">Publicación</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Una vez aprobada por ti, publicamos la landing y queda 100% operativa en tu dominio.</p>
+          </div>
+        </div>
 
         <!-- Step 8 -->
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up" data-reveal-delay="100">
-          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6">08</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Paso 8</span>
-          <h3 class="font-display text-xl text-white mb-3">Mantención</h3>
-          <p class="text-sm text-mist/80">Cuando lo necesites, puedes contratar el Plan de Mantención para cambios menores y ajustes.</p>
-        </article>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">08</div></div>
+          <div class="tl-card">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 8</span>
+            <h3 class="font-display text-xl text-white mb-2">Mantención</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Cuando lo necesites, puedes contratar el Plan de Mantención para cambios menores y ajustes.</p>
+          </div>
+        </div>
 
         <!-- Step 9 -->
-        <article class="relative bg-[#050505] border border-white/5 rounded-3xl p-7 overflow-hidden group hover:border-white/10 transition-colors" data-reveal="fade-up" data-reveal-delay="200">
-          <div class="w-12 h-12 rounded-full border border-white/10 bg-[#0a0a0a] flex items-center justify-center font-mono text-sm text-white mb-6">09</div>
-          <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-3">Paso 9</span>
-          <h3 class="font-display text-xl text-white mb-3">Renovación</h3>
-          <p class="text-sm text-mist/80">Antes del vencimiento anual, te contactaremos para consultar si deseas renovar tus servicios.</p>
-        </article>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">09</div></div>
+          <div class="tl-card">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 9</span>
+            <h3 class="font-display text-xl text-white mb-2">Renovación</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Antes del vencimiento anual, te contactaremos para consultar si deseas renovar tus servicios.</p>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
+
+  <!-- Timeline scroll animation -->
+  <script>
+  (function(){
+    const tl = document.getElementById('proceso-timeline');
+    if(!tl) return;
+    const items = tl.querySelectorAll('.tl-item');
+    const progress = document.getElementById('tl-progress');
+
+    function onScroll(){
+      const rect = tl.getBoundingClientRect();
+      const winH = window.innerHeight;
+      const tlTop = rect.top;
+      const tlH = rect.height;
+
+      // Progress line
+      if(tlTop < winH && rect.bottom > 0){
+        const scrolled = Math.min(Math.max((winH - tlTop) / (tlH + winH * 0.5), 0), 1);
+        progress.style.height = (scrolled * 100) + '%';
+      }
+
+      // Reveal items
+      items.forEach(function(item){
+        const r = item.getBoundingClientRect();
+        if(r.top < winH * 0.85){
+          item.classList.add('tl-visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll, {passive:true});
+    setTimeout(onScroll, 100);
+  })();
+  </script>
 
   <!-- ============================================
        PORTAFOLIO · GALERÍA DE TRABAJOS
