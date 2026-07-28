@@ -415,7 +415,7 @@
     /* === BACK TO TOP === */
     #backToTop {
       position: fixed;
-      bottom: 6.5rem;
+      bottom: 5.5rem; /* Moved up to make room for WA float */
       right: 1.5rem;
       z-index: 39;
       width: 44px;
@@ -432,6 +432,28 @@
       pointer-events: none;
       transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out), background 0.3s;
       cursor: pointer;
+    }
+    
+    /* === WA FLOAT === */
+    #waFloat {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 40;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+      cursor: pointer;
+    }
+    #waFloat:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
     }
     #backToTop.visible {
       opacity: 1;
@@ -663,7 +685,8 @@
       #cursor-dot, #cursor-ring, #cursor-halo { display: none !important; }
 
       /* Back-to-top + WA float: más espacio */
-      #backToTop { bottom: 7.5rem; right: 1rem; width: 40px; height: 40px; }
+      #backToTop { bottom: 5rem; right: 1rem; width: 40px; height: 40px; }
+      #waFloat { bottom: 1.25rem; right: 1rem; width: 48px; height: 48px; }
 
       /* Hero parallax layers más sutiles */
       .hero-layer { inset: -5%; }
@@ -1062,6 +1085,13 @@
   <!-- Scroll progress bar -->
   <div id="scrollProgress" aria-hidden="true"></div>
 
+  <!-- Floating WhatsApp button -->
+  <a href="#" class="js-wa-link" id="waFloat" aria-label="Chat en WhatsApp" title="Chat en WhatsApp" data-source="wa_float">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
   <!-- Back to top button -->
   <button id="backToTop" aria-label="Volver al inicio" title="Volver al inicio">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1169,7 +1199,7 @@
           <!-- Trust pill con social proof -->
           <div class="trust-pill mb-6">
             <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-            <span class="font-mono uppercase tracking-[0.15em] text-[10px] sm:text-[11px]">+30 profesionales en Chile confían en nosotros</span>
+            <span class="font-mono uppercase tracking-[0.15em] text-[10px] sm:text-[11px]">Diseño estratégico para profesionales</span>
           </div>
 
           <h1 id="hero-title" class="font-display tracking-tighter leading-[1.05] sm:leading-[0.97] lg:leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-medium">
@@ -1965,7 +1995,7 @@
             </div>
             <!-- Screenshot viewport — short crop -->
             <div class="relative pf-shine" style="height: 180px; overflow: hidden; background: #050505;">
-              <img src="assets/img/portfolio-johan.webp" alt="Johan Alegría Photography" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]">
+              <img src="assets/img/portfolio-johan.webp" alt="Johan Alegría Photography" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
               <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none"></div>
             </div>
           </a>
@@ -1996,7 +2026,7 @@
             </div>
             <!-- Screenshot viewport — short crop -->
             <div class="relative pf-shine" style="height: 180px; overflow: hidden; background: #050505;">
-              <img src="assets/img/portfolio-vision.webp" alt="Visión Inspección" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]">
+              <img src="assets/img/portfolio-vision.webp" alt="Visión Inspección" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
               <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none"></div>
             </div>
           </a>
@@ -2074,12 +2104,12 @@
 
         <details open class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
-            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Qué incluye el paquete de $99.990?</h3>
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Qué incluye el Servicio Landing Page?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Incluye una landing page de una sola página, diseño profesional, estructura de textos orientada a consultas, formulario de contacto, SEO técnico básico, dominio, hosting, SSL y correo corporativo por 1 año.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Incluye diseño profesional de una Landing Page enfocada en conversiones, redacción de textos (copywriting), formulario de contacto integrado a tu correo, botón directo a WhatsApp, dominio, hosting, certificado de seguridad (SSL) y un correo corporativo por el primer año.</p></div>
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
