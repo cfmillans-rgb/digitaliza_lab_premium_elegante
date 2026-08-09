@@ -2617,8 +2617,9 @@
             const target = parseInt(el.dataset.counter, 10);
             const suffix = el.dataset.suffix || '';
             const duration = 1600;
-            const start = performance.now();
+            let start = null;
             function tick(now) {
+              if (!start) start = now;
               const progress = Math.min((now - start) / duration, 1);
               const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
               const value = Math.floor(target * eased);
