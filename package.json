@@ -20,5 +20,8 @@
   "homepage": "https://github.com/cfmillans-rgb/digitaliza_lab_premium_elegante#readme",
   "dependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
   }
 }
