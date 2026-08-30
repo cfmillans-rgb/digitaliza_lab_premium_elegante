@@ -1,31 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://digitalizalab.cl/</loc>
-    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://digitalizalab.cl/assets/img/og-image.png</image:loc>
-      <image:title>Digitaliza Lab — Landing pages profesionales en Chile</image:title>
-      <image:caption>Agencia digital chilena especializada en landing pages para profesionales independientes.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://digitalizalab.cl/logo.png</image:loc>
-      <image:title>Logo Digitaliza Lab</image:title>
-    </image:image>
   </url>
-
   <url>
     <loc>https://digitalizalab.cl/blog.html</loc>
-    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://digitalizalab.cl/blog/diseno-web-chile.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalizalab.cl/blog/landing-page-chile.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalizalab.cl/blog/agencia-digital-santiago.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalizalab.cl/blog/webs-abogados-medicos.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalizalab.cl/blog/seo-local-chile.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalizalab.cl/blog/ciberseguridad-pymes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalizalab.cl/blog/certificado-ssl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalizalab.cl/blog/prevencion-ddos.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
