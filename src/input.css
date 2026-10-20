@@ -63,7 +63,8 @@
 }
 
 /* Keep content above the spotlight */
-.spotlight-card > * {
+/* Decorative absolute layers (glows) keep their absolute position */
+.spotlight-card > *:not(.absolute) {
   position: relative;
   z-index: 1;
 }
