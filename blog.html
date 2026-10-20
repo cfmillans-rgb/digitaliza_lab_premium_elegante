@@ -178,7 +178,7 @@
       pointer-events: none;
       z-index: 1;
       opacity: var(--grain-opacity);
-      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
     }
 
     .grid-bg {
@@ -794,10 +794,8 @@
 
       <!-- Desktop links -->
       <ul class="hidden lg:flex items-center gap-1 text-sm">
-        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="index.html#beneficios">Beneficios</a></li>
+        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="index.html#servicios">Servicios</a></li>
         <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="index.html#portafolio">Portafolio</a></li>
-        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="index.html#incluye">Qué incluye</a></li>
-        <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="index.html#ideal">Para quién es</a></li>
         <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="index.html#proceso">Proceso</a></li>
         <li><a class="px-3 py-2 text-mist hover:text-white transition-colors" href="index.html#faq">FAQ</a></li>
         <li><a class="nav-link px-1 py-0.5 text-amber-glow font-medium" href="blog.html">Blog</a></li>
@@ -817,10 +815,8 @@
     <!-- Mobile menu -->
     <div id="mobileMenu" class="lg:hidden hidden border-t border-white/5 bg-ink-950/95 backdrop-blur-xl">
       <ul class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1 text-sm">
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="index.html#beneficios">Beneficios</a></li>
+        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="index.html#servicios">Servicios</a></li>
         <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="index.html#portafolio">Portafolio</a></li>
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="index.html#incluye">Qué incluye</a></li>
-        <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="index.html#ideal">Para quién es</a></li>
         <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="index.html#proceso">Proceso</a></li>
         <li><a class="block px-3 py-3 text-mist hover:text-amber-glow rounded-lg hover:bg-white/5 transition" href="index.html#faq">FAQ</a></li>
         <li><a class="nav-link px-1 py-0.5 text-amber-glow font-medium" href="blog.html">Blog</a></li>
@@ -930,7 +926,6 @@
 
   </div>
 </section>
-  </main>
 
   <!-- CTA FINAL -->
   <section class="border-t border-white/5 py-24">
@@ -946,10 +941,11 @@
       </a>
     </div>
   </section>
+  </main>
 
+  <!-- ============================================
          FOOTER
   ============================================ -->
-  </main>
 
   <footer role="contentinfo" class="relative border-t border-white/5 bg-ink-950/60 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -985,10 +981,8 @@
         <div class="md:col-span-2">
           <h3 class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-4">Secciones</h3>
           <ul class="space-y-2 text-sm">
-            <li><a href="index.html#beneficios" class="text-mist hover:text-white transition">Beneficios</a></li>
+            <li><a href="index.html#servicios" class="text-mist hover:text-white transition">Servicios</a></li>
             <li><a href="index.html#portafolio" class="text-mist hover:text-white transition">Portafolio</a></li>
-            <li><a href="index.html#incluye" class="text-mist hover:text-white transition">Qué incluye</a></li>
-            <li><a href="index.html#ideal" class="text-mist hover:text-white transition">Para quién es</a></li>
             <li><a href="index.html#proceso" class="text-mist hover:text-white transition">Proceso</a></li>
             <li><a href="index.html#faq" class="text-mist hover:text-white transition">FAQ</a></li>
           </ul>
@@ -1025,7 +1019,8 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>\n  <script defer>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
       AOS.init({ duration: 700, once: true, offset: 60 });
 

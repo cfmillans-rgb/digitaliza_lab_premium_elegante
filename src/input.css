@@ -80,3 +80,30 @@
 .parallax-layer {
   will-change: transform;
 }
+
+/* Secondary button (pricing cards: Mantención / Renovación) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+  color: #e5e7eb;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+.btn-secondary:hover {
+  border-color: rgba(255, 138, 66, 0.6);
+  color: #ff8a42;
+  background: rgba(255, 138, 66, 0.08);
+  transform: translateY(-2px);
+}
+.btn-secondary:focus-visible {
+  outline: 2px solid #ff8a42;
+  outline-offset: 3px;
+}

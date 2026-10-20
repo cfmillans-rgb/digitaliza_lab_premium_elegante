@@ -161,7 +161,7 @@
       pointer-events: none;
       z-index: 1;
       opacity: var(--grain-opacity);
-      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
     }
 
     .grid-bg {
@@ -455,6 +455,10 @@
       transform: scale(1.1);
       box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
     }
+    /* Cuando la barra CTA inferior está visible, los botones flotantes suben para no taparla */
+    #waFloat, #backToTop { transition-property: transform, box-shadow, bottom, opacity, background; }
+    body.sticky-cta-on #waFloat { bottom: calc(var(--sticky-h, 64px) + 0.75rem); }
+    body.sticky-cta-on #backToTop { bottom: calc(var(--sticky-h, 64px) + 0.75rem + 60px); }
     #backToTop.visible {
       opacity: 1;
       transform: translateY(0);
@@ -923,9 +927,8 @@
   </style>
 
   <!-- ================== SECURITY: CSP ================== -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'none';">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net; frame-src https://www.facebook.com; base-uri 'self'; form-action 'self'">
+  <!-- X-Frame-Options, X-Content-Type-Options y frame-ancestors solo funcionan como cabeceras HTTP (no en <meta>); se configuran en el hosting/CDN -->
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- ================== NOSCRIPT FALLBACK ================== -->
@@ -1682,7 +1685,7 @@
   <section aria-label="Testimonios y clientes" class="relative py-14 sm:py-20 lg:py-28 overflow-hidden">
 
     <div class="absolute inset-0 -z-10">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#e07a3a]/07 blur-[140px] rounded-full"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#e07a3a]/[0.07] blur-[140px] rounded-full"></div>
     </div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
@@ -2021,7 +2024,7 @@
   ============================================ -->
   <section id="portafolio" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
     <div class="absolute inset-0 -z-10">
-      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-amber-glow/8 blur-[130px] rounded-full"></div>
+      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-amber-glow/[0.08] blur-[130px] rounded-full"></div>
       <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full"></div>
     </div>
 
@@ -2443,7 +2446,7 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden" data-reveal="fade-up" data-reveal-delay="100">
 
       <!-- Card 1 -->
-      <a href="blog.html#diseno-web-chile" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
+      <a href="blog/diseno-web-chile.html" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
         <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow/70">Diseño Web Chile</span>
         <h3 class="font-display text-xl font-light text-white leading-snug group-hover:text-amber-glow transition-colors">
           Lo que realmente importa en un sitio web en Chile en 2025
@@ -2456,7 +2459,7 @@
       </a>
 
       <!-- Card 2 -->
-      <a href="blog.html#landing-page-chile" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
+      <a href="blog/landing-page-chile.html" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
         <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow/70">Landing Page Chile</span>
         <h3 class="font-display text-xl font-light text-white leading-snug group-hover:text-amber-glow transition-colors">
           Anatomía de una landing page que convierte en el mercado chileno
@@ -2469,7 +2472,7 @@
       </a>
 
       <!-- Card 3 -->
-      <a href="blog.html#sectores" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
+      <a href="blog/webs-abogados-medicos.html" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
         <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow/70">Abogados · Médicos</span>
         <h3 class="font-display text-xl font-light text-white leading-snug group-hover:text-amber-glow transition-colors">
           Webs para sectores que exigen autoridad desde el primer clic
@@ -2482,7 +2485,7 @@
       </a>
 
       <!-- Card 4 -->
-      <a href="blog.html" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
+      <a href="blog/ciberseguridad-pymes.html" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
         <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow/70">Seguridad Web</span>
         <h3 class="font-display text-xl font-light text-white leading-snug group-hover:text-amber-glow transition-colors">
           Ciberseguridad para PyMEs: Protege los datos de tus clientes
@@ -2495,7 +2498,7 @@
       </a>
 
       <!-- Card 5 -->
-      <a href="blog.html" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
+      <a href="blog/certificado-ssl.html" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
         <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow/70">SSL & HTTPS</span>
         <h3 class="font-display text-xl font-light text-white leading-snug group-hover:text-amber-glow transition-colors">
           Certificados SSL: Por qué son obligatorios en 2025
@@ -2508,7 +2511,7 @@
       </a>
 
       <!-- Card 6 -->
-      <a href="blog.html" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
+      <a href="blog/prevencion-ddos.html" class="group bg-ink-800 hover:bg-ink-700 p-8 flex flex-col gap-4 transition-colors">
         <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow/70">Prevención DDoS</span>
         <h3 class="font-display text-xl font-light text-white leading-snug group-hover:text-amber-glow transition-colors">
           Cómo mitigamos ataques DDoS y bots maliciosos
@@ -2524,10 +2527,11 @@
 
     <!-- Bottom CTA -->
     <div class="mt-10 text-center" data-reveal="fade-up" data-reveal-delay="150">
-      <a href="blog.html" class="text-mist hover:text-white font-mono text-[11px] uppercase tracking-[0.18em] transition inline-flex items-center gap-2 group">
-        Ver también: SEO Local Chile, Agencia Digital Santiago
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
+      <p class="text-mist font-mono text-[11px] uppercase tracking-[0.18em]">
+        Ver también:
+        <a href="blog/seo-local-chile.html" class="text-amber-glow hover:text-white transition">SEO Local Chile</a> ·
+        <a href="blog/agencia-digital-santiago.html" class="text-amber-glow hover:text-white transition">Agencia Digital Santiago</a>
+      </p>
     </div>
 
   </div>
@@ -2985,6 +2989,8 @@
           const contactTop = contactSection ? contactSection.getBoundingClientRect().top + scrollY - window.innerHeight : Infinity;
           const show = scrollY > 600 && scrollY < contactTop;
           bar.classList.toggle('visible', show);
+          document.body.classList.toggle('sticky-cta-on', show);
+          document.documentElement.style.setProperty('--sticky-h', bar.offsetHeight + 'px');
 
         }, { passive: true });
       })();
