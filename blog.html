@@ -3,39 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76SK4B9GS2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'granted',
-      'wait_for_update': 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-76SK4B9GS2', { anonymize_ip: true, cookie_flags: 'SameSite=None;Secure', send_page_view: true });
-  </script>
-
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1057340010310894');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1057340010310894&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+  <script src="assets/js/consent.js" defer></script>
 
   <!-- ================== SEO PRIMARIO ================== -->
   <title>Blog de Diseño Web y SEO Local | Digitaliza Lab</title>
@@ -1010,11 +978,14 @@
 
       <!-- Bottom bar -->
       <div class="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-mist/60">
-        <span>© <span id="currentYear"></span> Digitaliza Lab · Todos los derechos reservados</span>
-        <span class="flex items-center gap-2">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
-          Hecho en Chile · v2.0
-        </span>
+        <span>© <span id="currentYear"></span> Digitaliza Lab SpA · RUT 78.517.255-8</span>
+        <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+          <a href="terminos.html" class="hover:text-white transition">Términos</a>
+          <a href="privacidad.html" class="hover:text-white transition">Privacidad</a>
+          <a href="entrega-y-reembolso.html" class="hover:text-white transition">Entrega y Reembolso</a>
+          <a href="datos-empresa.html" class="hover:text-white transition">Datos de la empresa</a>
+          <button type="button" data-cookie-settings class="hover:text-white transition">Configurar cookies</button>
+        </div>
       </div>
     </div>
   </footer>

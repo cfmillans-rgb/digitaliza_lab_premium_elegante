@@ -3,48 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76SK4B9GS2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-
-    // Consent Mode v2 — default denegado hasta que el usuario consienta (GDPR-ready)
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'granted',  // permitido para tracking anónimo
-      'wait_for_update': 500
-    });
-
-    gtag('js', new Date());
-    gtag('config', 'G-76SK4B9GS2', {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=None;Secure',
-      send_page_view: true
-    });
-  </script>
-  <!-- /Google Analytics -->
-
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1057340010310894');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1057340010310894&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+  <script src="assets/js/consent.js" defer></script>
 
   <!-- ================== SEO PRIMARIO ================== -->
   <title>Diseño de Landing Pages en Chile | Digitaliza Lab</title>
@@ -2385,14 +2344,14 @@
                     <input type="text" id="nombreCliente" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="Carolina Reyes" required aria-required="true" autocomplete="name">
                   </div>
                   <div class="relative">
-                    <label for="rubroCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Profesión o rubro</label>
-                    <input type="text" id="rubroCliente" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="Abogada, médico, coach..." required aria-required="true" autocomplete="organization-title">
+                    <label for="rubroCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Profesión o rubro <span class="opacity-50">(opcional)</span></label>
+                    <input type="text" id="rubroCliente" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="Abogada, médico, coach..." autocomplete="organization-title">
                   </div>
                 </div>
 
                 <div class="relative">
                   <label for="contactoCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Correo o WhatsApp</label>
-                  <input type="text" id="contactoCliente" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="correo@dominio.com o +56 9 1234 5678" required aria-required="true" autocomplete="email tel">
+                  <input type="text" id="contactoCliente" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all" placeholder="correo@dominio.com o +56 9 1234 5678" required aria-required="true" autocomplete="on">
                 </div>
 
                 <div class="relative">
@@ -2613,6 +2572,7 @@
           <a href="privacidad.html" class="text-mist/70 hover:text-white transition">Privacidad</a>
           <a href="entrega-y-reembolso.html" class="text-mist/70 hover:text-white transition">Entrega y Reembolso</a>
           <a href="datos-empresa.html" class="text-mist/70 hover:text-white transition">Datos de la empresa</a>
+          <button type="button" data-cookie-settings class="text-mist/70 hover:text-white transition">Configurar cookies</button>
           <span class="flex items-center gap-2">
             <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-glow motion-safe:animate-shimmer"></span>
             Hecho en Chile
@@ -2660,7 +2620,7 @@
         if (typeof window.fbq === 'function') {
           if (eventName === 'generate_lead') {
             window.fbq('track', 'Lead', params || {});
-          } else if (eventName === 'click_whatsapp' || eventName === 'click_cta' || eventName === 'form_submit') {
+          } else if (eventName === 'click_whatsapp' || eventName === 'click_cta' || eventName === 'form_whatsapp_open') {
             window.fbq('track', 'Contact', params || {});
           }
         }
@@ -2758,8 +2718,9 @@
             'Quisiera más información sobre el servicio de landing page.',
           ].filter((l) => l !== null).join('\n');
 
-          // Evento de conversión clave
-          track('generate_lead', {
+          // El formulario solo abre WhatsApp: no sabemos si la persona envía el mensaje,
+          // así que se registra como "abrió WhatsApp desde el formulario", no como lead confirmado.
+          track('form_whatsapp_open', {
             method: 'whatsapp_form',
             rubro: rubro || 'no_especificado',
           });
