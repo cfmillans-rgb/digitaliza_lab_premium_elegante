@@ -1,0 +1,97 @@
+{#-
+  Plantilla de los artículos del blog (formato nuevo).
+  Cada artículo es un archivo en src/blog/ con una ficha (front matter) arriba
+  y el contenido HTML abajo. Los títulos <h2 id="..."> arman el índice solos.
+-#}
+{%- set url = empresa.url + page.url -%}
+{%- set nPalabras = (lead + " " + content) | palabras -%}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include "partials/consent.njk" %}
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="author" content="Equipo {{ empresa.nombre }}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="{{ url }}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{ empresa.nombre }}">
+  <meta property="og:title" content="{{ h1 }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ url }}">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:image" content="{{ empresa.url }}/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="{{ published }}">
+  <meta property="article:modified_time" content="{{ modified }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ empresa.url }}/assets/img/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{{ { h1: h1, description: description, published: published, modified: modified, url: url, palabras: nPalabras } | articuloLd(empresa) | safe }}
+  </script>
+  <style>
+{% include "partials/estilos-articulo.css" %}
+  </style>
+</head>
+<body>
+  {% include "partials/nav-simple.njk" %}
+
+  <main class="post" id="main-content">
+    <nav aria-label="Ruta de navegación">
+      <ol class="crumbs">
+        <li><a href="/">Inicio</a></li><li aria-hidden="true">→</li>
+        <li><a href="/blog.html">Blog</a></li><li aria-hidden="true">→</li>
+        <li aria-current="page">{{ crumb }}</li>
+      </ol>
+    </nav>
+
+    <article>
+      <header>
+        <span class="kicker">{{ kicker }}</span>
+        <h1 class="title">{{ h1 }}</h1>
+        <p class="lead">{{ lead }}</p>
+        <div class="meta">
+          <span>Por <strong>Equipo {{ empresa.nombre }}</strong></span>
+          <span>Publicado el <time datetime="{{ published }}">{{ published | fechaLarga }}</time></span>
+          <span>Actualizado el <time datetime="{{ modified }}">{{ modified | fechaLarga }}</time></span>
+          <span>{{ nPalabras | minutos }} min de lectura</span>
+        </div>
+      </header>
+
+      <nav class="toc" aria-label="Contenido del artículo"><p>En este artículo</p><ul>
+        {%- for h in content | indice %}<li><a href="#{{ h.id }}">{{ h.texto | safe }}</a></li>{% endfor -%}
+      </ul></nav>
+
+      <div class="article-body">
+{{ content | safe }}
+      </div>
+
+      <section class="sources" aria-labelledby="fuentes">
+        <h2 id="fuentes">Fuentes</h2>
+        <ol>{% for s in sources %}<li><a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.titulo }}</a></li>{% endfor %}</ol>
+      </section>
+    </article>
+
+    <section class="related" aria-labelledby="relacionados">
+      <h2 id="relacionados">Sigue leyendo</h2>
+      <div class="related-grid">{% for r in related %}<a href="{{ r }}.html"><span>Guía</span>{{ articulos[r] }}</a>{% endfor %}</div>
+    </section>
+  </main>
+
+  {% include "partials/footer-simple.njk" %}
+
+  <script>
+    (function () {
+      var nav = document.getElementById('mainNav');
+      if (nav) window.addEventListener('scroll', function () { nav.classList.toggle('nav-scrolled', window.scrollY > 40); }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

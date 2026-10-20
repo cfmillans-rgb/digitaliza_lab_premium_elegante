@@ -1,9 +1,12 @@
+---
+# Página generada con Eleventy. Datos compartidos en src/_data (empresa.json, precios.json).
+---
 <!doctype html>
 <html lang="es-CL" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="assets/js/consent.js" defer></script>
+  {% include "partials/consent.njk" %}
   <title>Términos y Condiciones | Digitaliza Lab</title>
   <meta name="description" content="Términos y condiciones de servicio aplicables a la contratación de desarrollo de landing pages con Digitaliza Lab SpA.">
   <meta name="robots" content="noindex, follow">
@@ -11,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/blog-styles.min.css?v=20261019d">
+  <link rel="stylesheet" href="/assets/css/blog-styles.min.css?v={{ build.version }}">
   <style>
     html, body { background: #000; color: #e5e7eb; font-family: 'DM Sans', system-ui, sans-serif; }
     ::selection { background: rgba(224,122,58,0.35); color: #fff; }
@@ -57,7 +60,7 @@
       </a>
       <div style="display: flex; align-items: center; gap: 1rem;">
         <a href="index.html" style="font-size: 0.85rem; color: #ff8a42; font-weight: 500;">← Volver al inicio</a>
-        <a href="https://wa.me/56982867164" target="_blank" rel="noopener noreferrer" class="btn-primary">Contacto</a>
+        <a href="https://wa.me/{{ empresa.whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn-primary">Contacto</a>
       </div>
     </div>
   </nav>
@@ -79,7 +82,7 @@
     <article class="legal-content">
       
   <h2>1. Identificación y Partes</h2>
-  <p>Este documento establece los términos y condiciones de servicio entre <strong style="color:#fff;">DIGITALIZA LAB SPA</strong> (en adelante, "Digitaliza Lab", RUT 78.517.255-8) y cualquier persona natural o jurídica que contrate sus servicios (en adelante, "el Cliente").</p>
+  <p>Este documento establece los términos y condiciones de servicio entre <strong style="color:#fff;">DIGITALIZA LAB SPA</strong> (en adelante, "Digitaliza Lab", RUT {{ empresa.rut }}) y cualquier persona natural o jurídica que contrate sus servicios (en adelante, "el Cliente").</p>
   <p>Al realizar el pago del servicio, el Cliente declara haber leído, comprendido y aceptado íntegramente las condiciones aquí establecidas.</p>
 
   <h2>2. Descripción del Servicio</h2>
@@ -144,7 +147,7 @@
 
   <h2>9. Mantención posterior</h2>
   <p>Las actualizaciones posteriores a la entrega no están incluidas en el servicio.</p>
-  <p>Para cambios futuros, Digitaliza Lab ofrece un <strong>pack de ajustes de $39.990 neto</strong>, de pago único, que contempla hasta 10 ajustes menores solicitados en una sola instancia. No es una suscripción: se contrata cuando lo necesitas y se agota al usarlo.</p>
+  <p>Para cambios futuros, Digitaliza Lab ofrece un <strong>pack de ajustes de {{ precios.ajustes | clp }} neto</strong>, de pago único, que contempla hasta 10 ajustes menores solicitados en una sola instancia. No es una suscripción: se contrata cuando lo necesitas y se agota al usarlo.</p>
 
   <h2>10. Responsabilidades del cliente</h2>
   <p>El cliente es responsable de:</p>
@@ -172,7 +175,7 @@
 
   <h2>13. Dominio, hosting, SSL y renovaciones</h2>
   <p>El servicio incluye dominio, hosting, certificado SSL y correo corporativo por <strong>1 año</strong> desde la publicación del sitio o la activación del servicio.</p>
-  <p>Transcurridos los 12 meses, el cliente debe pagar la <strong>renovación anual de $49.990 neto</strong> para mantener el sitio activo. La renovación se ejecuta dentro de 24 horas hábiles desde la confirmación del pago.</p>
+  <p>Transcurridos los 12 meses, el cliente debe pagar la <strong>renovación anual de {{ precios.renovacion | clp }} neto</strong> para mantener el sitio activo. La renovación se ejecuta dentro de 24 horas hábiles desde la confirmación del pago.</p>
 
   <div class="callout">
     <span class="callout-title">Importante sobre las renovaciones</span>
@@ -204,26 +207,14 @@
 
   <h2>18. Ley aplicable y resolución de conflictos</h2>
   <p>Estos términos se rigen por las leyes de la República de Chile.</p>
-  <p>Ante cualquier discrepancia, te pedimos escribirnos primero a <a href="mailto:ventas@digitalizalab.cl">ventas@digitalizalab.cl</a>: la mayoría de los problemas se resuelven conversando.</p>
+  <p>Ante cualquier discrepancia, te pedimos escribirnos primero a <a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a>: la mayoría de los problemas se resuelven conversando.</p>
   <p>Si el cliente tiene la calidad de consumidor, conserva íntegros los derechos que le otorga la Ley N° 19.496 y puede presentar un reclamo ante el Servicio Nacional del Consumidor en <a href="https://www.sernac.cl" target="_blank" rel="noopener">sernac.cl</a>. Ninguna cláusula de este documento limita esos derechos.</p>
 
     </article>
   </main>
 
   <!-- FOOTER -->
-  <footer style="border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 1.5rem; text-align: center;">
-    <div style="max-width: 48rem; margin: 0 auto;">
-      <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; font-size: 0.9rem;">
-        <a href="terminos.html" style="color: #9ca3af; text-decoration: none;">Términos y condiciones</a>
-        <a href="privacidad.html" style="color: #9ca3af; text-decoration: none;">Política de privacidad</a>
-        <a href="entrega-y-reembolso.html" style="color: #9ca3af; text-decoration: none;">Entrega y reembolso</a>
-        <a href="datos-empresa.html" style="color: #9ca3af; text-decoration: none;">Datos de la empresa</a>
-        <button type="button" data-cookie-settings style="color: #9ca3af; background: none; border: 0; padding: 0; font: inherit; cursor: pointer;">Configurar cookies</button>
-      </div>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.1em; margin-bottom: 0.5rem;">© <script>document.write(new Date().getFullYear())</script> DIGITALIZA LAB SPA · RUT 78.517.255-8</p>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.05em;">Antonio Bellet 193 Of 1210, Providencia, Santiago, Chile</p>
-    </div>
-  </footer>
+  {% include "partials/footer-legal.njk" %}
 
   <script>
     const nav = document.getElementById('mainNav');

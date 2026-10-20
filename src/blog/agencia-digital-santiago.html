@@ -1,9 +1,12 @@
+---
+# Página generada con Eleventy. Datos compartidos en src/_data (empresa.json, precios.json).
+---
 <!doctype html>
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="../assets/js/consent.js" defer></script>
+  {% include "partials/consent.njk" %}
   <title>Agencia Digital en Santiago: Qué Preguntar Antes de Contratar | Digitaliza Lab</title>
   <meta name="description" content="Guía para elegir agencia digital en Santiago. Las 5 preguntas clave que debes hacer antes de firmar y cómo evitar malas experiencias.">
   <meta name="author" content="Digitaliza Lab">
@@ -24,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/blog-styles.min.css?v=20261019d">
+  <link rel="stylesheet" href="/assets/css/blog-styles.min.css?v={{ build.version }}">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -80,7 +83,7 @@
       </a>
       <div style="display: flex; align-items: center; gap: 1rem;">
         <a href="../blog.html" style="font-size: 0.85rem; color: #ff8a42; font-weight: 500;">← Blog</a>
-        <a href="https://wa.me/56982867164?text=Hola,%20quiero%20cotizar%20mi%20landing" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Cotizar</a>
+        <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20quiero%20cotizar%20mi%20landing" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Cotizar</a>
       </div>
     </div>
   </nav>
@@ -118,19 +121,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer style="border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 1.5rem; text-align: center;">
-    <div style="max-width: 48rem; margin: 0 auto;">
-      <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; font-size: 0.9rem;">
-        <a href="../terminos.html" style="color: #9ca3af; text-decoration: none;">Términos y condiciones</a>
-        <a href="../privacidad.html" style="color: #9ca3af; text-decoration: none;">Política de privacidad</a>
-        <a href="../entrega-y-reembolso.html" style="color: #9ca3af; text-decoration: none;">Entrega y reembolso</a>
-        <a href="../datos-empresa.html" style="color: #9ca3af; text-decoration: none;">Datos de la empresa</a>
-        <button type="button" data-cookie-settings style="color: #9ca3af; background: none; border: 0; padding: 0; font: inherit; cursor: pointer;">Configurar cookies</button>
-      </div>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.1em; margin-bottom: 0.5rem;">© <script>document.write(new Date().getFullYear())</script> DIGITALIZA LAB SPA · RUT 78.517.255-8</p>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.05em;">Antonio Bellet 193 Of 1210, Providencia, Santiago, Chile</p>
-    </div>
-  </footer>
+  {% include "partials/footer-legal.njk" %}
 
   <script>
     const nav = document.getElementById('mainNav');

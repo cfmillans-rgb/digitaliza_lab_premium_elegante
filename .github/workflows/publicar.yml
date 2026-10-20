@@ -1,0 +1,47 @@
+# Construye el sitio con Eleventy + Tailwind y lo publica en GitHub Pages
+# cada vez que hay un cambio en la rama main.
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Revisar que estén las páginas principales
+        run: |
+          for f in index.html blog.html pagina-web-psicologos.html terminos.html privacidad.html assets/js/consent.js assets/css/styles.min.css CNAME; do
+            test -s "_site/$f" || { echo "Falta _site/$f"; exit 1; }
+          done
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

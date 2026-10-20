@@ -1,13 +1,16 @@
+---
+# Página generada con Eleventy. Datos compartidos en src/_data (empresa.json, precios.json).
+---
 <!doctype html>
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="assets/js/consent.js" defer></script>
+  {% include "partials/consent.njk" %}
 
   <!-- ================== SEO PRIMARIO ================== -->
   <title>Diseño de Landing Pages en Chile | Digitaliza Lab</title>
-  <meta name="description" content="Agencia de diseño de landing pages en Chile para profesionales independientes. Todo incluido (hosting, dominio, SSL). Entrega en 72 h hábiles desde $99.990 + IVA.">
+  <meta name="description" content="Agencia de diseño de landing pages en Chile para profesionales independientes. Todo incluido (hosting, dominio, SSL). Entrega en 72 h hábiles desde {{ precios.landing | clp }} + IVA.">
   <meta name="keywords" content="diseño de landing page Chile, landing page profesional, agencia digital Chile, diseño web Santiago, desarrollo web Chile, landing para abogados, landing para médicos, sitio web profesional">
   <meta name="author" content="Digitaliza Lab">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -20,7 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Digitaliza Lab">
   <meta property="og:title" content="Diseño de Landing Pages en Chile | Digitaliza Lab">
-  <meta property="og:description" content="Agencia de diseño de landing pages en Chile para profesionales. Todo incluido (hosting, dominio, SSL). Entrega en 72 h hábiles desde $99.990 + IVA.">
+  <meta property="og:description" content="Agencia de diseño de landing pages en Chile para profesionales. Todo incluido (hosting, dominio, SSL). Entrega en 72 h hábiles desde {{ precios.landing | clp }} + IVA.">
   <meta property="og:url" content="https://digitalizalab.cl/">
   <meta property="og:image" content="https://digitalizalab.cl/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -33,7 +36,7 @@
   <meta name="twitter:site" content="@digitaliza.lab">
   <meta name="twitter:creator" content="@digitaliza.lab">
   <meta name="twitter:title" content="Diseño de Landing Pages en Chile | Digitaliza Lab">
-  <meta name="twitter:description" content="Agencia de diseño de landing pages en Chile para profesionales. Todo incluido por 1 año. Desde $99.990 + IVA.">
+  <meta name="twitter:description" content="Agencia de diseño de landing pages en Chile para profesionales. Todo incluido por 1 año. Desde {{ precios.landing | clp }} + IVA.">
   <meta name="twitter:image" content="https://digitalizalab.cl/assets/img/og-image.png">
   <meta name="twitter:image:alt" content="Digitaliza Lab — Agencia digital de diseño web en Chile">
 
@@ -42,7 +45,7 @@
   <link rel="apple-touch-icon" href="favicon.svg">
 
   <!-- ================== PRELOADS ================== -->
-  <link rel="preload" href="assets/css/styles.min.css?v=20261019d" as="style">
+  <link rel="preload" href="/assets/css/styles.min.css?v={{ build.version }}" as="style">
   <!-- Preconnect to font CDN for faster font loading -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
@@ -52,7 +55,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- ================== COMPILED CSS ================== -->
-  <link rel="stylesheet" href="assets/css/styles.min.css?v=20261019d">
+  <link rel="stylesheet" href="/assets/css/styles.min.css?v={{ build.version }}">
 
   <!-- ================== AOS ANIMATIONS (no-blocking) ================== -->
   <!-- ================== CUSTOM CSS ================== -->
@@ -920,7 +923,7 @@
         "name": "Diseño de Landing Pages en Chile | Digitaliza Lab",
         "isPartOf": { "@id": "https://digitalizalab.cl/#website" },
         "about": { "@id": "https://digitalizalab.cl/#organization" },
-        "description": "Agencia de diseño de landing pages en Chile para profesionales independientes. Todo incluido (hosting, dominio, SSL). Entrega en 72 h hábiles desde $99.990 + IVA.",
+        "description": "Agencia de diseño de landing pages en Chile para profesionales independientes. Todo incluido (hosting, dominio, SSL). Entrega en 72 h hábiles desde {{ precios.landing | clp }} + IVA.",
         "inLanguage": "es-CL",
         "potentialAction": [
           {
@@ -944,8 +947,8 @@
         "image": "https://digitalizalab.cl/assets/img/og-image.png",
         "description": "Agencia digital chilena especializada en el diseño de landing pages para profesionales independientes y negocios de servicios.",
         "priceRange": "$$",
-        "telephone": "+56982867164",
-        "email": "ventas@digitalizalab.cl",
+        "telephone": "+{{ empresa.whatsapp }}",
+        "email": "{{ empresa.email }}",
         "foundingDate": "2024",
         "areaServed": {
           "@type": "Country",
@@ -953,18 +956,18 @@
         },
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Antonio Bellet 193, Of. 1210",
+          "streetAddress": "{{ empresa.direccion }}",
           "addressLocality": "Providencia",
           "addressRegion": "Región Metropolitana",
           "addressCountry": "CL"
         },
         "openingHours": "Mo-Fr 09:00-18:00",
         "legalName": "Digitaliza Lab SpA",
-        "taxID": "78.517.255-8",
+        "taxID": "{{ empresa.rut }}",
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+56982867164",
-          "email": "ventas@digitalizalab.cl",
+          "telephone": "+{{ empresa.whatsapp }}",
+          "email": "{{ empresa.email }}",
           "contactType": "sales",
           "availableLanguage": ["Spanish", "es"],
           "areaServed": "CL"
@@ -987,11 +990,11 @@
                 "provider": { "@id": "https://digitalizalab.cl/#organization" },
                 "areaServed": "Chile"
               },
-              "price": "99990",
+              "price": "{{ precios.landing }}",
               "priceCurrency": "CLP",
               "priceSpecification": {
                 "@type": "UnitPriceSpecification",
-                "price": "99990",
+                "price": "{{ precios.landing }}",
                 "priceCurrency": "CLP",
                 "valueAddedTaxIncluded": false
               },
@@ -1034,7 +1037,7 @@
             "name": "¿Qué pasa cuando termina el primer año?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Te avisamos con anticipación antes del vencimiento. La renovación del hosting y dominio tiene un valor de $49.990 + IVA anual, para que tu web siga activa sin interrupciones. También puedes transferir el dominio si así lo decides."
+              "text": "Te avisamos con anticipación antes del vencimiento. La renovación del hosting y dominio tiene un valor de {{ precios.renovacion | clp }} + IVA anual, para que tu web siga activa sin interrupciones. También puedes transferir el dominio si así lo decides."
             }
           },
           {
@@ -1059,7 +1062,7 @@
   <div id="scrollProgress" aria-hidden="true"></div>
 
   <!-- Floating WhatsApp button -->
-  <a href="https://wa.me/56982867164?text=Hola,%20quiero%20cotizar%20mi%20landing" class="js-wa-link" id="waFloat" aria-label="Chat en WhatsApp" title="Chat en WhatsApp" data-source="wa_float">
+  <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20quiero%20cotizar%20mi%20landing" class="js-wa-link" id="waFloat" aria-label="Chat en WhatsApp" title="Chat en WhatsApp" data-source="wa_float">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
       <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
@@ -1181,7 +1184,7 @@
           </h1>
 
           <p class="mt-6 text-base sm:text-lg text-mist max-w-xl leading-relaxed">
-            Diseño, textos, dominio, hosting y correo corporativo — <strong class="text-white font-medium">todo incluido por $99.990 + IVA.</strong> Tú solo apruebas el resultado. Sin plantillas, sin mensualidades escondidas, sin esperar semanas.
+            Diseño, textos, dominio, hosting y correo corporativo — <strong class="text-white font-medium">todo incluido por {{ precios.landing | clp }} + IVA.</strong> Tú solo apruebas el resultado. Sin plantillas, sin mensualidades escondidas, sin esperar semanas.
           </p>
 
           <!-- Points -->
@@ -1203,7 +1206,7 @@
           <!-- CTAs dominantes con micro-métrica -->
           <div class="mt-9">
             <div class="flex flex-wrap gap-4 items-center">
-              <a href="https://wa.me/56982867164?text=Hola,%20quiero%20cotizar%20mi%20landing" target="_blank" rel="noopener noreferrer" class="btn-interactive inline-flex items-center justify-center rounded-full bg-white text-black font-semibold text-sm px-8 py-4 transition-all hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_30px_rgba(255,255,255,0.2)]" data-cta="hero_primary_wa">
+              <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20quiero%20cotizar%20mi%20landing" target="_blank" rel="noopener noreferrer" class="btn-interactive inline-flex items-center justify-center rounded-full bg-white text-black font-semibold text-sm px-8 py-4 transition-all hover:scale-105 hover:bg-gray-200 js-cta-track shadow-[0_0_30px_rgba(255,255,255,0.2)]" data-cta="hero_primary_wa">
                 Cotizar por WhatsApp
                 <svg aria-hidden="true" class="ml-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
               </a>
@@ -1315,10 +1318,10 @@
             </div>
             <span class="text-xs text-mist uppercase tracking-wider block mb-1">Pago único</span>
             <div class="flex items-baseline gap-2">
-              <span class="font-display text-4xl sm:text-5xl font-medium text-white">$99.990</span>
+              <span class="font-display text-4xl sm:text-5xl font-medium text-white">{{ precios.landing | clp }}</span>
               <span class="text-sm text-mist/70">+ IVA</span>
             </div>
-            <p class="text-xs text-mist/70 mt-1">Total $118.988 con IVA · Sin mensualidades</p>
+            <p class="text-xs text-mist/70 mt-1">Total {{ precios.landing | conIva | clp }} con IVA · Sin mensualidades</p>
           </div>
 
           <ul class="space-y-3 mb-8 flex-grow">
@@ -1331,7 +1334,7 @@
             <li class="flex items-start gap-3 text-sm text-mist"><svg aria-hidden="true" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Entrega en 72 horas hábiles</li>
           </ul>
 
-          <a href="https://wa.me/56982867164?text=Hola,+quiero+cotizar+mi+landing" target="_blank" rel="noopener noreferrer" class="btn-primary w-full justify-center">
+          <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+quiero+cotizar+mi+landing" target="_blank" rel="noopener noreferrer" class="btn-primary w-full justify-center">
             Cotizar ahora
             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -1345,10 +1348,10 @@
           <div class="mb-6 pb-6 border-b border-white/10">
             <span class="text-xs text-mist uppercase tracking-wider block mb-1">Valor por pack</span>
             <div class="flex items-baseline gap-2">
-              <span class="font-display text-4xl sm:text-5xl font-medium text-white">$39.990</span>
+              <span class="font-display text-4xl sm:text-5xl font-medium text-white">{{ precios.ajustes | clp }}</span>
               <span class="text-sm text-mist/70">+ IVA</span>
             </div>
-            <p class="text-xs text-mist/70 mt-1">Total $47.588 con IVA</p>
+            <p class="text-xs text-mist/70 mt-1">Total {{ precios.ajustes | conIva | clp }} con IVA</p>
           </div>
 
           <ul class="space-y-3 mb-8 flex-grow">
@@ -1360,7 +1363,7 @@
             <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Ajustes simples de contenido.</li>
           </ul>
 
-          <a href="https://wa.me/56982867164?text=Hola,+quiero+solicitar+el+pack+de+ajustes" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full justify-center mt-auto">
+          <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+quiero+solicitar+el+pack+de+ajustes" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full justify-center mt-auto">
             Solicitar ajustes
           </a>
         </div>
@@ -1373,10 +1376,10 @@
           <div class="mb-6 pb-6 border-b border-white/10">
             <span class="text-xs text-mist uppercase tracking-wider block mb-1">Valor</span>
             <div class="flex items-baseline gap-2">
-              <span class="font-display text-4xl sm:text-5xl font-medium text-white">$49.990</span>
+              <span class="font-display text-4xl sm:text-5xl font-medium text-white">{{ precios.renovacion | clp }}</span>
               <span class="text-sm text-mist/70 font-medium">+ IVA /año</span>
             </div>
-            <p class="text-xs text-mist/70 mt-1">Total $59.488 con IVA</p>
+            <p class="text-xs text-mist/70 mt-1">Total {{ precios.renovacion | conIva | clp }} con IVA</p>
           </div>
 
           <ul class="space-y-3 mb-8 flex-grow">
@@ -1387,7 +1390,7 @@
             <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Publicación sin interrupciones.</li>
           </ul>
 
-          <a href="https://wa.me/56982867164?text=Hola,+quiero+renovar+mi+sitio" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full justify-center mt-auto">
+          <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+quiero+renovar+mi+sitio" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full justify-center mt-auto">
             Renovar mi sitio
           </a>
         </div>
@@ -1459,7 +1462,7 @@
             <h3 class="font-display text-2xl text-white mb-3">Johan Alegría Photography</h3>
             <p class="text-sm text-mist leading-relaxed mb-6">Landing diseñada para transmitir elegancia, aumentar la confianza y facilitar las reservas mediante WhatsApp.</p>
             <div class="flex flex-wrap items-center gap-4 mt-2">
-              <a href="https://wa.me/56982867164?text=Hola,+QUIERO+MI+PROPUESTA+-+vi+el+proyecto+de+Johan+Alegria+y+me+interesa+algo+similar" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-primary text-xs py-2.5 px-5 js-cta-track" data-cta="portfolio_cta_johan">
+              <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+QUIERO+MI+PROPUESTA+-+vi+el+proyecto+de+Johan+Alegria+y+me+interesa+algo+similar" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-primary text-xs py-2.5 px-5 js-cta-track" data-cta="portfolio_cta_johan">
                 QUIERO MI PROPUESTA
               </a>
               <a href="https://johanalegriaphotography.cl/" target="_blank" rel="noopener noreferrer" class="btn-interactive flex items-center gap-2 text-mist hover:text-white transition-colors font-medium text-xs w-max">
@@ -1495,7 +1498,7 @@
             <h3 class="font-display text-2xl text-white mb-3">Visión Inspección</h3>
             <p class="text-sm text-mist leading-relaxed mb-6">Landing orientada a captar solicitudes de empresas y clientes particulares mediante una propuesta clara y profesional.</p>
             <div class="flex flex-wrap items-center gap-4 mt-2">
-              <a href="https://wa.me/56982867164?text=Hola,+QUIERO+MI+PROPUESTA+-+vi+el+proyecto+de+Vision+Inspeccion+y+me+interesa+algo+similar" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-primary text-xs py-2.5 px-5 js-cta-track" data-cta="portfolio_cta_vision">
+              <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+QUIERO+MI+PROPUESTA+-+vi+el+proyecto+de+Vision+Inspeccion+y+me+interesa+algo+similar" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-primary text-xs py-2.5 px-5 js-cta-track" data-cta="portfolio_cta_vision">
                 QUIERO MI PROPUESTA
               </a>
               <a href="https://visioninspeccion.cl/" target="_blank" rel="noopener noreferrer" class="btn-interactive flex items-center gap-2 text-mist hover:text-white transition-colors font-medium text-xs w-max">
@@ -1908,7 +1911,7 @@
               <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Te avisamos con anticipación antes del vencimiento. <strong class="text-white">La renovación del hosting y dominio tiene un valor de $49.990 + IVA anual</strong>, para que tu web siga activa sin interrupciones. También puedes transferir el dominio si así lo decides.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Te avisamos con anticipación antes del vencimiento. <strong class="text-white">La renovación del hosting y dominio tiene un valor de {{ precios.renovacion | clp }} + IVA anual</strong>, para que tu web siga activa sin interrupciones. También puedes transferir el dominio si así lo decides.</p></div>
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
@@ -1944,14 +1947,14 @@
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-        <a href="https://wa.me/56982867164?text=Hola,%20quiero%20cotizar%20mi%20landing" target="_blank" rel="noopener noreferrer" class="btn-primary js-cta-track px-8 py-4 text-base" data-cta="urgency_cta_wa">
+        <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20quiero%20cotizar%20mi%20landing" target="_blank" rel="noopener noreferrer" class="btn-primary js-cta-track px-8 py-4 text-base" data-cta="urgency_cta_wa">
           Quiero mi web en 72 horas
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
         </a>
         <a href="#contacto" class="btn-interactive inline-flex items-center gap-2 rounded-full border border-white/20 text-mist font-medium text-sm px-6 py-3.5 hover:text-white hover:border-white/40 transition-all js-cta-track" data-cta="urgency_cta_form">
           O completa el formulario
         </a>
-        <a href="https://wa.me/56982867164?text=Hola,+QUIERO+MI+PROPUESTA" target="_blank" rel="noopener noreferrer" class="btn-interactive inline-flex items-center gap-2 rounded-full border border-green-400/30 bg-green-400/5 text-green-400 font-medium text-sm px-6 py-3.5 hover:bg-green-400/10 transition-all">
+        <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+QUIERO+MI+PROPUESTA" target="_blank" rel="noopener noreferrer" class="btn-interactive inline-flex items-center gap-2 rounded-full border border-green-400/30 bg-green-400/5 text-green-400 font-medium text-sm px-6 py-3.5 hover:bg-green-400/10 transition-all">
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
           Escribir por WhatsApp
         </a>
@@ -1960,7 +1963,7 @@
       <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] text-mist/70 font-mono uppercase tracking-wider">
         <span class="flex items-center gap-1.5">
           <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Pago único $99.990 + IVA
+          Pago único {{ precios.landing | clp }} + IVA
         </span>
         <span class="flex items-center gap-1.5">
           <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1997,20 +2000,20 @@
 
           <ul class="space-y-3">
             <li>
-              <a href="mailto:ventas@digitalizalab.cl" class="flex items-center gap-3 glass rounded-xl px-4 py-3.5 hover:border-amber-glow/30 transition-all group">
+              <a href="mailto:{{ empresa.email }}" class="flex items-center gap-3 glass rounded-xl px-4 py-3.5 hover:border-amber-glow/30 transition-all group">
                 <span class="w-9 h-9 rounded-lg bg-amber-glow/10 grid place-items-center text-amber-glow group-hover:bg-amber-glow/20 transition"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
                 <div>
                   <div class="text-[10px] font-mono uppercase tracking-wider text-mist">Correo</div>
-                  <div class="text-white text-sm">ventas@digitalizalab.cl</div>
+                  <div class="text-white text-sm">{{ empresa.email }}</div>
                 </div>
               </a>
             </li>
             <li>
-              <a href="https://wa.me/56982867164" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 glass rounded-xl px-4 py-3.5 hover:border-amber-glow/30 transition-all group">
+              <a href="https://wa.me/{{ empresa.whatsapp }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 glass rounded-xl px-4 py-3.5 hover:border-amber-glow/30 transition-all group">
                 <span class="w-9 h-9 rounded-lg bg-green-500/10 grid place-items-center text-green-400 group-hover:bg-green-500/20 transition"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span>
                 <div>
                   <div class="text-[10px] font-mono uppercase tracking-wider text-mist">WhatsApp</div>
-                  <div class="text-white text-sm">+56 9 8286 7164</div>
+                  <div class="text-white text-sm">{{ empresa.whatsappVisible }}</div>
                 </div>
               </a>
             </li>
@@ -2087,7 +2090,7 @@
                 <div class="text-center pt-3 border-t border-white/5 mt-5">
                   <span class="text-xs text-mist/70">o si prefieres, </span>
                   <a class="js-wa-link inline-flex items-center gap-1 text-xs text-amber-glow hover:text-white transition-colors font-medium" data-source="form_alt"
-                     href="https://wa.me/56982867164?text=Hola,%20quiero%20cotizar%20mi%20landing"
+                     href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20quiero%20cotizar%20mi%20landing"
                      data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">
                     escríbenos por WhatsApp →
                   </a>
@@ -2241,10 +2244,10 @@
             <a href="https://www.facebook.com/profile.php?id=61577511797419" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-amber-glow hover:border-amber-glow/40 transition">
               <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="mailto:ventas@digitalizalab.cl" aria-label="Correo" class="w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-amber-glow hover:border-amber-glow/40 transition">
+            <a href="mailto:{{ empresa.email }}" aria-label="Correo" class="w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-amber-glow hover:border-amber-glow/40 transition">
               <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
-            <a href="https://wa.me/56982867164?text=Hola,%20quiero%20cotizar%20mi%20landing" data-source="footer_social" class="js-wa-link w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-green-400 hover:border-green-400/40 transition" aria-label="WhatsApp"
+            <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20quiero%20cotizar%20mi%20landing" data-source="footer_social" class="js-wa-link w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-green-400 hover:border-green-400/40 transition" aria-label="WhatsApp"
                data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">
               <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>
             </a>
@@ -2275,16 +2278,16 @@
         <div class="md:col-span-3">
           <h3 class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-4">Contacto</h3>
           <ul class="space-y-2 text-sm">
-            <li><a href="mailto:ventas@digitalizalab.cl" class="text-mist hover:text-white transition">ventas@digitalizalab.cl</a></li>
-            <li><a href="https://wa.me/56982867164?text=Hola,%20quiero%20cotizar%20mi%20landing" data-source="footer_link" class="js-wa-link text-mist hover:text-white transition" data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">+56 9 8286 7164</a></li>
-            <li><span class="text-mist">Antonio Bellet 193, Of. 1210, Providencia, Santiago</span></li>
+            <li><a href="mailto:{{ empresa.email }}" class="text-mist hover:text-white transition">{{ empresa.email }}</a></li>
+            <li><a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20quiero%20cotizar%20mi%20landing" data-source="footer_link" class="js-wa-link text-mist hover:text-white transition" data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">{{ empresa.whatsappVisible }}</a></li>
+            <li><span class="text-mist">{{ empresa.direccion }}, {{ empresa.comuna }}, {{ empresa.ciudad }}</span></li>
           </ul>
         </div>
       </div>
 
       <!-- Bottom bar -->
       <div class="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-mist/70">
-        <span>© <span id="currentYear"></span> Digitaliza Lab SpA · RUT 78.517.255-8</span>
+        <span>© <span id="currentYear"></span> Digitaliza Lab SpA · RUT {{ empresa.rut }}</span>
         <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
           <a href="terminos.html" class="text-mist/70 hover:text-white transition">Términos</a>
           <a href="privacidad.html" class="text-mist/70 hover:text-white transition">Privacidad</a>
@@ -2305,7 +2308,7 @@
   ============================================ -->
   <div id="stickyCta" aria-hidden="true">
     <span class="sticky-label">Landing page todo incluido</span>
-    <span class="sticky-price">$99.990 <span class="text-xs text-mist font-normal">+ IVA</span></span>
+    <span class="sticky-price">{{ precios.landing | clp }} <span class="text-xs text-mist font-normal">+ IVA</span></span>
     <a href="#contacto" class="btn-interactive inline-flex items-center gap-2 rounded-full bg-amber-glow text-ink-950 font-semibold text-xs px-5 py-2.5 hover:bg-[#ff9a5c] transition-all js-cta-track shadow-[0_0_15px_rgba(255,138,66,0.3)]" data-cta="sticky_bar">
       Cotizar ahora
       <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -2327,7 +2330,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       'use strict';
 
-      const WA_NUMBER  = '56982867164';
+      const WA_NUMBER  = '{{ empresa.whatsapp }}';
       const WA_DEFAULT = 'Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.';
 
       /* -------- GA4 helper (seguro si gtag no cargó) -------- */
@@ -2444,7 +2447,7 @@
           });
 
           window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines)}`, '_blank', 'noopener,noreferrer');
-          if (feedback) feedback.textContent = '✓ Abriendo WhatsApp… si no se abre, escríbenos al +56 9 8286 7164.';
+          if (feedback) feedback.textContent = '✓ Abriendo WhatsApp… si no se abre, escríbenos al {{ empresa.whatsappVisible }}.';
           form.reset();
         });
       }
@@ -2699,6 +2702,6 @@
 
 
 
-  <script src="assets/js/micro-interactions.js" defer></script>
+  <script src="/assets/js/micro-interactions.js" defer></script>
 </body>
 </html>

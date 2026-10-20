@@ -1,9 +1,12 @@
+---
+# Página generada con Eleventy. Datos compartidos en src/_data (empresa.json, precios.json).
+---
 <!doctype html>
 <html lang="es-CL" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="assets/js/consent.js" defer></script>
+  {% include "partials/consent.njk" %}
   <title>Entrega y Reembolso | Digitaliza Lab</title>
   <meta name="description" content="Qué recibes, en qué plazo, cómo funcionan las correcciones y en qué casos devolvemos el dinero.">
   <meta name="robots" content="noindex, follow">
@@ -11,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/blog-styles.min.css?v=20261019d">
+  <link rel="stylesheet" href="/assets/css/blog-styles.min.css?v={{ build.version }}">
   <style>
     html, body { background: #000; color: #e5e7eb; font-family: 'DM Sans', system-ui, sans-serif; }
     ::selection { background: rgba(224,122,58,0.35); color: #fff; }
@@ -57,7 +60,7 @@
       </a>
       <div style="display: flex; align-items: center; gap: 1rem;">
         <a href="index.html" style="font-size: 0.85rem; color: #ff8a42; font-weight: 500;">← Volver al inicio</a>
-        <a href="https://wa.me/56982867164" target="_blank" rel="noopener noreferrer" class="btn-primary">Contacto</a>
+        <a href="https://wa.me/{{ empresa.whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn-primary">Contacto</a>
       </div>
     </div>
   </nav>
@@ -111,7 +114,7 @@
   <h2>4. Correcciones incluidas</h2>
   <p>El servicio incluye <strong>una ronda de correcciones</strong>: ajustes de textos, reemplazo de imágenes, ajustes de color, corrección de datos de contacto y cambios visuales menores.</p>
   <p>No entran en esa ronda los cambios completos de estructura, los rediseños totales, los cambios de enfoque comercial ni las secciones nuevas no contempladas. Todo eso se puede hacer, pero se cotiza aparte.</p>
-  <p>Para cambios posteriores existe el <strong>pack de ajustes de $39.990 neto</strong>: pago único, hasta 10 ajustes menores en una sola instancia.</p>
+  <p>Para cambios posteriores existe el <strong>pack de ajustes de {{ precios.ajustes | clp }} neto</strong>: pago único, hasta 10 ajustes menores en una sola instancia.</p>
 
   <h2>5. Reembolsos</h2>
   <p>El servicio se paga por adelantado y no está sujeto al derecho a retracto de 10 días, por tratarse de un desarrollo a medida. Esa exclusión está explicada en el punto 7 de los <a href="terminos.html">Términos y Condiciones</a>.</p>
@@ -151,33 +154,21 @@
 
   <h2>6. Cómo pedir un reembolso</h2>
   <ol>
-    <li>Escribe a <a href="mailto:ventas@digitalizalab.cl">ventas@digitalizalab.cl</a> indicando tu nombre o razón social, la fecha del pago y el motivo.</li>
+    <li>Escribe a <a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a> indicando tu nombre o razón social, la fecha del pago y el motivo.</li>
     <li>Te respondemos en un plazo máximo de <strong>3 días hábiles</strong> confirmando si corresponde y por qué monto.</li>
     <li>Si corresponde, devolvemos dentro de <strong>10 días hábiles</strong> por el mismo medio de pago que usaste, o por transferencia a la cuenta que nos indiques.</li>
     <li>Emitimos la nota de crédito correspondiente al documento tributario original.</li>
   </ol>
 
   <h2>7. Si tienes un problema</h2>
-  <p>Escríbenos primero a <a href="mailto:ventas@digitalizalab.cl">ventas@digitalizalab.cl</a> o por WhatsApp. La gran mayoría de los problemas se resuelven conversando y rápido.</p>
+  <p>Escríbenos primero a <a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a> o por WhatsApp. La gran mayoría de los problemas se resuelven conversando y rápido.</p>
   <p>Si eres consumidor, conservas íntegros los derechos que te otorga la Ley N° 19.496 y puedes reclamar ante el SERNAC en <a href="https://www.sernac.cl" target="_blank" rel="noopener">sernac.cl</a>. Nada de lo dicho en esta política limita esos derechos.</p>
 
     </article>
   </main>
 
   <!-- FOOTER -->
-  <footer style="border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 1.5rem; text-align: center;">
-    <div style="max-width: 48rem; margin: 0 auto;">
-      <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; font-size: 0.9rem;">
-        <a href="terminos.html" style="color: #9ca3af; text-decoration: none;">Términos y condiciones</a>
-        <a href="privacidad.html" style="color: #9ca3af; text-decoration: none;">Política de privacidad</a>
-        <a href="entrega-y-reembolso.html" style="color: #9ca3af; text-decoration: none;">Entrega y reembolso</a>
-        <a href="datos-empresa.html" style="color: #9ca3af; text-decoration: none;">Datos de la empresa</a>
-        <button type="button" data-cookie-settings style="color: #9ca3af; background: none; border: 0; padding: 0; font: inherit; cursor: pointer;">Configurar cookies</button>
-      </div>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.1em; margin-bottom: 0.5rem;">© <script>document.write(new Date().getFullYear())</script> DIGITALIZA LAB SPA · RUT 78.517.255-8</p>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.05em;">Antonio Bellet 193 Of 1210, Providencia, Santiago, Chile</p>
-    </div>
-  </footer>
+  {% include "partials/footer-legal.njk" %}
 
   <script>
     const nav = document.getElementById('mainNav');

@@ -1,9 +1,12 @@
+---
+# Página generada con Eleventy. Datos compartidos en src/_data (empresa.json, precios.json).
+---
 <!doctype html>
 <html lang="es-CL" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="assets/js/consent.js" defer></script>
+  {% include "partials/consent.njk" %}
   <title>Política de Privacidad | Digitaliza Lab</title>
   <meta name="description" content="Cómo recolectamos, usamos y protegemos los datos personales, y cómo ejercer tus derechos conforme a la Ley N° 21.719.">
   <meta name="robots" content="noindex, follow">
@@ -11,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/blog-styles.min.css?v=20261019d">
+  <link rel="stylesheet" href="/assets/css/blog-styles.min.css?v={{ build.version }}">
   <style>
     html, body { background: #000; color: #e5e7eb; font-family: 'DM Sans', system-ui, sans-serif; }
     ::selection { background: rgba(224,122,58,0.35); color: #fff; }
@@ -57,7 +60,7 @@
       </a>
       <div style="display: flex; align-items: center; gap: 1rem;">
         <a href="index.html" style="font-size: 0.85rem; color: #ff8a42; font-weight: 500;">← Volver al inicio</a>
-        <a href="https://wa.me/56982867164" target="_blank" rel="noopener noreferrer" class="btn-primary">Contacto</a>
+        <a href="https://wa.me/{{ empresa.whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn-primary">Contacto</a>
       </div>
     </div>
   </nav>
@@ -85,9 +88,9 @@
   <h2>1. Quién es responsable de tus datos</h2>
   <table>
     <tr><th>Responsable</th><td>DIGITALIZA LAB SPA</td></tr>
-    <tr><th>RUT</th><td>78.517.255-8</td></tr>
-    <tr><th>Domicilio</th><td>Antonio Bellet 193 Of 1210, Providencia, Santiago, Chile</td></tr>
-    <tr><th>Contacto de privacidad</th><td><a href="mailto:privacidad@digitalizalab.cl">privacidad@digitalizalab.cl</a></td></tr>
+    <tr><th>RUT</th><td>{{ empresa.rut }}</td></tr>
+    <tr><th>Domicilio</th><td>{{ empresa.direccion }}, {{ empresa.comuna }}, {{ empresa.ciudad }}, Chile</td></tr>
+    <tr><th>Contacto de privacidad</th><td><a href="mailto:{{ empresa.emailPrivacidad }}">{{ empresa.emailPrivacidad }}</a></td></tr>
   </table>
   <p>Cualquier consulta o solicitud sobre tus datos personales puedes dirigirla a ese correo. Es el canal oficial y lo revisamos.</p>
 
@@ -197,7 +200,7 @@
   </ul>
 
   <h3>Cómo ejercerlos</h3>
-  <p>Escríbenos a <a href="mailto:privacidad@digitalizalab.cl">privacidad@digitalizalab.cl</a> indicando qué derecho quieres ejercer y adjuntando una copia de tu cédula de identidad por ambos lados, para verificar que eres quien dices ser.</p>
+  <p>Escríbenos a <a href="mailto:{{ empresa.emailPrivacidad }}">{{ empresa.emailPrivacidad }}</a> indicando qué derecho quieres ejercer y adjuntando una copia de tu cédula de identidad por ambos lados, para verificar que eres quien dices ser.</p>
   <p>Te responderemos dentro de los plazos que establece la ley y, en todo caso, en un <strong>máximo de 30 días corridos</strong> desde tu solicitud.</p>
   <p>Si no estás conforme con nuestra respuesta, o si no te respondemos, puedes reclamar ante la <strong>Agencia de Protección de Datos Personales</strong>, el organismo fiscalizador creado por la Ley N° 21.719.</p>
 
@@ -248,19 +251,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer style="border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 1.5rem; text-align: center;">
-    <div style="max-width: 48rem; margin: 0 auto;">
-      <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; font-size: 0.9rem;">
-        <a href="terminos.html" style="color: #9ca3af; text-decoration: none;">Términos y condiciones</a>
-        <a href="privacidad.html" style="color: #9ca3af; text-decoration: none;">Política de privacidad</a>
-        <a href="entrega-y-reembolso.html" style="color: #9ca3af; text-decoration: none;">Entrega y reembolso</a>
-        <a href="datos-empresa.html" style="color: #9ca3af; text-decoration: none;">Datos de la empresa</a>
-        <button type="button" data-cookie-settings style="color: #9ca3af; background: none; border: 0; padding: 0; font: inherit; cursor: pointer;">Configurar cookies</button>
-      </div>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.1em; margin-bottom: 0.5rem;">© <script>document.write(new Date().getFullYear())</script> DIGITALIZA LAB SPA · RUT 78.517.255-8</p>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.05em;">Antonio Bellet 193 Of 1210, Providencia, Santiago, Chile</p>
-    </div>
-  </footer>
+  {% include "partials/footer-legal.njk" %}
 
   <script>
     const nav = document.getElementById('mainNav');

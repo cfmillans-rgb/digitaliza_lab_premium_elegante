@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./blog.html",
-    "./blog/**/*.html",
-    "./terminos.html",
-    "./privacidad.html",
-    "./entrega-y-reembolso.html",
-    "./datos-empresa.html",
-    "./assets/js/**/*.js",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/blog.html",
+    "./src/blog/**/*.html",
+    "./src/terminos.html",
+    "./src/privacidad.html",
+    "./src/entrega-y-reembolso.html",
+    "./src/datos-empresa.html",
+    "./src/assets/js/**/*.js",
+    "./src/consent.js.njk",
   ],
   theme: {
     extend: {
