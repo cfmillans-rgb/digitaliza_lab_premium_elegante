@@ -49,7 +49,7 @@
   <!-- ================== FONTS ================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- ================== COMPILED CSS ================== -->
   <link rel="stylesheet" href="assets/css/styles.min.css?v=20261019b">
@@ -267,7 +267,7 @@
     }
 
     .step-numeral {
-      font-family: 'Fraunces', serif;
+      font-family: 'Inter', sans-serif;
       font-size: clamp(5rem, 10vw, 8rem);
       font-weight: 300;
       font-style: italic;
@@ -318,7 +318,7 @@
       border-radius: var(--r-md);
       padding: 0.95rem 1.15rem;
       color: #f3f4f6;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       transition: all 0.3s var(--ease-out);
       font-size: 0.95rem;
     }
@@ -481,7 +481,7 @@
 
     /* === STAT COUNTER === */
     .stat-value {
-      font-family: 'Fraunces', serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 300;
       font-size: clamp(2.75rem, 5vw, 4rem);
       line-height: 1;
@@ -586,7 +586,7 @@
       flex-shrink: 0;
     }
     .brand-pill-name {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
       font-weight: 500;
       color: rgba(255,255,255,0.65);
@@ -797,7 +797,7 @@
     }
 
     .seo-guide-h3 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Inter', sans-serif;
       font-size: clamp(1.5rem, 3.5vw, 2.2rem);
       font-weight: 400;
       line-height: 1.1;
@@ -808,7 +808,7 @@
     .seo-guide-h3 em { color: #c96a2c; font-style: italic; }
 
     .seo-guide-body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 0.97rem;
       line-height: 1.78;
       color: #b0b3b8;
@@ -816,7 +816,7 @@
     .seo-guide-body p { margin-bottom: 1.1rem; }
     .seo-guide-body strong { color: #e5e7eb; font-weight: 600; }
     .seo-guide-body h4 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.1rem;
       font-weight: 500;
       letter-spacing: -0.015em;
@@ -849,7 +849,7 @@
       flex-wrap: wrap;
     }
     .seo-inline-cta-text {
-      font-family: 'Fraunces', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.05rem;
       font-style: italic;
       color: #e5e7eb;
@@ -1154,7 +1154,7 @@
   <!-- ============================================
        HERO
   ============================================ -->
-  <section id="inicio" aria-labelledby="hero-title" class="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden">
+  <section id="inicio" aria-labelledby="hero-title" class="relative pt-20 sm:pt-28 lg:pt-20 pb-16 sm:pb-24 overflow-hidden">
     <!-- Parallax multicapa -->
     <div class="hero-layer hero-layer-1" data-hero-layer="0.25" aria-hidden="true"></div>
     <div class="hero-layer hero-layer-2" data-hero-layer="0.12" aria-hidden="true"></div>
@@ -1165,12 +1165,12 @@
         <!-- Left column -->
         <div class="lg:col-span-7 relative">
           <!-- Trust pill con social proof -->
-          <div class="trust-pill mb-6">
+          <div class="trust-pill mb-5 sm:mb-6">
             <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
             <span class="font-mono uppercase tracking-[0.15em] text-[10px] sm:text-[11px]">Entrega en 72 horas hábiles</span>
           </div>
 
-          <h1 id="hero-title" class="font-display tracking-tighter leading-[1.05] sm:leading-[0.97] lg:leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-medium">
+          <h1 id="hero-title" class="font-display tracking-tighter leading-[1.05] sm:leading-[0.97] lg:leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-medium">
             <span class="gradient-title block pb-2">Tu profesión merece</span>
             <span class="font-light text-white/95">una web que </span><br class="block sm:hidden"><span class="gradient-title-warm font-semibold">te consiga clientes</span>
           </h1>
@@ -1180,7 +1180,7 @@
           </p>
 
           <!-- Points -->
-          <ul class="mt-7 space-y-2.5 text-sm sm:text-base text-white/80">
+          <ul class="hidden sm:block mt-7 space-y-2.5 text-sm sm:text-base text-white/80">
             <li class="flex items-start gap-3">
               <span class="w-5 h-5 rounded-full bg-[#ff8a42]/15 grid place-items-center mt-0.5 flex-shrink-0"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
               Diseño limpio y profesional, adaptado al estilo de tu rubro.
@@ -1275,171 +1275,6 @@
   </div>
 
   <!-- ============================================
-       MARQUEE / SOCIAL PROOF
-  ============================================ -->
-  <section aria-label="Servicios y tecnologías" class="py-10 border-y border-white/5 bg-ink-950/40 overflow-hidden">
-    <div class="marquee-track motion-safe:animate-marquee">
-      <div class="flex items-center gap-12 px-6 text-xs font-mono uppercase tracking-[0.25em] text-mist/70 whitespace-nowrap">
-        <span>◆ Landing pages</span>
-        <span>◆ Diseño web</span>
-        <span>◆ SEO técnico</span>
-        <span>◆ Hosting + SSL</span>
-        <span>◆ Correo corporativo</span>
-        <span>◆ Hecho en Chile</span>
-        <span>◆ Entrega 72h</span>
-        <span>◆ Profesionales independientes</span>
-        <span>◆ Landing pages</span>
-        <span>◆ Diseño web</span>
-        <span>◆ SEO técnico</span>
-        <span>◆ Hosting + SSL</span>
-        <span>◆ Correo corporativo</span>
-        <span>◆ Hecho en Chile</span>
-        <span>◆ Entrega 72h</span>
-        <span>◆ Profesionales independientes</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       PROMESA · MÉTRICAS DE VALOR (NUEVA v3)
-  ============================================ -->
-  <section aria-label="Nuestra promesa" class="relative py-20 sm:py-24 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid lg:grid-cols-12 gap-10 items-center">
-
-        <div class="lg:col-span-5" data-reveal="fade-right">
-          <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-[#ff8a42] mb-4">— Nuestra promesa</span>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.05] tracking-tight text-white">
-            Cifras claras,<br>
-            <span class="italic text-[#ff8a42]">promesas cumplidas.</span>
-          </h2>
-          <p class="mt-5 text-base text-mist max-w-md">Cada número representa un compromiso concreto contigo. Sin letras chicas, sin sorpresas.</p>
-        </div>
-
-        <div class="lg:col-span-7" data-reveal="fade-left" data-reveal-delay="100">
-          <div class="grid grid-cols-2 gap-4">
-
-            <!-- Card 1 -->
-            <div class="relative overflow-hidden group glass p-6 sm:p-7 text-center transition-all duration-500 hover:border-amber-glow/30 hover:shadow-[0_0_40px_rgba(255,138,66,0.1)]">
-              <div class="absolute inset-0 bg-gradient-to-b from-[#ff8a42]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              <div class="stat-value relative z-10" data-counter="72" data-suffix="h">72h</div>
-              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist relative z-10">Entrega hábil</div>
-              <div class="mt-2 text-xs text-white/60 leading-relaxed relative z-10">Desde que recibimos tu onboarding completo</div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="relative overflow-hidden group glass p-6 sm:p-7 text-center transition-all duration-500 hover:border-amber-glow/30 hover:shadow-[0_0_40px_rgba(255,138,66,0.1)]">
-              <div class="absolute inset-0 bg-gradient-to-b from-[#ff8a42]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              <div class="stat-value relative z-10 text-3xl sm:text-4xl font-display font-medium">Directo</div>
-              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist relative z-10">Soporte directo</div>
-              <div class="mt-2 text-xs text-white/60 leading-relaxed relative z-10">Hablas con quien hace tu web</div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="relative overflow-hidden group glass p-6 sm:p-7 text-center transition-all duration-500 hover:border-amber-glow/30 hover:shadow-[0_0_40px_rgba(255,138,66,0.1)]">
-              <div class="absolute inset-0 bg-gradient-to-b from-[#ff8a42]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              <div class="stat-value relative z-10" data-counter="1" data-suffix=" año">1 año</div>
-              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist relative z-10">Todo incluido</div>
-              <div class="mt-2 text-xs text-white/60 leading-relaxed relative z-10">Dominio, hosting de alto rendimiento y SSL</div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="relative overflow-hidden group glass p-6 sm:p-7 text-center transition-all duration-500 hover:border-amber-glow/30 hover:shadow-[0_0_40px_rgba(255,138,66,0.1)]">
-              <div class="absolute inset-0 bg-gradient-to-b from-[#ff8a42]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              <div class="stat-value relative z-10 text-3xl sm:text-4xl font-display font-medium">🇨🇱</div>
-              <div class="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-mist relative z-10">Hecho en Chile</div>
-              <div class="mt-2 text-xs text-white/60 leading-relaxed relative z-10">Comunicación local y directa</div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-  <!-- ============================================
-       72 HORAS · DESDE CERO
-  ============================================ -->
-  <section id="72horas" class="relative py-24 sm:py-32 overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-amber-glow/5 blur-[140px] rounded-full"></div>
-    </div>
-
-    <div class="max-w-5xl mx-auto px-6">
-
-      <!-- Cabecera: número grande + titular -->
-      <div class="flex flex-col sm:flex-row sm:items-end gap-6 sm:gap-12 mb-10" data-reveal="fade-up">
-
-        <!-- Título + subtítulo -->
-        <div class="pb-2">
-          <span class="block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— La pregunta que todos hacen</span>
-          <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
-            72 horas. Desde cero.
-          </h2>
-          <p class="mt-3 text-lg font-light italic text-amber-glow">Sin plantillas. Sin vueltas.</p>
-          <p class="mt-4 max-w-xl text-mist text-base leading-relaxed">
-            La mayoría de las agencias tarda semanas porque construye cada proyecto sobre la marcha.
-            Nosotros trabajamos con un proceso definido para entregar tu sitio en 72 horas,
-            desde cero y pensado para tu negocio.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- 3 bloques numerados -->
-      <div class="grid sm:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden" data-reveal="fade-up" data-reveal-delay="100">
-
-        <div class="bg-ink-900 p-8 flex flex-col gap-4">
-          <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/20">01</span>
-          <div>
-            <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-amber-glow mb-2">Diseño a medida</p>
-            <p class="text-mist text-sm leading-relaxed">Diseñamos desde cero según tu negocio, objetivos y público — no una base genérica adaptada.</p>
-          </div>
-        </div>
-
-        <div class="bg-ink-900 p-8 flex flex-col gap-4">
-          <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/20">02</span>
-          <div>
-            <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-amber-glow mb-2">Copy que convierte</p>
-            <p class="text-mist text-sm leading-relaxed">Mensajes claros y estratégicos para que tus visitas entiendan qué haces y por qué contratarte.</p>
-          </div>
-        </div>
-
-        <div class="bg-ink-900 p-8 flex flex-col gap-4">
-          <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/20">03</span>
-          <div>
-            <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-amber-glow mb-2">Todo listo</p>
-            <p class="text-mist text-sm leading-relaxed">Dominio, hosting, SSL y SEO técnico configurados para publicar. Sin curva de aprendizaje.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Cierre: método -->
-      <div class="mt-12 flex flex-col sm:flex-row sm:items-center gap-8" data-reveal="fade-up" data-reveal-delay="150">
-        <div class="border-l-2 border-amber-glow/30 pl-6 flex-1">
-          <p class="text-white font-medium mb-2">¿De dónde sale la velocidad?</p>
-          <p class="text-mist text-sm leading-relaxed">
-            No improvisamos cada proyecto.
-            Tenemos un proceso definido: sabemos qué preguntar, qué construir y qué validar en cada etapa.
-            <strong class="text-white">Por eso podemos entregar en 72 horas sin sacrificar calidad.</strong>
-          </p>
-        </div>
-        <a href="#proceso" class="shrink-0 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-amber-glow border border-amber-glow/30 hover:border-amber-glow/70 px-5 py-3 rounded-full transition-all hover:bg-amber-glow/5 btn-interactive">
-          Ver cómo trabajamos
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================
        SERVICIOS · SHOWCASE
   ============================================ -->
   <section id="servicios" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
@@ -1449,96 +1284,6 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-
-      <!-- Showcase block: mockup + copy -->
-      <div class="grid lg:grid-cols-12 gap-10 items-center mb-24">
-        <div class="lg:col-span-7 order-2 lg:order-1" data-reveal="fade-right">
-          <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Resultado profesional</span>
-          <h2 class="font-display text-3xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white mb-5">
-            Así se ve el resultado final que<br>
-            <span class="italic text-amber-glow">entregas a tus clientes.</span>
-          </h2>
-          <p class="text-mist text-base max-w-xl mb-7">Una landing page que se ve impecable en cualquier dispositivo, transmite seriedad y facilita el contacto desde el primer momento.</p>
-
-          <div class="space-y-3 max-w-md">
-            <div class="flex items-center gap-3 glass rounded-xl px-4 py-3">
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-              <span class="text-sm text-white/85">Optimizada para escritorio y móvil</span>
-            </div>
-            <div class="flex items-center gap-3 glass rounded-xl px-4 py-3">
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-              <span class="text-sm text-white/85">Diseño personalizado para tu marca</span>
-            </div>
-            <div class="flex items-center gap-3 glass rounded-xl px-4 py-3">
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff8a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              <span class="text-sm text-white/85">Carga rápida y experiencia fluida</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-5 order-1 lg:order-2" data-reveal="fade-left" data-reveal-delay="100">
-          <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-tr from-amber-glow/20 via-transparent to-cyan-500/10 blur-2xl rounded-3xl"></div>
-            <svg aria-hidden="true" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" class="relative w-full max-w-lg mx-auto block" width="600" height="450">
-              <defs>
-                <radialGradient id="gd" cx="50%" cy="50%"><stop offset="0%" stop-color="#e07a3a" stop-opacity=".25"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-              </defs>
-              <!-- Ambient glow -->
-              <ellipse cx="280" cy="300" rx="220" ry="80" fill="url(#gd)" opacity=".6"/>
-              <!-- LAPTOP body -->
-              <rect x="60" y="80" width="380" height="240" rx="10" fill="#111827" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
-              <!-- Screen bezel -->
-              <rect x="70" y="90" width="360" height="220" rx="7" fill="#0a0e1a"/>
-              <!-- Browser bar -->
-              <rect x="70" y="90" width="360" height="28" rx="7" fill="#1a2230"/>
-              <circle cx="90" cy="104" r="5" fill="rgba(255,80,80,.55)"/>
-              <circle cx="105" cy="104" r="5" fill="rgba(224,122,58,.55)"/>
-              <circle cx="120" cy="104" r="5" fill="rgba(34,197,94,.45)"/>
-              <rect x="140" y="97" width="200" height="14" rx="7" fill="rgba(255,255,255,.06)"/>
-              <text x="240" y="108" font-family="monospace" font-size="7" fill="rgba(255,255,255,.3)" text-anchor="middle">digitalizalab.cl</text>
-              <!-- Nav bar on screen -->
-              <rect x="78" y="126" width="344" height="20" rx="0" fill="rgba(255,255,255,.03)"/>
-              <rect x="86" y="131" width="60" height="8" rx="2" fill="rgba(224,122,58,.5)"/>
-              <rect x="350" y="130" width="60" height="10" rx="5" fill="rgba(224,122,58,.25)" stroke="rgba(224,122,58,.5)" stroke-width="1"/>
-              <!-- Hero area -->
-              <rect x="86" y="155" width="170" height="16" rx="3" fill="rgba(255,255,255,.85)"/>
-              <rect x="86" y="177" width="130" height="10" rx="2" fill="rgba(224,122,58,.8)"/>
-              <rect x="86" y="195" width="200" height="4" rx="1" fill="rgba(255,255,255,.18)"/>
-              <rect x="86" y="205" width="180" height="4" rx="1" fill="rgba(255,255,255,.12)"/>
-              <rect x="86" y="220" width="90" height="24" rx="12" fill="rgba(224,122,58,.35)" stroke="rgba(224,122,58,.6)" stroke-width="1"/>
-              <text x="131" y="236" font-family="monospace" font-size="8" fill="rgba(255,255,255,.8)" text-anchor="middle">Cotizar →</text>
-              <!-- Right side illustration on screen -->
-              <rect x="290" y="152" width="120" height="110" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
-              <rect x="298" y="160" width="104" height="60" rx="4" fill="rgba(224,122,58,.08)"/>
-              <circle cx="350" cy="190" r="22" fill="none" stroke="rgba(224,122,58,.3)" stroke-width="1.5" stroke-dasharray="5 3"/>
-              <text x="350" y="195" font-family="monospace" font-size="10" fill="rgba(224,122,58,.7)" text-anchor="middle">DL</text>
-              <!-- Laptop base -->
-              <rect x="40" y="320" width="420" height="12" rx="4" fill="#1a2230" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
-              <rect x="160" y="330" width="180" height="5" rx="2" fill="rgba(255,255,255,.04)"/>
-              <!-- MOBILE phone (overlapping, right side) -->
-              <rect x="380" y="200" width="110" height="195" rx="16" fill="#111827" stroke="rgba(255,255,255,.15)" stroke-width="1.5" filter="url(#glow)"/>
-              <rect x="387" y="215" width="96" height="165" rx="10" fill="#0a0e1a"/>
-              <!-- Phone notch -->
-              <rect x="415" y="208" width="40" height="6" rx="3" fill="rgba(255,255,255,.08)"/>
-              <!-- Mobile nav -->
-              <rect x="393" y="220" width="84" height="14" rx="0" fill="rgba(255,255,255,.03)"/>
-              <rect x="397" y="223" width="30" height="6" rx="2" fill="rgba(224,122,58,.5)"/>
-              <!-- Mobile hero text -->
-              <rect x="397" y="242" width="76" height="10" rx="2" fill="rgba(255,255,255,.8)"/>
-              <rect x="397" y="258" width="55" height="7" rx="1" fill="rgba(224,122,58,.7)"/>
-              <rect x="397" y="272" width="78" height="3" rx="1" fill="rgba(255,255,255,.15)"/>
-              <rect x="397" y="280" width="65" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
-              <rect x="397" y="292" width="60" height="18" rx="9" fill="rgba(224,122,58,.3)" stroke="rgba(224,122,58,.55)" stroke-width="1"/>
-              <text x="427" y="304" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.7)" text-anchor="middle">Cotizar</text>
-              <!-- Mobile home bar -->
-              <rect x="415" y="375" width="40" height="4" rx="2" fill="rgba(255,255,255,.15)"/>
-              <!-- Reflection line on laptop -->
-              <line x1="70" y1="91" x2="430" y2="91" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
-            </svg>
-          </div>
-        </div>
-      </div>
 
       <!-- Includes header -->
       <div class="max-w-3xl mx-auto text-center mb-14" data-reveal="fade-up">
@@ -1648,154 +1393,187 @@
 
 
   <!-- ============================================
-       SOCIAL PROOF: TESTIMONIOS + MARCAS
+       PORTAFOLIO · GALERÍA DE TRABAJOS
   ============================================ -->
-  <section aria-label="Testimonios y clientes" class="relative py-14 sm:py-20 lg:py-28 overflow-hidden">
-
+  <section id="portafolio" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
     <div class="absolute inset-0 -z-10">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#e07a3a]/[0.07] blur-[140px] rounded-full"></div>
+      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-amber-glow/[0.08] blur-[130px] rounded-full"></div>
+      <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full"></div>
     </div>
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="section-divider mb-14"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-      <div class="text-center mb-10" data-reveal="fade-up">
-        <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-3">— Lo que dicen nuestros clientes</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight tracking-tight text-white">
-          Resultados que <span class="italic text-amber-glow">hablan solos.</span>
+      <div class="max-w-3xl mx-auto text-center mb-14" data-reveal="fade-up">
+        <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Portafolio</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
+          Trabajos reales,<br>
+          <span class="italic text-amber-glow">resultados comprobables.</span>
         </h2>
+        <p class="mt-5 text-base text-mist max-w-xl mx-auto">Cada proyecto es diseñado a medida. Estos son algunos de nuestros últimos lanzamientos.</p>
       </div>
 
-      <!-- Testimonial slider -->
-      <div class="testimonial-slider" id="testimonialSlider" data-reveal="fade-up" data-reveal-delay="80">
-        <div class="testimonial-slides" id="testimonialSlides">
-
-          <div class="testimonial-slide px-2 sm:px-8">
-            <figure class="text-center py-4 relative">
-              <blockquote class="font-display text-xl sm:text-2xl lg:text-3xl font-light leading-[1.4] text-white max-w-3xl mx-auto tracking-tight">
-                "Necesitábamos algo que representara bien nuestro trabajo en obra.
-                <span class="text-amber-glow font-normal">La web quedó exactamente como la imaginábamos</span>
-                — profesional, clara y sin relleno. El proceso fue sorprendentemente rápido y sin vueltas."
-              </blockquote>
-              <figcaption class="mt-8 flex items-center justify-center gap-4">
-                <div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">E</div>
-                <div class="text-left">
-                  <div class="text-white text-sm font-medium">Esteban</div>
-                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">SMS · Constructora</div>
-                </div>
-              </figcaption>
-            </figure>
+      <!-- Portfolio Grid -->
+      <style>
+        .pf-shine { position: relative; overflow: hidden; }
+        .pf-shine::after {
+          content: '';
+          position: absolute; inset: 0;
+          background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.08) 55%, transparent 60%);
+          transform: translateX(-100%);
+          transition: none;
+        }
+        .group:hover .pf-shine::after {
+          transform: translateX(100%);
+          transition: transform 0.8s ease;
+        }
+      </style>
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mb-20">
+        
+        <!-- Proyecto 1: Johan Alegría -->
+        <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up">
+          <a href="https://johanalegriaphotography.cl/" target="_blank" rel="noopener noreferrer" class="block">
+            <!-- Browser frame -->
+            <div class="bg-[#1a1a1a] px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+              </div>
+              <div class="flex-1 mx-3">
+                <div class="bg-[#0d0d0d] rounded-md px-3 py-1 text-[10px] text-mist/70 font-mono text-center truncate">johanalegriaphotography.cl</div>
+              </div>
+            </div>
+            <!-- Screenshot viewport — short crop -->
+            <div class="relative pf-shine" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;">
+              <img src="assets/img/portfolio-johan.webp" alt="Portada del sitio de Johan Alegría Photography" width="960" height="600" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+              <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none"></div>
+            </div>
+          </a>
+          <div class="p-6 sm:p-8">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-2">Fotógrafo Profesional</span>
+            <h3 class="font-display text-2xl text-white mb-3">Johan Alegría Photography</h3>
+            <p class="text-sm text-mist leading-relaxed mb-6">Landing diseñada para transmitir elegancia, aumentar la confianza y facilitar las reservas mediante WhatsApp.</p>
+            <div class="flex flex-wrap items-center gap-4 mt-2">
+              <a href="https://wa.me/56982867164?text=Hola,+QUIERO+MI+PROPUESTA+-+vi+el+proyecto+de+Johan+Alegria+y+me+interesa+algo+similar" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-primary text-xs py-2.5 px-5 js-cta-track" data-cta="portfolio_cta_johan">
+                QUIERO MI PROPUESTA
+              </a>
+              <a href="https://johanalegriaphotography.cl/" target="_blank" rel="noopener noreferrer" class="btn-interactive flex items-center gap-2 text-mist hover:text-white transition-colors font-medium text-xs w-max">
+                Ver proyecto 
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
+        </article>
 
-          <div class="testimonial-slide px-2 sm:px-8">
-            <figure class="text-center py-4 relative">
-              <blockquote class="font-display text-xl sm:text-2xl lg:text-3xl font-light leading-[1.4] text-white max-w-3xl mx-auto tracking-tight">
-                "En nuestra industria la primera impresión importa cuando mandas un presupuesto.
-                <span class="text-cyan-400 font-normal">Desde que tenemos la web los clientes llegan mucho más convencidos</span>
-                — y cerrar proyectos se hizo bastante más fácil."
-              </blockquote>
-              <figcaption class="mt-8 flex items-center justify-center gap-4">
-                <div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">N</div>
-                <div class="text-left">
-                  <div class="text-white text-sm font-medium">Nicolás</div>
-                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">Visión Inspección</div>
-                </div>
-              </figcaption>
-            </figure>
+        <!-- Proyecto 2: Video Inspección -->
+        <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up" data-reveal-delay="100">
+          <a href="https://visioninspeccion.cl/" target="_blank" rel="noopener noreferrer" class="block">
+            <!-- Browser frame -->
+            <div class="bg-[#1a1a1a] px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+              </div>
+              <div class="flex-1 mx-3">
+                <div class="bg-[#0d0d0d] rounded-md px-3 py-1 text-[10px] text-mist/70 font-mono text-center truncate">visioninspeccion.cl</div>
+              </div>
+            </div>
+            <!-- Screenshot viewport — short crop -->
+            <div class="relative pf-shine" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;">
+              <img src="assets/img/portfolio-vision.webp" alt="Portada del sitio de Visión Inspección" width="960" height="600" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+              <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none"></div>
+            </div>
+          </a>
+          <div class="p-6 sm:p-8">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-2">Video inspección de tuberías</span>
+            <h3 class="font-display text-2xl text-white mb-3">Visión Inspección</h3>
+            <p class="text-sm text-mist leading-relaxed mb-6">Landing orientada a captar solicitudes de empresas y clientes particulares mediante una propuesta clara y profesional.</p>
+            <div class="flex flex-wrap items-center gap-4 mt-2">
+              <a href="https://wa.me/56982867164?text=Hola,+QUIERO+MI+PROPUESTA+-+vi+el+proyecto+de+Vision+Inspeccion+y+me+interesa+algo+similar" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-primary text-xs py-2.5 px-5 js-cta-track" data-cta="portfolio_cta_vision">
+                QUIERO MI PROPUESTA
+              </a>
+              <a href="https://visioninspeccion.cl/" target="_blank" rel="noopener noreferrer" class="btn-interactive flex items-center gap-2 text-mist hover:text-white transition-colors font-medium text-xs w-max">
+                Ver proyecto 
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
+        </article>
 
-          <div class="testimonial-slide px-2 sm:px-8">
-            <figure class="text-center py-4 relative">
-              <blockquote class="font-display text-xl sm:text-2xl lg:text-3xl font-light leading-[1.4] text-white max-w-3xl mx-auto tracking-tight">
-                "Necesitaba una landing para captar datos de mis clientes y
-                <span class="text-purple-400 font-normal">Digitaliza Lab entendió el estilo de Svara al tiro</span>
-                — quedé encantada con el resultado. Súper profesionales."
-              </blockquote>
-              <figcaption class="mt-8 flex items-center justify-center gap-4">
-                <div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">F</div>
-                <div class="text-left">
-                  <div class="text-white text-sm font-medium">Francisca</div>
-                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">Svara · Tienda de Velas</div>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
+      </div>
 
-          <div class="testimonial-slide px-2 sm:px-8">
-            <figure class="text-center py-4 relative">
-              <blockquote class="font-display text-xl sm:text-2xl lg:text-3xl font-light leading-[1.4] text-white max-w-3xl mx-auto tracking-tight">
-                "Tenía mi negocio sin presencia web y necesitaba algo profesional rápido.
-                <span class="text-emerald-400 font-normal">En menos de una semana ya tenía mi landing funcionando</span>
-                — los clientes ahora me encuentran directo por Google."
-              </blockquote>
-              <figcaption class="mt-8 flex items-center justify-center gap-4">
-                <div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">A</div>
-                <div class="text-left">
-                  <div class="text-white text-sm font-medium">Alex</div>
-                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">Emprendedor</div>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="testimonial-slide px-2 sm:px-8">
-            <figure class="text-center py-4 relative">
-              <blockquote class="font-display text-xl sm:text-2xl lg:text-3xl font-light leading-[1.4] text-white max-w-3xl mx-auto tracking-tight">
-                "Soy fotógrafo y necesitaba mostrar mi portafolio de forma profesional.
-                <span class="text-sky-400 font-normal">Digitaliza Lab fue súper rápida y el resultado quedó impecable</span>
-                — mis clientes ahora ven mi trabajo antes de contactarme."
-              </blockquote>
-              <figcaption class="mt-8 flex items-center justify-center gap-4">
-                <div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">J</div>
-                <div class="text-left">
-                  <div class="text-white text-sm font-medium">Johan Alegría</div>
-                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">Fotógrafo</div>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-
+      <!-- Diseños de muestra (no son clientes) -->
+      <div class="mt-4" data-reveal="fade-up">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+          <h3 class="font-display text-2xl sm:text-3xl font-light text-white">Diseños de muestra por rubro</h3>
+          <p class="mt-3 text-sm sm:text-base text-mist">Conceptos creados por nuestro equipo para mostrar estilos posibles según el tipo de negocio. No son sitios de clientes.</p>
         </div>
-
-        <div class="flex justify-center gap-3 mt-10" id="testimonialDots">
-          <button class="w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-colors active:bg-amber-glow testimonial-dot active" data-index="0" aria-label="Testimonio 1"></button>
-          <button class="w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-colors active:bg-amber-glow testimonial-dot" data-index="1" aria-label="Testimonio 2"></button>
-          <button class="w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-colors active:bg-amber-glow testimonial-dot" data-index="2" aria-label="Testimonio 3"></button>
-          <button class="w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-colors active:bg-amber-glow testimonial-dot" data-index="3" aria-label="Testimonio 4"></button>
-          <button class="w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-colors active:bg-amber-glow testimonial-dot" data-index="4" aria-label="Testimonio 5"></button>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="glass rounded-2xl overflow-hidden group flex flex-col">
+          <a href="https://cfmillans-rgb.github.io/03-valdes-asociados/" target="_blank" rel="noopener noreferrer" class="block relative" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;" aria-label="Ver diseño de muestra: Valdés &amp; Asociados">
+            <img src="assets/img/demo-valdes.webp" alt="Diseño de muestra para estudio jurídico: Valdés &amp; Asociados" width="799" height="506" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
+            <span class="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.15em] bg-black/70 text-white/90 border border-white/15 rounded-full px-2.5 py-1">Diseño de muestra</span>
+          </a>
+          <div class="p-5 flex flex-col flex-1">
+            <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-1.5">Estudio jurídico</span>
+            <h4 class="font-display text-lg text-white mb-2">Valdés &amp; Asociados</h4>
+            <p class="text-sm text-mist leading-relaxed mb-4 flex-1">Sobrio y de autoridad, pensado para abogados que necesitan transmitir confianza.</p>
+            <a href="https://cfmillans-rgb.github.io/03-valdes-asociados/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-mist hover:text-white transition-colors w-max">
+              Ver diseño
+              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="glass rounded-2xl overflow-hidden group flex flex-col">
+          <a href="https://cfmillans-rgb.github.io/08-taller-rivera/" target="_blank" rel="noopener noreferrer" class="block relative" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;" aria-label="Ver diseño de muestra: Taller Rivera">
+            <img src="assets/img/demo-taller-rivera.webp" alt="Diseño de muestra para taller automotriz: Taller Rivera" width="799" height="506" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
+            <span class="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.15em] bg-black/70 text-white/90 border border-white/15 rounded-full px-2.5 py-1">Diseño de muestra</span>
+          </a>
+          <div class="p-5 flex flex-col flex-1">
+            <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-1.5">Taller automotriz</span>
+            <h4 class="font-display text-lg text-white mb-2">Taller Rivera</h4>
+            <p class="text-sm text-mist leading-relaxed mb-4 flex-1">Precios claros y cotizador, para servicios donde la transparencia vende.</p>
+            <a href="https://cfmillans-rgb.github.io/08-taller-rivera/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-mist hover:text-white transition-colors w-max">
+              Ver diseño
+              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="glass rounded-2xl overflow-hidden group flex flex-col">
+          <a href="https://cfmillans-rgb.github.io/06-gruas-titan/" target="_blank" rel="noopener noreferrer" class="block relative" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;" aria-label="Ver diseño de muestra: Grúas Titán 24/7">
+            <img src="assets/img/demo-gruas-titan.webp" alt="Diseño de muestra para servicios de urgencia: Grúas Titán 24/7" width="799" height="506" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
+            <span class="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.15em] bg-black/70 text-white/90 border border-white/15 rounded-full px-2.5 py-1">Diseño de muestra</span>
+          </a>
+          <div class="p-5 flex flex-col flex-1">
+            <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-1.5">Servicios de urgencia</span>
+            <h4 class="font-display text-lg text-white mb-2">Grúas Titán 24/7</h4>
+            <p class="text-sm text-mist leading-relaxed mb-4 flex-1">Una sola acción: llamar. Para negocios que se contratan en minutos.</p>
+            <a href="https://cfmillans-rgb.github.io/06-gruas-titan/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-mist hover:text-white transition-colors w-max">
+              Ver diseño
+              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="glass rounded-2xl overflow-hidden group flex flex-col">
+          <a href="https://cfmillans-rgb.github.io/cleanpro-landing/" target="_blank" rel="noopener noreferrer" class="block relative" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;" aria-label="Ver diseño de muestra: CleanPro">
+            <img src="assets/img/demo-cleanpro.webp" alt="Diseño de muestra para limpieza de hogares y oficinas: CleanPro" width="799" height="506" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
+            <span class="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.15em] bg-black/70 text-white/90 border border-white/15 rounded-full px-2.5 py-1">Diseño de muestra</span>
+          </a>
+          <div class="p-5 flex flex-col flex-1">
+            <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-1.5">Limpieza de hogares y oficinas</span>
+            <h4 class="font-display text-lg text-white mb-2">CleanPro</h4>
+            <p class="text-sm text-mist leading-relaxed mb-4 flex-1">Luminoso y cercano, para servicios a domicilio.</p>
+            <a href="https://cfmillans-rgb.github.io/cleanpro-landing/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-mist hover:text-white transition-colors w-max">
+              Ver diseño
+              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
         </div>
       </div>
 
-    </div>
 
-    <!-- MARCAS -->
-    <div class="mt-24 sm:mt-32">
-      <div class="text-center mb-10 max-w-5xl mx-auto px-4 sm:px-6" data-reveal="fade-up">
-        <span class="inline-block font-mono text-[10px] uppercase tracking-[0.22em] text-mist/70">— Marcas que confían</span>
-      </div>
-
-      <div class="overflow-hidden relative" data-reveal="fade-up">
-        <div class="absolute inset-y-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#000000] to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute inset-y-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#000000] to-transparent z-10 pointer-events-none"></div>
-
-        <div class="brands-track py-4 opacity-70">
-          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/70 ml-1">Constructora</span></div>
-          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Visión Inspección</span> <span class="text-xs text-mist/70 ml-1">Mantenciones</span></div>
-          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Svara</span> <span class="text-xs text-mist/70 ml-1">Tienda de Velas</span></div>
-          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Peluca de Carla</span> <span class="text-xs text-mist/70 ml-1">Peluquería</span></div>
-
-          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Nicolás Plaza</span> <span class="text-xs text-mist/70 ml-1">Fotografía</span></div>
-          <!-- Duplicated for marquee -->
-          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/70 ml-1">Constructora</span></div>
-          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Visión Inspección</span> <span class="text-xs text-mist/70 ml-1">Mantenciones</span></div>
-          <div class="btn-interactive brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Svara</span> <span class="text-xs text-mist/70 ml-1">Tienda de Velas</span></div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="section-divider mt-14"></div>
     </div>
   </section>
 
@@ -1846,12 +1624,13 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-      <div class="max-w-3xl mx-auto text-center mb-20" data-reveal="fade-up">
+      <div class="max-w-3xl mx-auto text-center mb-16" data-reveal="fade-up">
         <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— ¿Cómo trabajamos?</span>
         <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
-          Un flujo de trabajo claro<br>
-          <span class="italic text-amber-glow">de principio a fin.</span>
+          72 horas. Desde cero.<br>
+          <span class="italic text-amber-glow">Cuatro pasos, sin vueltas.</span>
         </h2>
+        <p class="mt-5 text-base text-mist max-w-xl mx-auto">No improvisamos cada proyecto: sabemos qué preguntar, qué construir y qué validar en cada etapa. Por eso podemos entregar rápido sin usar plantillas.</p>
       </div>
 
       <!-- Timeline -->
@@ -1863,8 +1642,8 @@
           <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">01</div></div>
           <div class="tl-card">
             <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 1</span>
-            <h3 class="font-display text-xl text-white mb-2">Solicitas tu Landing</h3>
-            <p class="text-sm text-mist/80 leading-relaxed">Nos escribes por WhatsApp y resolvemos todas tus dudas iniciales antes de empezar.</p>
+            <h3 class="font-display text-xl text-white mb-2">Conversamos</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Nos escribes por WhatsApp, resolvemos tus dudas y confirmamos que la landing es lo que tu negocio necesita.</p>
           </div>
         </div>
 
@@ -1873,8 +1652,8 @@
           <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">02</div></div>
           <div class="tl-card">
             <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 2</span>
-            <h3 class="font-display text-xl text-white mb-2">Realizas el pago</h3>
-            <p class="text-sm text-mist/80 leading-relaxed">Puedes pagar mediante Mercado Pago (crédito/débito) o Transferencia Bancaria.</p>
+            <h3 class="font-display text-xl text-white mb-2">Pagas y envías tu información</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Pagas con tarjeta o transferencia, te emitimos boleta o factura electrónica y completas un formulario simple con logo, colores, fotos y textos.</p>
           </div>
         </div>
 
@@ -1883,8 +1662,8 @@
           <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">03</div></div>
           <div class="tl-card">
             <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 3</span>
-            <h3 class="font-display text-xl text-white mb-2">Emitimos tu boleta o factura</h3>
-            <p class="text-sm text-mist/80 leading-relaxed">Solicitamos tus datos y te enviamos la boleta electrónica (personas) o la factura electrónica (empresas).</p>
+            <h3 class="font-display text-xl text-white mb-2">Recibes tu web en 72 horas hábiles</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Desde que tenemos tu información completa, diseñamos y te entregamos la primera versión funcionando.</p>
           </div>
         </div>
 
@@ -1893,58 +1672,8 @@
           <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">04</div></div>
           <div class="tl-card">
             <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 4</span>
-            <h3 class="font-display text-xl text-white mb-2">Onboarding</h3>
-            <p class="text-sm text-mist/80 leading-relaxed">Recibes un formulario simple para enviarnos logo, colores, fotos, textos y datos de contacto.</p>
-          </div>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="tl-item">
-          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">05</div></div>
-          <div class="tl-card">
-            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 5</span>
-            <h3 class="font-display text-xl text-white mb-2">Diseñamos tu Landing</h3>
-            <p class="text-sm text-mist/80 leading-relaxed">En un plazo máximo de 72 horas hábiles recibirás la primera versión completamente funcional.</p>
-          </div>
-        </div>
-
-        <!-- Step 6 -->
-        <div class="tl-item">
-          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">06</div></div>
-          <div class="tl-card">
-            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 6</span>
-            <h3 class="font-display text-xl text-white mb-2">Revisión</h3>
-            <p class="text-sm text-mist/80 leading-relaxed">Tienes 7 días hábiles para enviarnos una ronda de correcciones, en un solo mensaje.</p>
-          </div>
-        </div>
-
-        <!-- Step 7 -->
-        <div class="tl-item">
-          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">07</div></div>
-          <div class="tl-card">
-            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 7</span>
-            <h3 class="font-display text-xl text-white mb-2">Publicación</h3>
-            <p class="text-sm text-mist/80 leading-relaxed">Una vez aprobada por ti, publicamos la landing y queda 100% operativa en tu dominio.</p>
-          </div>
-        </div>
-
-        <!-- Step 8 -->
-        <div class="tl-item">
-          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">08</div></div>
-          <div class="tl-card">
-            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 8</span>
-            <h3 class="font-display text-xl text-white mb-2">Ajustes</h3>
-            <p class="text-sm text-mist/80 leading-relaxed">Cuando lo necesites, puedes contratar el Pack de Ajustes para cambios menores.</p>
-          </div>
-        </div>
-
-        <!-- Step 9 -->
-        <div class="tl-item">
-          <div class="tl-dot-wrap"><div class="tl-dot-pulse"></div><div class="tl-dot">09</div></div>
-          <div class="tl-card">
-            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-2">Paso 9</span>
-            <h3 class="font-display text-xl text-white mb-2">Renovación</h3>
-            <p class="text-sm text-mist/80 leading-relaxed">Antes del vencimiento anual, te contactaremos para consultar si deseas renovar tus servicios.</p>
+            <h3 class="font-display text-xl text-white mb-2">Ajustamos y publicamos</h3>
+            <p class="text-sm text-mist/80 leading-relaxed">Tienes 7 días hábiles para enviarnos una ronda de correcciones. Las aplicamos y tu landing queda publicada en tu dominio.</p>
           </div>
         </div>
 
@@ -1988,118 +1717,104 @@
   </script>
 
   <!-- ============================================
-       PORTAFOLIO · GALERÍA DE TRABAJOS
+       SOCIAL PROOF: TESTIMONIOS + MARCAS
   ============================================ -->
-  <section id="portafolio" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
+  <section aria-label="Testimonios y clientes" class="relative py-14 sm:py-20 lg:py-28 overflow-hidden">
+
     <div class="absolute inset-0 -z-10">
-      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-amber-glow/[0.08] blur-[130px] rounded-full"></div>
-      <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#e07a3a]/[0.07] blur-[140px] rounded-full"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="section-divider mb-14"></div>
 
-      <div class="max-w-3xl mx-auto text-center mb-14" data-reveal="fade-up">
-        <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-4">— Portafolio</span>
-        <h2 class="font-display text-4xl sm:text-5xl font-light leading-[1.05] tracking-tight text-white">
-          Trabajos reales,<br>
-          <span class="italic text-amber-glow">resultados comprobables.</span>
+      <div class="text-center mb-10" data-reveal="fade-up">
+        <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-3">— Lo que dicen nuestros clientes</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight tracking-tight text-white">
+          Resultados que <span class="italic text-amber-glow">hablan solos.</span>
         </h2>
-        <p class="mt-5 text-base text-mist max-w-xl mx-auto">Cada proyecto es diseñado a medida. Estos son algunos de nuestros últimos lanzamientos.</p>
       </div>
 
-      <!-- Portfolio Grid -->
-      <style>
-        .pf-shine { position: relative; overflow: hidden; }
-        .pf-shine::after {
-          content: '';
-          position: absolute; inset: 0;
-          background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.08) 55%, transparent 60%);
-          transform: translateX(-100%);
-          transition: none;
-        }
-        .group:hover .pf-shine::after {
-          transform: translateX(100%);
-          transition: transform 0.8s ease;
-        }
-      </style>
-      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16">
-        
-        <!-- Proyecto 1: Johan Alegría -->
-        <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up">
-          <a href="https://johanalegriaphotography.cl/" target="_blank" rel="noopener noreferrer" class="block">
-            <!-- Browser frame -->
-            <div class="bg-[#1a1a1a] px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
-              <div class="flex gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
-              </div>
-              <div class="flex-1 mx-3">
-                <div class="bg-[#0d0d0d] rounded-md px-3 py-1 text-[10px] text-mist/70 font-mono text-center truncate">johanalegriaphotography.cl</div>
-              </div>
-            </div>
-            <!-- Screenshot viewport — short crop -->
-            <div class="relative pf-shine" style="height: 180px; overflow: hidden; background: #050505;">
-              <img src="assets/img/portfolio-johan.webp" alt="Johan Alegría Photography" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
-              <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none"></div>
-            </div>
-          </a>
-          <div class="p-6 sm:p-8">
-            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-2">Fotógrafo Profesional</span>
-            <h3 class="font-display text-2xl text-white mb-3">Johan Alegría Photography</h3>
-            <p class="text-sm text-mist leading-relaxed mb-6">Landing diseñada para transmitir elegancia, aumentar la confianza y facilitar las reservas mediante WhatsApp.</p>
-            <div class="flex flex-wrap items-center gap-4 mt-2">
-              <a href="https://wa.me/56982867164?text=Hola,+QUIERO+MI+PROPUESTA+-+vi+el+proyecto+de+Johan+Alegria+y+me+interesa+algo+similar" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-primary text-xs py-2.5 px-5 js-cta-track" data-cta="portfolio_cta_johan">
-                QUIERO MI PROPUESTA
-              </a>
-              <a href="https://johanalegriaphotography.cl/" target="_blank" rel="noopener noreferrer" class="btn-interactive flex items-center gap-2 text-mist hover:text-white transition-colors font-medium text-xs w-max">
-                Ver proyecto 
-                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Proyecto 2: Video Inspección -->
-        <article class="glass rounded-3xl overflow-hidden group" data-reveal="fade-up" data-reveal-delay="100">
-          <a href="https://visioninspeccion.cl/" target="_blank" rel="noopener noreferrer" class="block">
-            <!-- Browser frame -->
-            <div class="bg-[#1a1a1a] px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
-              <div class="flex gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
-              </div>
-              <div class="flex-1 mx-3">
-                <div class="bg-[#0d0d0d] rounded-md px-3 py-1 text-[10px] text-mist/70 font-mono text-center truncate">visioninspeccion.cl</div>
-              </div>
-            </div>
-            <!-- Screenshot viewport — short crop -->
-            <div class="relative pf-shine" style="height: 180px; overflow: hidden; background: #050505;">
-              <img src="assets/img/portfolio-vision.webp" alt="Visión Inspección" class="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
-              <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none"></div>
-            </div>
-          </a>
-          <div class="p-6 sm:p-8">
-            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-2">Video inspección de tuberías</span>
-            <h3 class="font-display text-2xl text-white mb-3">Visión Inspección</h3>
-            <p class="text-sm text-mist leading-relaxed mb-6">Landing orientada a captar solicitudes de empresas y clientes particulares mediante una propuesta clara y profesional.</p>
-            <div class="flex flex-wrap items-center gap-4 mt-2">
-              <a href="https://wa.me/56982867164?text=Hola,+QUIERO+MI+PROPUESTA+-+vi+el+proyecto+de+Vision+Inspeccion+y+me+interesa+algo+similar" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-primary text-xs py-2.5 px-5 js-cta-track" data-cta="portfolio_cta_vision">
-                QUIERO MI PROPUESTA
-              </a>
-              <a href="https://visioninspeccion.cl/" target="_blank" rel="noopener noreferrer" class="btn-interactive flex items-center gap-2 text-mist hover:text-white transition-colors font-medium text-xs w-max">
-                Ver proyecto 
-                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
+      <!-- Testimonios en grilla (sin carrusel automático) -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-reveal="fade-up" data-reveal-delay="100">
+          <figure class="glass rounded-2xl p-6 sm:p-7 flex flex-col">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="#ff8a42" opacity=".5" class="mb-4"><path d="M7.17 17q-1.42 0-2.3-.93T4 13.62q0-2.37 1.36-4.5Q6.71 7 9.04 5.5l.96 1.24Q8.26 8 7.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T10 14.3q0 1.2-.82 1.95T7.17 17Zm9 0q-1.42 0-2.3-.93T13 13.62q0-2.37 1.36-4.5Q15.71 7 18.04 5.5l.96 1.24Q17.26 8 16.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T19 14.3q0 1.2-.82 1.95T16.17 17Z"/></svg>
+            <blockquote class="text-[15px] leading-relaxed text-mist flex-1">"Necesitábamos algo que representara bien nuestro trabajo en obra. <span class="text-white">La web quedó exactamente como la imaginábamos</span> — profesional, clara y sin relleno. El proceso fue sorprendentemente rápido y sin vueltas."</blockquote>
+            <figcaption class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4"><div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">E</div>
+                <div class="text-left">
+                  <div class="text-white text-sm font-medium">Esteban</div>
+                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">SMS · Constructora</div>
+                </div></figcaption>
+          </figure>
+          <figure class="glass rounded-2xl p-6 sm:p-7 flex flex-col">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="#ff8a42" opacity=".5" class="mb-4"><path d="M7.17 17q-1.42 0-2.3-.93T4 13.62q0-2.37 1.36-4.5Q6.71 7 9.04 5.5l.96 1.24Q8.26 8 7.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T10 14.3q0 1.2-.82 1.95T7.17 17Zm9 0q-1.42 0-2.3-.93T13 13.62q0-2.37 1.36-4.5Q15.71 7 18.04 5.5l.96 1.24Q17.26 8 16.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T19 14.3q0 1.2-.82 1.95T16.17 17Z"/></svg>
+            <blockquote class="text-[15px] leading-relaxed text-mist flex-1">"En nuestra industria la primera impresión importa cuando mandas un presupuesto. <span class="text-white">Desde que tenemos la web los clientes llegan mucho más convencidos</span> — y cerrar proyectos se hizo bastante más fácil."</blockquote>
+            <figcaption class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4"><div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">N</div>
+                <div class="text-left">
+                  <div class="text-white text-sm font-medium">Nicolás</div>
+                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">Visión Inspección</div>
+                </div></figcaption>
+          </figure>
+          <figure class="glass rounded-2xl p-6 sm:p-7 flex flex-col">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="#ff8a42" opacity=".5" class="mb-4"><path d="M7.17 17q-1.42 0-2.3-.93T4 13.62q0-2.37 1.36-4.5Q6.71 7 9.04 5.5l.96 1.24Q8.26 8 7.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T10 14.3q0 1.2-.82 1.95T7.17 17Zm9 0q-1.42 0-2.3-.93T13 13.62q0-2.37 1.36-4.5Q15.71 7 18.04 5.5l.96 1.24Q17.26 8 16.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T19 14.3q0 1.2-.82 1.95T16.17 17Z"/></svg>
+            <blockquote class="text-[15px] leading-relaxed text-mist flex-1">"Necesitaba una landing para captar datos de mis clientes y <span class="text-white">Digitaliza Lab entendió el estilo de Svara al tiro</span> — quedé encantada con el resultado. Súper profesionales."</blockquote>
+            <figcaption class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4"><div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">F</div>
+                <div class="text-left">
+                  <div class="text-white text-sm font-medium">Francisca</div>
+                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">Svara · Tienda de Velas</div>
+                </div></figcaption>
+          </figure>
+          <figure class="glass rounded-2xl p-6 sm:p-7 flex flex-col">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="#ff8a42" opacity=".5" class="mb-4"><path d="M7.17 17q-1.42 0-2.3-.93T4 13.62q0-2.37 1.36-4.5Q6.71 7 9.04 5.5l.96 1.24Q8.26 8 7.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T10 14.3q0 1.2-.82 1.95T7.17 17Zm9 0q-1.42 0-2.3-.93T13 13.62q0-2.37 1.36-4.5Q15.71 7 18.04 5.5l.96 1.24Q17.26 8 16.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T19 14.3q0 1.2-.82 1.95T16.17 17Z"/></svg>
+            <blockquote class="text-[15px] leading-relaxed text-mist flex-1">"Tenía mi negocio sin presencia web y necesitaba algo profesional rápido. <span class="text-white">En menos de una semana ya tenía mi landing funcionando</span> — los clientes ahora me encuentran directo por Google."</blockquote>
+            <figcaption class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4"><div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">A</div>
+                <div class="text-left">
+                  <div class="text-white text-sm font-medium">Alex</div>
+                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">Emprendedor</div>
+                </div></figcaption>
+          </figure>
+          <figure class="glass rounded-2xl p-6 sm:p-7 flex flex-col">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="#ff8a42" opacity=".5" class="mb-4"><path d="M7.17 17q-1.42 0-2.3-.93T4 13.62q0-2.37 1.36-4.5Q6.71 7 9.04 5.5l.96 1.24Q8.26 8 7.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T10 14.3q0 1.2-.82 1.95T7.17 17Zm9 0q-1.42 0-2.3-.93T13 13.62q0-2.37 1.36-4.5Q15.71 7 18.04 5.5l.96 1.24Q17.26 8 16.47 9.2t-.86 2.3q.19-.05.56-.05 1.25 0 2.04.82T19 14.3q0 1.2-.82 1.95T16.17 17Z"/></svg>
+            <blockquote class="text-[15px] leading-relaxed text-mist flex-1">"Soy fotógrafo y necesitaba mostrar mi portafolio de forma profesional. <span class="text-white">Digitaliza Lab fue súper rápida y el resultado quedó impecable</span> — mis clientes ahora ven mi trabajo antes de contactarme."</blockquote>
+            <figcaption class="mt-6 pt-5 border-t border-white/5 flex items-center gap-4"><div class="w-10 h-10 rounded-full border border-white/10 bg-[#111111] grid place-items-center text-white/80 font-display text-sm flex-shrink-0 shadow-inner">J</div>
+                <div class="text-left">
+                  <div class="text-white text-sm font-medium">Johan Alegría</div>
+                  <div class="text-[10px] text-mist/70 font-mono uppercase tracking-widest">Fotógrafo</div>
+                </div></figcaption>
+          </figure>
       </div>
 
-      <!-- CTA Inferior Portafolio (Removido para usar CTAs individuales) -->
+    </div>
 
+    <!-- MARCAS -->
+    <div class="mt-24 sm:mt-32">
+      <div class="text-center mb-10 max-w-5xl mx-auto px-4 sm:px-6" data-reveal="fade-up">
+        <span class="inline-block font-mono text-[10px] uppercase tracking-[0.22em] text-mist/70">— Marcas que confían</span>
+      </div>
+
+      <div class="overflow-hidden relative" data-reveal="fade-up">
+        <div class="absolute inset-y-0 left-0 w-24 sm:w-40 bg-gradient-to-r from-[#000000] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-24 sm:w-40 bg-gradient-to-l from-[#000000] to-transparent z-10 pointer-events-none"></div>
+
+        <div class="brands-track py-4 opacity-70">
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/70 ml-1">Constructora</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Visión Inspección</span> <span class="text-xs text-mist/70 ml-1">Mantenciones</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Svara</span> <span class="text-xs text-mist/70 ml-1">Tienda de Velas</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Peluca de Carla</span> <span class="text-xs text-mist/70 ml-1">Peluquería</span></div>
+          <div class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Nicolás Plaza</span> <span class="text-xs text-mist/70 ml-1">Fotografía</span></div>
+          <!-- Duplicado para el loop del marquee (oculto a lectores de pantalla) -->
+          <div aria-hidden="true" class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">SMS</span> <span class="text-xs text-mist/70 ml-1">Constructora</span></div>
+          <div aria-hidden="true" class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Visión Inspección</span> <span class="text-xs text-mist/70 ml-1">Mantenciones</span></div>
+          <div aria-hidden="true" class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Svara</span> <span class="text-xs text-mist/70 ml-1">Tienda de Velas</span></div>
+          <div aria-hidden="true" class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Peluca de Carla</span> <span class="text-xs text-mist/70 ml-1">Peluquería</span></div>
+          <div aria-hidden="true" class="brand-pill border border-white/5 bg-white/[0.02] px-6 py-2.5 rounded-full backdrop-blur-sm"><span class="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 inline-block"></span><span class="text-sm text-white/90 font-medium">Nicolás Plaza</span> <span class="text-xs text-mist/70 ml-1">Fotografía</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="section-divider mt-14"></div>
     </div>
   </section>
 
@@ -2122,11 +1837,11 @@
       <div class="flex flex-wrap justify-center gap-6 items-center opacity-70">
         <!-- Íconos de tarjetas y transferencia -->
         <div class="glass px-6 py-3 rounded-xl border border-white/10 flex items-center gap-3">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-amber-glow"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-amber-glow" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
           <span class="text-sm text-white font-medium">Tarjetas de Crédito / Débito</span>
         </div>
         <div class="glass px-6 py-3 rounded-xl border border-white/10 flex items-center gap-3">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-cyan-400"><path d="M3 2v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-amber-glow" aria-hidden="true"><path d="M3 2v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg>
           <span class="text-sm text-white font-medium">Transferencia Bancaria</span>
         </div>
       </div>
@@ -2384,9 +2099,6 @@
   </section>
 
   <!-- ============================================
-       FOOTER
-  ============================================ -->
-  <!-- ============================================
      BLOG PREVIEW
 ============================================ -->
 <section class="relative py-24 sm:py-32 border-t border-white/5 overflow-hidden">
@@ -2500,6 +2212,7 @@
   </div>
 </section>
 
+  
   </main>
 
   <footer role="contentinfo" class="relative border-t border-white/5 bg-[#000000] pt-16 pb-8">
