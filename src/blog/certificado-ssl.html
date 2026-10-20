@@ -1,30 +1,33 @@
+---
+# Página generada con Eleventy. Datos compartidos en src/_data (empresa.json, precios.json).
+---
 <!doctype html>
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="../assets/js/consent.js" defer></script>
-  <title>SEO Local en Chile: Aparecer Primero Cuando Más Importa | Digitaliza Lab</title>
-  <meta name="description" content="Guía de SEO local en Chile. Estrategias para Google Business, keywords chilenas y cómo aparecer primero en tu zona sin depender de publicidad.">
+  {% include "partials/consent.njk" %}
+  <title>SSL y HTTPS: Por Qué Son Obligatorios en 2026 | Digitaliza Lab</title>
+  <meta name="description" content="Todo sobre certificados SSL y HTTPS para sitios web en Chile. Por qué Google penaliza los sitios sin SSL y cómo proteger a tus visitantes.">
   <meta name="author" content="Digitaliza Lab">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Digitaliza Lab">
-  <meta property="og:title" content="SEO Local en Chile: Aparecer Primero Cuando Más Importa | Digitaliza Lab">
-  <meta property="og:description" content="Guía de SEO local en Chile. Estrategias para Google Business, keywords chilenas y cómo aparecer primero en tu zona sin depender de publicidad.">
-  <meta property="og:url" content="https://digitalizalab.cl/blog/seo-local-chile.html">
+  <meta property="og:title" content="SSL y HTTPS: Por Qué Son Obligatorios en 2026 | Digitaliza Lab">
+  <meta property="og:description" content="Todo sobre certificados SSL y HTTPS para sitios web en Chile. Por qué Google penaliza los sitios sin SSL y cómo proteger a tus visitantes.">
+  <meta property="og:url" content="https://digitalizalab.cl/blog/certificado-ssl.html">
   <meta property="og:locale" content="es_CL">
   <meta property="og:image" content="https://digitalizalab.cl/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://digitalizalab.cl/assets/img/og-image.png">
-  <link rel="canonical" href="https://digitalizalab.cl/blog/seo-local-chile.html">
+  <link rel="canonical" href="https://digitalizalab.cl/blog/certificado-ssl.html">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/blog-styles.min.css?v=20261019d">
+  <link rel="stylesheet" href="/assets/css/blog-styles.min.css?v={{ build.version }}">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,15 +37,15 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "item": { "@id": "https://digitalizalab.cl/", "name": "Inicio" } },
           { "@type": "ListItem", "position": 2, "item": { "@id": "https://digitalizalab.cl/blog.html", "name": "Blog" } },
-          { "@type": "ListItem", "position": 3, "item": { "@id": "https://digitalizalab.cl/blog/seo-local-chile.html", "name": "SEO Local en Chile: aparecer primero cuando más importa" } }
+          { "@type": "ListItem", "position": 3, "item": { "@id": "https://digitalizalab.cl/blog/certificado-ssl.html", "name": "SSL y HTTPS: por qué son obligatorios en 2026" } }
         ]
       },
       {
         "@type": "Article",
-        "headline": "SEO Local en Chile: aparecer primero cuando más importa",
+        "headline": "SSL y HTTPS: por qué son obligatorios en 2026",
         "author": { "@type": "Organization", "name": "Digitaliza Lab" },
         "publisher": { "@type": "Organization", "name": "Digitaliza Lab", "url": "https://digitalizalab.cl/" },
-        "mainEntityOfPage": "https://digitalizalab.cl/blog/seo-local-chile.html"
+        "mainEntityOfPage": "https://digitalizalab.cl/blog/certificado-ssl.html"
       }
     ]
   }
@@ -80,7 +83,7 @@
       </a>
       <div style="display: flex; align-items: center; gap: 1rem;">
         <a href="../blog.html" style="font-size: 0.85rem; color: #ff8a42; font-weight: 500;">← Blog</a>
-        <a href="https://wa.me/56982867164?text=Hola,%20quiero%20cotizar%20mi%20landing" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Cotizar</a>
+        <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20quiero%20cotizar%20mi%20landing" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Cotizar</a>
       </div>
     </div>
   </nav>
@@ -93,48 +96,29 @@
         <li>→</li>
         <li><a href="../blog.html" style="color: #71717a; transition: color 0.2s;">Blog</a></li>
         <li>→</li>
-        <li style="color: #ff8a42;">SEO Local Chile</li>
+        <li style="color: #ff8a42;">SSL y HTTPS</li>
       </ol>
     </nav>
 
-    <div class="read-time">5 min de lectura</div>
-    <div class="seo-kw-badge">seo local chile</div>
-    <h1 style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.025em; color: #e8eaf0; margin-bottom: 2.5rem;">SEO Local en Chile: aparecer primero cuando más importa</h1>
+    <div class="read-time">3 min de lectura</div>
+    <div class="seo-kw-badge">certificado ssl · https</div>
+    <h1 style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.025em; color: #e8eaf0; margin-bottom: 2.5rem;">SSL y HTTPS: por qué son obligatorios en 2026</h1>
 
     <article class="article-body">
-      <p>El <strong>SEO local en Chile</strong> es la inversión digital con mejor retorno a largo plazo para negocios con presencia física o cobertura geográfica definida. A diferencia de la publicidad pagada, el tráfico orgánico no desaparece cuando pausas el presupuesto — sigue llegando mes a mes, y con el tiempo su costo efectivo por lead se vuelve imbatible.</p>
-<p>La estrategia parte de tres pilares: primero, optimización del perfil de Google Business — reseñas, categorías, fotos y atributos determinan si apareces en el mapa cuando alguien busca tu servicio en tu zona. Segundo, contenido relevante para búsquedas locales: páginas con la ciudad o comuna incluida y artículos que responden preguntas frecuentes de tu audiencia. Tercero, menciones y backlinks desde directorios chilenos confiables, medios locales y asociaciones del rubro.</p>
-<h4>¿Cuánto tarda el SEO local en dar resultados en Chile?</h4>
-<p>En mercados como Santiago, donde la competencia digital sigue siendo moderada comparada con España o México, es posible ver mejoras significativas entre tres y seis meses para keywords de cola larga. Para términos más competitivos el horizonte realista es seis a doce meses. La clave es entender el SEO como una inversión acumulativa: cada artículo publicado, cada reseña obtenida y cada backlink construido suma y permanece.</p>
-<ul>
-<li>Auditoría técnica completa: rastreabilidad, velocidad e indexación</li>
-<li>Investigación de keywords con datos reales de búsquedas en Chile</li>
-<li>Páginas de servicio + artículos optimizados para búsquedas locales</li>
-<li>Gestión del perfil de Google Business: posts, reseñas y atributos</li>
-<li>Reportes mensuales con ranking de keywords y evolución de tráfico orgánico</li>
-</ul>
+      <p>Si al entrar a tu sitio web, navegadores como Google Chrome o Safari muestran un candado rojo o el mensaje de <strong>"Sitio no seguro"</strong>, estás perdiendo clientes antes de que lean tu propuesta. Un certificado SSL encripta la comunicación entre tu visitante y el servidor, garantizando que nadie pueda interceptar la información.</p>
+<p>Hoy en día, el HTTPS ya no es un "lujo" técnico; es un requisito fundamental. Google penaliza severamente en sus rankings de búsqueda a los sitios web que todavía operan bajo el protocolo HTTP, considerándolos obsoletos y peligrosos.</p>
+<h4>El impacto de un SSL en tu negocio</h4>
+<p>Al contar con un SSL válido, incrementas inmediatamente la confianza del usuario. En Digitaliza Lab, <strong>incluimos certificados SSL de grado bancario (Let's Encrypt / Cloudflare) en todos nuestros planes</strong>. Nos encargamos de la renovación automática para que tu sitio jamás muestre advertencias de seguridad, asegurando que el tráfico orgánico y pagado convierta sin barreras de desconfianza.</p>
       
 <div class="seo-inline-cta">
-  <span class="seo-inline-cta-text">¿Quieres aparecer primero en Google Chile sin depender de publicidad?</span>
-  <a href="../index.html#contacto" class="btn-primary">Ver plan SEO</a>
+  <span class="seo-inline-cta-text">Asegura tu presencia digital con encriptación de nivel corporativo.</span>
+  <a href="../index.html#contacto" class="btn-primary">Renovar mi sitio</a>
 </div>
     </article>
   </main>
 
   <!-- FOOTER -->
-  <footer style="border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 1.5rem; text-align: center;">
-    <div style="max-width: 48rem; margin: 0 auto;">
-      <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; font-size: 0.9rem;">
-        <a href="../terminos.html" style="color: #9ca3af; text-decoration: none;">Términos y condiciones</a>
-        <a href="../privacidad.html" style="color: #9ca3af; text-decoration: none;">Política de privacidad</a>
-        <a href="../entrega-y-reembolso.html" style="color: #9ca3af; text-decoration: none;">Entrega y reembolso</a>
-        <a href="../datos-empresa.html" style="color: #9ca3af; text-decoration: none;">Datos de la empresa</a>
-        <button type="button" data-cookie-settings style="color: #9ca3af; background: none; border: 0; padding: 0; font: inherit; cursor: pointer;">Configurar cookies</button>
-      </div>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.1em; margin-bottom: 0.5rem;">© <script>document.write(new Date().getFullYear())</script> DIGITALIZA LAB SPA · RUT 78.517.255-8</p>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #52525b; letter-spacing: 0.05em;">Antonio Bellet 193 Of 1210, Providencia, Santiago, Chile</p>
-    </div>
-  </footer>
+  {% include "partials/footer-legal.njk" %}
 
   <script>
     const nav = document.getElementById('mainNav');

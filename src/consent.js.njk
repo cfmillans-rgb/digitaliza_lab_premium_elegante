@@ -1,3 +1,7 @@
+---
+permalink: /assets/js/consent.js
+eleventyExcludeFromCollections: true
+---
 /* ============================================================
    Digitaliza Lab — Consentimiento de cookies (Ley N° 21.719)
 
@@ -14,9 +18,9 @@
 (function () {
   'use strict';
 
-  var GA_ID = 'G-76SK4B9GS2';
-  var PIXEL_ID = '1057340010310894';
-  var STORAGE_KEY = 'dl_consent_v1';
+  var GA_ID = '{{ empresa.gaId }}';
+  var PIXEL_ID = '{{ empresa.pixelId }}';
+{% raw %}  var STORAGE_KEY = 'dl_consent_v1';
   var root = document.documentElement;
   var privacyHref = (location.pathname.indexOf('/blog/') !== -1 ? '../' : '') + 'privacidad.html';
 
@@ -222,4 +226,4 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
-})();
+})();{% endraw %}

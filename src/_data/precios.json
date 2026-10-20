@@ -1,0 +1,7 @@
+{
+  "_nota": "Precios NETOS en pesos chilenos. El total con IVA se calcula solo (filtro conIva). Cambia aquí y se actualiza todo el sitio.",
+  "iva": 0.19,
+  "landing": 99990,
+  "ajustes": 39990,
+  "renovacion": 49990
+}

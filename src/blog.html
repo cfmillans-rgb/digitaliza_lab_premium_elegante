@@ -1,9 +1,12 @@
+---
+# Página generada con Eleventy. Datos compartidos en src/_data (empresa.json, precios.json).
+---
 <!doctype html>
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="assets/js/consent.js" defer></script>
+  {% include "partials/consent.njk" %}
 
   <!-- ================== SEO PRIMARIO ================== -->
   <title>Blog de Diseño Web y SEO Local | Digitaliza Lab</title>
@@ -93,10 +96,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <!-- ================== COMPILED CSS ================== -->
-  <link rel="preload" href="assets/css/blog-styles.min.css?v=20261019d" as="style">
-  <link rel="stylesheet" href="assets/css/blog-styles.min.css?v=20261019d">
+  <link rel="preload" href="/assets/css/blog-styles.min.css?v={{ build.version }}" as="style">
+  <link rel="stylesheet" href="/assets/css/blog-styles.min.css?v={{ build.version }}">
   <style>
     :root {
       --grain-opacity: 0.035;
@@ -936,10 +938,10 @@
             <a href="https://www.facebook.com/profile.php?id=61577511797419" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-amber-glow hover:border-amber-glow/40 transition">
               <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="mailto:ventas@digitalizalab.cl" aria-label="Correo" class="w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-amber-glow hover:border-amber-glow/40 transition">
+            <a href="mailto:{{ empresa.email }}" aria-label="Correo" class="w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-amber-glow hover:border-amber-glow/40 transition">
               <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
-            <a href="https://wa.me/56982867164" data-source="footer_social" class="js-wa-link w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-green-400 hover:border-green-400/40 transition" aria-label="WhatsApp"
+            <a href="https://wa.me/{{ empresa.whatsapp }}" data-source="footer_social" class="js-wa-link w-10 h-10 rounded-lg border border-white/10 grid place-items-center text-mist hover:text-green-400 hover:border-green-400/40 transition" aria-label="WhatsApp"
                data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">
               <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>
             </a>
@@ -969,8 +971,8 @@
         <div class="md:col-span-3">
           <h3 class="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-glow mb-4">Contacto</h3>
           <ul class="space-y-2 text-sm">
-            <li><a href="mailto:ventas@digitalizalab.cl" class="text-mist hover:text-white transition">ventas@digitalizalab.cl</a></li>
-            <li><a href="https://wa.me/56982867164" data-source="footer_link" class="js-wa-link text-mist hover:text-white transition" data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">+56 9 8286 7164</a></li>
+            <li><a href="mailto:{{ empresa.email }}" class="text-mist hover:text-white transition">{{ empresa.email }}</a></li>
+            <li><a href="https://wa.me/{{ empresa.whatsapp }}" data-source="footer_link" class="js-wa-link text-mist hover:text-white transition" data-message="Hola Digitaliza Lab, quisiera información sobre el servicio de landing page.">{{ empresa.whatsappVisible }}</a></li>
             <li><span class="text-mist">Santiago, Chile</span></li>
           </ul>
         </div>
@@ -978,7 +980,7 @@
 
       <!-- Bottom bar -->
       <div class="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-mist/60">
-        <span>© <span id="currentYear"></span> Digitaliza Lab SpA · RUT 78.517.255-8</span>
+        <span>© <span id="currentYear"></span> Digitaliza Lab SpA · RUT {{ empresa.rut }}</span>
         <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
           <a href="terminos.html" class="hover:text-white transition">Términos</a>
           <a href="privacidad.html" class="hover:text-white transition">Privacidad</a>
@@ -990,10 +992,8 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      AOS.init({ duration: 700, once: true, offset: 60 });
 
       
       // Nav scroll
@@ -1044,6 +1044,6 @@
       },{passive:true});
     });
   </script>
-  <script src="assets/js/micro-interactions.js" defer></script>
+  <script src="/assets/js/micro-interactions.js" defer></script>
 </body>
 </html>

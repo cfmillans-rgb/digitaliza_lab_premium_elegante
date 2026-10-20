@@ -1,10 +1,12 @@
 {
   "name": "digitaliza_lab_premium_elegante",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sitio web de Digitaliza Lab (digitalizalab.cl), generado con Eleventy + Tailwind",
   "scripts": {
-    "build": "npx tailwindcss@3.4.17 -c ./tailwind.config.js -i ./src/input.css -o ./assets/css/styles.min.css --minify && npx tailwindcss@3.4.17 -c ./tailwind-blog.config.js -i ./src/input.css -o ./assets/css/blog-styles.min.css --minify"
+    "build:css": "tailwindcss -c ./tailwind.config.js -i ./src/styles/tailwind.css -o ./src/assets/css/styles.min.css --minify && tailwindcss -c ./tailwind-blog.config.js -i ./src/styles/tailwind.css -o ./src/assets/css/blog-styles.min.css --minify",
+    "build:html": "eleventy",
+    "build": "npm run build:css && npm run build:html",
+    "start": "npm run build:css && eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,9 @@
     "url": "https://github.com/cfmillans-rgb/digitaliza_lab_premium_elegante/issues"
   },
   "homepage": "https://github.com/cfmillans-rgb/digitaliza_lab_premium_elegante#readme",
-  "dependencies": {
-    "tailwindcss": "^3.4.17"
-  },
   "devDependencies": {
-    "sharp": "^0.35.3"
+    "@11ty/eleventy": "^3.1.7",
+    "npm-run-all2": "^8.0.4",
+    "tailwindcss": "^3.4.17"
   }
 }
