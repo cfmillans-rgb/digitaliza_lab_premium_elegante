@@ -1,0 +1,35 @@
+{#- Bloque de pago para la tarjeta de un servicio de precio fijo: "Pagar con Webpay" + "Pagar por transferencia".
+    Los servicios de precio fijo se pagan directo; "Cotizar" queda solo para proyectos a medida.
+
+    Uso (antes del include, define el objeto `pago`):
+      {% set pago = { clave: "landing", nombre: "Landing Page", articulo: "la Landing Page", clase: "btn-primary", claseTransferencia: "btn-secondary", nota: "Texto opcional." } %}
+      {% include "partials/pago-webpay.njk" %}
+
+    - clave:    llave del servicio en src/_data/pagos.json y src/_data/precios.json
+    - nombre:   nombre del servicio (se usa en la medición)
+    - articulo: cómo se nombra en el mensaje de WhatsApp ("Hola, quiero contratar la Landing Page…")
+    - clase / claseTransferencia: clases de los botones según la página (btn-primary, btn-secondary, btn-ghost)
+    - nota:     frase opcional sobre qué pasa después del pago
+
+    Las cuotas sin interés se muestran solo si pagos.cuotasSinInteres es mayor que 0 (ver src/_data/pagos.json).
+    El botón de Webpay queda deshabilitado hasta marcar la casilla de aceptación de los Términos
+    (script en partials/pago-webpay-js.njk; estilos en partials/pago-webpay.css). Si no hay link para la clave,
+    solo se muestra la opción de transferencia. -#}
+{%- set totalPago = precios[pago.clave] | conIva -%}
+<div class="pago-opciones">
+  {%- if pagos[pago.clave] %}
+  <div class="pago-webpay" data-pago>
+    <label class="pago-acepto">
+      <input type="checkbox" data-pago-acepto>
+      <span>Acepto los <a href="/terminos.html" target="_blank" rel="noopener">Términos y Condiciones</a> y la <a href="/entrega-y-reembolso.html" target="_blank" rel="noopener">Política de Entrega y Reembolso</a>.</span>
+    </label>
+    <a href="{{ pagos[pago.clave] }}" target="_blank" rel="noopener" class="{{ pago.clase }} pago-btn" data-pago-link data-servicio="{{ pago.nombre }}" data-valor="{{ totalPago }}">Pagar {{ totalPago | clp }} con Webpay</a>
+    <p class="pago-aviso" data-pago-aviso aria-live="polite"></p>
+    <p class="pago-nota">Crédito, débito o prepago{% if pagos.cuotasSinInteres > 0 %}, hasta <strong>{{ pagos.cuotasSinInteres }} cuotas sin interés</strong> con tarjetas de crédito bancarias{% endif %}.{% if pago.nota %} {{ pago.nota }}{% endif %}</p>
+  </div>
+  {%- endif %}
+  <div class="pago-alterna">
+    <a href="https://wa.me/{{ empresa.whatsapp }}?text={{ ('Hola, quiero contratar ' + pago.articulo + ' y pagar por transferencia.') | urlencode }}" target="_blank" rel="noopener noreferrer" class="{{ pago.claseTransferencia }} pago-btn">Pagar por transferencia</a>
+    <p class="pago-nota"><span class="pago-recomendado">Recomendado</span> · te enviamos los datos por WhatsApp.</p>
+  </div>
+</div>

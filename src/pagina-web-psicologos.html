@@ -175,6 +175,7 @@
     .final p { color: #b6bcc6; margin: 0 auto 1.75rem; max-width: 34rem; }
     .src { font-size: 0.82rem; color: #9ca3af; margin-top: 1.25rem; }
     .src a { text-decoration: underline; text-underline-offset: 2px; }
+{% include "partials/pago-webpay.css" %}
   </style>
 </head>
 <body>
@@ -188,7 +189,7 @@
         <a class="link" href="#incluye">Qué incluye</a>
         <a class="link" href="#precio">Precio</a>
         <a class="link" href="#preguntas">Preguntas</a>
-        <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20soy%20psic%C3%B3logo/a%20y%20quiero%20cotizar%20mi%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">Cotizar</a>
+        <a href="#precio" class="btn-primary btn-sm">Contratar</a>
       </div>
     </div>
   </nav>
@@ -202,7 +203,7 @@
         <h1>Una página web para tu consulta que <span>genera confianza</span> antes de la primera sesión</h1>
         <p>Sobria, clara y pensada para cómo eligen terapeuta las personas en Chile: quién eres, cómo trabajas, cuánto cuesta y cómo pedir hora. Lista en 72 horas hábiles, con dominio, hosting, SSL y correo incluidos el primer año.</p>
         <div class="actions">
-          <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20soy%20psic%C3%B3logo/a%20y%20quiero%20cotizar%20mi%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="btn-primary">Cotizar por WhatsApp</a>
+          <a href="#precio" class="btn-primary">Contratar mi página</a>
           <a href="#incluye" class="btn-ghost">Ver qué incluye</a>
         </div>
         <div class="pill-row"><span>{{ precios.landing | clp }} + IVA, pago único</span><span>Entrega en 72 h hábiles</span><span>Respeta la ética profesional</span></div>
@@ -250,7 +251,8 @@
               <li>Dominio, hosting, SSL y correo corporativo (1 año)</li>
               <li>Entrega en 72 horas hábiles</li>
             </ul>
-            <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20soy%20psic%C3%B3logo/a%20y%20quiero%20cotizar%20mi%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width:100%;justify-content:center;box-sizing:border-box">Cotizar ahora</a>
+            {% set pago = { clave: "landing", nombre: "Landing Page", articulo: "la página web para mi consulta", clase: "btn-primary", claseTransferencia: "btn-ghost", nota: "Después del pago te enviamos el formulario de onboarding." } %}
+            {% include "partials/pago-webpay.njk" %}
           </div>
         </div>
       </section>
@@ -272,7 +274,7 @@
       <section class="final" aria-labelledby="t-final">
         <h2 class="sec" id="t-final">¿Conversamos sobre tu página?</h2>
         <p>Escríbenos por WhatsApp y te respondemos en horario hábil. Si quieres leer más antes, revisa nuestra guía de <a href="/blog/webs-abogados-medicos.html" style="color:#ff8a42;text-decoration:underline">webs para profesionales de la salud</a>.</p>
-        <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20soy%20psic%C3%B3logo/a%20y%20quiero%20cotizar%20mi%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="btn-primary">Cotizar por WhatsApp</a>
+        <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,%20soy%20psic%C3%B3logo/a%20y%20tengo%20una%20consulta%20sobre%20mi%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="btn-primary">Escríbenos por WhatsApp</a>
       </section>
     </div>
   </main>
@@ -286,5 +288,6 @@
       var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
     })();
   </script>
+  {% include "partials/pago-webpay-js.njk" %}
 </body>
 </html>
