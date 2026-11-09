@@ -1,7 +1,6 @@
 {
   "_nota": "Links de pago de Webpay.cl (Transbank), uno por servicio. Cada link cobra un MONTO FIJO configurado en el Portal de Clientes de Transbank (total con IVA). Si cambias un precio en precios.json, cambia también el monto del link en Transbank.",
   "landing": "https://www.webpay.cl/form-pay/438662",
-  "ajustes": "https://www.webpay.cl/form-pay/438664",
   "renovacion": "https://www.webpay.cl/form-pay/438665",
   "_notaCuotas": "cuotasSinInteres: el sitio muestra 'hasta N cuotas sin interés'. Déjalo en un número mayor que 0 SOLO si el producto Cuotas Sin Interés está activo en Transbank (con ese producto Transbank abona la venta en partes, mes a mes). Si no está activo, pon 0 y la frase desaparece.",
   "cuotasSinInteres": 3

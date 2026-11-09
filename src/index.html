@@ -1020,6 +1020,22 @@
           },
           {
             "@type": "Question",
+            "name": "¿Cómo puedo pagar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Por transferencia bancaria directa, nuestra opción recomendada (te enviamos los datos por WhatsApp), o con tarjeta de crédito, débito o prepago en Webpay{% if pagos.cuotasSinInteres > 0 %}, hasta en {{ pagos.cuotasSinInteres }} cuotas sin interés con tarjetas de crédito bancarias{% endif %}. Apenas confirmamos tu pago, te emitimos boleta o factura electrónica."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito cotizar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. El Sitio Web Informativo y la Renovación Anual tienen precio fijo y se pagan directo en el sitio. Solo cotizamos la actualización o mantención de sitios web y los proyectos a medida: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "¿Cuándo comienza el plazo de entrega?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -1028,10 +1044,10 @@
           },
           {
             "@type": "Question",
-            "name": "¿Funciona para cualquier tipo de profesional?",
+            "name": "¿Funciona para cualquier tipo de negocio?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Funciona mejor para profesionales independientes y negocios de servicios que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. No es el formato correcto para ecommerce o desarrollos más complejos."
+              "text": "Funciona mejor para negocios de servicios y profesionales independientes que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. Si necesitas una tienda online o un desarrollo más complejo, lo vemos como un proyecto a medida."
             }
           },
           {
@@ -1305,7 +1321,7 @@
       </div>
 
       <!-- Pricing grid -->
-      <div class="grid lg:grid-cols-3 gap-6 items-stretch" data-reveal="fade-up">
+      <div class="grid lg:grid-cols-2 gap-6 items-stretch max-w-5xl mx-auto" data-reveal="fade-up">
 
         <!-- Card 1: Sitio Web Informativo -->
         <div class="spotlight-card relative bg-[#050505] border border-amber-glow/30 rounded-3xl p-7 flex flex-col shadow-2xl h-full group">
@@ -1340,34 +1356,8 @@
           {% include "partials/pago-webpay.njk" %}
         </div>
 
-        <!-- Card 2: Pack de Ajustes -->
-        <div class="glass border border-white/5 hover:border-white/20 transition-colors rounded-3xl p-7 flex flex-col h-full group">
-          <h3 class="font-display text-2xl text-white mb-2 flex items-center gap-2">Pack de Ajustes</h3>
-          <p class="text-sm text-mist/80 mb-6">Para cambios después de la entrega. Pago único, no es suscripción.</p>
-          
-          <div class="mb-6 pb-6 border-b border-white/10">
-            <span class="text-xs text-mist uppercase tracking-wider block mb-1">Valor por pack</span>
-            <div class="flex items-baseline gap-2">
-              <span class="font-display text-4xl sm:text-5xl font-medium text-white">{{ precios.ajustes | clp }}</span>
-              <span class="text-sm text-mist/70">+ IVA</span>
-            </div>
-            <p class="text-xs text-mist/70 mt-1">Total {{ precios.ajustes | conIva | clp }} con IVA</p>
-          </div>
 
-          <ul class="space-y-3 mb-8 flex-grow">
-            <li class="text-sm text-white/90 font-medium mb-3">Hasta 10 ajustes menores, en una sola solicitud:</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Cambio de imágenes.</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Actualización de textos.</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Cambio de datos de contacto.</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Reemplazo de banners.</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Ajustes simples de contenido.</li>
-          </ul>
-
-          {% set pago = { clave: "ajustes", nombre: "Pack de Ajustes", articulo: "el Pack de Ajustes", clase: "btn-primary", claseTransferencia: "btn-secondary", nota: "Después del pago te escribimos para coordinar." } %}
-          {% include "partials/pago-webpay.njk" %}
-        </div>
-
-        <!-- Card 3: Renovación Anual -->
+        <!-- Card 2: Renovación Anual -->
         <div class="glass border border-white/5 hover:border-white/20 transition-colors rounded-3xl p-7 flex flex-col h-full group">
           <h3 class="font-display text-2xl text-white mb-2 flex items-center gap-2">Renovación Anual</h3>
           <p class="text-sm text-mist/80 mb-6">Para mantener el sitio funcionando después del primer año.</p>
@@ -1396,12 +1386,13 @@
       </div>
 
       <!-- Proyectos a medida: el único servicio que se cotiza -->
-      <div id="a-medida" class="mt-6 glass border border-white/10 rounded-3xl p-7 sm:p-9 grid lg:grid-cols-12 gap-6 items-center scroll-mt-28" data-reveal="fade-up">
+      <div id="a-medida" class="mt-6 max-w-5xl mx-auto glass border border-white/10 rounded-3xl p-7 sm:p-9 grid lg:grid-cols-12 gap-6 items-center scroll-mt-28" data-reveal="fade-up">
         <div class="lg:col-span-8">
           <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-3">— Proyectos a medida</span>
-          <h3 class="font-display text-2xl sm:text-3xl text-white mb-3">¿Necesitas algo más grande?</h3>
-          <p class="text-sm sm:text-base text-mist/90 mb-5 max-w-2xl">Tiendas online con carrito, integraciones y APIs, automatizaciones, SaaS y otros desarrollos. Cuéntanos qué necesitas y te enviamos una propuesta con alcance, plazo y precio.</p>
+          <h3 class="font-display text-2xl sm:text-3xl text-white mb-3">¿Necesitas cambios o algo más grande?</h3>
+          <p class="text-sm sm:text-base text-mist/90 mb-5 max-w-2xl">Actualización y mantención de sitios web, tiendas online con carrito, integraciones y APIs, automatizaciones, SaaS y otros desarrollos. Cuéntanos qué necesitas y te enviamos una propuesta con alcance, plazo y precio.</p>
           <ul class="flex flex-wrap gap-2" aria-label="Ejemplos de proyectos a medida">
+            <li class="text-xs text-mist border border-white/10 rounded-full px-3 py-1.5">Actualización y mantención</li>
             <li class="text-xs text-mist border border-white/10 rounded-full px-3 py-1.5">Tiendas online con carrito</li>
             <li class="text-xs text-mist border border-white/10 rounded-full px-3 py-1.5">Integraciones y APIs</li>
             <li class="text-xs text-mist border border-white/10 rounded-full px-3 py-1.5">Automatizaciones</li>
@@ -1914,6 +1905,26 @@
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Cómo puedo pagar?</h3>
+            <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
+              <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+            </span>
+          </summary>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Por <strong class="text-white">transferencia bancaria directa</strong>, nuestra opción recomendada (te enviamos los datos por WhatsApp), o con <strong class="text-white">tarjeta de crédito, débito o prepago en Webpay</strong>{% if pagos.cuotasSinInteres > 0 %}, hasta en {{ pagos.cuotasSinInteres }} cuotas sin interés con tarjetas de crédito bancarias{% endif %}. Encuentras las dos opciones en <a href="#servicios" class="text-amber-glow hover:underline">cada servicio</a>. Apenas confirmamos tu pago, te emitimos boleta o factura electrónica.</p></div>
+        </details>
+
+        <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Necesito cotizar?</h3>
+            <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
+              <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+            </span>
+          </summary>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">No. El Sitio Web Informativo y la Renovación Anual tienen precio fijo y los pagas directo en la <a href="#servicios" class="text-amber-glow hover:underline">sección de servicios</a>. Solo cotizamos los <a href="#a-medida" class="text-amber-glow hover:underline">actualización o mantención de sitios web y los proyectos a medida</a>: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS.</p></div>
+        </details>
+
+        <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
             <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Cuándo comienza el plazo de entrega?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
@@ -1924,12 +1935,12 @@
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
-            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Funciona para cualquier tipo de profesional?</h3>
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Funciona para cualquier tipo de negocio?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Funciona mejor para profesionales independientes y negocios de servicios que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. No es el formato correcto para ecommerce o desarrollos más complejos.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Funciona mejor para negocios de servicios y profesionales independientes que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. Si necesitas una tienda online o un desarrollo más complejo, lo vemos como un <a href="#a-medida" class="text-amber-glow hover:underline">proyecto a medida</a>.</p></div>
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
@@ -2024,7 +2035,7 @@
             Hablemos sin vueltas.<br>
             <span class="italic text-amber-glow">Te respondemos en horario laboral.</span>
           </h2>
-          <p class="text-mist text-base mb-8 max-w-md">¿Una tienda online, una integración, automatizaciones o un SaaS? Cuéntanos tu proyecto y te enviamos una propuesta. Si buscas un sitio web informativo, no necesitas cotizar: <a href="#servicios" class="text-amber-glow hover:underline">contrátala directo</a>.</p>
+          <p class="text-mist text-base mb-8 max-w-md">¿Actualizar o mantener tu sitio actual, una tienda online, una integración, automatizaciones o un SaaS? Cuéntanos tu proyecto y te enviamos una propuesta. Si buscas un sitio web informativo, no necesitas cotizar: <a href="#servicios" class="text-amber-glow hover:underline">contrátala directo</a>.</p>
 
           <ul class="space-y-3">
             <li>
@@ -2107,7 +2118,7 @@
 
                 <div class="relative">
                   <label for="mensajeCliente" class="block text-[10px] font-mono uppercase tracking-[0.15em] text-mist mb-2">Mensaje <span class="opacity-50">(opcional)</span></label>
-                  <textarea id="mensajeCliente" rows="3" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all resize-none" placeholder="Tienda online, integración, automatización, SaaS..."></textarea>
+                  <textarea id="mensajeCliente" rows="3" class="spotlight-card w-full bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-base md:text-sm text-white focus:outline-none focus:border-amber-glow/50 focus:bg-[#1a1a1a] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] transition-all resize-none" placeholder="Actualizar mi sitio, tienda online, integración, automatización, SaaS..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary w-full py-4 mt-2 justify-center shadow-[0_0_20px_rgba(255,138,66,0.15)] hover:shadow-[0_0_30px_rgba(255,138,66,0.3)] focus-visible:ring-2 focus-visible:ring-amber-glow focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 transition-all">
