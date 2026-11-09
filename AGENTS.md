@@ -16,7 +16,8 @@ Este repositorio es el sitio **digitalizalab.cl**. Se genera con **Eleventy** + 
 6. **Los textos deben coincidir con los Términos y Condiciones** (`src/terminos.html`, `src/entrega-y-reembolso.html`): plazos, correcciones, garantía y precios. Si cambias uno, revisa el otro.
 7. **Diseños de muestra ≠ clientes.** En el portafolio, la sección "Trabajos reales" solo lleva clientes con permiso. Los demos van en "Diseños de muestra" y deben decir que no son clientes.
 8. **"Cotizar" es solo para proyectos a medida** (tiendas con carrito, APIs, automatizaciones, SaaS…: bloque `#a-medida` y formulario de `#contacto`). Los servicios de precio fijo (landing, pack de ajustes, renovación) se pagan directo con Webpay o transferencia: sus botones llevan a `#servicios` (o a `#precio` en las páginas por rubro), no a cotizar.
-9. **Sintaxis de plantillas:** las páginas se procesan con Nunjucks. Si necesitas escribir `{{`, `{%` o `{#` literalmente (por ejemplo en CSS o JS), envuélvelo en `{% raw %}…{% endraw %}`.
+9. **Nombre del servicio:** en los textos comerciales y legales el servicio se llama **Sitio Web Informativo** (de una sola página). "Landing page" queda solo como término técnico en el contenido educativo del blog y en las llaves internas (`precios.landing`). Los testimonios de clientes no se editan.
+10. **Sintaxis de plantillas:** las páginas se procesan con Nunjucks. Si necesitas escribir `{{`, `{%` o `{#` literalmente (por ejemplo en CSS o JS), envuélvelo en `{% raw %}…{% endraw %}`.
 
 ## Estructura
 
