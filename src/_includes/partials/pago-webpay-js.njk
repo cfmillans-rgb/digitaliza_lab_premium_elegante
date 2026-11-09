@@ -1,0 +1,38 @@
+<script>
+  /* Botones "Pagar con Webpay" (partials/pago-webpay.njk): se habilitan al marcar la casilla de aceptación. */
+  (function () {
+    document.querySelectorAll('[data-pago]').forEach(function (box) {
+      var acepto = box.querySelector('[data-pago-acepto]');
+      var link = box.querySelector('[data-pago-link]');
+      var aviso = box.querySelector('[data-pago-aviso]');
+      if (!acepto || !link) return;
+
+      function actualizar() {
+        link.classList.toggle('is-disabled', !acepto.checked);
+        link.setAttribute('aria-disabled', acepto.checked ? 'false' : 'true');
+        if (acepto.checked && aviso) aviso.textContent = '';
+      }
+
+      acepto.addEventListener('change', actualizar);
+      link.addEventListener('click', function (e) {
+        if (!acepto.checked) {
+          e.preventDefault();
+          if (aviso) aviso.textContent = 'Para continuar, marca la casilla de aceptación.';
+          acepto.focus();
+          return;
+        }
+        // Medición: gtag y fbq solo existen si la persona aceptó las cookies (se cargan desde consent.js).
+        var valor = Number(link.getAttribute('data-valor')) || 0;
+        var servicio = link.getAttribute('data-servicio') || '';
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'begin_checkout', { currency: 'CLP', value: valor, items: [{ item_name: servicio, price: valor, quantity: 1 }] });
+        }
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'InitiateCheckout', { currency: 'CLP', value: valor, content_name: servicio });
+        }
+      });
+
+      actualizar();
+    });
+  })();
+</script>

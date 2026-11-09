@@ -1,0 +1,31 @@
+{#- Bloque "Pagar con Webpay" para la tarjeta de un servicio.
+
+    Uso (antes del include, define el objeto `pago`):
+      {% set pago = { clave: "landing", nombre: "Landing Page", clase: "btn-secondary", retracto: true, nota: "Texto opcional." } %}
+      {% include "partials/pago-webpay.njk" %}
+
+    - clave:    llave del servicio en src/_data/pagos.json y src/_data/precios.json
+    - nombre:   nombre del servicio (se usa en la medición)
+    - clase:    clase del botón según la página (btn-primary, btn-secondary, btn-ghost)
+    - retracto: true si hay que recordar que el servicio no tiene derecho a retracto (punto 7 de los Términos)
+    - nota:     frase opcional sobre qué pasa después del pago
+    - transferencia: texto opcional (HTML) para invitar a pagar por transferencia
+
+    Las cuotas sin interés se muestran solo si pagos.cuotasSinInteres es mayor que 0 (ver src/_data/pagos.json).
+    El botón queda deshabilitado hasta marcar la casilla de aceptación (script en partials/pago-webpay-js.njk;
+    estilos en partials/pago-webpay.css). Si no hay link para la clave, el bloque no se muestra. -#}
+{%- if pagos[pago.clave] -%}
+{%- set totalPago = precios[pago.clave] | conIva -%}
+<div class="pago-webpay" data-pago>
+  <label class="pago-acepto">
+    <input type="checkbox" data-pago-acepto>
+    <span>Acepto los <a href="/terminos.html" target="_blank" rel="noopener">Términos y Condiciones</a> y la <a href="/entrega-y-reembolso.html" target="_blank" rel="noopener">Política de Entrega y Reembolso</a>{% if pago.retracto %}, incluido que este servicio no tiene derecho a retracto{% endif %}.</span>
+  </label>
+  <a href="{{ pagos[pago.clave] }}" target="_blank" rel="noopener" class="{{ pago.clase }} pago-btn" data-pago-link data-servicio="{{ pago.nombre }}" data-valor="{{ totalPago }}">Pagar {{ totalPago | clp }} con Webpay</a>
+  <p class="pago-aviso" data-pago-aviso aria-live="polite"></p>
+  <p class="pago-nota">Crédito, débito o prepago{% if pagos.cuotasSinInteres > 0 %}, hasta <strong>{{ pagos.cuotasSinInteres }} cuotas sin interés</strong> con tarjetas de crédito bancarias{% endif %}.{% if pago.nota %} {{ pago.nota }}{% endif %}</p>
+  {%- if pago.transferencia %}
+  <p class="pago-transferencia">{{ pago.transferencia | safe }}</p>
+  {%- endif %}
+</div>
+{%- endif -%}

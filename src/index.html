@@ -886,6 +886,8 @@
     .group:hover .portfolio-img {
       object-position: bottom;
     }
+
+{% include "partials/pago-webpay.css" %}
   </style>
 
   <!-- ================== SECURITY: CSP ================== -->
@@ -1334,10 +1336,13 @@
             <li class="flex items-start gap-3 text-sm text-mist"><svg aria-hidden="true" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Entrega en 72 horas hábiles</li>
           </ul>
 
-          <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+quiero+cotizar+mi+landing" target="_blank" rel="noopener noreferrer" class="btn-primary w-full justify-center">
+          <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+quiero+cotizar+mi+landing" target="_blank" rel="noopener noreferrer" class="btn-primary w-full justify-center mb-3">
             Cotizar ahora
             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
+
+          {% set pago = { clave: "landing", nombre: "Landing Page", clase: "btn-secondary", retracto: true, nota: "Después del pago te enviamos el formulario de onboarding.", transferencia: "¿Prefieres <strong>transferencia directa</strong>? Es nuestra opción recomendada: te enviamos los datos junto con tu cotización." } %}
+          {% include "partials/pago-webpay.njk" %}
         </div>
 
         <!-- Card 2: Pack de Ajustes -->
@@ -1363,9 +1368,15 @@
             <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Ajustes simples de contenido.</li>
           </ul>
 
-          <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+quiero+solicitar+el+pack+de+ajustes" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full justify-center mt-auto">
-            Solicitar ajustes
-          </a>
+          {% set pago = { clave: "ajustes", nombre: "Pack de Ajustes", clase: "btn-primary", retracto: false, nota: "Después del pago te escribimos para coordinar." } %}
+          {% include "partials/pago-webpay.njk" %}
+
+          <div class="pago-alterna mt-3">
+            <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+quiero+el+pack+de+ajustes+y+pagar+por+transferencia" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full justify-center">
+              Pagar por transferencia
+            </a>
+            <p class="pago-nota">Recomendado: te enviamos los datos por WhatsApp.</p>
+          </div>
         </div>
 
         <!-- Card 3: Renovación Anual -->
@@ -1390,9 +1401,15 @@
             <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Publicación sin interrupciones.</li>
           </ul>
 
-          <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+quiero+renovar+mi+sitio" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full justify-center mt-auto">
-            Renovar mi sitio
-          </a>
+          {% set pago = { clave: "renovacion", nombre: "Renovación Anual", clase: "btn-primary", retracto: false, nota: "Después del pago te escribimos para coordinar." } %}
+          {% include "partials/pago-webpay.njk" %}
+
+          <div class="pago-alterna mt-3">
+            <a href="https://wa.me/{{ empresa.whatsapp }}?text=Hola,+quiero+renovar+mi+sitio+y+pagar+por+transferencia" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full justify-center">
+              Pagar por transferencia
+            </a>
+            <p class="pago-nota">Recomendado: te enviamos los datos por WhatsApp.</p>
+          </div>
         </div>
 
       </div>
@@ -1838,20 +1855,26 @@
       </h2>
       
       <p class="text-base text-mist/90 mb-10 leading-relaxed max-w-2xl mx-auto">
-        Puedes pagar con <strong class="text-white font-medium">Mercado Pago (tarjeta de crédito o débito)</strong> o <strong class="text-white font-medium">Transferencia bancaria</strong> — tú eliges. <br><br>
+        Puedes pagar por <strong class="text-white font-medium">transferencia bancaria directa</strong> —nuestra opción recomendada— o con <strong class="text-white font-medium">tarjeta de crédito, débito o prepago en Webpay</strong> (Transbank), desde el botón de cada servicio{% if pagos.cuotasSinInteres > 0 %}, hasta en <strong class="text-white font-medium">{{ pagos.cuotasSinInteres }} cuotas sin interés</strong> con tarjetas de crédito bancarias{% endif %}. Los datos de transferencia te los enviamos junto con tu cotización. <br><br>
         Apenas confirmamos tu pago, te emitimos tu boleta o factura electrónica y te enviamos el formulario de onboarding. El plazo de 72 horas hábiles corre desde que lo recibimos completo.
       </p>
 
       <div class="flex flex-wrap justify-center gap-6 items-center opacity-70">
-        <!-- Íconos de tarjetas y transferencia -->
+        <!-- Íconos de transferencia (recomendada) y tarjetas -->
+        <div class="glass px-6 py-3 rounded-xl border border-green-400/30 flex items-center gap-3">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-green-400" aria-hidden="true"><path d="M3 2v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg>
+          <span class="text-sm text-white font-medium">Transferencia directa · <span class="text-green-400">Recomendada</span></span>
+        </div>
         <div class="glass px-6 py-3 rounded-xl border border-white/10 flex items-center gap-3">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-amber-glow" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-          <span class="text-sm text-white font-medium">Tarjetas de Crédito / Débito</span>
+          <span class="text-sm text-white font-medium">Webpay · Crédito, débito y prepago</span>
         </div>
+        {% if pagos.cuotasSinInteres > 0 %}
         <div class="glass px-6 py-3 rounded-xl border border-white/10 flex items-center gap-3">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-amber-glow" aria-hidden="true"><path d="M3 2v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg>
-          <span class="text-sm text-white font-medium">Transferencia Bancaria</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-amber-glow" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+          <span class="text-sm text-white font-medium">Hasta {{ pagos.cuotasSinInteres }} cuotas sin interés</span>
         </div>
+        {% endif %}
       </div>
 
     </div>
@@ -2702,6 +2725,7 @@
 
 
 
+  {% include "partials/pago-webpay-js.njk" %}
   <script src="/assets/js/micro-interactions.js" defer></script>
 </body>
 </html>
