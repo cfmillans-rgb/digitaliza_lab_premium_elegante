@@ -1020,6 +1020,22 @@
           },
           {
             "@type": "Question",
+            "name": "¿Cómo puedo pagar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Por transferencia bancaria directa, nuestra opción recomendada (te enviamos los datos por WhatsApp), o con tarjeta de crédito, débito o prepago en Webpay{% if pagos.cuotasSinInteres > 0 %}, hasta en {{ pagos.cuotasSinInteres }} cuotas sin interés con tarjetas de crédito bancarias{% endif %}. Apenas confirmamos tu pago, te emitimos boleta o factura electrónica."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito cotizar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. El Sitio Web Informativo, el Pack de Ajustes y la Renovación Anual tienen precio fijo y se pagan directo en el sitio. Solo cotizamos proyectos a medida: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "¿Cuándo comienza el plazo de entrega?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -1028,10 +1044,10 @@
           },
           {
             "@type": "Question",
-            "name": "¿Funciona para cualquier tipo de profesional?",
+            "name": "¿Funciona para cualquier tipo de negocio?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Funciona mejor para profesionales independientes y negocios de servicios que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. No es el formato correcto para ecommerce o desarrollos más complejos."
+              "text": "Funciona mejor para negocios de servicios y profesionales independientes que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. Si necesitas una tienda online o un desarrollo más complejo, lo vemos como un proyecto a medida."
             }
           },
           {
@@ -1914,6 +1930,26 @@
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Cómo puedo pagar?</h3>
+            <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
+              <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+            </span>
+          </summary>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Por <strong class="text-white">transferencia bancaria directa</strong>, nuestra opción recomendada (te enviamos los datos por WhatsApp), o con <strong class="text-white">tarjeta de crédito, débito o prepago en Webpay</strong>{% if pagos.cuotasSinInteres > 0 %}, hasta en {{ pagos.cuotasSinInteres }} cuotas sin interés con tarjetas de crédito bancarias{% endif %}. Encuentras las dos opciones en <a href="#servicios" class="text-amber-glow hover:underline">cada servicio</a>. Apenas confirmamos tu pago, te emitimos boleta o factura electrónica.</p></div>
+        </details>
+
+        <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Necesito cotizar?</h3>
+            <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
+              <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+            </span>
+          </summary>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">No. El Sitio Web Informativo, el Pack de Ajustes y la Renovación Anual tienen precio fijo y los pagas directo en la <a href="#servicios" class="text-amber-glow hover:underline">sección de servicios</a>. Solo cotizamos los <a href="#a-medida" class="text-amber-glow hover:underline">proyectos a medida</a>: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS.</p></div>
+        </details>
+
+        <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
             <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Cuándo comienza el plazo de entrega?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
@@ -1924,12 +1960,12 @@
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
           <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none focus:outline-none select-none">
-            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Funciona para cualquier tipo de profesional?</h3>
+            <h3 class="font-display text-lg sm:text-xl text-[#ffffff] group-hover:text-amber-glow transition-colors">¿Funciona para cualquier tipo de negocio?</h3>
             <span class="w-8 h-8 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 group-hover:bg-amber-glow/10 group-hover:border-amber-glow/30 transition-all">
               <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Funciona mejor para profesionales independientes y negocios de servicios que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. No es el formato correcto para ecommerce o desarrollos más complejos.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">Funciona mejor para negocios de servicios y profesionales independientes que buscan generar consultas: abogados, médicos, coaches, consultores, entre otros. Si necesitas una tienda online o un desarrollo más complejo, lo vemos como un <a href="#a-medida" class="text-amber-glow hover:underline">proyecto a medida</a>.</p></div>
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
