@@ -1031,7 +1031,7 @@
             "name": "¿Necesito cotizar?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. El Sitio Web Informativo, el Pack de Ajustes y la Renovación Anual tienen precio fijo y se pagan directo en el sitio. Solo cotizamos proyectos a medida: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS."
+              "text": "No. El Sitio Web Informativo y la Renovación Anual tienen precio fijo y se pagan directo en el sitio. Solo cotizamos los ajustes a un sitio ya entregado y los proyectos a medida: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS."
             }
           },
           {
@@ -1321,7 +1321,7 @@
       </div>
 
       <!-- Pricing grid -->
-      <div class="grid lg:grid-cols-3 gap-6 items-stretch" data-reveal="fade-up">
+      <div class="grid lg:grid-cols-2 gap-6 items-stretch max-w-5xl mx-auto" data-reveal="fade-up">
 
         <!-- Card 1: Sitio Web Informativo -->
         <div class="spotlight-card relative bg-[#050505] border border-amber-glow/30 rounded-3xl p-7 flex flex-col shadow-2xl h-full group">
@@ -1356,34 +1356,8 @@
           {% include "partials/pago-webpay.njk" %}
         </div>
 
-        <!-- Card 2: Pack de Ajustes -->
-        <div class="glass border border-white/5 hover:border-white/20 transition-colors rounded-3xl p-7 flex flex-col h-full group">
-          <h3 class="font-display text-2xl text-white mb-2 flex items-center gap-2">Pack de Ajustes</h3>
-          <p class="text-sm text-mist/80 mb-6">Para cambios después de la entrega. Pago único, no es suscripción.</p>
-          
-          <div class="mb-6 pb-6 border-b border-white/10">
-            <span class="text-xs text-mist uppercase tracking-wider block mb-1">Valor por pack</span>
-            <div class="flex items-baseline gap-2">
-              <span class="font-display text-4xl sm:text-5xl font-medium text-white">{{ precios.ajustes | clp }}</span>
-              <span class="text-sm text-mist/70">+ IVA</span>
-            </div>
-            <p class="text-xs text-mist/70 mt-1">Total {{ precios.ajustes | conIva | clp }} con IVA</p>
-          </div>
 
-          <ul class="space-y-3 mb-8 flex-grow">
-            <li class="text-sm text-white/90 font-medium mb-3">Hasta 10 ajustes menores, en una sola solicitud:</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Cambio de imágenes.</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Actualización de textos.</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Cambio de datos de contacto.</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Reemplazo de banners.</li>
-            <li class="flex items-start gap-3 text-sm text-mist"><span class="text-white/30 font-bold">•</span> Ajustes simples de contenido.</li>
-          </ul>
-
-          {% set pago = { clave: "ajustes", nombre: "Pack de Ajustes", articulo: "el Pack de Ajustes", clase: "btn-primary", claseTransferencia: "btn-secondary", nota: "Después del pago te escribimos para coordinar." } %}
-          {% include "partials/pago-webpay.njk" %}
-        </div>
-
-        <!-- Card 3: Renovación Anual -->
+        <!-- Card 2: Renovación Anual -->
         <div class="glass border border-white/5 hover:border-white/20 transition-colors rounded-3xl p-7 flex flex-col h-full group">
           <h3 class="font-display text-2xl text-white mb-2 flex items-center gap-2">Renovación Anual</h3>
           <p class="text-sm text-mist/80 mb-6">Para mantener el sitio funcionando después del primer año.</p>
@@ -1412,12 +1386,13 @@
       </div>
 
       <!-- Proyectos a medida: el único servicio que se cotiza -->
-      <div id="a-medida" class="mt-6 glass border border-white/10 rounded-3xl p-7 sm:p-9 grid lg:grid-cols-12 gap-6 items-center scroll-mt-28" data-reveal="fade-up">
+      <div id="a-medida" class="mt-6 max-w-5xl mx-auto glass border border-white/10 rounded-3xl p-7 sm:p-9 grid lg:grid-cols-12 gap-6 items-center scroll-mt-28" data-reveal="fade-up">
         <div class="lg:col-span-8">
           <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-3">— Proyectos a medida</span>
-          <h3 class="font-display text-2xl sm:text-3xl text-white mb-3">¿Necesitas algo más grande?</h3>
-          <p class="text-sm sm:text-base text-mist/90 mb-5 max-w-2xl">Tiendas online con carrito, integraciones y APIs, automatizaciones, SaaS y otros desarrollos. Cuéntanos qué necesitas y te enviamos una propuesta con alcance, plazo y precio.</p>
+          <h3 class="font-display text-2xl sm:text-3xl text-white mb-3">¿Necesitas cambios o algo más grande?</h3>
+          <p class="text-sm sm:text-base text-mist/90 mb-5 max-w-2xl">Ajustes a un sitio ya entregado, tiendas online con carrito, integraciones y APIs, automatizaciones, SaaS y otros desarrollos. Cuéntanos qué necesitas y te enviamos una propuesta con alcance, plazo y precio.</p>
           <ul class="flex flex-wrap gap-2" aria-label="Ejemplos de proyectos a medida">
+            <li class="text-xs text-mist border border-white/10 rounded-full px-3 py-1.5">Ajustes a tu sitio</li>
             <li class="text-xs text-mist border border-white/10 rounded-full px-3 py-1.5">Tiendas online con carrito</li>
             <li class="text-xs text-mist border border-white/10 rounded-full px-3 py-1.5">Integraciones y APIs</li>
             <li class="text-xs text-mist border border-white/10 rounded-full px-3 py-1.5">Automatizaciones</li>
@@ -1945,7 +1920,7 @@
               <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">No. El Sitio Web Informativo, el Pack de Ajustes y la Renovación Anual tienen precio fijo y los pagas directo en la <a href="#servicios" class="text-amber-glow hover:underline">sección de servicios</a>. Solo cotizamos los <a href="#a-medida" class="text-amber-glow hover:underline">proyectos a medida</a>: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">No. El Sitio Web Informativo y la Renovación Anual tienen precio fijo y los pagas directo en la <a href="#servicios" class="text-amber-glow hover:underline">sección de servicios</a>. Solo cotizamos los <a href="#a-medida" class="text-amber-glow hover:underline">ajustes a un sitio ya entregado y los proyectos a medida</a>: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS.</p></div>
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">

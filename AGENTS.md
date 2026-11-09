@@ -7,7 +7,7 @@ Este repositorio es el sitio **digitalizalab.cl**. Se genera con **Eleventy** + 
 1. **Edita solo dentro de `src/`.** La carpeta `_site/` es el resultado de la compilación: no la edites ni la subas (está en `.gitignore`).
 2. **No escribas datos de la empresa ni precios a mano.** Están centralizados:
    - `src/_data/empresa.json` → razón social, RUT, dirección, correo, WhatsApp, horario, IDs de Google Analytics y Meta.
-   - `src/_data/precios.json` → precios **netos** (sin IVA) de landing, pack de ajustes y renovación.
+   - `src/_data/precios.json` → precios **netos** (sin IVA) del sitio web informativo (`landing`) y de la renovación.
    - `src/_data/pagos.json` → links de pago de Webpay.cl (Transbank), uno por servicio. Cada link cobra un **monto fijo** que se configura en el Portal de Clientes de Transbank: si cambias un precio en `precios.json`, cambia también el monto del link en Transbank. Los botones se arman con `partials/pago-webpay.njk`. `cuotasSinInteres` muestra "hasta N cuotas sin interés": déjalo mayor que 0 **solo** si el producto Cuotas Sin Interés está activo en Transbank; si no, ponlo en 0.
    En las páginas se usan así: `{{ empresa.rut }}`, `{{ precios.landing | clp }}` (→ `$99.990`) y `{{ precios.landing | conIva | clp }}` (→ `$118.988`).
 3. **Los precios publicados deben mostrar el IVA** (Ley 19.496, art. 30): usa `+ IVA` junto al neto y el total con `conIva`.
@@ -15,7 +15,7 @@ Este repositorio es el sitio **digitalizalab.cl**. Se genera con **Eleventy** + 
 5. **Mantén las URLs.** Cada archivo `src/x.html` se publica como `/x.html` y `src/blog/x.html` como `/blog/x.html`. No cambies nombres de archivo sin agregar una redirección.
 6. **Los textos deben coincidir con los Términos y Condiciones** (`src/terminos.html`, `src/entrega-y-reembolso.html`): plazos, correcciones, garantía y precios. Si cambias uno, revisa el otro.
 7. **Diseños de muestra ≠ clientes.** En el portafolio, la sección "Trabajos reales" solo lleva clientes con permiso. Los demos van en "Diseños de muestra" y deben decir que no son clientes.
-8. **"Cotizar" es solo para proyectos a medida** (tiendas con carrito, APIs, automatizaciones, SaaS…: bloque `#a-medida` y formulario de `#contacto`). Los servicios de precio fijo (landing, pack de ajustes, renovación) se pagan directo con Webpay o transferencia: sus botones llevan a `#servicios` (o a `#precio` en las páginas por rubro), no a cotizar.
+8. **"Cotizar" es solo para proyectos a medida y ajustes a sitios ya entregados** (tiendas con carrito, APIs, automatizaciones, SaaS…: bloque `#a-medida` y formulario de `#contacto`). Los servicios de precio fijo (sitio web informativo y renovación) se pagan directo con Webpay o transferencia: sus botones llevan a `#servicios` (o a `#precio` en las páginas por rubro), no a cotizar.
 9. **Nombre del servicio:** en los textos comerciales y legales el servicio se llama **Sitio Web Informativo** (de una sola página). "Landing page" queda solo como término técnico en el contenido educativo del blog y en las llaves internas (`precios.landing`). Los testimonios de clientes no se editan.
 10. **Sintaxis de plantillas:** las páginas se procesan con Nunjucks. Si necesitas escribir `{{`, `{%` o `{#` literalmente (por ejemplo en CSS o JS), envuélvelo en `{% raw %}…{% endraw %}`.
 
