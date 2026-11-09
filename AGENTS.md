@@ -15,7 +15,8 @@ Este repositorio es el sitio **digitalizalab.cl**. Se genera con **Eleventy** + 
 5. **Mantén las URLs.** Cada archivo `src/x.html` se publica como `/x.html` y `src/blog/x.html` como `/blog/x.html`. No cambies nombres de archivo sin agregar una redirección.
 6. **Los textos deben coincidir con los Términos y Condiciones** (`src/terminos.html`, `src/entrega-y-reembolso.html`): plazos, correcciones, garantía y precios. Si cambias uno, revisa el otro.
 7. **Diseños de muestra ≠ clientes.** En el portafolio, la sección "Trabajos reales" solo lleva clientes con permiso. Los demos van en "Diseños de muestra" y deben decir que no son clientes.
-8. **Sintaxis de plantillas:** las páginas se procesan con Nunjucks. Si necesitas escribir `{{`, `{%` o `{#` literalmente (por ejemplo en CSS o JS), envuélvelo en `{% raw %}…{% endraw %}`.
+8. **"Cotizar" es solo para proyectos a medida** (tiendas con carrito, APIs, automatizaciones, SaaS…: bloque `#a-medida` y formulario de `#contacto`). Los servicios de precio fijo (landing, pack de ajustes, renovación) se pagan directo con Webpay o transferencia: sus botones llevan a `#servicios` (o a `#precio` en las páginas por rubro), no a cotizar.
+9. **Sintaxis de plantillas:** las páginas se procesan con Nunjucks. Si necesitas escribir `{{`, `{%` o `{#` literalmente (por ejemplo en CSS o JS), envuélvelo en `{% raw %}…{% endraw %}`.
 
 ## Estructura
 
