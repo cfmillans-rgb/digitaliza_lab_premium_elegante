@@ -1,0 +1,47 @@
+[
+  {
+    "clave": "valdes",
+    "status": 200,
+    "bytes": 36326
+  },
+  {
+    "clave": "nutre",
+    "status": null,
+    "bytes": 29106
+  },
+  {
+    "clave": "bellamora",
+    "status": 200,
+    "bytes": 34218
+  },
+  {
+    "clave": "andes",
+    "status": 200,
+    "bytes": 54540
+  },
+  {
+    "clave": "taller",
+    "status": 200,
+    "bytes": 27784
+  },
+  {
+    "clave": "cleanpro",
+    "status": 200,
+    "bytes": 26452
+  },
+  {
+    "clave": "gruas",
+    "status": 200,
+    "bytes": 20338
+  },
+  {
+    "clave": "patitas",
+    "status": 200,
+    "bytes": 18498
+  },
+  {
+    "clave": "mentor",
+    "status": 200,
+    "bytes": 26546
+  }
+]
