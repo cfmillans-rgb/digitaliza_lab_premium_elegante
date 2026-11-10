@@ -116,6 +116,28 @@ async function capturas(demos) {
   guardar('capturas.json', reporte);
 }
 
+// Página completa (para revisar fotos y recortes): .webp de 640 px de ancho.
+async function completas(lista) {
+  const browser = await chromium.launch();
+  for (const d of lista) {
+    const context = await browser.newContext({ viewport: { width: 1280, height: 810 }, locale: 'es-CL', reducedMotion: 'reduce' });
+    const page = await context.newPage();
+    try { await page.goto(d.url, { waitUntil: 'networkidle', timeout: 90000 }); } catch (e) { console.log('goto', d.clave, e.message); }
+    await page.addStyleTag({ content: '[data-dl-muestra]{display:none!important}[data-aos]{opacity:1!important;transform:none!important}' }).catch(() => {});
+    await page.evaluate(async () => {
+      for (let y = 0; y < document.documentElement.scrollHeight; y += 500) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 250)); }
+      window.scrollTo(0, 0);
+    }).catch(() => {});
+    await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+    await esperar(2000);
+    const png = await page.screenshot({ type: 'png', fullPage: true });
+    await sharp(png, { limitInputPixels: false }).resize({ width: 640 }).webp({ quality: 70 }).toFile(path.join(salida, `completa-${d.clave}.webp`));
+    console.log('completa', d.clave);
+    await context.close();
+  }
+  await browser.close();
+}
+
 // fotos.json: { "grupo": [ { "id": "photo-…", "nota": "…" }, … ], … }
 async function fotos(grupos) {
   const ANCHO = 320, ALTO = 213, BARRA = 26, COLS = 5;
@@ -164,5 +186,6 @@ async function fotos(grupos) {
   if (modo === 'revisar') await revisar(datos);
   else if (modo === 'capturas') await capturas(datos);
   else if (modo === 'fotos') await fotos(datos);
+  else if (modo === 'completas') await completas(datos);
   else throw new Error('Modo desconocido: ' + modo);
 })().catch((e) => { console.error(e); process.exit(1); });

@@ -9,6 +9,7 @@ on:
       - herramientas/demos.cjs
       - herramientas/revisar.json
       - herramientas/fotos.json
+      - herramientas/completas.json
       - herramientas/ejecutar.txt
       - .github/workflows/capturas-demos.yml
   workflow_dispatch:
@@ -44,6 +45,10 @@ jobs:
         if: hashFiles('herramientas/fotos.json') != ''
         continue-on-error: true
         run: node /tmp/cap/demos.cjs fotos "$GITHUB_WORKSPACE/herramientas/fotos.json" "$GITHUB_WORKSPACE/herramientas/salida/fotos"
+      - name: Páginas completas para revisar
+        if: hashFiles('herramientas/completas.json') != ''
+        continue-on-error: true
+        run: node /tmp/cap/demos.cjs completas "$GITHUB_WORKSPACE/herramientas/completas.json" "$GITHUB_WORKSPACE/herramientas/salida/completas"
       - name: Capturar las portadas
         continue-on-error: true
         run: node /tmp/cap/demos.cjs capturas "$GITHUB_WORKSPACE/src/_data/demos.json" "$GITHUB_WORKSPACE/herramientas/salida/capturas"
