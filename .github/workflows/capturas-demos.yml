@@ -1,12 +1,15 @@
-# TEMPORAL: genera las capturas de los diseños de muestra y las sube a esta misma rama.
-# Se borra (junto con herramientas/) antes de unir la rama a main.
-name: Capturas de diseños de muestra (temporal)
+# TEMPORAL: revisa los diseños de muestra, prueba fotos de reemplazo y captura las portadas.
+# Sube los resultados a esta misma rama. Se borra (junto con herramientas/) antes de unir la rama a main.
+name: Revisión de diseños de muestra (temporal)
 
 on:
   push:
     branches: [demos-galeria]
     paths:
-      - herramientas/capturas-demos.cjs
+      - herramientas/demos.cjs
+      - herramientas/revisar.json
+      - herramientas/fotos.json
+      - herramientas/ejecutar.txt
       - .github/workflows/capturas-demos.yml
   workflow_dispatch:
 
@@ -18,9 +21,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  capturar:
+  revisar:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,17 +32,25 @@ jobs:
       - name: Instalar Playwright y sharp (fuera del proyecto)
         run: |
           mkdir -p /tmp/cap
-          cp herramientas/capturas-demos.cjs /tmp/cap/
+          cp herramientas/demos.cjs /tmp/cap/
           cd /tmp/cap
           npm init -y > /dev/null
           npm install --no-audit --no-fund playwright@1 sharp@0.33
           npx playwright install --with-deps chromium
+      - name: Revisar cada demo completa
+        continue-on-error: true
+        run: node /tmp/cap/demos.cjs revisar "$GITHUB_WORKSPACE/herramientas/revisar.json" "$GITHUB_WORKSPACE/herramientas/salida/revision"
+      - name: Probar fotos de reemplazo
+        if: hashFiles('herramientas/fotos.json') != ''
+        continue-on-error: true
+        run: node /tmp/cap/demos.cjs fotos "$GITHUB_WORKSPACE/herramientas/fotos.json" "$GITHUB_WORKSPACE/herramientas/salida/fotos"
       - name: Capturar las portadas
-        run: node /tmp/cap/capturas-demos.cjs "$GITHUB_WORKSPACE/src/_data/demos.json" "$GITHUB_WORKSPACE/herramientas/capturas"
-      - name: Subir las capturas a la rama
+        continue-on-error: true
+        run: node /tmp/cap/demos.cjs capturas "$GITHUB_WORKSPACE/src/_data/demos.json" "$GITHUB_WORKSPACE/herramientas/salida/capturas"
+      - name: Subir los resultados a la rama
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
-          git add herramientas/capturas
-          git commit -m "Capturas de los diseños de muestra (automático)" || { echo "Sin cambios"; exit 0; }
+          git add herramientas/salida
+          git commit -m "Revisión y capturas de los diseños de muestra (automático)" || { echo "Sin cambios"; exit 0; }
           git push origin "HEAD:${GITHUB_REF_NAME}"
