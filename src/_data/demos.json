@@ -22,21 +22,10 @@
     "home": true
   },
   {
-    "clave": "alison",
-    "nombre": "Alison Carú",
-    "rubro": "Estética facial",
-    "grupo": "belleza",
-    "descripcion": "Elegante y premium, para centros de estética facial.",
-    "alt": "Diseño de muestra para estética facial: Alison Carú",
-    "url": "https://cfmillans-rgb.github.io/alison-landing/",
-    "imagen": "demo-alison-caru.webp",
-    "home": false
-  },
-  {
     "clave": "bellamora",
     "nombre": "Bellamora Studio",
     "rubro": "Salón de belleza",
-    "grupo": "belleza",
+    "grupo": "profesionales",
     "descripcion": "Cálido y editorial, para salones que reservan hora en línea.",
     "alt": "Diseño de muestra para salón de belleza: Bellamora Studio",
     "url": "https://cfmillans-rgb.github.io/bellamora-studio/",

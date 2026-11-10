@@ -7,8 +7,7 @@ navLinks:
 ---
 {%- set url = empresa.url + "/disenos-de-muestra.html" -%}
 {%- set grupos = [
-  { clave: "profesionales", id: "profesionales-y-salud", titulo: "Profesionales y salud", texto: "Para estudios y consultas donde la confianza se gana antes del primer contacto." },
-  { clave: "belleza", id: "belleza-y-estetica", titulo: "Belleza y estética", texto: "Para salones y centros que muestran su trabajo y facilitan pedir hora." },
+  { clave: "profesionales", id: "profesionales-salud-y-belleza", titulo: "Profesionales, salud y belleza", texto: "Para estudios, consultas y salones donde la confianza se gana antes del primer contacto." },
   { clave: "servicios", id: "construccion-y-servicios", titulo: "Construcción y servicios", texto: "Para empresas que cotizan, atienden a domicilio o responden urgencias." },
   { clave: "comercio", id: "tiendas-y-cursos", titulo: "Tiendas y cursos online", texto: "Para tiendas y academias que muestran su catálogo o sus programas." }
 ] -%}
@@ -64,7 +63,8 @@ navLinks:
     h2.sec { font-size: clamp(1.5rem, 3.2vw, 2.1rem); font-weight: 500; letter-spacing: -0.025em; color: #fff; line-height: 1.15; margin: 0 0 0.6rem; }
     .sec-lead { color: #b6bcc6; font-size: 1.02rem; line-height: 1.65; max-width: 44rem; margin: 0 0 1.75rem; }
     .demos { display: grid; gap: 1.25rem; list-style: none; padding: 0; margin: 0; }
-    @media (min-width: 720px) { .demos { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 640px) { .demos { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .demos { grid-template-columns: repeat(3, 1fr); } }
     .demo { position: relative; display: flex; flex-direction: column; height: 100%; background: linear-gradient(135deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; overflow: hidden; transition: border-color .2s; }
     .demo:hover { border-color: rgba(255,138,66,0.45); }
     .demo:has(.ver:focus-visible) { outline: 2px solid #ff8a42; outline-offset: 3px; }
@@ -126,7 +126,7 @@ navLinks:
           <li>
             <article class="demo">
               <div class="shot">
-                <img src="/assets/img/{{ demo.imagen }}" alt="{{ demo.alt }}" width="799" height="506" {% if gi == 0 %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+                <img src="/assets/img/{{ demo.imagen }}" alt="{{ demo.alt }}" width="799" height="506" {% if gi > 0 %}loading="lazy" {% endif %}decoding="async">
                 <span class="badge">Diseño de muestra</span>
               </div>
               <div class="body">
