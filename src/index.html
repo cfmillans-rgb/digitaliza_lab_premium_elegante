@@ -1538,66 +1538,15 @@
           <p class="mt-3 text-sm sm:text-base text-mist">Conceptos creados por nuestro equipo para mostrar estilos posibles según el tipo de negocio. No son sitios de clientes.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <article class="glass rounded-2xl overflow-hidden group flex flex-col">
-          <a href="https://cfmillans-rgb.github.io/03-valdes-asociados/" target="_blank" rel="noopener noreferrer" class="block relative" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;" aria-label="Ver diseño de muestra: Valdés &amp; Asociados">
-            <img src="assets/img/demo-valdes.webp" alt="Diseño de muestra para estudio jurídico: Valdés &amp; Asociados" width="799" height="506" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
-            <span class="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.15em] bg-black/70 text-white/90 border border-white/15 rounded-full px-2.5 py-1">Diseño de muestra</span>
+        {%- for demo in demos %}{% if demo.home %}
+{% include "partials/demo-card-home.njk" %}
+        {%- endif %}{% endfor %}
+        </div>
+        <div class="mt-8 text-center">
+          <a href="/disenos-de-muestra.html" class="js-cta-track inline-flex items-center gap-1.5 text-sm font-medium text-amber-glow hover:text-white transition-colors" data-cta="demos_ver_todos">
+            Ver los {{ demos | length }} diseños de muestra
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <div class="p-5 flex flex-col flex-1">
-            <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-1.5">Estudio jurídico</span>
-            <h4 class="font-display text-lg text-white mb-2">Valdés &amp; Asociados</h4>
-            <p class="text-sm text-mist leading-relaxed mb-4 flex-1">Sobrio y de autoridad, pensado para abogados que necesitan transmitir confianza.</p>
-            <a href="https://cfmillans-rgb.github.io/03-valdes-asociados/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-mist hover:text-white transition-colors w-max">
-              Ver diseño
-              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-        </article>
-        <article class="glass rounded-2xl overflow-hidden group flex flex-col">
-          <a href="https://cfmillans-rgb.github.io/08-taller-rivera/" target="_blank" rel="noopener noreferrer" class="block relative" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;" aria-label="Ver diseño de muestra: Taller Rivera">
-            <img src="assets/img/demo-taller-rivera.webp" alt="Diseño de muestra para taller automotriz: Taller Rivera" width="799" height="506" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
-            <span class="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.15em] bg-black/70 text-white/90 border border-white/15 rounded-full px-2.5 py-1">Diseño de muestra</span>
-          </a>
-          <div class="p-5 flex flex-col flex-1">
-            <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-1.5">Taller automotriz</span>
-            <h4 class="font-display text-lg text-white mb-2">Taller Rivera</h4>
-            <p class="text-sm text-mist leading-relaxed mb-4 flex-1">Precios claros y cotizador, para servicios donde la transparencia vende.</p>
-            <a href="https://cfmillans-rgb.github.io/08-taller-rivera/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-mist hover:text-white transition-colors w-max">
-              Ver diseño
-              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-        </article>
-        <article class="glass rounded-2xl overflow-hidden group flex flex-col">
-          <a href="https://cfmillans-rgb.github.io/06-gruas-titan/" target="_blank" rel="noopener noreferrer" class="block relative" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;" aria-label="Ver diseño de muestra: Grúas Titán 24/7">
-            <img src="assets/img/demo-gruas-titan.webp" alt="Diseño de muestra para servicios de urgencia: Grúas Titán 24/7" width="799" height="506" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
-            <span class="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.15em] bg-black/70 text-white/90 border border-white/15 rounded-full px-2.5 py-1">Diseño de muestra</span>
-          </a>
-          <div class="p-5 flex flex-col flex-1">
-            <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-1.5">Servicios de urgencia</span>
-            <h4 class="font-display text-lg text-white mb-2">Grúas Titán 24/7</h4>
-            <p class="text-sm text-mist leading-relaxed mb-4 flex-1">Una sola acción: llamar. Para negocios que se contratan en minutos.</p>
-            <a href="https://cfmillans-rgb.github.io/06-gruas-titan/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-mist hover:text-white transition-colors w-max">
-              Ver diseño
-              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-        </article>
-        <article class="glass rounded-2xl overflow-hidden group flex flex-col">
-          <a href="https://cfmillans-rgb.github.io/cleanpro-landing/" target="_blank" rel="noopener noreferrer" class="block relative" style="aspect-ratio: 16 / 10; overflow: hidden; background: #050505;" aria-label="Ver diseño de muestra: CleanPro">
-            <img src="assets/img/demo-cleanpro.webp" alt="Diseño de muestra para limpieza de hogares y oficinas: CleanPro" width="799" height="506" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
-            <span class="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.15em] bg-black/70 text-white/90 border border-white/15 rounded-full px-2.5 py-1">Diseño de muestra</span>
-          </a>
-          <div class="p-5 flex flex-col flex-1">
-            <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-amber-glow mb-1.5">Limpieza de hogares y oficinas</span>
-            <h4 class="font-display text-lg text-white mb-2">CleanPro</h4>
-            <p class="text-sm text-mist leading-relaxed mb-4 flex-1">Luminoso y cercano, para servicios a domicilio.</p>
-            <a href="https://cfmillans-rgb.github.io/cleanpro-landing/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-mist hover:text-white transition-colors w-max">
-              Ver diseño
-              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-        </article>
         </div>
       </div>
 

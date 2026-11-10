@@ -1,0 +1,113 @@
+[
+  {
+    "clave": "valdes",
+    "nombre": "Valdés & Asociados",
+    "rubro": "Estudio jurídico",
+    "grupo": "profesionales",
+    "descripcion": "Sobrio y de autoridad, pensado para abogados que necesitan transmitir confianza.",
+    "alt": "Diseño de muestra para estudio jurídico: Valdés & Asociados",
+    "url": "https://cfmillans-rgb.github.io/03-valdes-asociados/",
+    "imagen": "demo-valdes.webp",
+    "home": true
+  },
+  {
+    "clave": "nutre",
+    "nombre": "Nutre Bienestar",
+    "rubro": "Nutrición",
+    "grupo": "profesionales",
+    "descripcion": "Cálido y cercano, para nutricionistas que agendan consultas por WhatsApp.",
+    "alt": "Diseño de muestra para consulta de nutrición: Nutre Bienestar",
+    "url": "https://cfmillans-rgb.github.io/04-nutre-bienestar/",
+    "imagen": "demo-nutre-bienestar.webp",
+    "home": true
+  },
+  {
+    "clave": "alison",
+    "nombre": "Alison Carú",
+    "rubro": "Estética facial",
+    "grupo": "belleza",
+    "descripcion": "Elegante y premium, para centros de estética facial.",
+    "alt": "Diseño de muestra para estética facial: Alison Carú",
+    "url": "https://cfmillans-rgb.github.io/alison-landing/",
+    "imagen": "demo-alison-caru.webp",
+    "home": false
+  },
+  {
+    "clave": "bellamora",
+    "nombre": "Bellamora Studio",
+    "rubro": "Salón de belleza",
+    "grupo": "belleza",
+    "descripcion": "Cálido y editorial, para salones que reservan hora en línea.",
+    "alt": "Diseño de muestra para salón de belleza: Bellamora Studio",
+    "url": "https://cfmillans-rgb.github.io/bellamora-studio/",
+    "imagen": "demo-bellamora-studio.webp",
+    "home": false
+  },
+  {
+    "clave": "andes",
+    "nombre": "Andes Constructora",
+    "rubro": "Constructora",
+    "grupo": "servicios",
+    "descripcion": "Sólido y ordenado, para constructoras que reciben solicitudes de cotización.",
+    "alt": "Diseño de muestra para constructora: Andes Constructora",
+    "url": "https://cfmillans-rgb.github.io/02-andes-constructora/",
+    "imagen": "demo-andes-constructora.webp",
+    "home": true
+  },
+  {
+    "clave": "taller",
+    "nombre": "Taller Rivera",
+    "rubro": "Taller automotriz",
+    "grupo": "servicios",
+    "descripcion": "Precios claros y cotizador, para servicios donde la transparencia vende.",
+    "alt": "Diseño de muestra para taller automotriz: Taller Rivera",
+    "url": "https://cfmillans-rgb.github.io/08-taller-rivera/",
+    "imagen": "demo-taller-rivera.webp",
+    "home": true
+  },
+  {
+    "clave": "cleanpro",
+    "nombre": "CleanPro",
+    "rubro": "Limpieza de hogares y oficinas",
+    "grupo": "servicios",
+    "descripcion": "Luminoso y cercano, para servicios a domicilio.",
+    "alt": "Diseño de muestra para limpieza de hogares y oficinas: CleanPro",
+    "url": "https://cfmillans-rgb.github.io/cleanpro-landing/",
+    "imagen": "demo-cleanpro.webp",
+    "home": false
+  },
+  {
+    "clave": "gruas",
+    "nombre": "Grúas Titán 24/7",
+    "rubro": "Servicios de urgencia",
+    "grupo": "servicios",
+    "descripcion": "Una sola acción: llamar. Para negocios que se contratan en minutos.",
+    "alt": "Diseño de muestra para servicios de urgencia: Grúas Titán 24/7",
+    "url": "https://cfmillans-rgb.github.io/06-gruas-titan/",
+    "imagen": "demo-gruas-titan.webp",
+    "home": false
+  },
+  {
+    "clave": "patitas",
+    "nombre": "Mundo Patitas",
+    "rubro": "Tienda de mascotas",
+    "grupo": "comercio",
+    "descripcion": "Alegre y colorido, para tiendas de mascotas.",
+    "alt": "Diseño de muestra para tienda de mascotas: Mundo Patitas",
+    "url": "https://cfmillans-rgb.github.io/05-mundo-patitas/",
+    "imagen": "demo-mundo-patitas.webp",
+    "home": false,
+    "nota": "El carro de compras no es parte del Sitio Web Informativo: se cotiza aparte, como proyecto a medida."
+  },
+  {
+    "clave": "mentor",
+    "nombre": "Mentor IA Academy",
+    "rubro": "Cursos online",
+    "grupo": "comercio",
+    "descripcion": "Tecnológico y dinámico, para cursos y academias online.",
+    "alt": "Diseño de muestra para academia de cursos online: Mentor IA Academy",
+    "url": "https://cfmillans-rgb.github.io/07-mentor-ia-academy/",
+    "imagen": "demo-mentor-ia-academy.webp",
+    "home": false
+  }
+]

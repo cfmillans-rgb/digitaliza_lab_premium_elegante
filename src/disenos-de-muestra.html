@@ -1,0 +1,178 @@
+---
+# Galería de diseños de muestra. Las tarjetas salen de src/_data/demos.json (no se escriben a mano).
+navLinks:
+  - { href: "/#portafolio", texto: "Proyectos" }
+  - { href: "/#proceso", texto: "Cómo trabajamos" }
+  - { href: "/blog.html", texto: "Blog" }
+---
+{%- set url = empresa.url + "/disenos-de-muestra.html" -%}
+{%- set grupos = [
+  { clave: "profesionales", id: "profesionales-y-salud", titulo: "Profesionales y salud", texto: "Para estudios y consultas donde la confianza se gana antes del primer contacto." },
+  { clave: "belleza", id: "belleza-y-estetica", titulo: "Belleza y estética", texto: "Para salones y centros que muestran su trabajo y facilitan pedir hora." },
+  { clave: "servicios", id: "construccion-y-servicios", titulo: "Construcción y servicios", texto: "Para empresas que cotizan, atienden a domicilio o responden urgencias." },
+  { clave: "comercio", id: "tiendas-y-cursos", titulo: "Tiendas y cursos online", texto: "Para tiendas y academias que muestran su catálogo o sus programas." }
+] -%}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include "partials/consent.njk" %}
+  <title>Diseños de muestra de sitios web por rubro | {{ empresa.nombre }}</title>
+  <meta name="description" content="Diseños de muestra de sitios web para abogados, nutricionistas, constructoras, talleres, salones y más. Conceptos de {{ empresa.nombre }}, no sitios de clientes.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="{{ url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ empresa.nombre }}">
+  <meta property="og:title" content="Diseños de muestra de sitios web por rubro">
+  <meta property="og:description" content="Conceptos creados por nuestro equipo para mostrar estilos posibles según el tipo de negocio. No son sitios de clientes.">
+  <meta property="og:url" content="{{ url }}">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:image" content="{{ empresa.url }}/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ empresa.url }}/assets/img/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "{{ empresa.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Diseños de muestra", "item": "{{ url }}" }
+  ]
+}
+  </script>
+  <style>
+{% include "partials/estilos-articulo.css" %}
+    main.lp { padding: 6.5rem 1.25rem 2rem; }
+    .wrap { max-width: 68rem; margin: 0 auto; }
+    .hero { padding: 2.5rem 0 2.5rem; }
+    .hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.4rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.035em; color: #fff; margin: 0 0 1.25rem; max-width: 46rem; }
+    .hero h1 span { color: #ff8a42; }
+    .hero p { font-size: 1.12rem; line-height: 1.6; color: #c4c8cf; max-width: 42rem; margin: 0; }
+    .hero p strong { color: #fff; font-weight: 600; }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #ff8a42; margin: 0 0 0.75rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 1.75rem 0 0; }
+    .chips a { display: inline-block; padding: 0.45rem 0.95rem; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; font-size: 0.85rem; color: #c4c8cf; transition: border-color .2s, color .2s; }
+    .chips a:hover { border-color: rgba(255,138,66,0.6); color: #fff; }
+    section.block { padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.06); scroll-margin-top: 4.5rem; }
+    h2.sec { font-size: clamp(1.5rem, 3.2vw, 2.1rem); font-weight: 500; letter-spacing: -0.025em; color: #fff; line-height: 1.15; margin: 0 0 0.6rem; }
+    .sec-lead { color: #b6bcc6; font-size: 1.02rem; line-height: 1.65; max-width: 44rem; margin: 0 0 1.75rem; }
+    .demos { display: grid; gap: 1.25rem; list-style: none; padding: 0; margin: 0; }
+    @media (min-width: 720px) { .demos { grid-template-columns: repeat(2, 1fr); } }
+    .demo { position: relative; display: flex; flex-direction: column; height: 100%; background: linear-gradient(135deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; overflow: hidden; transition: border-color .2s; }
+    .demo:hover { border-color: rgba(255,138,66,0.45); }
+    .demo:has(.ver:focus-visible) { outline: 2px solid #ff8a42; outline-offset: 3px; }
+    .shot { position: relative; aspect-ratio: 799 / 506; background: #050505; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .7s; }
+    .demo:hover .shot img { transform: scale(1.03); }
+    .badge { position: absolute; top: 0.75rem; left: 0.75rem; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; background: rgba(0,0,0,0.72); color: rgba(255,255,255,0.92); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; padding: 0.3rem 0.65rem; }
+    .demo .body { display: flex; flex-direction: column; flex: 1; padding: 1.2rem 1.35rem 1.35rem; }
+    .rubro { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: #ff8a42; margin: 0 0 0.4rem; }
+    .demo h3 { color: #fff; font-size: 1.15rem; font-weight: 600; margin: 0 0 0.45rem; }
+    .demo .desc { color: #b6bcc6; font-size: 0.95rem; line-height: 1.6; margin: 0 0 1rem; }
+    .demo .nota { color: #9ca3af; font-size: 0.85rem; line-height: 1.55; margin: -0.4rem 0 1rem; padding-left: 0.75rem; border-left: 2px solid rgba(255,138,66,0.45); }
+    .demo .ver { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: auto; width: max-content; font-size: 0.88rem; font-weight: 500; color: #fff; transition: color .2s; }
+    .demo .ver::after { content: ""; position: absolute; inset: 0; } /* toda la tarjeta abre el diseño */
+    .demo:hover .ver { color: #ff8a42; }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 720px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    .card { background: linear-gradient(135deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 1.4rem; }
+    .card h3 { color: #fff; font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem; }
+    .card p { color: #b6bcc6; font-size: 0.95rem; line-height: 1.65; margin: 0; }
+    .card a { color: #ff8a42; text-decoration: underline; text-underline-offset: 3px; }
+    .final { text-align: center; padding: 4rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .final p { color: #b6bcc6; line-height: 1.65; margin: 0 auto 1.75rem; max-width: 36rem; }
+    .final p strong { color: #fff; font-weight: 600; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: center; }
+    .btn-ghost { display: inline-flex; align-items: center; padding: 0.8rem 1.4rem; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; color: #fff; font-weight: 500; font-size: 0.9rem; }
+    .btn-ghost:hover { border-color: rgba(255,138,66,0.6); color: #ff8a42; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    @media (prefers-reduced-motion: reduce) { .shot img, .demo, .demo .ver, .chips a { transition: none; } .demo:hover .shot img { transform: none; } }
+  </style>
+</head>
+<body>
+  {% include "partials/nav-simple.njk" %}
+
+  <main class="lp" id="main-content">
+    <div class="wrap">
+      <nav aria-label="Ruta de navegación"><ol class="crumbs"><li><a href="/">Inicio</a></li><li aria-hidden="true">→</li><li aria-current="page">Diseños de muestra</li></ol></nav>
+
+      <header class="hero">
+        <p class="eyebrow">Diseños de muestra</p>
+        <h1>Ideas de diseño para <span>cada tipo de negocio</span></h1>
+        <p>{{ demos | length }} conceptos creados por nuestro equipo para mostrar estilos posibles según el rubro. <strong>No son sitios de clientes:</strong> las empresas, los teléfonos y los correos que aparecen son ficticios.</p>
+        <nav aria-label="Rubros">
+          <ul class="chips">
+            {%- for g in grupos %}
+            <li><a href="#{{ g.id }}">{{ g.titulo }}</a></li>
+            {%- endfor %}
+          </ul>
+        </nav>
+      </header>
+
+      {%- for g in grupos %}
+      {%- set gi = loop.index0 %}
+      <section class="block" id="{{ g.id }}" aria-labelledby="t-{{ g.id }}">
+        <h2 class="sec" id="t-{{ g.id }}">{{ g.titulo }}</h2>
+        <p class="sec-lead">{{ g.texto }}</p>
+        <ul class="demos">
+          {%- for demo in demos %}{% if demo.grupo == g.clave %}
+          <li>
+            <article class="demo">
+              <div class="shot">
+                <img src="/assets/img/{{ demo.imagen }}" alt="{{ demo.alt }}" width="799" height="506" {% if gi == 0 %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+                <span class="badge">Diseño de muestra</span>
+              </div>
+              <div class="body">
+                <p class="rubro">{{ demo.rubro }}</p>
+                <h3>{{ demo.nombre }}</h3>
+                <p class="desc">{{ demo.descripcion }}</p>
+                {%- if demo.nota %}
+                <p class="nota">{{ demo.nota }}</p>
+                {%- endif %}
+                <a class="ver" href="{{ demo.url }}" target="_blank" rel="noopener noreferrer">Ver diseño<span class="sr-only"> de muestra {{ demo.nombre }} (se abre en una pestaña nueva)</span> <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </li>
+          {%- endif %}{% endfor %}
+        </ul>
+      </section>
+      {%- endfor %}
+
+      <section class="block" aria-labelledby="t-antes">
+        <h2 class="sec" id="t-antes">Antes de elegir un estilo</h2>
+        <p class="sec-lead">Estos diseños sirven para imaginar cómo podría verse tu sitio. Esto es lo que conviene saber:</p>
+        <div class="grid grid-3">
+          <div class="card"><h3>Son referencias, no clientes</h3><p>Los creamos para mostrar estilos. Para ver sitios hechos para clientes, revisa los <a href="/#portafolio">trabajos reales</a>.</p></div>
+          <div class="card"><h3>Tu sitio se hace a medida</h3><p>Se construye con la información, los textos, las imágenes y las definiciones de tu negocio, no con los datos de una muestra.</p></div>
+          <div class="card"><h3>Algunas funciones se cotizan aparte</h3><p>Si una muestra tiene algo que no está en <a href="/#servicios">lo que incluye el Sitio Web Informativo</a>, como un carro de compras, esa parte se cotiza como <a href="/#a-medida">proyecto a medida</a>.</p></div>
+        </div>
+      </section>
+
+      <section class="final" aria-labelledby="t-final">
+        <h2 class="sec" id="t-final">¿Te gustó algún estilo?</h2>
+        <p>Cuéntanos cuál cuando nos escribas: nos ayuda a entender lo que buscas. El <strong>Sitio Web Informativo</strong> cuesta {{ precios.landing | clp }} + IVA ({{ precios.landing | conIva | clp }} con IVA), pago único.</p>
+        <div class="actions">
+          <a href="/#servicios" class="btn-primary">Ver precio y qué incluye</a>
+          <a href="/#portafolio" class="btn-ghost">Ver trabajos reales</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  {% include "partials/footer-simple.njk" %}
+
+  <script>
+    (function () {
+      var nav = document.getElementById('mainNav');
+      if (nav) window.addEventListener('scroll', function () { nav.classList.toggle('nav-scrolled', window.scrollY > 40); }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
