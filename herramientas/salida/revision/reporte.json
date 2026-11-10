@@ -95,15 +95,11 @@
       "contacto@xx.xx",
       "mailto:contacto@xx.xx"
     ],
-    "imagenesRotas": [
-      "https://images.unsplash.com/photo-1590517862676-4fc22d8b16a8?w=800&q=80&auto=format&fit=crop"
-    ],
+    "imagenesRotas": [],
     "imagenesSinCargar": [],
     "geo": 0,
     "alto": 10053,
-    "fallas": [
-      "falló: https://images.unsplash.com/photo-1590517862676-4fc22d8b16a8?w=800&q=80&auto=format&fit=crop"
-    ],
+    "fallas": [],
     "consola": []
   },
   {
@@ -118,17 +114,11 @@
     "correos": [
       "contacto@xx.xx"
     ],
-    "imagenesRotas": [
-      "https://images.unsplash.com/photo-1632823469850-d4d4206e2365?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1625047509168-a7006f8233f8?auto=format&fit=crop&w=600&q=80"
-    ],
+    "imagenesRotas": [],
     "imagenesSinCargar": [],
     "geo": 0,
     "alto": 4773,
-    "fallas": [
-      "falló: https://images.unsplash.com/photo-1625047509168-a7006f8233f8?auto=format&fit=crop&w=600&q=80",
-      "falló: https://images.unsplash.com/photo-1632823469850-d4d4206e2365?auto=format&fit=crop&w=600&q=80"
-    ],
+    "fallas": [],
     "consola": []
   },
   {
@@ -177,51 +167,12 @@
     "telefonosEnTexto": [],
     "telefonosEnEnlaces": [],
     "correos": [],
-    "imagenesRotas": [
-      "https://loremflickr.com/600/600/dog,happy/all?lock=10",
-      "https://loremflickr.com/400/300/dog,leash/all?lock=1",
-      "https://loremflickr.com/400/300/cat,scratcher/all?lock=2",
-      "https://loremflickr.com/400/300/dog,food/all?lock=3",
-      "https://loremflickr.com/400/300/cat,food/all?lock=4",
-      "https://loremflickr.com/400/300/pet,bowl/all?lock=5",
-      "https://loremflickr.com/400/300/cat,toy/all?lock=6",
-      "https://loremflickr.com/400/300/pet,bed/all?lock=7",
-      "https://loremflickr.com/400/300/dog,snack/all?lock=8",
-      "https://loremflickr.com/400/300/cat,litter/all?lock=9",
-      "https://loremflickr.com/100/100/woman,portrait/all?lock=1",
-      "https://loremflickr.com/100/100/man,portrait/all?lock=2"
-    ],
+    "imagenesRotas": [],
     "imagenesSinCargar": [],
     "geo": 0,
-    "alto": 4721,
-    "fallas": [
-      "500: https://loremflickr.com/600/600/dog,happy/all?lock=10",
-      "500: https://loremflickr.com/400/300/dog,food/all?lock=3",
-      "500: https://loremflickr.com/400/300/cat,food/all?lock=4",
-      "500: https://loremflickr.com/400/300/pet,bowl/all?lock=5",
-      "500: https://loremflickr.com/400/300/dog,leash/all?lock=1",
-      "500: https://loremflickr.com/400/300/cat,scratcher/all?lock=2",
-      "500: https://loremflickr.com/400/300/cat,toy/all?lock=6",
-      "500: https://loremflickr.com/400/300/pet,bed/all?lock=7",
-      "500: https://loremflickr.com/400/300/dog,snack/all?lock=8",
-      "500: https://loremflickr.com/400/300/cat,litter/all?lock=9",
-      "500: https://loremflickr.com/100/100/man,portrait/all?lock=2",
-      "500: https://loremflickr.com/100/100/woman,portrait/all?lock=1"
-    ],
-    "consola": [
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()",
-      "Failed to load resource: the server responded with a status of 500 ()"
-    ]
+    "alto": 4703,
+    "fallas": [],
+    "consola": []
   },
   {
     "clave": "mentor",
