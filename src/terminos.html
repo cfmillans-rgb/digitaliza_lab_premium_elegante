@@ -77,7 +77,7 @@
 
     <h1 style="font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.025em; color: #fff; margin-bottom: 1rem;">Términos y Condiciones</h1>
     <p style="font-size: 1.15rem; color: #9ca3af; margin-bottom: 0.5rem;">Condiciones del servicio de diseño y desarrollo web. Reglas claras para proteger a ambas partes.</p>
-    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #71717a; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 0.05em;">Versión 2.3 · Última actualización: 8 de noviembre de 2026</p>
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #71717a; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 0.05em;">Versión 2.4 · Última actualización: 23 de noviembre de 2026</p>
 
     <article class="legal-content">
       
@@ -88,6 +88,7 @@
   <h2>2. Descripción del Servicio</h2>
   <p>Digitaliza Lab ofrece el servicio de diseño y desarrollo de sitios web informativos de una sola página (también llamados landing pages), orientados a la conversión, incluyendo el registro de dominio, provisión de hosting, certificado SSL y configuración de correo corporativo por el primer año.</p>
   <p>Cualquier requerimiento adicional no descrito en la propuesta comercial (tales como desarrollo de software a medida, e-commerce, integración de APIs complejas, o redacción extensa de múltiples páginas) queda excluido del servicio estándar y deberá ser cotizado por separado.</p>
+  <p>Para empresas beneficiarias de programas de Sercotec, Digitaliza Lab ofrece además el <strong>Pack Web Sercotec</strong>, que suma al sitio web informativo la documentación de respaldo para la rendición del gasto. Sus condiciones particulares están en el <a href="#pack-sercotec">punto 19</a> y, en lo que regulan, prevalecen sobre las generales.</p>
 
   <h2>3. Obligaciones Previas y Onboarding</h2>
   <p>Una vez realizado el pago, el Cliente deberá completar un formulario de "Onboarding" donde proporcionará todos los textos, imágenes, logotipos y requerimientos específicos para la construcción del sitio web.</p>
@@ -98,7 +99,7 @@
 
   <h2>5. Pagos y Documentos Tributarios</h2>
   <ul>
-    <li>Para reservar el proyecto e iniciar el trabajo se requiere el <strong>pago del 100% por adelantado</strong>.</li>
+    <li>Para reservar el proyecto e iniciar el trabajo se requiere el <strong>pago del 100% por adelantado</strong>. En el Pack Web Sercotec rige la reserva del <a href="#pack-sercotec">punto 19.3</a>.</li>
     <li><strong>Todos los precios publicados y cotizados son valores netos y no incluyen IVA.</strong></li>
     <li>Medios de pago habilitados: <strong>transferencia bancaria</strong> a la cuenta de Digitaliza Lab SpA y <strong>pago en línea con Webpay, de Transbank</strong>, con tarjetas de crédito, débito o prepago.</li>
     <li>Los datos de transferencia se entregan por los canales oficiales (WhatsApp o correo) cuando el cliente los solicita, o junto con la cotización en proyectos a medida. <strong>Nunca se publican en el sitio ni se envían por canales distintos a los oficiales.</strong></li>
@@ -116,6 +117,7 @@
   </div>
 
   <p>Si la información o el material entregados están incompletos, te lo avisamos y el plazo queda en suspenso hasta recibir correctamente todo lo requerido. No es una manera de estirar los tiempos: sin tu contenido no hay sitio que construir.</p>
+  <p>En el Pack Web Sercotec el plazo de desarrollo es de <strong>5 a 7 días hábiles</strong> y se cuenta como indica el <a href="#pack-sercotec">punto 19.5</a>.</p>
 
   <h2>7. Derecho a retracto</h2>
 
@@ -209,6 +211,55 @@
   <p>Estos términos se rigen por las leyes de la República de Chile.</p>
   <p>Ante cualquier discrepancia, te pedimos escribirnos primero a <a href="mailto:{{ empresa.email }}">{{ empresa.email }}</a>: la mayoría de los problemas se resuelven conversando.</p>
   <p>Si el cliente tiene la calidad de consumidor, conserva íntegros los derechos que le otorga la Ley N° 19.496 y puede presentar un reclamo ante el Servicio Nacional del Consumidor en <a href="https://www.sernac.cl" target="_blank" rel="noopener">sernac.cl</a>. Ninguna cláusula de este documento limita esos derechos.</p>
+
+  <h2 id="pack-sercotec">19. Pack Web Sercotec</h2>
+  <p>El <strong>Pack Web Sercotec</strong> está dirigido a empresas beneficiarias de programas de Sercotec —por ejemplo, Capital Semilla, Capital Abeja o Crece— que financian su sitio web con el subsidio de su proyecto. Incluye el sitio web informativo descrito en el punto 2 y la documentación de respaldo indicada en el punto 19.4. Lo que este punto no regula se rige por las demás condiciones de estos términos.</p>
+
+  <h3>19.1 Proveedor independiente</h3>
+  <p>Digitaliza Lab SpA es un proveedor independiente. No forma parte de Sercotec ni de los Agentes Operadores Sercotec, no participa en la evaluación de planes de inversión ni de rendiciones, y <strong>no garantiza que el gasto sea aprobado, pagado o reembolsado</strong>. Esa decisión corresponde al Agente Operador y a Sercotec, según las bases del programa y el plan de inversión aprobado del cliente.</p>
+
+  <h3>19.2 Precio y cotización</h3>
+  <ul>
+    <li>El precio del Pack es de <strong>{{ precios.sercotec | clp }} neto más IVA</strong> (total {{ precios.sercotec | conIva | clp }}) e incluye, sin costo adicional, el dominio, el hosting, el certificado SSL y el correo corporativo del primer año. El IVA, y la diferencia si el plan de inversión del cliente aprobó un monto menor, son de cargo del cliente.</li>
+    <li>Digitaliza Lab entrega una cotización formal dentro de <strong>24 horas hábiles</strong> desde que recibe los antecedentes completos de la precalificación. La cotización describe el servicio y lo que incluye, e indica el RUT, los datos bancarios de Digitaliza Lab SpA y la condición de pago.</li>
+    <li>La primera cotización y los ajustes razonables de glosa no tienen costo. Los cambios de alcance y las cotizaciones adicionales personalizadas se conversan antes de prepararlas.</li>
+    <li>Digitaliza Lab no prepara cotizaciones ni otros documentos a nombre de terceros proveedores.</li>
+  </ul>
+
+  <h3>19.3 Modalidades de pago</h3>
+  <p>El cliente elige, junto con su Agente Operador, una de las dos modalidades de compra de los programas. En ambas, lo que paga el cliente se transfiere desde la cuenta bancaria de la empresa beneficiaria y la factura indica «transferencia» como condición de pago. Este Pack no se paga con Webpay ni en cuotas.</p>
+  <ul>
+    <li><strong>Compra asistida:</strong> validada la cotización por el Agente Operador, el cliente paga el IVA como reserva. Terminado y publicado el sitio, Digitaliza Lab emite la factura electrónica y el Agente Operador paga el valor neto directamente a Digitaliza Lab SpA. Digitaliza Lab no solicita anticipos al Agente Operador.</li>
+    <li><strong>Reembolso:</strong> validada la cotización, el cliente paga el total (neto más IVA) y, con la factura y los documentos de respaldo, solicita a su Agente Operador el reembolso del valor neto.</li>
+  </ul>
+  <p>En el Pack, el pago de la reserva reemplaza al pago del 100% por adelantado del punto 5. Digitaliza Lab coordina con el cliente la fecha de emisión de la factura para que pueda presentarla dentro de los plazos de rendición de su programa.</p>
+
+  <div class="callout">
+    <span class="callout-title">Si el Agente Operador no paga el valor neto</span>
+    <p>En compra asistida, el cliente es responsable de presentar a su Agente Operador la factura y los respaldos dentro de los plazos de su programa. Si el Agente Operador rechaza el pago, o no lo realiza dentro de 30 días corridos desde la emisión de la factura, por causas no imputables a Digitaliza Lab —por ejemplo, porque el gasto no estaba en el plan aprobado o porque la documentación se presentó fuera de plazo—, <strong>el cliente deberá pagar directamente el valor neto</strong> dentro de los 10 días hábiles siguientes al rechazo o al vencimiento de ese plazo.</p>
+  </div>
+
+  <h3>19.4 Documentos incluidos</h3>
+  <p>Junto con la entrega final, Digitaliza Lab entrega los documentos que suelen pedir los Agentes Operadores para rendir un servicio de desarrollo web:</p>
+  <ul>
+    <li>Cotización formal.</li>
+    <li>Programa de trabajo del servicio, con sus etapas, plazos y entregables.</li>
+    <li>Factura electrónica emitida a la razón social exacta, RUT, giro y dirección tributaria que indique el cliente.</li>
+    <li>Informe del servicio, con introducción, objetivos, alcance, desarrollo, resultados, conclusiones y el link operativo del sitio, para ser firmado por ambas partes.</li>
+    <li>Diseños del sitio en formato JPG y capturas de pantalla como respaldo gráfico.</li>
+    <li>Apoyo para completar el acta de recepción conforme o el anexo que solicite el Agente Operador.</li>
+  </ul>
+  <p>Si el Agente Operador pide aclarar o ajustar un documento emitido por Digitaliza Lab, el ajuste no tiene costo; si el pago se rechaza por un error en esos documentos, Digitaliza Lab los corrige o reemite sin costo. La presentación de la rendición, la firma de los documentos que correspondan al cliente y el registro fotográfico que exija su programa son responsabilidad del cliente.</p>
+
+  <h3>19.5 Plazo de desarrollo</h3>
+  <p>El plazo es de <strong>5 a 7 días hábiles</strong> y corre cuando se cumplen a la vez: <strong>(a)</strong> el Agente Operador validó la cotización y el cliente lo informó por escrito; <strong>(b)</strong> el pago de la reserva está confirmado (el IVA en compra asistida o el total en reembolso), y <strong>(c)</strong> Digitaliza Lab recibió el formulario de onboarding completo. Para la garantía por atraso de la Política de Entrega y Reembolso, el plazo comprometido es de 7 días hábiles.</p>
+  <p>La ronda de correcciones del punto 8 también aplica. Como los programas tienen fechas límite de ejecución, conviene enviar las correcciones lo antes posible.</p>
+
+  <h3>19.6 Devoluciones</h3>
+  <p>Rige la <a href="entrega-y-reembolso.html#pack-sercotec">Política de Entrega y Reembolso</a>, aplicada sobre los montos que el cliente efectivamente haya pagado a Digitaliza Lab. El rechazo del gasto por parte del Agente Operador o de Sercotec no da derecho a devolución, salvo que se deba a un error en los documentos emitidos por Digitaliza Lab que no haya sido corregido.</p>
+
+  <h3>19.7 Renovación</h3>
+  <p>La renovación del dominio y del hosting desde el segundo año ({{ precios.renovacion | clp }} neto) no forma parte del proyecto financiado por el programa y se rige por el punto 13.</p>
 
     </article>
   </main>

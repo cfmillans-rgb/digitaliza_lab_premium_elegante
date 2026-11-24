@@ -1,0 +1,481 @@
+---
+# Página generada con Eleventy. Datos compartidos en src/_data (empresa.json, precios.json).
+# Pack Web Sercotec: el precio está en precios.sercotec. No usa Webpay: se vende con una
+# cotización formal para el Agente Operador y se paga por transferencia (compra asistida o reembolso).
+# Condiciones: punto 19 de terminos.html y punto 8 de entrega-y-reembolso.html (deben coincidir).
+---
+{%- set neto = precios.sercotec -%}
+{%- set total = precios.sercotec | conIva -%}
+{%- set ivaMonto = total - neto -%}
+{%- set faqs = [
+  { q: "¿Sercotec financia una página web?",
+    a: "Puede hacerlo, si está en tu plan de inversión aprobado. Las bases 2026 de Capital Abeja Emprende, por ejemplo, incluyen el desarrollo de páginas web dentro del marketing digital. Si tu plan no la incluye, pregúntale a tu asesor(a) cómo solicitar su incorporación antes de contratar: los gastos que no están en el plan no se pagan." },
+  { q: "¿Quién paga el IVA?",
+    a: "La empresa beneficiaria. El subsidio es neto: el IVA y los demás impuestos no los financia el programa. En este Pack, el IVA es de " + (ivaMonto | clp) + "." },
+  { q: "¿Compra asistida o reembolso?",
+    a: "Trabajamos con las dos. En compra asistida pagas solo el IVA y tu Agente Operador nos paga el neto cuando el sitio está terminado; las bases fijan un mínimo de $100.000 netos para esta modalidad y este Pack lo supera. En reembolso pagas el total y después pides el reembolso del neto con la factura y los respaldos." },
+  { q: "¿Tengo que pagar un anticipo?",
+    a: "Solo la reserva. En compra asistida, la reserva es el IVA, que de todas formas es de tu cargo; el neto lo paga tu Agente Operador con el sitio terminado, porque los programas no pagan anticipos a proveedores. En reembolso, pagas el total al reservar." },
+  { q: "¿Qué documentos me entregan para rendir?",
+    a: "Cotización formal, programa de trabajo, factura electrónica a nombre de tu empresa, informe del servicio con el link operativo de tu sitio (para firmar por ambas partes), diseños en JPG y capturas. También te ayudamos con el acta de recepción o el anexo que te pida tu asesor(a)." },
+  { q: "¿Garantizan que me aprueben el gasto?",
+    a: "No. La aprobación depende de tu Agente Operador y de Sercotec. Lo que sí garantizamos es que nuestros documentos vengan correctos: si hay un error nuestro, lo corregimos o reemitimos sin costo." },
+  { q: "¿Qué pasa si el Agente Operador no paga el neto?",
+    a: "Si tu asesor(a) no valida la cotización, no pagas nada, porque la reserva se paga después de esa validación. Si la valida y después el pago se rechaza por una causa que no es nuestra (por ejemplo, porque la documentación se presentó fuera de plazo), el neto queda de tu cargo, como indican los <a href=\"/terminos.html#pack-sercotec\">Términos y Condiciones</a>." },
+  { q: "¿Necesito tres cotizaciones?",
+    a: "Depende del monto y de tu región: hay Agentes Operadores que piden tres cotizaciones para compras de montos altos. Pregúntale a tu asesor(a). Nosotros te entregamos la nuestra; nunca preparamos cotizaciones a nombre de otros proveedores." },
+  { q: "¿Qué pasa después del primer año?",
+    a: "Dominio, hosting, SSL y correo están incluidos el primer año. Desde el segundo año, la renovación cuesta " + (precios.renovacion | clp) + " + IVA (" + (precios.renovacion | conIva | clp) + " con IVA) y ya no forma parte de tu proyecto Sercotec. Te avisamos antes del vencimiento." },
+  { q: "¿Digitaliza Lab es parte de Sercotec?",
+    a: "No. Somos un proveedor independiente: no formamos parte de Sercotec ni de los Agentes Operadores, y no participamos en la evaluación de planes de inversión ni de rendiciones." }
+] -%}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include "partials/consent.njk" %}
+  <title>Pack Web Sercotec: tu sitio con los respaldos para rendir | Digitaliza Lab</title>
+  <meta name="description" content="Página web para beneficiarias y beneficiarios de Capital Abeja, Capital Semilla y Crece: cotización formal en 24 horas hábiles, desarrollo en 5 a 7 días hábiles y documentos para tu rendición. {{ neto | clp }} + IVA.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://digitalizalab.cl/sercotec.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digitaliza Lab">
+  <meta property="og:title" content="Digitaliza Lab · Sercotec: tu sitio web con los respaldos para rendir">
+  <meta property="og:description" content="Cotización formal en 24 horas hábiles, desarrollo en 5 a 7 días hábiles y los documentos que pide tu Agente Operador.">
+  <meta property="og:url" content="https://digitalizalab.cl/sercotec.html">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:image" content="https://digitalizalab.cl/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://digitalizalab.cl/assets/img/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://digitalizalab.cl/" },
+        { "@type": "ListItem", "position": 2, "name": "Pack Web Sercotec", "item": "https://digitalizalab.cl/sercotec.html" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Pack Web Sercotec",
+      "serviceType": "Diseño de sitio web informativo con documentación para rendición",
+      "description": "Sitio web informativo con cotización formal, factura electrónica, programa de trabajo, informe del servicio y respaldos gráficos para empresas beneficiarias de programas de Sercotec.",
+      "areaServed": { "@type": "Country", "name": "Chile" },
+      "audience": { "@type": "BusinessAudience", "audienceType": "Empresas beneficiarias de programas de Sercotec" },
+      "provider": { "@id": "https://digitalizalab.cl/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "{{ neto }}",
+        "priceCurrency": "CLP",
+        "url": "https://digitalizalab.cl/sercotec.html",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "{{ neto }}",
+          "priceCurrency": "CLP",
+          "valueAddedTaxIncluded": false
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+{%- for f in faqs %}
+        { "@type": "Question", "name": {{ f.q | json | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | striptags | json | safe }} } }{% if not loop.last %},{% endif %}
+{%- endfor %}
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+{% include "partials/estilos-articulo.css" %}
+    main.lp { padding: 6.5rem 1.25rem 2rem; }
+    .wrap { max-width: 68rem; margin: 0 auto; }
+    .narrow { max-width: 46rem; margin: 0 auto; }
+    .hero { padding: 2.5rem 0 3rem; }
+    .lockup { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: #ff8a42; border: 1px solid rgba(255,138,66,0.35); border-radius: 999px; padding: 0.4rem 0.9rem; margin: 0 0 1.4rem; }
+    .lockup .dot { color: rgba(255,255,255,0.35); }
+    .lockup .tag { color: #e5e7eb; }
+    .hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.6rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.035em; color: #fff; margin: 0 0 1.25rem; max-width: 48rem; }
+    .hero h1 span { color: #ff8a42; }
+    .hero p.lead-hero { font-size: 1.15rem; line-height: 1.6; color: #c4c8cf; max-width: 42rem; margin: 0 0 1.75rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+    .btn-ghost { display: inline-flex; align-items: center; padding: 0.8rem 1.4rem; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; color: #fff; font-weight: 500; font-size: 0.9rem; }
+    .btn-ghost:hover { border-color: rgba(255,138,66,0.6); color: #ff8a42; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-top: 1.75rem; font-size: 0.85rem; color: #9ca3af; }
+    .pill-row span::before { content: '✓ '; color: #4ade80; }
+    .aviso { margin: 1.75rem 0 0; max-width: 44rem; display: flex; gap: 0.7rem; align-items: flex-start; font-size: 0.82rem; line-height: 1.6; color: #9ca3af; border-left: 2px solid rgba(255,138,66,0.5); padding: 0.2rem 0 0.2rem 0.9rem; }
+    .aviso strong { color: #e5e7eb; font-weight: 600; }
+    section.block { padding: 3.5rem 0; border-top: 1px solid rgba(255,255,255,0.06); scroll-margin-top: 4.5rem; }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #ff8a42; margin: 0 0 0.75rem; }
+    h2.sec { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 500; letter-spacing: -0.025em; color: #fff; line-height: 1.15; margin: 0 0 1rem; }
+    .sec-lead { color: #b6bcc6; font-size: 1.05rem; line-height: 1.7; max-width: 44rem; margin: 0 0 2rem; }
+    h3.sub { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9ca3af; font-weight: 500; margin: 2rem 0 0.9rem; }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 720px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+    .card { background: linear-gradient(135deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 1.4rem; }
+    .card h3 { color: #fff; font-size: 1.05rem; font-weight: 600; margin: 0 0 0.5rem; }
+    .card p { color: #b6bcc6; font-size: 0.95rem; line-height: 1.65; margin: 0; }
+    .card a { color: #ff8a42; text-decoration: underline; text-underline-offset: 3px; }
+    .card.doc h3::before { content: ''; display: inline-block; width: 0.72rem; height: 0.9rem; margin-right: 0.6rem; vertical-align: -0.05rem; border: 1.5px solid #ff8a42; border-radius: 2px; background: linear-gradient(#ff8a42, #ff8a42) center 38% / 50% 1.5px no-repeat, linear-gradient(#ff8a42, #ff8a42) center 66% / 50% 1.5px no-repeat; }
+    .plazo { padding: 1.75rem; }
+    .plazo .big { font-size: clamp(2.6rem, 7vw, 3.6rem); font-weight: 500; letter-spacing: -0.04em; color: #fff; line-height: 1; margin-bottom: 0.9rem; }
+    .plazo .big span { color: #ff8a42; font-size: 0.45em; letter-spacing: -0.01em; margin-left: 0.35rem; }
+    .plazo h3 { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: #ff8a42; font-weight: 500; }
+    .note-line { color: #c4c8cf; font-size: 1.02rem; line-height: 1.7; max-width: 46rem; margin: 1.75rem 0 0; }
+    .proveedor { margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem 1.5rem; align-items: center; padding: 1.1rem 1.4rem; border: 1px dashed rgba(255,255,255,0.14); border-radius: 16px; font-size: 0.92rem; color: #b6bcc6; }
+    .proveedor strong { color: #fff; font-weight: 600; }
+    .proveedor a { color: #ff8a42; text-decoration: underline; text-underline-offset: 3px; }
+    .price { border: 1px solid rgba(255,138,66,0.35); background: #050505; border-radius: 22px; padding: 1.75rem; }
+    .price .name { font-size: 1.15rem; color: #fff; font-weight: 600; margin: 0 0 0.75rem; }
+    .price .amount { font-size: 2.8rem; font-weight: 500; color: #fff; letter-spacing: -0.03em; }
+    .price .amount small { font-size: 1rem; color: #9ca3af; font-weight: 400; }
+    .price .total { color: #9ca3af; font-size: 0.85rem; margin: 0.2rem 0 1.25rem; }
+    .price ul { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+    .price li { padding: 0.35rem 0 0.35rem 1.6rem; position: relative; color: #c4c8cf; font-size: 0.95rem; }
+    .price li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; }
+    .price .btn-primary { width: 100%; justify-content: center; box-sizing: border-box; }
+    .price .fine { margin: 0.9rem 0 0; font-size: 0.75rem; line-height: 1.5; color: rgba(156,163,175,0.85); text-align: center; }
+    .iva { border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; margin: 0 0 1.25rem; max-width: 26rem; }
+    .iva div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.06); color: #b6bcc6; font-size: 0.95rem; }
+    .iva div:last-child { border-bottom: 0; background: rgba(255,138,66,0.07); color: #fff; font-weight: 600; }
+    .iva strong { color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .small-note { color: #9ca3af; font-size: 0.88rem; line-height: 1.65; max-width: 40rem; margin: 0; }
+    .modo .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #4ade80; border: 1px solid rgba(74,222,128,0.3); border-radius: 999px; padding: 0.2rem 0.65rem; margin-bottom: 0.8rem; }
+    .modo ol { margin: 0.75rem 0 0; padding-left: 1.2rem; color: #c4c8cf; font-size: 0.94rem; line-height: 1.6; }
+    .modo li { margin: 0.45rem 0; padding-left: 0.2rem; }
+    .modo li::marker { color: #ff8a42; font-family: 'JetBrains Mono', monospace; }
+    .modo li strong { color: #fff; font-weight: 600; }
+    .modo .foot { margin-top: 1rem; padding-top: 0.9rem; border-top: 1px solid rgba(255,255,255,0.07); font-size: 0.85rem; color: #9ca3af; }
+    .callout-pago { margin-top: 1rem; background: rgba(255,138,66,0.06); border: 1px solid rgba(255,138,66,0.22); border-radius: 14px; padding: 1.1rem 1.25rem; color: #d1d5db; font-size: 0.95rem; line-height: 1.65; }
+    .callout-pago strong { color: #fff; }
+    .cotizar { display: grid; gap: 1.5rem; align-items: start; }
+    @media (min-width: 900px) { .cotizar { grid-template-columns: 1.5fr 1fr; } }
+    .form-card { background: #050505; border: 1px solid rgba(255,255,255,0.1); border-radius: 22px; padding: 1.6rem; }
+    .form-grid { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .form-grid.two { grid-template-columns: 1fr 1fr; } }
+    .field label, .field legend { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9ca3af; margin-bottom: 0.5rem; padding: 0; }
+    .field label .n, .field legend .n { color: #ff8a42; margin-right: 0.35rem; }
+    .field input[type=text], .field input[type=date], .field select { width: 100%; box-sizing: border-box; background: #111; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 0.8rem 0.95rem; color: #fff; font: inherit; font-size: 1rem; color-scheme: dark; }
+    .field input:focus, .field select:focus { outline: none; border-color: rgba(255,138,66,0.6); background: #161616; }
+    .field input:focus-visible, .field select:focus-visible { outline: 2px solid #ff8a42; outline-offset: 2px; }
+    .field fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+    .checks { display: grid; gap: 0.55rem; }
+    @media (min-width: 640px) { .checks { grid-template-columns: 1fr 1fr; } }
+    .checks label { display: flex; gap: 0.6rem; align-items: flex-start; font-family: 'Inter', system-ui, sans-serif; font-size: 0.92rem; letter-spacing: 0; text-transform: none; color: #d1d5db; margin: 0; cursor: pointer; background: #0b0b0b; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 0.7rem 0.8rem; }
+    .checks input { width: 1.05rem; height: 1.05rem; margin: 0.15rem 0 0; accent-color: #ff8a42; flex-shrink: 0; }
+    .form-card button { margin-top: 1.25rem; width: 100%; justify-content: center; border: 0; cursor: pointer; font: inherit; font-weight: 600; font-size: 0.95rem; padding: 0.95rem 1.4rem; }
+    .form-feedback { margin: 0.8rem 0 0; min-height: 1.2rem; font-size: 0.88rem; color: #ff8a42; text-align: center; }
+    .form-hint { margin: 0.8rem 0 0; font-size: 0.75rem; color: rgba(156,163,175,0.85); text-align: center; line-height: 1.5; }
+    .policy { list-style: none; padding: 0; margin: 0; }
+    .policy li { padding: 0.55rem 0 0.55rem 1.6rem; position: relative; color: #c4c8cf; font-size: 0.95rem; line-height: 1.6; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .policy li:last-child { border-bottom: 0; }
+    .policy li::before { content: '→'; position: absolute; left: 0; color: #ff8a42; font-family: 'JetBrains Mono', monospace; }
+    details.faq { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1rem 0; }
+    details.faq summary { cursor: pointer; color: #fff; font-weight: 500; font-size: 1.02rem; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq summary::after { content: '+'; color: #ff8a42; font-size: 1.3rem; line-height: 1; }
+    details.faq[open] summary::after { content: '–'; }
+    details.faq p { color: #b6bcc6; line-height: 1.7; margin: 0.75rem 0 0; }
+    details.faq a { color: #ff8a42; text-decoration: underline; text-underline-offset: 3px; }
+    .final { text-align: center; padding: 4rem 0 2rem; }
+    .final p { color: #b6bcc6; margin: 0 auto 1.75rem; max-width: 34rem; line-height: 1.65; }
+    .final .actions { justify-content: center; }
+    .src { font-size: 0.82rem; line-height: 1.65; color: #9ca3af; margin-top: 2rem; }
+    .src a { text-decoration: underline; text-underline-offset: 2px; }
+    .final .aviso-final { max-width: 46rem; margin: 2.75rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 0.78rem; line-height: 1.6; color: #9ca3af; }
+    .hint-cell { display: flex; align-items: flex-end; }
+    .field-hint { margin: 0; font-size: 0.82rem; line-height: 1.55; color: #9ca3af; padding-bottom: 0.2rem; }
+    @media (max-width: 560px) { .price .amount { font-size: 2.3rem; } .lockup { font-size: 0.66rem; letter-spacing: 0.14em; } }
+  </style>
+</head>
+<body>
+  <nav id="mainNav" class="nav" aria-label="Principal">
+    <div class="nav-inner">
+      <a href="/" class="brand" aria-label="Inicio Digitaliza Lab">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" stroke="rgba(255,138,66,0.7)" stroke-width="1.5" fill="rgba(255,138,66,0.08)"/><text x="16" y="21.5" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#ff8a42" letter-spacing="-0.5">DL</text><circle cx="26" cy="7" r="2.5" fill="#ff8a42" opacity="0.9"/></svg>
+        <span>Digitaliza <em>Lab</em></span>
+      </a>
+      <div class="nav-links">
+        <a class="link" href="#incluye">Qué incluye</a>
+        <a class="link" href="#precio">Precio</a>
+        <a class="link" href="#pago">Cómo se paga</a>
+        <a class="link" href="#preguntas">Preguntas</a>
+        <a href="#cotizar" class="btn-primary btn-sm">Cotizar</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="lp" id="main-content">
+    <div class="wrap">
+      <nav aria-label="Ruta de navegación"><ol class="crumbs"><li><a href="/">Inicio</a></li><li aria-hidden="true">→</li><li aria-current="page">Pack Web Sercotec</li></ol></nav>
+
+      <header class="hero">
+        <p class="lockup"><span>Digitaliza Lab</span><span class="dot" aria-hidden="true">·</span><span class="tag">Sercotec</span></p>
+        <h1>Tu sitio web, con los <span>respaldos documentales</span> que necesitas</h1>
+        <p class="lead-hero">Para emprendedoras, emprendedores y empresas beneficiarias de Capital Abeja, Capital Semilla, Crece y otros programas de Sercotec. Te enviamos una cotización formal para presentar a tu Agente Operador y, una vez autorizada la compra, desarrollamos tu sitio con los documentos que te piden para rendir.</p>
+        <div class="actions">
+          <a href="#cotizar" class="btn-primary">Pedir mi cotización</a>
+          <a href="#incluye" class="btn-ghost">Ver qué incluye</a>
+        </div>
+        <div class="pill-row"><span>{{ neto | clp }} + IVA</span><span>Compra asistida o reembolso</span><span>Factura y documentos para rendir</span></div>
+        <p class="aviso"><span><strong>Proveedor independiente.</strong> Digitaliza Lab no es parte de Sercotec ni de los Agentes Operadores Sercotec. La aprobación de cada gasto depende de ellos y de las bases de tu programa.</span></p>
+      </header>
+
+      <section class="block" aria-labelledby="t-plazos">
+        <p class="eyebrow">Plazos</p>
+        <h2 class="sec" id="t-plazos">Primero, una cotización a tiempo. Después, tu web.</h2>
+        <div class="grid grid-2">
+          <div class="card plazo">
+            <div class="big">24 h</div>
+            <h3>Cotización</h3>
+            <p>Respuesta en un máximo de 24 horas hábiles, con tus antecedentes completos.</p>
+          </div>
+          <div class="card plazo">
+            <div class="big">5–7 <span>días</span></div>
+            <h3>Desarrollo</h3>
+            <p>Días hábiles desde que tu Agente Operador valida la cotización, confirmamos tu reserva y recibimos tus contenidos completos.</p>
+          </div>
+        </div>
+        <p class="note-line">Te ayudamos a preparar una propuesta clara para presentar a tu Agente Operador y coordinamos el desarrollo de tu sitio una vez autorizada la compra.</p>
+      </section>
+
+      <section class="block" id="incluye" aria-labelledby="t-incluye">
+        <p class="eyebrow">Qué incluye</p>
+        <h2 class="sec" id="t-incluye">Tu sitio web y la carpeta para rendirlo</h2>
+        <p class="sec-lead">El mismo Sitio Web Informativo que hacemos para cualquier negocio, más los documentos que los Agentes Operadores piden para rendir un servicio de desarrollo web.</p>
+
+        <h3 class="sub">El sitio</h3>
+        <div class="grid grid-2">
+          <div class="card"><h3>Sitio Web Informativo completo</h3><p>Diseño a medida de una página, con los textos incluidos, adaptado a celular y computador, SEO técnico, formulario y botón de WhatsApp.</p></div>
+          <div class="card"><h3>Dominio, hosting, SSL y correo por 1 año</h3><p>Incluidos sin costo adicional el primer año: no se cobran aparte en tu cotización ni en tu factura.</p></div>
+        </div>
+
+        <h3 class="sub">Los documentos para tu rendición</h3>
+        <div class="grid grid-3">
+          <div class="card doc"><h3>Cotización formal</h3><p>Con RUT, datos bancarios a nombre de Digitaliza Lab SpA y condición de pago, como la piden los Agentes Operadores.</p></div>
+          <div class="card doc"><h3>Programa de trabajo</h3><p>Las etapas, los plazos y los entregables del servicio.</p></div>
+          <div class="card doc"><h3>Factura electrónica</h3><p>A la razón social exacta de tu empresa, con su RUT, giro y dirección, y «transferencia» como condición de pago.</p></div>
+          <div class="card doc"><h3>Informe del servicio</h3><p>Introducción, objetivos, alcance, desarrollo, resultados y conclusiones, con el link operativo de tu sitio. Listo para firmar por ambas partes.</p></div>
+          <div class="card doc"><h3>Diseños en JPG y capturas</h3><p>Cada sección de tu sitio en imagen, como respaldo gráfico del servicio.</p></div>
+          <div class="card doc"><h3>Acta y coordinación</h3><p>Te ayudamos con el acta de recepción o el anexo que te pida tu asesor(a), y ajustamos la glosa si hace falta, sin costo.</p></div>
+        </div>
+
+        <div class="proveedor">
+          <span><strong>{{ empresa.razonSocial }}</strong> · RUT {{ empresa.rut }} · Emitimos factura electrónica y recibimos los pagos en una cuenta a nombre de la empresa.</span>
+          <span><a href="/#portafolio">Ver portafolio</a> · <a href="/datos-empresa.html">Datos de la empresa</a></span>
+        </div>
+      </section>
+
+      <section class="block" id="precio" aria-labelledby="t-precio">
+        <div class="grid grid-2" style="align-items:start; gap:2rem;">
+          <div>
+            <p class="eyebrow">Precio</p>
+            <h2 class="sec" id="t-precio">Un precio cerrado, con el IVA a la vista</h2>
+            <p class="sec-lead">El subsidio financia el valor neto cuando la página web está en tu plan aprobado. El IVA es de tu cargo, igual que la diferencia si tu plan aprobó un monto menor.</p>
+            <div class="iva" role="table" aria-label="Ejemplo de factura del Pack Web Sercotec">
+              <div role="row"><span role="cell">Valor neto</span><strong role="cell">{{ neto | clp }}</strong></div>
+              <div role="row"><span role="cell">IVA (19%)</span><strong role="cell">{{ ivaMonto | clp }}</strong></div>
+              <div role="row"><span role="cell">Total factura</span><strong role="cell">{{ total | clp }}</strong></div>
+            </div>
+            <p class="small-note">Desde el segundo año, la renovación de dominio y hosting cuesta {{ precios.renovacion | clp }} + IVA ({{ precios.renovacion | conIva | clp }} con IVA) y ya no forma parte de tu proyecto Sercotec.</p>
+          </div>
+          <div class="price">
+            <p class="name">Pack Web Sercotec</p>
+            <div class="amount">{{ neto | clp }} <small>+ IVA</small></div>
+            <p class="total">Total {{ total | clp }} con IVA · pago por transferencia</p>
+            <ul>
+              <li>Sitio Web Informativo completo</li>
+              <li>Dominio, hosting, SSL y correo (1 año), sin costo adicional</li>
+              <li>Cotización formal en 24 horas hábiles</li>
+              <li>Programa de trabajo e informe del servicio</li>
+              <li>Factura electrónica a nombre de tu empresa</li>
+              <li>Diseños en JPG y capturas</li>
+              <li>Desarrollo en 5 a 7 días hábiles</li>
+            </ul>
+            <a href="#cotizar" class="btn-primary">Pedir mi cotización</a>
+            <p class="fine">No incluye garantía de aprobación de la rendición: esa decisión es de tu Agente Operador y de Sercotec.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="pago" aria-labelledby="t-pago">
+        <p class="eyebrow">Cómo se paga</p>
+        <h2 class="sec" id="t-pago">Compra asistida o reembolso: lo defines con tu asesor(a)</h2>
+        <p class="sec-lead">Trabajamos con las dos modalidades de compra de los programas. En ambas, tu asesor(a) valida primero nuestra cotización.</p>
+        <div class="grid grid-2">
+          <div class="card modo">
+            <span class="tag">Pagas solo el IVA</span>
+            <h3>Compra asistida</h3>
+            <ol>
+              <li>Tu asesor(a) valida nuestra cotización.</li>
+              <li>Nos transfieres el IVA (<strong>{{ ivaMonto | clp }}</strong>) desde la cuenta de tu empresa, como reserva.</li>
+              <li>Nos envías tus contenidos y en 5 a 7 días hábiles tu sitio queda publicado.</li>
+              <li>Emitimos la factura y te entregamos los documentos para rendir.</li>
+              <li>Tu Agente Operador nos paga el neto (<strong>{{ neto | clp }}</strong>) directamente.</li>
+            </ol>
+            <p class="foot">Las bases fijan un mínimo de $100.000 netos para la compra asistida: este Pack lo supera.</p>
+          </div>
+          <div class="card modo">
+            <span class="tag">Pagas el total</span>
+            <h3>Reembolso</h3>
+            <ol>
+              <li>Tu asesor(a) valida nuestra cotización.</li>
+              <li>Nos transfieres el total (<strong>{{ total | clp }}</strong>) desde la cuenta de tu empresa.</li>
+              <li>Nos envías tus contenidos y en 5 a 7 días hábiles tu sitio queda publicado.</li>
+              <li>Te entregamos la factura y los documentos para rendir.</li>
+              <li>Pides a tu Agente Operador el reembolso del neto (<strong>{{ neto | clp }}</strong>).</li>
+            </ol>
+            <p class="foot">Coordinamos la fecha de la factura para que la presentes dentro del plazo de tu programa.</p>
+          </div>
+        </div>
+        <p class="callout-pago">En las dos modalidades pagas por transferencia y la factura dice «transferencia» como condición de pago. Para este Pack no usamos Webpay ni cuotas, porque complican la rendición. <strong>Si tu asesor(a) no valida la cotización, no pagas nada.</strong></p>
+      </section>
+
+      <section class="block" id="cotizar" aria-labelledby="t-cotizar">
+        <p class="eyebrow">Pide tu cotización</p>
+        <h2 class="sec" id="t-cotizar">Cuatro datos y te respondemos en 24 horas hábiles</h2>
+        <p class="sec-lead">Con esto sabemos qué necesitas, cuánto tiempo tienes y qué preparar. El formulario abre WhatsApp con tu mensaje listo para enviar.</p>
+        <div class="cotizar">
+          <form id="formSercotec" class="form-card" novalidate>
+            <div class="form-grid two">
+              <div class="field">
+                <label for="scNombre">Nombre</label>
+                <input type="text" id="scNombre" autocomplete="name" placeholder="Carolina Reyes" required aria-required="true">
+              </div>
+              <div class="field">
+                <label for="scContacto">WhatsApp o correo</label>
+                <input type="text" id="scContacto" autocomplete="on" placeholder="+56 9 1234 5678" required aria-required="true">
+              </div>
+              <div class="field">
+                <label for="scPrograma"><span class="n">1</span>Programa adjudicado</label>
+                <select id="scPrograma" required aria-required="true">
+                  <option value="">Elige tu programa</option>
+                  <option>Capital Abeja Emprende</option>
+                  <option>Capital Semilla Emprende</option>
+                  <option>Capital Semilla Modo Empleo</option>
+                  <option>Crece</option>
+                  <option>Otro programa de Sercotec</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="scRegion"><span class="n">2</span>Región y Agente Operador</label>
+                <input type="text" id="scRegion" placeholder="Metropolitana · tu operador" required aria-required="true">
+              </div>
+              <div class="field">
+                <label for="scFecha"><span class="n">3</span>Fecha límite para presentar la cotización</label>
+                <input type="date" id="scFecha" required aria-required="true" aria-describedby="scFechaAyuda">
+              </div>
+              <div class="hint-cell">
+                <p class="field-hint" id="scFechaAyuda">Nos ayuda a priorizar si tu plazo es corto. Si aún no la sabes, pregúntale a tu asesor(a).</p>
+              </div>
+            </div>
+            <div class="field" style="margin-top:1rem">
+              <fieldset>
+                <legend><span class="n">4</span>Estado de tu proyecto <span style="opacity:.6">(marca lo que ya tienes)</span></legend>
+                <div class="checks">
+                  <label><input type="checkbox" id="scPlan"> La página web está en mi plan aprobado</label>
+                  <label><input type="checkbox" id="scDominio"> Ya tengo dominio</label>
+                  <label><input type="checkbox" id="scLogo"> Tengo logo</label>
+                  <label><input type="checkbox" id="scTextos"> Tengo textos y fotos</label>
+                </div>
+              </fieldset>
+            </div>
+            <button type="submit" class="btn-primary">Pedir cotización por WhatsApp</button>
+            <p id="scFeedback" class="form-feedback" role="status" aria-live="polite"></p>
+            <p class="form-hint">Usamos estos datos solo para preparar tu cotización. Más detalles en nuestra <a href="/privacidad.html" style="text-decoration:underline">Política de Privacidad</a>.</p>
+          </form>
+          <div class="card">
+            <h3>Cómo cotizamos</h3>
+            <ul class="policy">
+              <li>La primera cotización no tiene costo.</li>
+              <li>Los ajustes razonables de glosa están incluidos.</li>
+              <li>Si cambia el alcance o necesitas varias versiones, lo conversamos antes.</li>
+              <li>Nunca preparamos cotizaciones a nombre de otros proveedores.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="preguntas" aria-labelledby="t-faq">
+        <div class="narrow">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2 class="sec" id="t-faq">Lo que suelen preguntarnos las beneficiarias</h2>
+          {%- for f in faqs %}
+          <details class="faq"><summary>{{ f.q }}</summary><p>{{ f.a | safe }}</p></details>
+          {%- endfor %}
+          <p class="src">Fuentes: Sercotec, <a href="https://www.sercotec.cl/wp-content/uploads/2026/04/Capital-Semilla-Recomendaciones-para-la-postulacion-2026.pdf" target="_blank" rel="noopener noreferrer">Recomendaciones para la postulación Capital Semilla Emprende 2026</a> y <a href="https://www.sercotec.cl/wp-content/uploads/2026/05/CRECE-Recomendaciones-para-la-postulacion-2026.pdf" target="_blank" rel="noopener noreferrer">Crece 2026</a> (subsidio neto e IVA a cargo de la empresa); <a href="https://www.sercotec.cl/wp-content/uploads/2026/05/Bases-Abeja-EMPRENDE-2026-Antofagasta-VB%C2%B0.pdf" target="_blank" rel="noopener noreferrer">Bases de convocatoria Capital Abeja Emprende 2026, Región de Antofagasta</a> (compra asistida desde $100.000 netos, reembolso y desarrollo de páginas web como marketing digital). Las reglas pueden variar según el programa, la región y el Agente Operador: confirma siempre con tu asesor(a).</p>
+        </div>
+      </section>
+
+      <section class="final" aria-labelledby="t-final">
+        <h2 class="sec" id="t-final">¿Te adjudicaste un fondo y necesitas tu página?</h2>
+        <p>Escríbenos y revisamos contigo si tu plan la incluye y qué necesitas para cotizar. Te respondemos en horario hábil.</p>
+        <div class="actions">
+          <a href="#cotizar" class="btn-primary">Pedir mi cotización</a>
+          <a href="https://wa.me/{{ empresa.whatsapp }}?text={{ 'Hola, me adjudiqué un fondo Sercotec y quiero cotizar el Pack Web Sercotec.' | urlencode }}" target="_blank" rel="noopener noreferrer" class="btn-ghost">Escríbenos por WhatsApp</a>
+        </div>
+        <p class="aviso-final">Digitaliza Lab SpA es un proveedor independiente. No forma parte de Sercotec ni de los Agentes Operadores Sercotec y no participa en la evaluación de planes de inversión ni de rendiciones. Sercotec y los nombres de sus programas pertenecen a sus respectivos titulares y se mencionan solo para indicar a quién está dirigido este servicio.</p>
+      </section>
+    </div>
+  </main>
+
+  {% include "partials/footer-simple.njk" %}
+
+  <script>
+    (function () {
+      var nav = document.getElementById('mainNav');
+      if (nav) window.addEventListener('scroll', function () { nav.classList.toggle('nav-scrolled', window.scrollY > 40); }, { passive: true });
+
+      /* Precalificación del Pack Web Sercotec: arma el mensaje y abre WhatsApp (no guarda datos en el sitio). */
+      var form = document.getElementById('formSercotec');
+      var feedback = document.getElementById('scFeedback');
+      if (!form) return;
+      function valor(id) { var el = document.getElementById(id); return el ? (el.value || '').trim() : ''; }
+      function marcado(id) { var el = document.getElementById(id); return !!(el && el.checked); }
+      function fecha(iso) { var p = String(iso).split('-'); return p.length === 3 ? p[2] + '-' + p[1] + '-' + p[0] : iso; }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nombre = valor('scNombre'), contacto = valor('scContacto'), programa = valor('scPrograma'), region = valor('scRegion'), limite = valor('scFecha');
+        var faltan = [];
+        if (!nombre) faltan.push('tu nombre');
+        if (!contacto) faltan.push('un WhatsApp o correo');
+        if (!programa) faltan.push('el programa');
+        if (!region) faltan.push('la región y el Agente Operador');
+        if (!limite) faltan.push('la fecha límite');
+        if (faltan.length) { if (feedback) feedback.textContent = 'Falta completar: ' + faltan.join(', ') + '.'; return; }
+
+        var texto = [
+          'Hola Digitaliza Lab, quiero cotizar el Pack Web Sercotec.',
+          '',
+          'Nombre: ' + nombre,
+          'Contacto: ' + contacto,
+          'Programa: ' + programa,
+          'Región y Agente Operador: ' + region,
+          'Fecha límite para presentar la cotización: ' + fecha(limite),
+          'Página web en mi plan aprobado: ' + (marcado('scPlan') ? 'Sí' : 'No o por confirmar'),
+          'Dominio: ' + (marcado('scDominio') ? 'Sí' : 'No') + ' · Logo: ' + (marcado('scLogo') ? 'Sí' : 'No') + ' · Textos y fotos: ' + (marcado('scTextos') ? 'Sí' : 'No')
+        ].join('\n');
+
+        // Medición: gtag y fbq solo existen si la persona aceptó las cookies (consent.js).
+        if (typeof window.gtag === 'function') window.gtag('event', 'form_whatsapp_open', { method: 'sercotec_precalificacion', programa: programa });
+        if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'Pack Web Sercotec' });
+
+        window.open('https://wa.me/{{ empresa.whatsapp }}?text=' + encodeURIComponent(texto), '_blank', 'noopener,noreferrer');
+        if (feedback) feedback.textContent = '✓ Abriendo WhatsApp… si no se abre, escríbenos al {{ empresa.whatsappVisible }}.';
+      });
+    })();
+  </script>
+</body>
+</html>

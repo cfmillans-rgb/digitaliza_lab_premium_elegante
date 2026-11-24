@@ -1018,6 +1018,27 @@
                 "valueAddedTaxIncluded": false
               },
               "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "url": "https://digitalizalab.cl/sercotec.html",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pack Web Sercotec",
+                "description": "Sitio web informativo con cotización formal, factura electrónica, programa de trabajo, informe del servicio y respaldos gráficos para empresas beneficiarias de programas de Sercotec.",
+                "serviceType": "Diseño y desarrollo web",
+                "provider": { "@id": "https://digitalizalab.cl/#organization" },
+                "areaServed": "Chile"
+              },
+              "price": "{{ precios.sercotec }}",
+              "priceCurrency": "CLP",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "{{ precios.sercotec }}",
+                "priceCurrency": "CLP",
+                "valueAddedTaxIncluded": false
+              },
+              "availability": "https://schema.org/InStock"
             }
           ]
         }
@@ -1048,7 +1069,7 @@
             "name": "¿Necesito cotizar?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. El Sitio Web Informativo y la Renovación Anual tienen precio fijo y se pagan directo en el sitio. Solo cotizamos la actualización o mantención de sitios web y los proyectos a medida: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS."
+              "text": "No. El Sitio Web Informativo y la Renovación Anual tienen precio fijo y se pagan directo en el sitio. Solo cotizamos la actualización o mantención de sitios web y los proyectos a medida: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS. Si tu página se financia con un fondo Sercotec, te preparamos una cotización formal para tu Agente Operador: revisa el Pack Web Sercotec."
             }
           },
           {
@@ -1400,6 +1421,19 @@
           {% include "partials/pago-webpay.njk" %}
         </div>
 
+      </div>
+
+      <!-- Pack Web Sercotec: para beneficiarias de fondos Sercotec (página aparte: sercotec.html) -->
+      <div class="mt-6 max-w-5xl mx-auto rounded-3xl border border-amber-glow/25 bg-amber-glow/[0.04] p-6 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-5" data-reveal="fade-up">
+        <div>
+          <span class="inline-block font-mono text-[11px] uppercase tracking-[0.25em] text-amber-glow mb-2">— Digitaliza Lab · Sercotec</span>
+          <h3 class="font-display text-xl sm:text-2xl text-white">¿Te adjudicaste un fondo Sercotec?</h3>
+          <p class="text-sm text-mist/90 mt-2 max-w-2xl">Pack Web Sercotec: tu sitio con cotización formal en 24 horas hábiles y los documentos para tu rendición. {{ precios.sercotec | clp }} + IVA ({{ precios.sercotec | conIva | clp }} con IVA).</p>
+        </div>
+        <a href="sercotec.html" class="btn-secondary shrink-0 js-cta-track" data-cta="home_pack_sercotec">
+          Ver Pack Web Sercotec
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
       </div>
 
       <!-- Proyectos a medida: el único servicio que se cotiza -->
@@ -1927,7 +1961,7 @@
               <svg aria-hidden="true" class="w-4 h-4 text-white group-hover:text-amber-glow transition-transform group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
             </span>
           </summary>
-          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">No. El Sitio Web Informativo y la Renovación Anual tienen precio fijo y los pagas directo en la <a href="#servicios" class="text-amber-glow hover:underline">sección de servicios</a>. Solo cotizamos los <a href="#a-medida" class="text-amber-glow hover:underline">actualización o mantención de sitios web y los proyectos a medida</a>: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS.</p></div>
+          <div class="pb-5 pr-10"><p class="text-mist text-sm sm:text-base leading-relaxed">No. El Sitio Web Informativo y la Renovación Anual tienen precio fijo y los pagas directo en la <a href="#servicios" class="text-amber-glow hover:underline">sección de servicios</a>. Solo cotizamos la <a href="#a-medida" class="text-amber-glow hover:underline">actualización o mantención de sitios web y los proyectos a medida</a>: tiendas online con carrito, integraciones y APIs, automatizaciones o SaaS. Si tu página se financia con un fondo Sercotec, te preparamos una cotización formal para tu Agente Operador: revisa el <a href="sercotec.html" class="text-amber-glow hover:underline">Pack Web Sercotec</a>.</p></div>
         </details>
 
         <details class="group px-4 sm:px-6 py-2 border-b border-white/5 last:border-0">
