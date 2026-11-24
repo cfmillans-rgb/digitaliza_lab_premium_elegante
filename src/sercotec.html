@@ -20,8 +20,6 @@
     a: "Cotización formal, programa de trabajo, factura electrónica a nombre de tu empresa, informe del servicio con el link operativo de tu sitio (para firmar por ambas partes), diseños en JPG y capturas. También te ayudamos con el acta de recepción o el anexo que te pida tu asesor(a)." },
   { q: "¿Garantizan que me aprueben el gasto?",
     a: "No. La aprobación depende de tu Agente Operador y de Sercotec. Lo que sí garantizamos es que nuestros documentos vengan correctos: si hay un error nuestro, lo corregimos o reemitimos sin costo." },
-  { q: "¿Qué pasa si el Agente Operador no paga el neto?",
-    a: "Si tu asesor(a) no valida la cotización, no pagas nada, porque la reserva se paga después de esa validación. Si la valida y después el pago se rechaza por una causa que no es nuestra (por ejemplo, porque la documentación se presentó fuera de plazo), el neto queda de tu cargo, como indican los <a href=\"/terminos.html#pack-sercotec\">Términos y Condiciones</a>." },
   { q: "¿Necesito tres cotizaciones?",
     a: "Depende del monto y de tu región: hay Agentes Operadores que piden tres cotizaciones para compras de montos altos. Pregúntale a tu asesor(a). Nosotros te entregamos la nuestra; nunca preparamos cotizaciones a nombre de otros proveedores." },
   { q: "¿Qué pasa después del primer año?",
@@ -194,8 +192,9 @@
     .src { font-size: 0.82rem; line-height: 1.65; color: #9ca3af; margin-top: 2rem; }
     .src a { text-decoration: underline; text-underline-offset: 2px; }
     .final .aviso-final { max-width: 46rem; margin: 2.75rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 0.78rem; line-height: 1.6; color: #9ca3af; }
-    .hint-cell { display: flex; align-items: flex-end; }
-    .field-hint { margin: 0; font-size: 0.82rem; line-height: 1.55; color: #9ca3af; padding-bottom: 0.2rem; }
+    .form-grid.two { align-items: end; }
+    .form-grid .full { grid-column: 1 / -1; }
+    .field-hint { margin: -0.35rem 0 0; font-size: 0.82rem; line-height: 1.55; color: #9ca3af; }
     @media (max-width: 560px) { .price .amount { font-size: 2.3rem; } .lockup { font-size: 0.66rem; letter-spacing: 0.14em; } }
   </style>
 </head>
@@ -344,7 +343,7 @@
 
       <section class="block" id="cotizar" aria-labelledby="t-cotizar">
         <p class="eyebrow">Pide tu cotización</p>
-        <h2 class="sec" id="t-cotizar">Cuatro datos y te respondemos en 24 horas hábiles</h2>
+        <h2 class="sec" id="t-cotizar">Tres datos y te respondemos en 24 horas hábiles</h2>
         <p class="sec-lead">Con esto sabemos qué necesitas, cuánto tiempo tienes y qué preparar. El formulario abre WhatsApp con tu mensaje listo para enviar.</p>
         <div class="cotizar">
           <form id="formSercotec" class="form-card" novalidate>
@@ -369,20 +368,14 @@
                 </select>
               </div>
               <div class="field">
-                <label for="scRegion"><span class="n">2</span>Región y Agente Operador</label>
-                <input type="text" id="scRegion" placeholder="Metropolitana · tu operador" required aria-required="true">
-              </div>
-              <div class="field">
-                <label for="scFecha"><span class="n">3</span>Fecha límite para presentar la cotización</label>
+                <label for="scFecha"><span class="n">2</span>Fecha límite para presentar la cotización</label>
                 <input type="date" id="scFecha" required aria-required="true" aria-describedby="scFechaAyuda">
               </div>
-              <div class="hint-cell">
-                <p class="field-hint" id="scFechaAyuda">Nos ayuda a priorizar si tu plazo es corto. Si aún no la sabes, pregúntale a tu asesor(a).</p>
-              </div>
+              <p class="field-hint full" id="scFechaAyuda">La fecha nos ayuda a priorizar si tu plazo es corto. Si aún no la sabes, pregúntale a tu asesor(a).</p>
             </div>
             <div class="field" style="margin-top:1rem">
               <fieldset>
-                <legend><span class="n">4</span>Estado de tu proyecto <span style="opacity:.6">(marca lo que ya tienes)</span></legend>
+                <legend><span class="n">3</span>Estado de tu proyecto <span style="opacity:.6">(marca lo que ya tienes)</span></legend>
                 <div class="checks">
                   <label><input type="checkbox" id="scPlan"> La página web está en mi plan aprobado</label>
                   <label><input type="checkbox" id="scDominio"> Ya tengo dominio</label>
@@ -414,7 +407,7 @@
           {%- for f in faqs %}
           <details class="faq"><summary>{{ f.q }}</summary><p>{{ f.a | safe }}</p></details>
           {%- endfor %}
-          <p class="src">Fuentes: Sercotec, <a href="https://www.sercotec.cl/wp-content/uploads/2026/04/Capital-Semilla-Recomendaciones-para-la-postulacion-2026.pdf" target="_blank" rel="noopener noreferrer">Recomendaciones para la postulación Capital Semilla Emprende 2026</a> y <a href="https://www.sercotec.cl/wp-content/uploads/2026/05/CRECE-Recomendaciones-para-la-postulacion-2026.pdf" target="_blank" rel="noopener noreferrer">Crece 2026</a> (subsidio neto e IVA a cargo de la empresa); <a href="https://www.sercotec.cl/wp-content/uploads/2026/05/Bases-Abeja-EMPRENDE-2026-Antofagasta-VB%C2%B0.pdf" target="_blank" rel="noopener noreferrer">Bases de convocatoria Capital Abeja Emprende 2026, Región de Antofagasta</a> (compra asistida desde $100.000 netos, reembolso y desarrollo de páginas web como marketing digital). Las reglas pueden variar según el programa, la región y el Agente Operador: confirma siempre con tu asesor(a).</p>
+          <p class="src">Fuente: bases de convocatoria 2026 de Sercotec. Confirma siempre con tu asesor(a).</p>
         </div>
       </section>
 
@@ -447,12 +440,11 @@
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var nombre = valor('scNombre'), contacto = valor('scContacto'), programa = valor('scPrograma'), region = valor('scRegion'), limite = valor('scFecha');
+        var nombre = valor('scNombre'), contacto = valor('scContacto'), programa = valor('scPrograma'), limite = valor('scFecha');
         var faltan = [];
         if (!nombre) faltan.push('tu nombre');
         if (!contacto) faltan.push('un WhatsApp o correo');
         if (!programa) faltan.push('el programa');
-        if (!region) faltan.push('la región y el Agente Operador');
         if (!limite) faltan.push('la fecha límite');
         if (faltan.length) { if (feedback) feedback.textContent = 'Falta completar: ' + faltan.join(', ') + '.'; return; }
 
@@ -462,7 +454,6 @@
           'Nombre: ' + nombre,
           'Contacto: ' + contacto,
           'Programa: ' + programa,
-          'Región y Agente Operador: ' + region,
           'Fecha límite para presentar la cotización: ' + fecha(limite),
           'Página web en mi plan aprobado: ' + (marcado('scPlan') ? 'Sí' : 'No o por confirmar'),
           'Dominio: ' + (marcado('scDominio') ? 'Sí' : 'No') + ' · Logo: ' + (marcado('scLogo') ? 'Sí' : 'No') + ' · Textos y fotos: ' + (marcado('scTextos') ? 'Sí' : 'No')
